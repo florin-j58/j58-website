@@ -1,0 +1,19 @@
+/* Impact: one-line mission, hairline, prize photo + cards */
+.imp{padding:88px 0;background:#EEF3F5;border-top:1px solid var(--gray-200)}
+.imp>.container{max-width:none;padding-inline:clamp(16px,5.5vw,120px)}
+.imp-mission{margin:0;font-weight:500;text-transform:uppercase;letter-spacing:-.015em;line-height:1.1;font-size:clamp(1.05rem,2.75vw,2.9rem);white-space:nowrap;color:var(--navy)}
+.imp-mission em{font-style:normal;font-weight:700;color:var(--blue-dark)}
+.imp-rule{border:0;height:1px;background:rgba(11,29,53,.22);margin:22px 0 40px}
+.imp-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.5fr);gap:16px;align-items:stretch}
+.imp-photo{position:relative;border-radius:28px;background-color:#000;background-size:cover;background-position:50% 50%;aspect-ratio:1656/1496;overflow:hidden}
+.imp-place{position:absolute;left:44%;top:29.5%;transform:translateX(-50%);background:linear-gradient(135deg,#F3D27A,#C99A2E);color:#241A03;font-weight:900;font-size:clamp(.75rem,1.1vw,1.05rem);letter-spacing:.14em;text-transform:uppercase;padding:.45em 1.4em;border-radius:999px;box-shadow:0 2px 12px rgba(201,154,46,.5);white-space:nowrap}
+.imp-cards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
+.imp-tile{border-radius:28px;padding:24px;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:10px}
+.imp-tile b{display:block;font-size:clamp(3rem,5vw,4.6rem);font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--navy)}
+.imp-tile span{font-size:calc(17px*var(--ts));line-height:1.4;color:var(--navy)}
+.imp-tile small{display:block;font-size:.9rem;color:var(--gray-600)}
+.imp-t-a{background:#CDEFF3;grid-row:1/3}
+.imp-t-c{background:#D8ECE8}
+.imp-t-d{background:#F6E9CF}
+@media(max-width:900px){.imp-mission{white-space:normal}.imp-grid{grid-template-columns:1fr}.imp-cards{grid-auto-rows:minmax(180px,auto)}}
+@media(max-width:560px){.imp-cards{grid-template-columns:1fr;grid-template-rows:none}.imp-t-a{grid-row:auto}}

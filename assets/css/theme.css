@@ -1,0 +1,97 @@
+/* J58 unified look: Playfair Display titles, Montserrat everything else,
+   alternating cream / deep-blue sections.  Loaded LAST on every page. */
+:root { --cream:var(--ds-cream,#F6F1E6); --deep:var(--ds-deep,#0B1D35); --font-title:var(--ds-font-title,"Playfair Display",Georgia,serif); --font-text:var(--ds-font-text,"Montserrat","Inter",system-ui,sans-serif); }
+html, body, button, input, select, textarea { font-family:var(--font-text); }
+h1, h2 { font-family:var(--font-title) !important; font-weight:700; letter-spacing:-.005em; }
+h3, h4, h5, h6, .eyebrow, .btn-primary, .btn-secondary, .sp-btn, .nav a, .site-nav a { font-family:var(--font-text); }
+.page-hero h1, .section-header h2, main h2 { text-transform:none; }
+
+/* ---- cream / deep-blue rhythm ---- */
+.section, .bg-cream { background:var(--cream); color:#1b1d1c; }
+.section-alt, .bg-deep, .uc { background:var(--deep); color:#fff; }
+.section-alt h1, .section-alt h2, .bg-deep h1, .bg-deep h2, .uc h2 { color:#fff; }
+.section-alt .section-header p, .section-alt > .container > p, .bg-deep .section-header p { color:rgba(255,255,255,.78); }
+.section-alt .eyebrow, .bg-deep .eyebrow { color:#7fd6e0; }
+/* white cards keep dark text inside deep sections */
+.section-alt :is(.card, .who-card, .story-card, .price-card, .faq-item, .tile, .stat, .panel, .team-card, .tm, .post-card, .blog-card, .country-card, .dealer, .dist-card, .acc, details) { color:#1b1d1c; }
+.section-alt :is(.card, .story-card, .price-card, .faq-item, .tile, .panel, .team-card, .tm, .post-card, .blog-card, .country-card, .dealer, .dist-card, details) :is(h2,h3,h4,p,li,span,a):not(.btn-primary):not(.btn-secondary) { color:inherit; }
+/* call-to-action bands: alternate against whatever comes before */
+.cta-band { background:var(--deep); color:#fff; }
+.section-alt + .cta-band { background:var(--cream); color:#1b1d1c; }
+.cta-band h2 { color:#fff; } .section-alt + .cta-band h2 { color:var(--deep); }
+.section-alt + .cta-band p { color:#3a3d3b; }
+.section-alt + .cta-band .btn-primary { background:var(--blue,#12aaba); color:#0B1D35; }
+.cta-band .dot, h1 .dot, h2 .dot { color:#12aaba !important; }
+.bro + .cta-band, .cmp + .cta-band { background:var(--cream); color:#1b1d1c; }
+.bro + .cta-band h2 { color:var(--deep); } .bro + .cta-band p { color:#3a3d3b; }
+.bro + .cta-band .btn-primary { background:#12aaba; color:#0B1D35; }
+.bro + .cta-band .cta-link { color:var(--deep); }
+.stack-section { background:var(--deep) !important; }
+.imp { background:var(--cream) !important; }
+.insp, .bro { background:var(--deep) !important; color:#fff; }
+.bg-deep .bro-text h2, .bro .bro-text h2 { color:#0B1D35; }
+.bg-deep .bro-text p { color:#33475b; } .bg-deep .bro-text .bro-kicker { color:#0e8794; }
+.bg-deep .insp-copy h2, .bg-deep .insp-copy p { color:#0B0F0E; }
+
+/* legibility on deep-blue sections (text that used dark colours) */
+.section-alt h2, .section-alt h3:not(.card h3) { color:#fff; }
+.section-alt > .container > h3, .section-alt .section-header h3 { color:#fff !important; }
+.section-alt label, .section-alt legend, .section-alt .req { color:rgba(255,255,255,.92); }
+.section-alt form small, .section-alt form span { color:rgba(255,255,255,.75); }
+.section-alt input, .section-alt select, .section-alt textarea { color:#0B1D35; }
+.section-alt li { color:rgba(255,255,255,.85); }
+.section-alt .section-header p, .section-alt > .container > p, .section-alt .container > div > p:not(.eyebrow) { color:rgba(255,255,255,.78); }
+.section-alt .fx-disc, .section-alt p.fx-disc { color:rgba(255,255,255,.6); }
+.section-alt .role { color:#7c8aa0; }
+/* keep dark text inside white cards */
+.section-alt :is(.card,.story-card,.price-card,.faq-item,.fx-card,.fx-step,.tm,.team-card,.quote,.testimonial,.mc-card,.post,details,.acc) :is(h2,h3,h4,p,li,span,label,div){ color:#1b1d1c; }
+.section-alt :is(.card,.story-card,.price-card,.faq-item,.fx-card,.fx-step,.tm,.team-card,.quote,.testimonial,.mc-card,.post,details,.acc) .role, .section-alt :is(.card,.story-card,.tm,.team-card) .muted { color:#64748b; }
+.section-alt .tm-li, .section-alt .tm-li span { color:#0e8794 !important; }
+.section-alt .dot, h1 .dot, h2 .dot, .dot { color:#12aaba !important; }
+/* final call-to-action band is always cream, separated from the footer */
+.cta-band, .section-alt + .cta-band, .bro + .cta-band { background:var(--cream) !important; color:#1b1d1c !important; border-top:1px solid rgba(11,29,53,.08); }
+.cta-band h2, .section-alt + .cta-band h2 { color:var(--deep) !important; }
+.cta-band p, .section-alt + .cta-band p { color:#3a3d3b !important; }
+.cta-band .btn-primary, .section-alt + .cta-band .btn-primary { background:#12aaba !important; color:#0B1D35 !important; }
+.cta-band .btn-primary:hover { background:var(--deep) !important; color:#fff !important; }
+.cta-band .cta-link, .cta-band a:not(.btn-primary) { color:var(--deep); }
+
+.section-alt h2:not(.fx-draft h2) { color:#fff !important; }
+.section-alt .step h3, .section-alt .step p { color:#fff; }
+.section-alt .step p { color:rgba(255,255,255,.78); }
+.fx-draft, .fx-draft :is(h2,h3,p,li,span) { color:#6b3a0c !important; }
+.fx-draft h2 { color:#6b3a0c !important; }
+
+/* ---- product page rhythm ---- */
+.product-hero, .bc, #mechanism, #wheels, .specs-section, .cta-section { background:var(--cream) !important; color:#1b1d1c; }
+.product-intro, .technical-diagram, .cmp--product { background:var(--deep) !important; color:#fff; }
+.pull-quote { color:#fff; }
+.component-section .component-section__text { background:transparent !important; }
+:is(.product-intro, .technical-diagram, .cmp--product) :is(h1,h2,h3,h4,p,li,span,dt,dd,em,strong,figcaption,small,div):not(svg *):not(.dot):not(.cmp-card *):not(.feature-check__icon) { color:#fff; }
+:is(.product-intro, .technical-diagram) :is(p,li,dd,small,.component-desc) { color:rgba(255,255,255,.82); }
+.cmp--product .cmp-h3 { color:#fff; } .cmp--product .cmp-h3 span { color:#12aaba; }
+.cmp--product .cmp-card, .cmp--product .cmp-card :is(div,span) { color:#1b1d1c; }
+.cmp--product .cmp-card .ch.ezer { color:#12aaba; } .cmp--product .cmp-card .ch.other { color:#8a8d8b; }
+.cta-section h2 { color:var(--deep) !important; } .cta-section p { color:#3a3d3b !important; }
+.cta-section .btn-primary, .cta-section a.btn-primary { background:#12aaba !important; color:#0B1D35 !important; }
+.cta-section .btn-secondary { background:transparent !important; color:var(--deep) !important; border-color:var(--deep) !important; }
+.cta-section .btn-white { background:#12aaba !important; color:#0B1D35 !important; }
+.cta-section .btn-ghost-white { background:transparent !important; color:var(--deep) !important; border:2px solid var(--deep) !important; }
+.callout__circle { color:#0B1D35 !important; }
+.component-overline, .specs-section__overline, .product-hero__label { color:#0e8794 !important; }
+#seating .component-overline, .technical-diagram .technical-diagram__overline { color:#7fd6e0 !important; }
+
+/* contact / brochure / intake */
+.cs, .fm-help { background:var(--deep) !important; color:#fff; margin-top:0 !important; }
+.cs-text h2, .fm-help h2 { color:#fff !important; }
+.cs-text p, .fm-help p { color:rgba(255,255,255,.82) !important; }
+.cs-text a, .fm-help p a, .cs-text .bro-kicker { color:#7fd6e0 !important; }
+.cs-text .bro-kicker { color:#7fd6e0 !important; }
+.fm-help .bro-btn--ghost { background:#fff; color:#0e8794; }
+.cs + .bro { background:var(--cream) !important; }
+.cs + .bro .bro-text h2 { color:#0B1D35; }
+.section-alt .who-card span { color:#0B1D35; } .section-alt .who-card:hover span { color:#fff; }
+
+/* one navigation everywhere: identical CTA on every page */
+.nav-wrap .nav-cta .btn-primary { background:#fff; color:#111 !important; }
+.nav-wrap .nav-cta .btn-primary:hover { background:#12aaba; color:#0B1D35 !important; }

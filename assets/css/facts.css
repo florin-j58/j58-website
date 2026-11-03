@@ -1,0 +1,12 @@
+/* Key-facts stripe (icons on cream) */
+.fs { background:var(--ds-cream,#F6F1E6); border-block:1px solid #e8dfcc; padding:34px 0; position:relative; z-index:1; }
+.fs__row { max-width:1100px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.fs__item { display:flex; align-items:center; gap:18px; padding:6px 10px; }
+.fs__item + .fs__item { border-left:1px solid #ddd2b9; padding-left:32px; }
+.fs__ico { flex:none; width:58px; height:58px; border-radius:50%; background:#fff; border:1px solid #e3d9c2; display:grid; place-items:center; color:#0f8a98; box-shadow:0 6px 16px rgba(60,45,10,.07); transition:transform .3s; }
+.fs__item:hover .fs__ico { transform:translateY(-3px) rotate(-4deg); }
+.fs__ico svg { width:28px; height:28px; }
+.fs__label { display:block; font-size:calc(12px * var(--ts, 1)); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7a6f57; }
+.fs__value { display:block; margin-top:3px; font-size:calc(22px * var(--ts, 1)); font-weight:800; line-height:1.15; color:#0B1D35; letter-spacing:-.01em; }
+.fs__sub { display:block; margin-top:2px; font-size:calc(14px * var(--ts, 1)); color:#6b6657; }
+@media (max-width:820px){ .fs__row { grid-template-columns:1fr; gap:6px; } .fs__item + .fs__item { border-left:0; border-top:1px solid #ddd2b9; padding:16px 10px 6px; } }

@@ -1,0 +1,40 @@
+/* ---------- ACCESSIBILITY PANEL (top-bar button + full-height side panel) ---------- */
+.a11y-open { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; font-size: calc(13px * var(--ts)); padding: 4px 6px; border-radius: 8px; background: transparent; border: 0; cursor: pointer; }
+.a11y-open:hover { color: var(--blue-glow, #2bc4e0); }
+.a11y-open:focus-visible, .a11y-panel button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #0B1D35; }
+.a11y-panel[hidden] { display: none; }
+.a11y-panel { position: fixed; inset: 0; z-index: 10000; font-family: "Montserrat", system-ui, sans-serif; }
+.a11y-scrim { position: absolute; inset: 0; background: rgba(11,29,53,.45); animation: a11yFade .2s ease; }
+.a11y-sheet { position: absolute; top: 0; bottom: 0; left: 0; width: min(360px, 92vw); height: 100%; background: #fff; color: #0B1D35; padding: 28px 24px 32px; overflow-y: auto; box-shadow: 12px 0 40px rgba(0,0,0,.25); animation: a11ySlide .25s ease; }
+@keyframes a11ySlide { from { transform: translateX(-100%); } to { transform: none; } }
+@keyframes a11yFade { from { opacity: 0; } to { opacity: 1; } }
+.a11y-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.a11y-top h2 { margin: 0; font-size: 1.35rem; font-weight: 800; color: #12aaba; }
+.a11y-x { width: 44px; height: 44px; border-radius: 10px; border: 0; background: #0B1D35; color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; }
+.a11y-h { margin: 26px 0 12px; font-size: 1.05rem; font-weight: 700; color: #0B1D35; }
+.a11y-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.a11y-opt { flex: 1 1 auto; min-height: 46px; padding: 10px 16px; border-radius: 12px; border: 2px solid transparent; background: #eceef1; color: #3a4655; font: 700 .95rem "Montserrat", sans-serif; cursor: pointer; transition: background .2s, color .2s; }
+.a11y-opt:hover { background: #dfe3e8; }
+.a11y-opt.on, .a11y-opt[aria-pressed="true"] { background: #12aaba; color: #0B1D35; }
+.a11y-opt[data-a11y="contrast"][data-v="1"] { background: #000; color: #fff; }
+.a11y-opt[data-a11y="contrast"][data-v="2"] { background: #fff; color: #000; border-color: #000; }
+.a11y-opt[data-a11y="contrast"][aria-pressed="true"] { box-shadow: 0 0 0 3px #12aaba; }
+.a11y-read.on { background: #0B1D35; color: #fff; }
+.a11y-reset { margin-top: 36px; background: none; border: 0; color: #0B1D35; text-decoration: underline; font: 600 .9rem "Montserrat", sans-serif; cursor: pointer; padding: 6px 0; }
+html.a11y-lock { overflow: hidden; }
+html.calm *, html.calm *::before, html.calm *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+/* white high-contrast */
+html.hcw body, html.hcw body *:not(img):not(video):not(svg):not(path):not(.a11y-panel):not(.a11y-panel *) { background-color: #fff !important; background-image: none !important; color: #000 !important; border-color: #000 !important; text-shadow: none !important; box-shadow: none !important; }
+html.hcw a { text-decoration: underline !important; color: #0000cc !important; }
+html.hcw .btn-primary, html.hcw .btn-secondary, html.hcw button:not(.a11y-opt):not(.a11y-x) { border: 2px solid #000 !important; }
+html.hcw .a11y-toolbar, html.hcw .a11y-toolbar * { background-color: #fff !important; color: #000 !important; }
+@media (max-width: 520px) { .a11y-open span { display: inline; } }
+html.hcw .hero-video, html.hcw video { display: none !important; }
+html.hcw .page-hero.has-video::before, html.hcw .page-hero.has-video::after { display: none !important; }
+
+/* ---------- FINAL CALL TO ACTION (all pages) ---------- */
+.cta-final { padding: clamp(32px,5vw,64px) 0; background: transparent; }
+.cta-final-box { display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; flex-wrap: wrap; background: #0B1D35; color: #fff; border-radius: 28px; padding: clamp(28px,4vw,52px) clamp(24px,4vw,56px); }
+.cta-final-box h2 { margin: 0; color: #fff; font-family: "Playfair Display", Georgia, serif; font-size: clamp(1.5rem,3vw,2.3rem); line-height: 1.2; max-width: 22em; }
+.cta-final-box .btn-primary { flex: none; }
+@media (max-width: 640px) { .cta-final-box { flex-direction: column; align-items: flex-start; } }

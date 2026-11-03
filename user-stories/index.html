@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html data-page="user-stories.html" data-depth="1" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#12aaba" />
+  <title>User Stories — Life with the EZER | J58</title>
+  <meta name="description" content="Real people, real days. Stories from EZER standing wheelchair users about work, family, and everyday independence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="User Stories | J58" />
+  <meta property="og:description" content="Stories from EZER users about everyday independence." />
+  <meta property="og:image" content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="stylesheet" href="../assets/css/nav.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/theme.css?v=3" />
+  <link rel="stylesheet" href="../assets/css/design-system.css?v=5" />
+<link rel="stylesheet" href="../assets/css/bro-banner.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
+<style>
+.has-reel{min-height:min(78vh,640px);display:flex;align-items:center}
+.has-reel::after{display:none}
+.has-reel .container{max-width:1100px;text-align:center;width:100%}
+.has-reel .container p{margin-inline:auto}
+.hero-reel{position:absolute;inset:0;overflow:hidden}
+.hero-reel{display:flex;flex-direction:column;gap:14px;padding-block:14px}.hero-reel__track{display:flex;gap:14px;flex:1;min-height:0;width:max-content;animation:reel 80s linear infinite}.hero-reel__track--rev{animation-direction:reverse;animation-duration:95s}
+.hero-reel__track img{height:100%;width:auto;aspect-ratio:1/1;object-fit:cover;border-radius:16px;flex:none;filter:saturate(.9)}
+
+.hero-reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,53,.78),rgba(11,29,53,.62) 50%,rgba(11,29,53,.85)),radial-gradient(ellipse at center,rgba(11,29,53,.55),transparent 70%)}
+.has-reel h1{text-shadow:0 4px 30px rgba(0,0,0,.45)}
+@keyframes reel{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.hero-reel__track{animation:none}}
+
+.us-list{display:grid;gap:28px;max-width:1040px;margin-inline:auto}
+.us-card{display:grid;grid-template-columns:1.15fr 1fr;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 14px 36px rgba(11,29,53,.10);border:1px solid rgba(11,29,53,.06);min-height:340px}
+.us-text{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.us-card blockquote{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.25rem,2.2vw,1.8rem);line-height:1.35;color:#0B1D35}
+.us-card blockquote::before{content:none}
+.us-card .quote-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(11,29,53,.12);padding-top:20px}
+.us-card .avatar{width:44px;height:44px;border-radius:50%;background:#12aaba;color:#0B1D35;display:grid;place-items:center;font:700 1rem "Montserrat",sans-serif;flex:none}
+.us-body h3{margin:0 0 16px;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.4rem,2.3vw,1.9rem);line-height:1.25;color:#0B1D35}
+.us-body p{margin:0;font-size:1.02rem;line-height:1.6;color:#4a5a6e}
+.us-text .btn-primary{align-self:flex-start}
+.us-photo{background-size:cover;background-repeat:no-repeat;min-height:260px}
+@media(max-width:760px){.us-card{grid-template-columns:1fr}.us-photo{order:-1;min-height:240px}}
+.vt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:min(1400px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%)}
+.vt-thumb{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#12324f,#0B1D35);display:grid;place-items:center;box-shadow:0 14px 36px rgba(0,0,0,.25)}
+.vt-head{position:absolute;left:10px;right:10px;top:10px;display:flex;align-items:center;gap:10px;padding:8px 12px 8px 8px;border-radius:14px;background:rgba(5,12,24,.78);color:#fff;font-family:"Montserrat",sans-serif;backdrop-filter:blur(4px)}
+.vt-av{width:30px;height:30px;border-radius:50%;flex:none;background:#0B1D35}
+.vt-title{display:flex;flex-direction:column;min-width:0;line-height:1.2}
+.vt-title strong{font-size:.9rem;font-weight:700}
+.vt-title span{font-size:.72rem;opacity:.7}
+
+.vt-thumb.has-video{cursor:pointer;background-size:cover;background-position:center}
+.vt-thumb.has-video .vt-soon{display:none}
+.vt-thumb.has-video .vt-pb{background:#12aaba;border-radius:50%}
+.vt-thumb.has-video:hover .vt-pb{background:#2bc4e0}
+.vt-modal{border:0;padding:0;background:#000;border-radius:20px;width:min(1100px,94vw);overflow:hidden}
+.vt-modal::backdrop{background:rgba(5,12,24,.78)}
+.vt-modal .vt-frame{position:relative;aspect-ratio:16/9;width:100%}
+.vt-modal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vt-modal .vt-x{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:20px;cursor:pointer}
+.vt-bar{position:absolute;left:10px;right:10px;bottom:10px;display:flex;align-items:center;gap:8px;height:40px;padding:0 6px;border-radius:12px;background:rgba(5,12,24,.78)}
+.vt-pb{display:grid;place-items:center;width:34px;height:34px;color:#fff}
+.vt-track{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.28)}
+.vt-soon{white-space:nowrap;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:600 .68rem "Montserrat",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.vt-meta{display:flex;flex-direction:column;margin-top:14px;font-family:"Montserrat",sans-serif;color:#fff}
+.vt-meta span{font-size:.85rem;opacity:.65}
+@media(max-width:1000px){.vt-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.vt-grid{grid-template-columns:1fr}}
+.us-list{gap:0!important}
+.us-card{position:sticky;margin-bottom:56px;transform-origin:50% 0}
+.us-card:nth-child(1){top:96px}.us-card:nth-child(2){top:112px}.us-card:nth-child(3){top:128px}.us-card:nth-child(4){top:144px}.us-card:nth-child(5){top:160px}.us-card:nth-child(6){top:176px;margin-bottom:0}
+.us-card:nth-child(even){grid-template-columns:1fr 1.15fr}
+.us-card:nth-child(even) .us-photo{order:-1}
+@media(max-width:760px){.us-card,.us-card:nth-child(even){grid-template-columns:1fr}.us-card:nth-child(even) .us-photo{order:-1}.us-card{position:relative;top:auto!important;margin-bottom:24px}}
+
+</style>
+<script src="../assets/js/lang.js"></script>
+<script src="../assets/js/consent.js" defer></script>
+<script src="../assets/js/coming-soon.js" defer></script>
+<script src="../assets/js/newsletter-popup.js" defer></script>
+<link rel="stylesheet" href="../assets/css/nav-dd.css?v=5" />
+
+<link rel="canonical" href="https://www.j58.eu/user-stories/index.html" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="a11y-toolbar" role="complementary" aria-label="Accessibility options">
+    <div class="container">
+      <span class="a11y-toolbar-label">Accessibility:</span>
+      <button class="a11y-btn" id="hcToggle" aria-pressed="false" aria-label="Toggle high contrast mode">High Contrast</button>
+      <div class="a11y-divider" aria-hidden="true"></div>
+      <div class="a11y-size-group" role="group" aria-label="Text size controls">
+        <button class="a11y-btn" id="textMinus" aria-label="Decrease text size">A&minus;</button>
+        <button class="a11y-btn" id="textPlus" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-wrap" id="navWrap">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <a href="../index.html" class="nav-logo" aria-label="J58 — home"><img src="../assets/img/j58-logo-white.png" alt="J58" width="1378" height="444" /></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="productMenu">Product <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="productMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Product</p>
+              <a class="nav-mega-link" href="../product/index.html"><strong>The EZER</strong><small>Features, benefits and how it works</small></a>
+              <a class="nav-mega-link" href="../product/resources.html"><strong>Resources</strong><small>Videos, brochure, specifications and manuals</small></a>
+            </div>
+            <a class="nav-mega-card" href="../product/index.html" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"><span><em>Product</em><b>See the EZER</b></span></a>
+          </div>
+        </li>
+        <li><a href="index.html" aria-current="page">User Stories</a></li>
+        <li><a href="../reimbursement/index.html">Funding</a></li>
+        <li><a href="../professionals/index.html">Professionals</a></li>
+        <li><a href="../distributors/index.html">Dealers</a></li>
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="aboutMenu">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="aboutMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">About</p>
+              <a class="nav-mega-link" href="../about/index.html"><strong>Our story &amp; team</strong><small>Mission, journey and the people behind J58</small></a>
+              <a class="nav-mega-link" href="../blog/index.html"><strong>Blogs and articles</strong><small>News, stories and newsletters</small></a>
+              <a class="nav-mega-link" href="../faq/index.html"><strong>FAQ</strong><small>Answers to common questions</small></a>
+            </div>
+            <a class="nav-mega-card" href="../about/index.html#team-heading" style="background-image:url('../assets/img/team/gabriel.jpg')"><span><em>Meet the team</em><b>Nice to meet YOU</b></span></a>
+          </div>
+        </li>
+        <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="../book-a-demo/index.html" class="btn-primary">Book a Demo</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-drawer" id="mobileDrawer" aria-label="Navigation menu">
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Product<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="../product/index.html">The EZER</a><a href="../product/resources.html">Resources</a></div></div>
+      <a href="index.html">User Stories</a>
+      <a href="../reimbursement/index.html">Funding</a>
+      <a href="../professionals/index.html">For Professionals</a>
+      <a href="../distributors/index.html">Dealers</a>
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">About<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="../about/index.html">Our story &amp; team</a><a href="../about/index.html#team-heading">Meet the team</a><a href="../blog/index.html">Blogs and articles</a><a href="../faq/index.html">FAQ</a></div></div>
+      <a href="../contact/index.html">Contact</a>
+      <div class="mobile-cta"><a href="../book-a-demo/index.html" class="btn-primary" style="display:block;text-align:center;">Book a Demo</a></div>
+    </div>
+  </div>
+
+  <main id="main" role="main">
+    <section class="page-hero has-reel">
+      <div class="hero-reel" aria-hidden="true"><div class="hero-reel__track"><img src="../assets/img/mission/p1.jpg" alt="A smiling man in the EZER standing wheelchair reaching a high shelf in a shop" loading="eager"><img src="../assets/img/mission/p2.jpg" alt="A bride sitting in a wheelchair laughing with her groom, who stands next to her at their wedding" loading="eager"><img src="../assets/img/mission/p3.jpg" alt="A woman kissing a man on the cheek while he stands in the EZER standing wheelchair outside a brick building" loading="eager"><img src="../assets/img/mission/p4.jpg" alt="A man standing in the EZER on a lawn, reaching up to prune a fruit tree" loading="eager"><img src="../assets/img/mission/p6.jpg" alt="A woman standing in the EZER wheelchair looking at framed paintings in an art museum" loading="eager"><img src="../assets/img/panels/active.jpg" alt="A woman using the EZER to stand and move through an art gallery with large framed photographs" loading="eager"><img src="../assets/img/panels/eye-level.jpg" alt="Patients and therapists at a table, using the EZER standing wheelchair" loading="eager"><img src="../assets/img/panels/reach-high.jpg" alt="A man standing in the EZER in a kitchen, reaching into a high cupboard" loading="eager"><img src="../assets/img/panels/work.jpg" alt="A smiling man at an office desk using the EZER standing wheelchair" loading="eager"><img src="../assets/img/product/benefit-safety.jpg" alt="A man in white standing up from the EZER outdoors on a paved yard" loading="eager"><img src="../assets/img/rehab/rehab-archery.jpg" alt="A patient standing in the EZER and shooting a bow at an archery target" loading="eager"><img src="../assets/img/mission/p1.jpg" alt="A smiling man in the EZER standing wheelchair reaching a high shelf in a shop" loading="eager"><img src="../assets/img/mission/p2.jpg" alt="A bride sitting in a wheelchair laughing with her groom, who stands next to her at their wedding" loading="eager"><img src="../assets/img/mission/p3.jpg" alt="A woman kissing a man on the cheek while he stands in the EZER standing wheelchair outside a brick building" loading="eager"><img src="../assets/img/mission/p4.jpg" alt="A man standing in the EZER on a lawn, reaching up to prune a fruit tree" loading="eager"><img src="../assets/img/mission/p6.jpg" alt="A woman standing in the EZER wheelchair looking at framed paintings in an art museum" loading="eager"><img src="../assets/img/panels/active.jpg" alt="A woman using the EZER to stand and move through an art gallery with large framed photographs" loading="eager"><img src="../assets/img/panels/eye-level.jpg" alt="Patients and therapists at a table, using the EZER standing wheelchair" loading="eager"><img src="../assets/img/panels/reach-high.jpg" alt="A man standing in the EZER in a kitchen, reaching into a high cupboard" loading="eager"><img src="../assets/img/panels/work.jpg" alt="A smiling man at an office desk using the EZER standing wheelchair" loading="eager"><img src="../assets/img/product/benefit-safety.jpg" alt="A man in white standing up from the EZER outdoors on a paved yard" loading="eager"><img src="../assets/img/rehab/rehab-archery.jpg" alt="A patient standing in the EZER and shooting a bow at an archery target" loading="eager"></div><div class="hero-reel__track hero-reel__track--rev"><img src="../assets/img/panels/spec-belt-drive.jpg" alt="Close-up of the EZER belt drive and light blue frame" loading="eager"><img src="../assets/img/panels/spec-gas-springs.jpg" alt="Close-up of the EZER gas spring housing that supports the standing movement" loading="eager"><img src="../assets/img/panels/spec-safety.jpg" alt="Close-up of the EZER safety lock mechanism, operated by hand" loading="eager"><img src="../assets/img/product/benefit-design.jpg" alt="Side view of the EZER large wheel and light blue frame against a dark background" loading="eager"><img src="../assets/img/product/hero-1.jpg" alt="Two people in a library, one standing in the EZER next to the other reading a book" loading="eager"><img src="../assets/img/product/hero-2.jpg" alt="A man driving the EZER on a stone path through a green indoor garden" loading="eager"><img src="../assets/img/product/hero-3.jpg" alt="A bride in a wheelchair arm in arm with her father, laughing during the wedding ceremony" loading="eager"><img src="../assets/img/product/hero-4.jpg" alt="A man standing in the EZER shooting a bow at an archery target indoors" loading="eager"><img src="../assets/img/rehab/rehab-1.jpg" alt="A patient standing in the EZER in a rehabilitation centre, buttoning his jacket" loading="eager"><img src="../assets/img/rehab/rehab-2.jpg" alt="A patient standing in the EZER during therapy, reaching up to a wall-mounted target" loading="eager"><img src="../assets/img/panels/spec-belt-drive.jpg" alt="Close-up of the EZER belt drive and light blue frame" loading="eager"><img src="../assets/img/panels/spec-gas-springs.jpg" alt="Close-up of the EZER gas spring housing that supports the standing movement" loading="eager"><img src="../assets/img/panels/spec-safety.jpg" alt="Close-up of the EZER safety lock mechanism, operated by hand" loading="eager"><img src="../assets/img/product/benefit-design.jpg" alt="Side view of the EZER large wheel and light blue frame against a dark background" loading="eager"><img src="../assets/img/product/hero-1.jpg" alt="Two people in a library, one standing in the EZER next to the other reading a book" loading="eager"><img src="../assets/img/product/hero-2.jpg" alt="A man driving the EZER on a stone path through a green indoor garden" loading="eager"><img src="../assets/img/product/hero-3.jpg" alt="A bride in a wheelchair arm in arm with her father, laughing during the wedding ceremony" loading="eager"><img src="../assets/img/product/hero-4.jpg" alt="A man standing in the EZER shooting a bow at an archery target indoors" loading="eager"><img src="../assets/img/rehab/rehab-1.jpg" alt="A patient standing in the EZER in a rehabilitation centre, buttoning his jacket" loading="eager"><img src="../assets/img/rehab/rehab-2.jpg" alt="A patient standing in the EZER during therapy, reaching up to a wall-mounted target" loading="eager"></div></div>
+      <div class="container">
+        <p class="eyebrow">User Stories</p>
+        <h1>Hear what our friends are saying<span class="dot">.</span></h1>
+        <p>Everyday moments, told at eye level. Real people, real days.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="us-list">
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Standing beside Patrick on our wedding day.</h3><p>“The best thing that happened to me on this day was to marry Patrick, and the second best thing was to stand next to him.”</p></div><a class="btn-primary" href="shanaya.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/shanaya/photo-03.jpg');background-position:50% 40%" role="img" aria-label="Shanaya with the EZER"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Back in the garden, and at the top shelf.</h3><p>We first met Jeroen in November 2024, when he came to test the prototype. He became a beta user and, convinced the EZER helps him in the house and in the garden, he decided to get one of his own.</p></div><a class="btn-primary" href="jeroen.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/jeroen/photo-01.jpg');background-position:50% 30%" role="img" aria-label="Jeroen with the EZER"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Staying active starts with standing up.</h3><p>Christian uses the EZER at home to stay active. The elevated position keeps his body more engaged.</p></div><a class="btn-primary" href="christian.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/christian/photo-04.jpg');background-position:50% 45%" role="img" aria-label="Christian with the EZER"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Conversations at eye level, at home.</h3><p>Edwin uses the EZER to socialise at eye level and to move around at home.</p></div><a class="btn-primary" href="edwin.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/edwin/photo-01.jpg');background-position:50% 35%" role="img" aria-label="Edwin with the EZER"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>My work often requires me to stand. And now I can.</h3><p>Nick uses the EZER at work. His kitchen is fully set up for standing, so he needed a wheelchair that adapts to the environment.</p></div><a class="btn-primary" href="nick.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/nick/photo-03.jpg');background-position:35% 50%" role="img" aria-label="Nick with the EZER"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Standing at home and at work.</h3><p>Johan uses the EZER at home and at work.</p></div><a class="btn-primary" href="johan.html">Read more</a></div><div class="us-photo" style="background-image:url('../assets/stories/johan/photo-01.jpg');background-position:50% 60%" role="img" aria-label="Johan with the EZER"></div></article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <section class="bro bro--home" aria-labelledby="bro-h">
+      <div class="container">
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">See the EZER for yourself<span class="dot">.</span></h2>
+            <p>Find out how standing while moving works. Book a personal demo and experience standing mobility firsthand.</p>
+            <div class="bro-actions">
+              <a href="../book-a-demo/index.html" class="bro-btn bro-btn--primary">Book a demo</a>
+              <a href="../brochure/index.html" class="bro-btn bro-btn--ghost">Request the brochure</a>
+            </div>
+          </div>
+          <div class="bro-photo" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="ds-footer" role="contentinfo" aria-label="Site footer">
+    <div class="ds-footer__wrap">
+      <p class="ds-footer__title">Make Standing the New Standard<span class="dot">.</span></p>
+      <div class="ds-footer__grid">
+        <div class="ds-footer__brand">
+          <a class="ds-footer__logo" href="../index.html" aria-label="J58 — home"><img src="../assets/img/j58-logo-white.png" alt="J58" width="1378" height="444" /></a>
+          <p>J58 develops the EZER standing wheelchair, the first mechanical standing wheelchair that allows people to sit, stand, and move while standing.</p>
+          <p>De Hems 10, 7522 NL Enschede, Nederland<br><a href="mailto:info@j58.eu">info@j58.eu</a></p>
+          <div class="ds-footer__social" aria-label="Social media"><a href="https://www.facebook.com/j58.eu/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.3-3.6 3.7V10H8.4v3h2.4v7z" fill="currentColor"/></svg></a><a href="https://nl.linkedin.com/company/j58" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="7.5" r="1.7" fill="currentColor"/><rect x="6" y="10" width="3" height="8.5" fill="currentColor"/><path d="M11 10h2.8v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.6 3 3.7v5h-3v-4.2c0-1-.2-1.8-1.3-1.8s-1.2.8-1.2 1.8v4.2h-3z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/j58.eu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.2" cy="7.8" r="1" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@J58EU" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="3.2" fill="currentColor"/><path d="M10.5 9.7v4.6l4-2.3z" fill="#12aaba"/></svg></a><a href="https://www.tiktok.com/@j58.eu" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 5v9.3a2.8 2.8 0 1 1-2.8-2.8M13.5 5c.3 2.1 1.8 3.5 4 3.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <a href="../product/index.html">The EZER</a>
+          <a href="../product/resources.html">Resources</a>
+          <a href="index.html">User Stories</a>
+          <a href="../faq/index.html">FAQ</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>For partners</h4>
+          <a href="../professionals/index.html">Healthcare Professionals</a>
+          <a href="../distributors/index.html">Dealers</a>
+          <a href="../reimbursement/index.html">Funding</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Company</h4>
+          <a href="../about/index.html">About J58</a>
+          <a href="../blog/index.html">Blogs and articles</a>
+          <a href="../contact/index.html">Contact</a>
+          <a href="../book-a-demo/index.html">Book a Demo</a>
+        </div>
+      </div>
+      <div class="ds-footer__bottom"><span>&copy; <span id="year">2026</span> J58. All rights reserved.</span><span><a href="../privacy-policy/index.html">Privacy</a> &middot; <a href="../cookie-policy/index.html">Cookies</a> &middot; <a href="../terms-and-conditions/index.html" data-terms>Terms</a> &middot; <a href="#" data-coming-soon>Accessibility</a></span></div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+<script src="../assets/js/cursor.js" defer></script>
+
+<dialog class="vt-modal" id="vt-modal" aria-label="User story video"><button class="vt-x" type="button" aria-label="Close">&times;</button><div class="vt-frame" id="vt-frame"></div></dialog>
+<script>
+/* Add the YouTube video ID (or full link) to each card's data-yt="" above. The thumbnail loads from YouTube and the video plays in a pop-up. */
+(function(){
+  var dlg=document.getElementById('vt-modal'), fr=document.getElementById('vt-frame');
+  function id(v){var m=(v||'').match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m?m[1]:((v||'').match(/^[\w-]{11}$/)?v:'');}
+  document.querySelectorAll('.vt-thumb[data-yt]').forEach(function(t){
+    var y=id(t.getAttribute('data-yt')); if(!y) return;
+    t.classList.add('has-video'); t.style.backgroundImage='linear-gradient(180deg,rgba(5,12,24,.15),rgba(5,12,24,.35)),url(https://i.ytimg.com/vi/'+y+'/hqdefault.jpg)';
+    t.setAttribute('role','button'); t.setAttribute('tabindex','0'); t.setAttribute('aria-label','Play video: '+t.getAttribute('data-name'));
+    function open(){ fr.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&rel=0" title="'+t.getAttribute('data-name')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; dlg.showModal(); }
+    t.addEventListener('click',open); t.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();open();} });
+  });
+  dlg.addEventListener('close',function(){ fr.innerHTML=''; });
+  dlg.querySelector('.vt-x').addEventListener('click',function(){ dlg.close(); });
+  dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
+})();
+</script>
+<script src="../assets/js/a11y.js"></script>
+<script src="../assets/js/nav-dd.js?v=4"></script>
+</body>
+</html>

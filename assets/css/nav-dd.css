@@ -1,0 +1,46 @@
+/* About dropdown (mega menu) with blurred page behind */
+.nav-wrap .nav-links > li{position:static}
+.nav-wrap .nav-links .nav-dd-btn{display:flex;align-items:center;gap:7px;padding:10px clamp(9px,1.05vw,14px);color:rgba(255,255,255,.92);font:inherit;font-size:1rem;font-weight:500;background:none;border:0;border-radius:8px;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease}
+.nav-wrap .nav-links .nav-dd-btn svg{width:14px;height:14px;transition:transform .25s ease}
+.nav-wrap .nav-links .nav-dd-btn:hover,.nav-wrap .nav-links .nav-dd-btn:focus-visible{background:rgba(255,255,255,.12);color:#fff}
+.nav-wrap .nav-links .nav-dd-btn.is-current,.nav-dd.is-open > .nav-dd-btn{background:rgba(255,255,255,.16);color:#fff}
+.nav-dd.is-open > .nav-dd-btn svg{transform:rotate(180deg)}
+.nav-wrap .nav-mega{position:absolute;left:clamp(16px,2.4vw,40px);right:clamp(16px,2.4vw,40px);top:100%;margin-top:6px;background:#fff;color:#0B1D35;border-radius:24px;box-shadow:0 30px 80px rgba(11,29,53,.35);padding:clamp(28px,3.4vw,48px) clamp(28px,4vw,64px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,64px);align-items:stretch;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s;z-index:1001;text-align:left}
+.nav-dd.is-open > .nav-mega{opacity:1;visibility:visible;transform:none;transition:opacity .22s ease,transform .22s ease}
+.nav-mega-eyebrow{font:700 .78rem/1 "Montserrat",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#12aaba;margin:0 0 18px}
+.nav-mega-links{display:flex;flex-direction:column;gap:6px}
+.nav-wrap .nav-links .nav-mega a.nav-mega-link{display:block;padding:12px 0;color:#0B1D35;background:none;border-radius:0;white-space:normal}
+.nav-mega-link strong{display:block;font:500 clamp(1.7rem,3vw,2.6rem)/1.15 "Montserrat",system-ui,sans-serif;letter-spacing:-.02em;transition:color .2s,transform .2s}
+.nav-mega-link small{display:block;margin-top:4px;font-size:.98rem;font-weight:400;color:#54606f}
+.nav-wrap .nav-links .nav-mega a.nav-mega-link:hover,.nav-wrap .nav-links .nav-mega a.nav-mega-link:focus-visible{background:none;color:#0B1D35}
+.nav-mega-link:hover strong,.nav-mega-link:focus-visible strong{color:#12aaba;transform:translateX(6px)}
+.nav-mega-link[aria-current="page"] strong{color:#12aaba}
+.nav-wrap .nav-links .nav-mega a.nav-mega-card{position:relative;display:flex;align-items:flex-end;min-height:260px;padding:0;border-radius:18px;overflow:hidden;background:#0B1D35 center/cover no-repeat;color:#fff}
+.nav-mega-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,53,0) 35%,rgba(11,29,53,.85))}
+.nav-mega-card span{position:relative;display:block;padding:22px 24px;white-space:normal}
+.nav-mega-card em{display:block;font:700 .72rem/1 "Montserrat",sans-serif;letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:#bff0f6;margin-bottom:8px}
+.nav-mega-card b{display:block;font:600 1.5rem/1.2 "Montserrat",sans-serif}
+.nav-backdrop{position:fixed;inset:0;z-index:999;background:rgba(11,29,53,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility 0s linear .22s}
+.nav-backdrop.on{opacity:1;visibility:visible;transition:opacity .22s ease}
+.nav-wrap.dd-open{z-index:1000}
+@media (max-width:1280px){.nav-wrap .nav-mega{display:none}}
+@media (prefers-reduced-motion:reduce){.nav-wrap .nav-mega,.nav-backdrop{transition:none}}
+
+/* wider mega panel: centred on the nav, left-aligned content */
+.nav-wrap .nav-mega{left:50%;right:auto;width:min(1240px,calc(100vw - 48px));box-sizing:border-box;transform:translate(-50%,-8px);grid-template-columns:minmax(0,1fr) minmax(0,420px);justify-items:start;text-align:left}
+.nav-dd.is-open > .nav-mega{transform:translate(-50%,0)}
+.nav-wrap .nav-mega .nav-mega-links{align-items:flex-start}
+.nav-wrap .nav-mega .nav-mega-card{justify-self:end;width:100%}
+
+/* invisible bridge so the pointer can travel from the button to the panel without it closing */
+.nav-wrap .nav-mega::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px}
+
+/* Mobile drawer: Product and About open as dropdown groups */
+.mobile-drawer .md-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 8px;background:none;border:0;color:#fff;font:inherit;font-weight:500;text-align:left;cursor:pointer;border-radius:8px}
+.mobile-drawer .md-toggle:hover{background:rgba(255,255,255,.1)}
+.mobile-drawer .md-toggle svg{width:18px;height:18px;flex:none;transition:transform .22s ease}
+.mobile-drawer .md-group.open > .md-toggle svg{transform:rotate(180deg)}
+.mobile-drawer .md-sub{display:none;flex-direction:column;margin:0 0 6px 10px;padding-left:14px;border-left:2px solid rgba(18,170,186,.7)}
+.mobile-drawer .md-group.open > .md-sub{display:flex}
+.mobile-drawer .md-sub a{font-size:.92em;opacity:.92}
+.nav-wrap .mobile-drawer.open{max-height:calc(100svh - 96px);overflow-y:auto;-webkit-overflow-scrolling:touch}

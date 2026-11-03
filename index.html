@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html data-page="index.html" data-depth="0" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#12aaba" />
+  <title>EZER Standing Wheelchair | J58 — Stand and Move. Anywhere.</title>
+  <meta name="description" content="J58 in Enschede, the Netherlands, builds the EZER, a fully mechanical standing wheelchair that lets you stand and move anywhere. Book a demo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EZER Standing Wheelchair | J58" />
+  <meta property="og:description" content="J58 in Enschede, the Netherlands, builds the EZER, a fully mechanical standing wheelchair that lets you stand and move anywhere. Book a demo." />
+  <meta property="og:image" content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" />
+  <meta property="og:url" content="https://www.j58.eu/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "J58",
+  "legalName": "J58 Holding B.V.",
+  "url": "https://www.j58.eu/",
+  "logo": "https://www.j58.eu/assets/img/j58-logo-white.png",
+  "email": "info@j58.eu",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "De Hems 10",
+    "postalCode": "7522 NL",
+    "addressLocality": "Enschede",
+    "addressCountry": "NL"
+  },
+  "sameAs": [
+    "https://www.facebook.com/j58.eu/",
+    "https://nl.linkedin.com/company/j58",
+    "https://www.instagram.com/j58.eu/",
+    "https://www.youtube.com/@J58EU",
+    "https://www.tiktok.com/@j58.eu"
+  ],
+  "makesOffer": {
+    "@type": "Product",
+    "name": "EZER Standing Wheelchair"
+  },
+  "description": "J58 develops the EZER, the world's first mechanical standing wheelchair."
+}
+  </script>
+
+  <!-- HOME: Qarry-inspired nav + hero (overrides site.css for this page) -->
+  <style>
+    :root {
+      --hero-accent: var(--blue, #12aaba);   /* J58 brand teal */
+      --hero-accent-ink: var(--navy, #0B1D35);
+      --hero-radius: 28px;
+      --hero-gap: 12px;
+    }
+
+    h1 .dot, h2 .dot { color: var(--hero-accent); }
+
+    /* ---------- NAV: logo left, floating dark pill, white CTA right ---------- */
+    .nav-wrap,
+    .nav-wrap.scrolled,
+    .nav-wrap.is-scrolled {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .nav-wrap .nav {
+      position: absolute;
+      top: calc(var(--hero-gap) + 28px);
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-left: clamp(24px, 6vw, 96px);
+      padding-right: clamp(24px, 6vw, 96px);
+      max-width: none;
+      height: auto;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .nav-wrap .nav-logo { color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .nav-wrap .nav-logo img { display: block; height: 56px; width: auto; }
+
+    .nav-wrap .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 auto;
+      padding: 0 10px;
+      height: 56px;
+      list-style: none;
+      background: rgba(11, 29, 53, .62);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 12px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-wrap .nav-links a {
+      display: block;
+      padding: 10px 16px;
+      color: rgba(255, 255, 255, .92);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .nav-wrap .nav-links a:hover,
+    .nav-wrap .nav-links a:focus-visible { background: rgba(255, 255, 255, .12); color: #fff; }
+
+    .nav-wrap .nav-cta .btn-primary {
+      background: #fff;
+      color: #111;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .nav-wrap .nav-cta .btn-primary:hover { background: var(--hero-accent); color: var(--hero-accent-ink); transform: translateY(-1px); }
+
+    .nav-wrap .nav-hamburger span { background: #fff; }
+    .nav-wrap .mobile-drawer {
+      position: absolute;
+      top: calc(var(--hero-gap) + 28px + 72px);
+      left: 16px;
+      right: 16px;
+      background: rgba(18, 18, 18, .96);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .nav-wrap .mobile-drawer a { color: #fff; }
+
+    /* ---------- HERO: rounded frame, full-bleed video, big left-aligned headline ---------- */
+    .page-hero.has-video.page-hero--full {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: var(--hero-gap);
+      min-height: calc(100svh - 80px);
+      padding: 140px 0 clamp(96px, 12vh, 140px);
+      border-radius: var(--hero-radius);
+      overflow: hidden;
+      background: var(--navy, #0B1D35);
+      text-align: center;
+      isolation: isolate;
+    }
+    .page-hero.has-video .hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    .page-hero.has-video .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* dark scrim, heavier on the left where the text sits */
+    .page-hero.has-video.page-hero--full::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(11, 29, 53, .23) 0%, rgba(11, 29, 53, .15) 55%, rgba(11, 29, 53, .08) 100%),
+        linear-gradient(0deg, rgba(11, 29, 53, .15) 0%, rgba(11, 29, 53, 0) 40%);
+    }
+    /* subtle film grain */
+    .page-hero.has-video.page-hero--full::after {
+      content: none; display: none;
+      /* grain removed */
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .12;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    .page-hero.has-video > .container {
+      max-width: none;
+      width: 100%;
+      padding-left: clamp(24px, 6vw, 96px);
+      padding-right: clamp(24px, 6vw, 96px);
+    }
+    .page-hero.has-video .badge {
+      display: inline-block;
+      margin: 0 0 20px;
+      padding: 0;
+      background: none !important;
+      border: 0 !important;
+      color: var(--blue-mid, #a8e4ea) !important;
+      font-size: .95rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .page-hero.has-video .hero-title {
+      max-width: 11em;
+      margin: 0 auto 28px;
+      color: #fff;
+      font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+    .page-hero.has-video > .container > p {
+      max-width: 32em;
+      margin: 32px auto 0;
+      color: rgba(255, 255, 255, .92);
+      font-size: clamp(.95rem, 1.2vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .page-hero.has-video .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .page-hero.has-video .hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .page-hero.has-video .hero-actions a::after { content: "\2192"; font-size: 1.2em; line-height: 1; }
+    .page-hero.has-video .hero-actions .btn-primary {
+      background: var(--hero-accent);
+      color: var(--hero-accent-ink);
+      border: 1px solid var(--hero-accent);
+    }
+    .page-hero.has-video .hero-actions .btn-primary:hover { transform: translateY(-2px); filter: none; }
+    .page-hero.has-video .hero-actions .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .9);
+    }
+    .page-hero.has-video .hero-actions .btn-secondary:hover { background: #fff; color: #111; transform: translateY(-2px); }
+
+    /* scroll-down square button */
+    .hero-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      z-index: 2;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      background: #fff;
+      color: #111;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+    .hero-scroll:hover { transform: translateX(-50%) translateY(3px); }
+    .hero-scroll svg { width: 22px; height: 22px; }
+
+    /* sound toggle (bottom-right of hero; sound is OFF until the visitor turns it on) */
+    .hero-sound {
+      position: absolute; right: 28px; bottom: 28px; z-index: 2;
+      display: grid; place-items: center; width: 56px; height: 56px;
+      background: rgba(255,255,255,.16); color: #fff; cursor: pointer;
+      border: 1px solid rgba(255,255,255,.7); border-radius: 10px;
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: background .2s ease, color .2s ease;
+    }
+    .hero-sound[hidden] { display: none; }
+    .hero-sound:hover { background: #fff; color: #111; }
+    .hero-sound svg { width: 22px; height: 22px; }
+    .hero-sound .ic-on { display: none; }
+    .hero-sound[aria-pressed="true"] .ic-on { display: block; }
+    .hero-sound[aria-pressed="true"] .ic-off { display: none; }
+
+    @media (max-width: 1280px) {
+      .nav-wrap .nav-links { display: none; }
+      .nav-wrap .nav { justify-content: space-between; }
+      .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 1480px) {
+      html:not([lang="en"]) .nav-wrap .nav-links { display: none; }
+      html:not([lang="en"]) .nav-wrap .nav { justify-content: space-between; }
+      html:not([lang="en"]) .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      html:not([lang="en"]) .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      :root { --hero-radius: 20px; --hero-gap: 8px; }
+      .nav-wrap .nav-logo img { height: 44px; }
+      .nav-wrap .nav-cta { display: none; }
+      .page-hero.has-video.page-hero--full { padding-top: 130px; padding-bottom: 110px; }
+      .page-hero.has-video .hero-actions a { padding: 14px 20px; font-size: .95rem; }
+      .hero-scroll { display: none; }
+      .hero-sound { right: 16px; bottom: 16px; width: 48px; height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .page-hero.has-video .hero-actions a, .nav-wrap .nav-cta .btn-primary, .hero-scroll { transition: none; }
+    }
+
+    /* ---------- NAV once the hero has scrolled away: solid J58 navy bar ---------- */
+    .nav-wrap .nav { transition: top .25s ease, padding .25s ease, background .25s ease; }
+    .nav-wrap.past-hero .nav {
+      top: 0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background: rgba(11, 29, 53, .96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 6px 24px rgba(11, 29, 53, .25);
+    }
+    .nav-wrap.past-hero .nav-logo img { height: 44px; }
+    .nav-wrap.past-hero .mobile-drawer { top: 80px; }
+    @media (prefers-reduced-motion: reduce) { .nav-wrap .nav { transition: none; } }
+
+    /* ---------- HOME PAGE WIDTHS: two content widths only ----------
+       WIDE  (aligned with the logo/nav edges): "Get inspired" panel + impact section
+       STANDARD (1120px content): every other section
+       Full-bleed exceptions: hero, partner marquee, section backgrounds */
+    :root { --w-wide: 1700px; --w-std: 1120px; --w-pad: clamp(24px, 6vw, 96px); --w-std-pad: clamp(20px, 5vw, 60px); }
+    main .insp > .container,
+    main .imp > .container, main .sp > .container { max-width: none; width: min(var(--w-wide), 100% - 2 * var(--w-pad)); padding-inline: 0; margin-inline: auto; }
+    main .section > .container,
+    main .stack-section > .container,
+    main .bro > .container,
+    main .cta-band > .container { max-width: none; width: min(var(--w-std), 100% - 2 * var(--w-std-pad)); padding-inline: 0; margin-inline: auto; }
+    main .bro-card { max-width: none; }
+    main .bro.bro--home { background: var(--cream) !important; color: #1b1d1c; border-top: 1px solid rgba(11,29,53,.08); padding-block: clamp(40px, 5vw, 72px); }
+
+    /* ---------- restructure additions ---------- */
+    /* hero: one filled primary, secondary as a text link */
+    .page-hero.has-video .hero-actions .btn-secondary { background: none; border: 0; padding-inline: 8px; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+    .page-hero.has-video .hero-actions .btn-secondary:hover { background: none; color: #fff; transform: none; text-decoration-thickness: 2px; }
+
+
+    /* problems: two-column list */
+    .probsol-grid { grid-template-columns: 1fr; }
+    .probsol-grid::before { display: none; }
+    .prob-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(28px, 5vw, 72px); }
+    @media (max-width: 720px) { .prob-list { grid-template-columns: 1fr; } }
+    .h-dot h2 .dot { color: var(--hero-accent); }
+
+    /* mission wall: full-viewport photo collage */
+    .mw { position: relative; height: 100vh; height: 100svh; min-height: 620px; background: #0B1D35; overflow: hidden; color: #fff; }
+    .mw-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 2.1fr 2.1fr 1fr; gap: 8px; padding: 8px; }
+    .mw-col { display: grid; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 0; }
+    .mw-t { position: relative; border-radius: 14px; background: #2a4a5e center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,.55); font: 600 .72rem/1 "Montserrat", sans-serif; letter-spacing: .12em; text-transform: uppercase; overflow: hidden; min-height: 0; }
+    .mw-t svg { width: 30px; height: 30px; }
+    .mw-big { justify-content: flex-end; padding-bottom: 36px; }
+    .mw-col--r .mw-t:last-child { justify-content: flex-start; padding-top: 36px; }
+    .mw-t[style*="background-image"] svg, .mw-t[style*="background-image"] span { display: none; }
+    .mw { --mw-overlay-opacity: .2; } /* overlay colours are 80% transparent over the photos */
+    .mw-t::after { content: ""; position: absolute; inset: 0; background: var(--tone); opacity: var(--mw-overlay-opacity); pointer-events: none; }
+    .mw-t { background-color: var(--tone); }
+    .mw-t[data-tone="a"] { --tone: #8c6a55; } .mw-t[data-tone="b"] { --tone: #3f6c6f; }
+    .mw-t[data-tone="c"] { --tone: #6f7f8c; } .mw-t[data-tone="d"] { --tone: #b0613b; }
+    .mw-t[data-tone="e"] { --tone: #4b5a6b; } .mw-t[data-tone="f"] { --tone: #5a7a62; }
+    .mw-veil { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(11,29,53,.68) 0%, rgba(11,29,53,.38) 45%, rgba(11,29,53,.08) 75%); pointer-events: none; }
+    .mw-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 24px; }
+    .mw-copy h2 { max-width: 12em; margin: 0 0 var(--ds-title-gap, 24px); color: #fff !important; font-size: clamp(2.2rem, 5.2vw, 4.6rem); line-height: 1.05; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+    .mw-copy h2 strong { font-weight: 800; }
+    .mw-copy h2 .dot { color: #5fb6d6; }
+    .mw-copy p { max-width: 30em; margin: 0 0 28px; font: 500 clamp(.95rem, 1.3vw, 1.15rem)/1.6 "Montserrat", sans-serif; text-shadow: 0 1px 14px rgba(0,0,0,.45); }
+    .mw-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .mw-badge { position: absolute; left: 50%; transform: translateX(-50%); bottom: clamp(20px, 5vh, 56px); width: 96px; height: 96px; opacity: .72; display: grid; place-items: center; border-radius: 50%; background: rgba(11,29,53,.4); }
+    .mw-badge > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .mw-wreath { transform-origin: 60px 60px; animation: mwSpin 16s linear infinite; }
+    .mw-badge-in { position: relative; width: 62%; aspect-ratio: 1; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 6px 22px rgba(0,0,0,.35); }
+    .mw-badge-in img { width: 78%; height: auto; display: block; }
+    @keyframes mwSpin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .mw-wreath { animation: none; } }
+    @media (max-width: 800px) { .mw-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; } .mw-col { display: none; } .mw-badge { width: 76px; height: 76px; } }
+
+    /* rise move thrive transition screen */
+    .rmt { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; background: #1a1612 url('assets/img/rise-move-thrive.jpg') 62% center / cover no-repeat; color: #fff; overflow: hidden; }
+    .rmt::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #0B1D35 0%, rgba(11,29,53,0) 24%, rgba(244,243,238,0) 76%, #F6F1E6 100%), linear-gradient(90deg, rgba(11,29,53,.55) 0%, rgba(11,29,53,.18) 45%, rgba(11,29,53,0) 70%); }
+    .rmt-copy { position: relative; width: min(var(--w-wide), 100% - 2 * var(--w-pad)); margin-inline: auto; padding-block: 72px; }
+    .rmt-title { margin: 0 0 28px; font-family: "Montserrat", sans-serif; line-height: .98; letter-spacing: -.02em; text-shadow: 0 2px 24px rgba(0,0,0,.25); }
+    .rmt-title span { display: block; }
+    .rmt-title .l { font-weight: 300; font-size: clamp(3rem, 7.2vw, 6.4rem); }
+    .rmt-title .b { font-weight: 700; font-size: clamp(4rem, 10.6vw, 9.4rem); line-height: 1.02; }
+    .rmt-title i { font-style: normal; color: #5fb6d6; }
+    .rmt-title .l i { color: #fff; }
+    .rmt-sub { margin: 0; max-width: 24em; font: 500 clamp(1rem, 1.5vw, 1.3rem)/1.55 "Montserrat", sans-serif; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+    @media (max-width: 700px) { .rmt { background-position: 70% center; } }
+
+    /* who are you */
+    .who { padding-block: clamp(40px, 6vw, 72px); }
+    .who { position: relative; overflow: hidden; }
+    .who .container { position: relative; }
+    .who-deco { position: absolute; inset: 0; pointer-events: none; }
+    .who-pill { position: absolute; left: 2%; top: 4px; transform: rotate(-4deg); display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px 9px 12px; background: #fff; color: #0B1D35; font: 700 .85rem/1 "Montserrat", sans-serif; letter-spacing: .1em; text-transform: uppercase; border: 2.5px solid #0B1D35; border-radius: 40px 50px 44px 48px / 50px 40px 48px 44px; box-shadow: 3px 4px 0 -1px #12aaba; }
+    .who-pill svg { width: 18px; height: 18px; }
+    .who-wheel { position: absolute; right: -76px; top: -34px; width: 64px; height: 64px; color: #12aaba; }
+    .who-spin { transform-origin: 50% 50%; animation: whoSpin 7s linear infinite; }
+    @keyframes whoSpin { to { transform: rotate(360deg); } }
+    .who-line { position: absolute; left: 0; right: 0; top: 30px; border-top: 2px dashed rgba(18,170,186,.55); }
+    .who-line i { position: absolute; right: 0; top: -8px; width: 14px; height: 14px; border-radius: 50%; background: #12aaba; }
+    .who-dots { --teal: #12aaba; left: -40px; top: auto; bottom: -68px; }
+    .who-dot { position: absolute; left: 6%; bottom: -44px; width: 22px; height: 22px; border-radius: 50%; background: #E9762B; box-shadow: 34px -10px 0 -6px #12aaba; }
+    .who-grid, .who .section-header { position: relative; z-index: 1; }
+    .who-card span { display: inline-flex; align-self: center; align-items: center; margin-top: auto; padding: 10px 18px; border-radius: 999px; white-space: nowrap; line-height: 1.2; justify-content: center; background: #12aaba; color: #0B1D35; font-weight: 700; font-size: .92rem; transition: background .2s, color .2s; }
+    .who-card span::after { content: "\2192"; margin-left: 8px; }
+    .who-card:hover span { background: #0B1D35; color: #fff; }
+    @media (prefers-reduced-motion: reduce) { .who-spin { animation: none; } }
+    .who .section-header h2 { display: inline-block; position: relative; z-index: 2; background: #0B1D35; padding: 0 26px; }
+    @media (max-width: 900px) { .who-wheel, .who-dots { display: none; } .who-line { top: 24px; } }
+    .rs-grid .card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+    .rs-grid .card p { margin-bottom: 20px; }
+    .rs-cta { margin-top: auto; display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: #12aaba; color: #0B1D35; font-weight: 700; font-size: .92rem; white-space: nowrap; transition: background .2s, color .2s; }
+    .rs-cta::after { content: "\2192"; margin-left: 8px; }
+    .rs-grid .card:hover .rs-cta { background: #0B1D35; color: #fff; }
+    .rs-funding { padding-top: 0; }
+    .rs-funding .btn-primary { color: #0B1D35; font-weight: 700; }
+    .rs-funding .container { border-top: 1px solid rgba(11,29,53,.12); padding-top: clamp(40px, 5vw, 64px); }
+    .rs-funding .section-header p { max-width: 640px; margin-inline: auto; }
+    .who-ic { width: 44px; height: 44px; border-radius: 11px; background: rgba(18,170,186,.12); color: #0e8794; display: grid; place-items: center; margin-bottom: 6px; }
+    .who-ic svg { width: 26px; height: 26px; }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .who-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 32px 28px; min-height: 250px; box-shadow: 0 1px 3px rgba(11,29,53,.06); border: 1px solid #E1E8EE; border-radius: 16px; background: #fff; text-decoration: none; color: var(--navy, #0B1D35); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .who-card b { font-size: 1.1rem; line-height: 1.25; margin-bottom: 8px; }
+    .who-card span { align-self: stretch !important; padding: 14px 20px !important; font-size: .92rem !important; }
+    .who-ic { width: 52px; height: 52px; }
+    .who-card:hover { transform: translateY(-3px); border-color: var(--hero-accent); box-shadow: 0 10px 28px rgba(11,29,53,.10); }
+    @media (max-width: 900px) { .who-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .who-grid { grid-template-columns: 1fr; } }
+
+    /* features: infinite carousel, centred card zoomed in, edges fade out */
+    .stack-section { overflow: hidden; }
+    .car-viewport { position: relative; width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 7%, #000 22%, #000 78%, rgba(0,0,0,.35) 93%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 7%, #000 22%, #000 78%, rgba(0,0,0,.35) 93%, transparent 100%); }
+    .stack { display: flex; gap: var(--car-gap, 28px); padding-block: 40px; will-change: transform; }
+    .stack-card { position: static; flex: 0 0 var(--car-w, 780px); width: var(--car-w, 780px); margin: 0; padding: 0; overflow: hidden; border-radius: 26px;
+      transform: scale(.8); opacity: .45; filter: saturate(.8); transition: transform 3s cubic-bezier(.45,.05,.25,1), opacity 3s ease, filter 3s ease; }
+    .stack-card.is-center { transform: scale(1); opacity: 1; filter: none; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+    .stack-card--rev { padding: 0; }
+    .stack-inner { grid-template-columns: 1fr; min-height: 0; gap: 0; }
+    .stack-media, .stack-card--rev .stack-media { order: -1; aspect-ratio: 16 / 9; border-radius: 0; }
+    .stack-text { padding: 26px 30px 30px; height: auto; }
+    .stack-card--rev .stack-text { text-align: left; align-items: flex-start; }
+    .stack-card--rev .stack-rule { margin-left: 0; }
+    .stack-title { font-size: clamp(24px, 2.4vw, 34px); }
+    .stack-rule { margin: 14px 0; }
+    .stack-text p { font-size: 1.05rem; max-width: none; }
+    .stack-num { display: none; }
+    .car-nav { display: flex; justify-content: center; gap: 12px; margin-top: 8px; }
+    .car-btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); background: transparent; color: #fff; font-size: 20px; cursor: pointer; transition: background .2s, color .2s; }
+    .car-btn:hover { background: #fff; color: #0c1a1d; }
+    @media (prefers-reduced-motion: reduce) { .stack-card { transition: none; } }
+    @media (max-width: 700px) { .car-viewport { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); } }
+
+    /* features carousel: one full viewport (title + cards + CTA) */
+    .stack-section { position: relative; }
+    .stack-section::before, .stack-section::after { content: ""; position: absolute; left: 0; right: 0; height: clamp(150px, 24vh, 250px); pointer-events: none; z-index: 0; }
+    .stack-section::before { top: 0; background: linear-gradient(180deg, rgb(246,241,230) 0%, rgb(242,237,227) 8%, rgb(228,225,216) 17%, rgb(209,208,202) 25%, rgb(186,187,185) 33%, rgb(156,160,163) 42%, rgb(128,135,142) 50%, rgb(101,110,120) 58%, rgb(71,83,98) 67%, rgb(48,62,81) 75%, rgb(29,45,67) 83%, rgb(15,33,56) 92%, rgb(11,29,53) 100%); }
+    .stack-section::after { bottom: 0; background: linear-gradient(0deg, rgb(246,241,230) 0%, rgb(242,237,227) 8%, rgb(228,225,216) 17%, rgb(209,208,202) 25%, rgb(186,187,185) 33%, rgb(156,160,163) 42%, rgb(128,135,142) 50%, rgb(101,110,120) 58%, rgb(71,83,98) 67%, rgb(48,62,81) 75%, rgb(29,45,67) 83%, rgb(15,33,56) 92%, rgb(11,29,53) 100%); }
+    .stack-section > .container { position: relative; z-index: 1; }
+    .stack-section { min-height: calc(100svh - 0px); display: flex; flex-direction: column; justify-content: center; padding-block: 150px 100px; box-sizing: border-box; }
+    .stack-section > .container { display: flex; flex-direction: column; justify-content: center; }
+    .stack-heading { margin-bottom: 4px; }
+    .stack-heading h2 { font-size: clamp(24px, min(4vw, 5.4svh), 46px); }
+    .stack { padding-block: 18px; }
+    .stack-text { padding: 22px 40px 28px; }
+    .stack-title { font-size: clamp(20px, 2vw, 27px); }
+    .stack-rule { margin: 10px 0; max-width: none; }
+    .stack-text p { font-size: .95rem; }
+    .car-nav { align-items: center; gap: 18px; margin-top: 4px; }
+    .car-nav .btn-primary { white-space: nowrap; }
+    @media (max-width: 640px) { .stack-text { padding: 20px 28px 24px; } .stack-section { padding-block: 84px 20px; } .car-nav { gap: 10px; } .car-btn { width: 44px; height: 44px; } }
+
+
+    /* "In their words": same carousel as the features section, quote cards on cream */
+    .qc-section { background: var(--ds-cream, #F6F1E6); color: #0B1D35; overflow: hidden; padding-block: clamp(72px, 9vw, 120px); }
+    .qc-section > .container { display: flex; flex-direction: column; }
+    .qc-section .stack-heading { text-align: center; margin-bottom: 8px; }
+    .qc-section .stack-heading h2 { color: #0B1D35; font-size: clamp(24px, min(4vw, 5.4svh), 46px); }
+    .qc-section .stack { padding-block: 28px; }
+    .qc-card { background: #fff; color: #0B1D35; padding: clamp(28px, 3vw, 44px) clamp(26px, 3vw, 44px); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; box-sizing: border-box; border: 1px solid rgba(11,29,53,.08); }
+    .qc-section .stack-card.is-center { box-shadow: 0 24px 60px rgba(11,29,53,.18); }
+    .qc-card blockquote { margin: 0; font-family: "Playfair Display", serif; font-weight: 700; font-size: clamp(1.15rem, 1.7vw, 1.55rem); line-height: 1.35; color: #0B1D35; }
+    .qc-card blockquote::before { content: none; }
+    .qc-rule { display: block; height: 1px; background: rgba(11,29,53,.14); margin: 22px 0 18px; }
+    .qc-author { display: flex; align-items: center; gap: 14px; }
+    .qc-avatar { width: 44px; height: 44px; border-radius: 50%; background: #12aaba; color: #0B1D35; display: grid; place-items: center; font: 700 1rem "Montserrat", sans-serif; flex: none; }
+    .qc-name { font: 700 .95rem "Montserrat", sans-serif; }
+    .qc-role { font: 500 .85rem "Montserrat", sans-serif; opacity: .65; }
+    .qc-section .car-btn { border-color: rgba(11,29,53,.4); color: #0B1D35; }
+    .qc-section .car-btn:hover { background: #0B1D35; color: #fff; border-color: #0B1D35; }
+    .qc-section .car-nav { margin-top: 8px; }
+
+
+    /* ---------- 8mm film look on the hero video ---------- */
+    .hero-video { overflow: hidden; }
+    .hero-video video { filter: none; transform: none; animation: none; }
+    .film { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .film i { position: absolute; inset: 0; display: block; }
+    .film-grain { inset: -50% !important; opacity: .34; mix-blend-mode: overlay; animation: filmGrain .5s steps(1, end) infinite;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 1.6 1.6 1.6 0 -1.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 260px 260px; }
+    .film-vig { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 48%, rgba(20,10,0,.28) 78%, rgba(10,5,0,.62) 100%); }
+    .film-leak { mix-blend-mode: screen; opacity: 0; background: radial-gradient(ellipse 38% 70% at 100% 40%, rgba(255,140,40,.55), rgba(255,90,20,0) 70%), radial-gradient(ellipse 28% 50% at 0% 85%, rgba(255,190,90,.35), rgba(255,120,30,0) 70%); animation: filmLeak 9s ease-in-out infinite; }
+    .film-scratch { opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, transparent 0, transparent 22%, rgba(255,255,255,.55) 22.1%, transparent 22.3%, transparent 61%, rgba(255,255,255,.35) 61.1%, transparent 61.25%, transparent 100%); animation: filmScratch 2.6s steps(1, end) infinite; }
+    .film-dust { opacity: 0; background:
+      radial-gradient(circle at 18% 32%, rgba(255,255,255,.75) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 72% 18%, rgba(255,255,255,.6) 0 1px, transparent 1.6px),
+      radial-gradient(circle at 44% 76%, rgba(0,0,0,.5) 0 2px, transparent 2.6px),
+      radial-gradient(circle at 86% 64%, rgba(255,255,255,.55) 0 1.2px, transparent 1.8px);
+      animation: filmDust 3.1s steps(1, end) infinite; }
+    .film-flicker { background: #fff3d6; mix-blend-mode: soft-light; opacity: 0; animation: filmFlicker .22s steps(1, end) infinite; }
+    @keyframes filmGrain { 0%{transform:translate(0,0)} 20%{transform:translate(-6%,4%)} 40%{transform:translate(5%,-7%)} 60%{transform:translate(-3%,8%)} 80%{transform:translate(7%,3%)} 100%{transform:translate(0,0)} }
+    @keyframes filmWeave { 0%{transform:scale(1.04) translate(0,0)} 14%{transform:scale(1.04) translate(.25%,-.15%)} 29%{transform:scale(1.04) translate(-.2%,.2%)} 43%{transform:scale(1.04) translate(.1%,.3%)} 57%{transform:scale(1.04) translate(-.3%,-.1%)} 71%{transform:scale(1.04) translate(.2%,.1%)} 86%{transform:scale(1.04) translate(-.1%,-.25%)} 100%{transform:scale(1.04) translate(0,0)} }
+    @keyframes filmFlicker { 0%{opacity:.05} 25%{opacity:.16} 50%{opacity:0} 75%{opacity:.11} 100%{opacity:.03} }
+    @keyframes filmLeak { 0%,55%,100%{opacity:0} 66%{opacity:.75} 78%{opacity:.25} 88%{opacity:0} }
+    @keyframes filmScratch { 0%,12%{opacity:0;transform:translateX(0)} 13%{opacity:.8;transform:translateX(4%)} 15%{opacity:0} 48%{opacity:0} 49%{opacity:.7;transform:translateX(-9%)} 51%{opacity:0} 100%{opacity:0} }
+    @keyframes filmDust { 0%{opacity:0} 6%{opacity:1;transform:translate(0,0)} 10%{opacity:0} 40%{opacity:0} 42%{opacity:1;transform:translate(9%,-7%)} 47%{opacity:0} 78%{opacity:0} 80%{opacity:1;transform:translate(-12%,10%)} 85%{opacity:0} 100%{opacity:0} }
+    @media (prefers-reduced-motion: reduce) { .hero-video video, .film i { animation: none !important; } .film-grain { opacity: .25; } }
+
+    /* closing CTA: one primary, one quiet link */
+    .cta-pair { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; }
+    .cta-band h2 .dot { color: #0B1D35; }
+    main .cta-band { padding-block: clamp(28px, 3.5vw, 44px); }
+    main .cta-band h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: 8px; }
+    main .cta-band p { margin-bottom: 16px; font-size: .98rem; }
+    .cta-link { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
+    .cta-link:hover { text-decoration-thickness: 2px; }
+  </style>
+  <link rel="stylesheet" href="assets/css/inspire.css" />
+  <link rel="stylesheet" href="assets/css/impact.css" />
+  <link rel="stylesheet" href="assets/css/forms.css" />
+  <link rel="stylesheet" href="assets/css/solution.css" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/theme.css?v=3" />
+  <link rel="stylesheet" href="assets/css/design-system.css?v=5" />
+<link rel="stylesheet" href="assets/css/bro-banner.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/facts.css" />
+<script src="assets/js/lang.js"></script>
+<script src="assets/js/consent.js" defer></script>
+<script src="assets/js/coming-soon.js" defer></script>
+<script src="assets/js/newsletter-popup.js" defer></script>
+<link rel="stylesheet" href="assets/css/nav-dd.css?v=5" />
+
+<link rel="canonical" href="https://www.j58.eu/" />
+<link rel="stylesheet" href="assets/css/mobile-home.css?v=5" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ACCESSIBILITY TOOLBAR -->
+  <div class="a11y-toolbar" role="complementary" aria-label="Accessibility options">
+    <div class="container">
+      <span class="a11y-toolbar-label">Accessibility:</span>
+      <button class="a11y-btn" id="hcToggle" aria-pressed="false" aria-label="Toggle high contrast mode">High Contrast</button>
+      <div class="a11y-divider" aria-hidden="true"></div>
+      <div class="a11y-size-group" role="group" aria-label="Text size controls">
+        <button class="a11y-btn" id="textMinus" aria-label="Decrease text size">A&minus;</button>
+        <button class="a11y-btn" id="textPlus" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="nav-wrap" id="navWrap">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="J58 — home"><img src="assets/img/j58-logo-white.png" alt="J58" width="1378" height="444" /></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="productMenu">Product <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="productMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Product</p>
+              <a class="nav-mega-link" href="product/index.html"><strong>The EZER</strong><small>Features, benefits and how it works</small></a>
+              <a class="nav-mega-link" href="product/resources.html"><strong>Resources</strong><small>Videos, brochure, specifications and manuals</small></a>
+            </div>
+            <a class="nav-mega-card" href="product/index.html" style="background-image:url('assets/img/hero-poster-teaser.jpg')"><span><em>Product</em><b>See the EZER</b></span></a>
+          </div>
+        </li>
+        <li><a href="user-stories/index.html">User Stories</a></li>
+        <li><a href="reimbursement/index.html">Funding</a></li>
+        <li><a href="professionals/index.html">Professionals</a></li>
+        <li><a href="distributors/index.html">Dealers</a></li>
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="aboutMenu">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="aboutMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">About</p>
+              <a class="nav-mega-link" href="about/index.html"><strong>Our story &amp; team</strong><small>Mission, journey and the people behind J58</small></a>
+              <a class="nav-mega-link" href="blog/index.html"><strong>Blogs and articles</strong><small>News, stories and newsletters</small></a>
+              <a class="nav-mega-link" href="faq/index.html"><strong>FAQ</strong><small>Answers to common questions</small></a>
+            </div>
+            <a class="nav-mega-card" href="about/index.html#team-heading" style="background-image:url('assets/img/team/gabriel.jpg')"><span><em>Meet the team</em><b>Nice to meet YOU</b></span></a>
+          </div>
+        </li>
+        <li><a href="contact/index.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="book-a-demo/index.html" class="btn-primary">Book a Demo</a></div>
+      <button class="nav-hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="mobile-drawer" id="mobileDrawer" aria-label="Navigation menu">
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Product<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="product/index.html">The EZER</a><a href="product/resources.html">Resources</a></div></div>
+      <a href="user-stories/index.html">User Stories</a>
+      <a href="reimbursement/index.html">Funding</a>
+      <a href="professionals/index.html">For Professionals</a>
+      <a href="distributors/index.html">Dealers</a>
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">About<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="about/index.html">Our story &amp; team</a><a href="about/index.html#team-heading">Meet the team</a><a href="blog/index.html">Blogs and articles</a><a href="faq/index.html">FAQ</a></div></div>
+      <a href="contact/index.html">Contact</a>
+      <div class="mobile-cta"><a href="book-a-demo/index.html" class="btn-primary" style="display:block;text-align:center;">Book a Demo</a></div>
+    </div>
+  </div>
+
+  <main id="main" role="main">
+
+    <section class="page-hero has-video page-hero--wide page-hero--full" aria-labelledby="hero-heading">
+      <div class="hero-video" aria-hidden="true">
+        <video id="heroVideo" data-audio="false" autoplay muted loop playsinline poster="assets/img/hero-poster-teaser.jpg">
+          <source src="assets/video/teaser.mp4" type="video/mp4" />
+        </video>
+        
+      </div>
+      <div class="container">
+        <h1 id="hero-heading" class="hero-title"><span class="w">Let's</span> <span class="w">get</span> <span class="w">up</span><br> <span class="w">and</span> <span class="w">go<span class="dot">.</span></span></h1>
+        <div class="hero-actions">
+          <a href="book-a-demo/index.html" class="btn-primary btn-lg">Book a demo</a>
+          <a href="product/index.html" class="btn-secondary btn-lg">See how it works</a>
+        </div>
+        <p>The world's first mechanical standing wheelchair that lets you stand and move at the same time.</p>
+      </div>
+      <button type="button" id="heroSound" class="hero-sound" aria-pressed="false" aria-label="Turn sound on" hidden>
+        <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6"/><path d="m21 9-5 6"/></svg>
+        <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      </button>
+      <a href="#partners-label" class="hero-scroll" aria-label="Scroll down">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M6 13l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <section class="fs" aria-label="Key facts about the EZER">
+      <div class="fs__row">
+        <div class="fs__item">
+          <span class="fs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg></span>
+          <div><span class="fs__label">Drive system</span><span class="fs__value">Mechanical</span><span class="fs__sub">Zero battery dependency</span></div>
+        </div>
+        <div class="fs__item">
+          <span class="fs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8l7.5 2.7v5.6c0 4.6-3.1 8.2-7.5 10.1-4.4-1.9-7.5-5.5-7.5-10.1V5.5z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg></span>
+          <div><span class="fs__label">Certification</span><span class="fs__value">CE Certified</span><span class="fs__sub">EU safety standard</span></div>
+        </div>
+        <div class="fs__item">
+          <span class="fs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.1-7-11.7a7 7 0 0 1 14 0c0 5.6-7 11.7-7 11.7z"/><circle cx="12" cy="9.8" r="2.6"/></svg></span>
+          <div><span class="fs__label">Origin</span><span class="fs__value">Dutch Design</span><span class="fs__sub">Built in Enschede</span></div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- WHO ARE YOU -->
+    <section class="section section-alt who" aria-labelledby="who-h">
+      <div class="container">
+      <div class="who-deco" aria-hidden="true">
+        
+        <svg class="who-wheel" viewBox="0 0 100 100" fill="none" stroke="currentColor"><g class="who-spin"><circle cx="50" cy="50" r="44" stroke-width="7"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/><path stroke-width="3" stroke-linecap="round" d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78"/></g></svg>
+        <span class="sp-dots who-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span>
+        <span class="who-line"></span>
+        
+      </div>
+      
+        <div class="section-header reveal" style="margin-bottom:32px"><h2 id="who-h">How can we help you<span class="dot">.</span></h2></div>
+        <div class="who-grid">
+          <a class="who-card reveal" href="product/index.html"><i class="who-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="4.5" r="1.8"/><path d="M10 7.5v5.5h5l3 5.5"/><path d="M10 10.5h4.5"/><path d="M7.5 11.5a5.5 5.5 0 1 0 7.2 7.6"/></svg></i><b>For me or someone I care for</b><span>Explore the EZER</span></a>
+          <a class="who-card reveal" href="professionals/index.html"><i class="who-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v2a4.5 4.5 0 0 0 9 0v-1.5"/><circle cx="19" cy="12" r="1.8"/></svg></i><b>I am an ergotherapist or clinician</b><span>For professionals</span></a>
+          <a class="who-card reveal" href="distributors/index.html"><i class="who-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l2-5h14l2 5"/><path d="M4 10v9h16v-9"/><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M10 19v-5h4v5"/></svg></i><b>Distribute the EZER</b><span>Become a dealer</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="partners-label">
+      <p class="text-center eyebrow" id="partners-label" style="margin-bottom:32px">In partnership with</p>
+      <div class="marquee" role="group" aria-label="Partners and supporters">
+        <ul class="marquee-track" role="list">
+          <li><img src="assets/img/partners/twente.png" alt="University of Twente" /></li>
+          <li><img src="assets/img/partners/demcon.png" alt="Demcon" /></li>
+          <li><img src="assets/img/partners/novel-t.png" alt="Novel-T" /></li>
+          <li><img src="assets/img/partners/roessingh.png" alt="Roessingh Centrum voor Revalidatie" /></li>
+          <li><img src="assets/img/partners/oostnl.png" alt="Oost NL" /></li>
+          <li><img src="assets/img/partners/imec.png" alt="imec" /></li>
+          <li><img src="assets/img/partners/4tu.png" alt="4TU.HTM" /></li>
+          <li><img src="assets/img/partners/innovation-origins.jpg" alt="Innovation Origins" /></li>
+          <!-- duplicate set for seamless infinite loop -->
+          <li aria-hidden="true"><img src="assets/img/partners/twente.png" alt="Logo of the University of Twente, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/demcon.png" alt="Logo of Demcon, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/novel-t.png" alt="Logo of Novel-T, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/roessingh.png" alt="Logo of Roessingh rehabilitation centre, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/oostnl.png" alt="Logo of Oost NL, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/imec.png" alt="Logo of imec, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/4tu.png" alt="Logo of 4TU, a J58 partner" /></li>
+          <li aria-hidden="true"><img src="assets/img/partners/innovation-origins.jpg" alt="Logo of Innovation Origins, which has covered J58" /></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- RISE MOVE THRIVE (transition) -->
+
+    <!-- OUR SOLUTION -->
+    <section class="sp" aria-labelledby="sp-h">
+      <div class="container">
+        <div class="sp-head reveal">
+          <h2 id="sp-h">Stand and move when you want to<span class="dot">.</span></h2>
+          <p>One mechanical wheelchair that answers the everyday problems of sitting all day. Confidently rise from sitting to standing and move while standing without the fear of falling.</p>
+        </div>
+        <div class="sp-row reveal">
+          <div class="sp-copy">
+            <h3>&ldquo;Being at eye level makes every conversation feel natural.&rdquo;<small class="sp-by">&mdash; Martin</small></h3>
+            <p>People frequently look past or over wheelchair users in public spaces or conversation circles. Talk, shop and meet people face to face instead of looking up.</p>
+          </div>
+          <div class="sp-vis v1" aria-hidden="true"><svg class="sp-squig sp-wheel" viewBox="0 0 100 100" fill="none" stroke="currentColor" aria-hidden="true"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/><path stroke-width="3" stroke-linecap="round" d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78"/></g></svg><div class="sp-photo" style="background-image:url('assets/img/panels/eye-level.jpg');background-position:50% 35%"></div><span class="sp-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg> Eye level</span><div class="sp-card"><b>While you move</b><ul><li>Stand up</li><li>Roll on</li><li>Be more active</li></ul></div></div>
+        </div>
+        <div class="sp-row sp-row--rev reveal">
+          <div class="sp-copy">
+            <h3>&ldquo;I can finally reach the high cupboards in my kitchen.&rdquo;<small class="sp-by">&mdash; Jeroen</small></h3>
+            <p>Skip home adaptations and reduce costs. Kitchen counters, cupboards and high shelves come back within reach, so you can leave your home as it is.</p>
+          </div>
+          <div class="sp-vis v2" aria-hidden="true"><span class="sp-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span><div class="sp-photo" style="background-image:url('assets/img/panels/reach-high.jpg');background-position:50% 30%"></div><span class="sp-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg> Top shelf</span><div class="sp-card"><b>At home</b><ul><li>Kitchen counter</li><li>High shelves</li><li>No rebuilding</li></ul></div></div>
+        </div>
+        <div class="sp-row reveal">
+          <div class="sp-copy">
+            <h3>&ldquo;My work often requires me to stand, and now I can.&rdquo;<small class="sp-by">&mdash; Erik</small></h3>
+            <p>Work at a standing desk, talk to clients eye to eye, and choose for yourself when to stand and when to sit.</p>
+          </div>
+          <div class="sp-vis v3" aria-hidden="true"><svg class="sp-squig sp-wheel" viewBox="0 0 100 100" fill="none" stroke="currentColor" aria-hidden="true"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/><path stroke-width="3" stroke-linecap="round" d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78"/></g></svg><div class="sp-photo" style="background-image:url('assets/img/panels/work.jpg');background-position:50% 25%"></div><span class="sp-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg> At work</span><div class="sp-card"><b>On the job</b><ul><li>Reach your desk</li><li>Join the standing meeting</li><li>Work on your own</li></ul></div></div>
+        </div>
+        <div class="sp-row sp-row--rev reveal">
+          <div class="sp-copy">
+            <h3>&ldquo;With this wheelchair, I can stay healthier and more active.&rdquo;<small class="sp-by">&mdash; Christian</small></h3>
+            <p>With the EZER standing wheelchair you can spend more of your day upright. Standing gets you out of the seated position for longer and redistributes the pressure.</p>
+          </div>
+          <div class="sp-vis v4" aria-hidden="true"><span class="sp-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span><div class="sp-photo" style="background-image:url('assets/stories/christian/photo-04.jpg');background-position:50% 55%"></div><span class="sp-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg> Stay active</span><div class="sp-card"><b>Time upright</b><div class="sp-bars"><i style="height:30%" class="l"></i><i style="height:38%" class="l"></i><i style="height:52%"></i><i style="height:64%"></i><i style="height:78%"></i><i style="height:92%"></i><i style="height:100%"></i><i style="height:84%"></i><i style="height:68%"></i><i style="height:44%" class="l"></i></div></div></div>
+        </div>
+      
+      <div class="sp-cta-all reveal" style="text-align:center;margin-top:48px"><a class="btn-primary btn-lg" href="product/index.html">Explore the product</a></div>
+    </div>
+    </section>
+
+    
+
+    <section class="stack-section" aria-labelledby="stack-heading">
+      <div class="container">
+        <div class="stack-heading">
+          <h2 id="stack-heading">See what makes the EZER wheelchair <strong>different<span class="dot">.</span></strong></h2>
+        </div>
+
+        <div class="car-viewport" id="carVp"><div class="stack" id="carTrack">
+          <!-- CARD 01 -->
+          <article class="stack-card" style="--i:0">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Instant standing and sitting<span class="dot">.</span></h3>
+                <div class="stack-sub">From sitting to standing in one smooth movement</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>3 seconds to stand</div><div>3 seconds to sit</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-01.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/video/webflow/erik-poster.jpg"><source src="assets/video/webflow/erik.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 02 -->
+          <article class="stack-card stack-card--rev" style="--i:1">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Sit, stand and move while standing<span class="dot">.</span></h3>
+                <div class="stack-sub">Your everyday wheelchair. A whole new perspective.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>2-in-1 solution</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-02.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/video/webflow/supermarket-poster.jpg"><source src="assets/video/webflow/supermarket.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 03 -->
+          <article class="stack-card" style="--i:2">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Premium mechanical design<span class="dot">.</span></h3>
+                <div class="stack-sub">Every detail has a purpose.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>No batteries</div><div>Lightweight</div><div>Easy to repair</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-03.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/video/mechanics-design-poster.jpg"><source src="assets/video/mechanics-design.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 04 -->
+          <article class="stack-card stack-card--rev" style="--i:3">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Convenience<span class="dot">.</span></h3>
+                <div class="stack-sub">Adjustable to fit you.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>Customizable components</div><div>Weight &amp; height</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-04.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/video/webflow/for-everyone-poster.jpg"><source src="assets/video/webflow/for-everyone.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 05 -->
+          <article class="stack-card" style="--i:4">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Patented safety<span class="dot">.</span></h3>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>Wider wheelbase</div><div>Locks in position</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-05.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay muted loop playsinline preload="metadata" poster="assets/video/webflow/asafasf-poster.jpg"><source src="assets/video/webflow/asafasf.mp4" type="video/mp4" /></video>
+              </div>
+            </div>
+          </article>
+        </div></div>
+        <div class="car-nav"><button type="button" class="car-btn" id="carPrev" aria-label="Previous feature">&larr;</button><a href="product/index.html#benefits" class="btn-primary btn-lg">Explore the Product</a><button type="button" class="car-btn" id="carNext" aria-label="Next feature">&rarr;</button></div>
+      </div>
+    </section>
+
+
+
+
+    <!-- USE CASE -->
+
+    <section class="mw" aria-labelledby="imp-h">
+      <!-- To add a photo: give a tile  style="background-image:url('assets/img/...jpg')"  and it replaces the placeholder. -->
+      <div class="mw-grid" aria-hidden="false">
+        <div class="mw-col mw-col--l"><div class="mw-t " data-tone="a" style="background-image:url('assets/img/mission/p3.jpg');background-position:55% 30%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo</span></div><div class="mw-t " data-tone="b" style="background-image:url('assets/img/mission/p6.jpg');background-position:55% 35%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo</span></div></div>
+        <div class="mw-t mw-big" data-tone="c" style="background-image:url('assets/img/mission/p2.jpg');background-position:50% 22%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo: user</span></div>
+        <div class="mw-t mw-big" data-tone="d" style="background-image:url('assets/img/mission/p1.jpg');background-position:75% 30%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo: user</span></div>
+        <div class="mw-col mw-col--r"><div class="mw-t " data-tone="e" style="background-image:url('assets/img/mission/p4.jpg');background-position:38% 38%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo</span></div><div class="mw-t " data-tone="f" style="background-image:url('assets/stories/christian/photo-04.jpg');background-position:50% 55%" role="img" aria-label="J58 community member using the EZER standing wheelchair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo</span></div></div>
+      </div>
+      <div class="mw-veil" aria-hidden="true"></div>
+      <div class="mw-copy">
+        <h2 id="imp-h">Our mission is to <span class="mw-acc">help 1&nbsp;million people</span> stand again<span class="dot">.</span></h2>
+        <div class="mw-cta"><a class="btn-primary" href="about/index.html">Learn more about us</a></div>
+      </div>
+      <div class="mw-badge" role="img" aria-label="1st place, Nationale Zorginnovatie Prijs 2025"><svg viewBox="0 0 120 120"><defs><linearGradient id="mwg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc92"/><stop offset=".5" stop-color="#c9a24a"/><stop offset="1" stop-color="#a47a28"/></linearGradient></defs><g class="mw-wreath" fill="url(#mwg)"><circle cx="60" cy="60" r="43" fill="none" stroke="#c9a24a" stroke-width="1"/><ellipse cx="54.0" cy="102.6" rx="2.4" ry="6.0" transform="rotate(163 54.0 102.6)"/><ellipse cx="49.8" cy="107.9" rx="2.0" ry="5.0" transform="rotate(123 49.8 107.9)" opacity=".85"/><ellipse cx="43.2" cy="99.6" rx="2.4" ry="5.9" transform="rotate(178 43.2 99.6)"/><ellipse cx="37.8" cy="103.7" rx="2.0" ry="4.9" transform="rotate(138 37.8 103.7)" opacity=".85"/><ellipse cx="33.5" cy="93.9" rx="2.3" ry="5.8" transform="rotate(193 33.5 93.9)"/><ellipse cx="27.2" cy="96.4" rx="1.9" ry="4.8" transform="rotate(153 27.2 96.4)" opacity=".85"/><ellipse cx="25.7" cy="85.9" rx="2.3" ry="5.7" transform="rotate(208 25.7 85.9)"/><ellipse cx="18.9" cy="86.7" rx="1.9" ry="4.7" transform="rotate(168 18.9 86.7)" opacity=".85"/><ellipse cx="20.1" cy="76.1" rx="2.2" ry="5.6" transform="rotate(223 20.1 76.1)"/><ellipse cx="13.4" cy="75.1" rx="1.9" ry="4.6" transform="rotate(183 13.4 75.1)" opacity=".85"/><ellipse cx="17.3" cy="65.2" rx="2.2" ry="5.5" transform="rotate(238 17.3 65.2)"/><ellipse cx="11.1" cy="62.6" rx="1.8" ry="4.5" transform="rotate(198 11.1 62.6)" opacity=".85"/><ellipse cx="17.4" cy="54.0" rx="2.1" ry="5.3" transform="rotate(253 17.4 54.0)"/><ellipse cx="12.1" cy="49.8" rx="1.8" ry="4.5" transform="rotate(213 12.1 49.8)" opacity=".85"/><ellipse cx="20.4" cy="43.2" rx="2.1" ry="5.2" transform="rotate(268 20.4 43.2)"/><ellipse cx="16.3" cy="37.8" rx="1.7" ry="4.4" transform="rotate(228 16.3 37.8)" opacity=".85"/><ellipse cx="26.1" cy="33.5" rx="2.1" ry="5.1" transform="rotate(283 26.1 33.5)"/><ellipse cx="23.6" cy="27.2" rx="1.7" ry="4.3" transform="rotate(243 23.6 27.2)" opacity=".85"/><ellipse cx="34.1" cy="25.7" rx="2.0" ry="5.0" transform="rotate(298 34.1 25.7)"/><ellipse cx="33.3" cy="18.9" rx="1.7" ry="4.2" transform="rotate(258 33.3 18.9)" opacity=".85"/><ellipse cx="43.9" cy="20.1" rx="2.0" ry="4.9" transform="rotate(313 43.9 20.1)"/><ellipse cx="44.9" cy="13.4" rx="1.6" ry="4.1" transform="rotate(273 44.9 13.4)" opacity=".85"/><ellipse cx="54.8" cy="17.3" rx="1.9" ry="4.8" transform="rotate(328 54.8 17.3)"/><ellipse cx="57.4" cy="11.1" rx="1.6" ry="4.0" transform="rotate(288 57.4 11.1)" opacity=".85"/><ellipse cx="66.0" cy="102.6" rx="2.4" ry="6.0" transform="rotate(197 66.0 102.6)"/><ellipse cx="70.2" cy="107.9" rx="2.0" ry="5.0" transform="rotate(237 70.2 107.9)" opacity=".85"/><ellipse cx="76.8" cy="99.6" rx="2.4" ry="5.9" transform="rotate(182 76.8 99.6)"/><ellipse cx="82.2" cy="103.7" rx="2.0" ry="4.9" transform="rotate(222 82.2 103.7)" opacity=".85"/><ellipse cx="86.5" cy="93.9" rx="2.3" ry="5.8" transform="rotate(167 86.5 93.9)"/><ellipse cx="92.8" cy="96.4" rx="1.9" ry="4.8" transform="rotate(207 92.8 96.4)" opacity=".85"/><ellipse cx="94.3" cy="85.9" rx="2.3" ry="5.7" transform="rotate(152 94.3 85.9)"/><ellipse cx="101.1" cy="86.7" rx="1.9" ry="4.7" transform="rotate(192 101.1 86.7)" opacity=".85"/><ellipse cx="99.9" cy="76.1" rx="2.2" ry="5.6" transform="rotate(137 99.9 76.1)"/><ellipse cx="106.6" cy="75.1" rx="1.9" ry="4.6" transform="rotate(177 106.6 75.1)" opacity=".85"/><ellipse cx="102.7" cy="65.2" rx="2.2" ry="5.5" transform="rotate(122 102.7 65.2)"/><ellipse cx="108.9" cy="62.6" rx="1.8" ry="4.5" transform="rotate(162 108.9 62.6)" opacity=".85"/><ellipse cx="102.6" cy="54.0" rx="2.1" ry="5.3" transform="rotate(107 102.6 54.0)"/><ellipse cx="107.9" cy="49.8" rx="1.8" ry="4.5" transform="rotate(147 107.9 49.8)" opacity=".85"/><ellipse cx="99.6" cy="43.2" rx="2.1" ry="5.2" transform="rotate(92 99.6 43.2)"/><ellipse cx="103.7" cy="37.8" rx="1.7" ry="4.4" transform="rotate(132 103.7 37.8)" opacity=".85"/><ellipse cx="93.9" cy="33.5" rx="2.1" ry="5.1" transform="rotate(77 93.9 33.5)"/><ellipse cx="96.4" cy="27.2" rx="1.7" ry="4.3" transform="rotate(117 96.4 27.2)" opacity=".85"/><ellipse cx="85.9" cy="25.7" rx="2.0" ry="5.0" transform="rotate(62 85.9 25.7)"/><ellipse cx="86.7" cy="18.9" rx="1.7" ry="4.2" transform="rotate(102 86.7 18.9)" opacity=".85"/><ellipse cx="76.1" cy="20.1" rx="2.0" ry="4.9" transform="rotate(47 76.1 20.1)"/><ellipse cx="75.1" cy="13.4" rx="1.6" ry="4.1" transform="rotate(87 75.1 13.4)" opacity=".85"/><ellipse cx="65.2" cy="17.3" rx="1.9" ry="4.8" transform="rotate(32 65.2 17.3)"/><ellipse cx="62.6" cy="11.1" rx="1.6" ry="4.0" transform="rotate(72 62.6 11.1)" opacity=".85"/></g></svg><span class="mw-badge-in"><img src="assets/img/prize/zorginnovatie-mark.png" alt="Zorginnovatie award mark won by J58"></span></div>
+    </section>
+
+
+    <section class="rl" aria-labelledby="ig-heading">
+      <div class="container rl-top reveal">
+        <div class="rl-titles"><h2 id="ig-heading">Follow our journey<span class="dot">.</span></h2><h3 class="rl-sub">Real moments from the J58 community<span class="dot">.</span></h3></div>
+        <div class="rl-icons"><a class="rl-ic" href="https://www.facebook.com/j58.eu/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.300-3.6 3.700V10H8.400v3h2.400v7z" fill="currentColor"/></svg></a><a class="rl-ic" href="https://nl.linkedin.com/company/j58" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.500" cy="7.500" r="1.700" fill="currentColor"/><rect x="6" y="10" width="3" height="8.500" fill="currentColor"/><path d="M11 10h2.800v1.200c.5-.9 1.500-1.400 2.700-1.400 2.400 0 3 1.600 3 3.700v5h-3v-4.200c0-1-.2-1.800-1.300-1.800s-1.200.8-1.200 1.800v4.200h-3z" fill="currentColor"/></svg></a><a class="rl-ic" href="https://www.instagram.com/j58.eu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.800"/><circle cx="12" cy="12" r="3.200" fill="none" stroke="currentColor" stroke-width="1.800"/><circle cx="16.200" cy="7.800" r="1" fill="currentColor"/></svg></a><a class="rl-ic" href="https://www.youtube.com/@J58EU" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.500" width="16" height="11" rx="3.200" fill="currentColor"/><path d="M10.500 9.700v4.600l4-2.300z" fill="#12aaba"/></svg></a><a class="rl-ic" href="https://www.tiktok.com/@j58.eu" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.500 5v9.300a2.800 2.800 0 1 1-2.800-2.800M13.500 5c.3 2.100 1.800 3.500 4 3.700" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+      <hr class="rl-divider" aria-hidden="true" />
+    </section>
+    <style>
+.pull-quote{position:relative;min-height:60vh;background:linear-gradient(rgba(11,29,53,.80),rgba(11,29,53,.72)),url('assets/img/martin-hoffman.jpg') center 4%/cover no-repeat,#0B1D35;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px clamp(20px,5vw,60px)}
+.pull-quote__decoration{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:200px;font-weight:900;line-height:1;color:rgba(18,170,186,.15);font-family:Georgia,serif;pointer-events:none;z-index:0;user-select:none}
+.pull-quote__content{position:relative;z-index:1;max-width:800px}
+.pull-quote blockquote{margin:0}
+.pull-quote__text{text-shadow:0 2px 24px rgba(11,29,53,.55);font-size:clamp(28px,4vw,52px);font-weight:700;color:#fff;line-height:1.3;font-style:italic;margin:0}
+.pull-quote__attribution{display:block;font-size:16px;color:#12aaba;font-weight:500;margin-top:32px;font-style:normal}
+@media(max-width:768px){.pull-quote{padding:60px 24px}}
+</style>
+
+
+<section class="qc-section" aria-label="Testimonials">
+      <div class="container">
+        <div class="car-viewport" id="sVp"><div class="stack" id="sTrack">
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/martin.jpg" alt="Martin" loading="lazy" style="object-position:50% 35%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;It's very special, now give me a kiss while I'm still standing&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Martin</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/anthony.jpg" alt="Anthony (stand-up comedian)" loading="lazy" style="object-position:35% 30%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;I live in The Netherlands, Dutch women are tall, that's why I need this wheelchair.&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Anthony (stand-up comedian)</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/christian.jpg" alt="Christian (Ambassador)" loading="lazy" style="object-position:50% 22%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;Instead of sitting under the table I can now join at the (standing) table&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Christian (Ambassador)</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/jeroen.jpg" alt="Jeroen" loading="lazy" style="object-position:50% 25%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;I can now reach higher shelves, use standing desks, and move freely, making me far more productive during the day.&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Jeroen</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/johan.jpg" alt="Johan" loading="lazy" style="object-position:55% 24%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;Being able to stand with my wheelchair has given me the confidence and independence to fully participate in activities with friends and family.&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Johan</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="assets/img/testimonials/erik.jpg" alt="Erik" loading="lazy" style="object-position:50% 24%"></div><div class="stack-text"><h3 class="stack-title">&ldquo;Having clients visiting us, I always had to look up at them. Now, with this wheelchair, we’re on the same level.&rdquo;</h3><span class="stack-rule"></span><div class="stack-sub">Erik</div></div></div></article>
+        </div></div>
+        <div class="car-nav"><button type="button" class="car-btn" id="sPrev" aria-label="Previous story">&larr;</button><a href="user-stories/index.html" class="btn-primary btn-lg">Read user stories</a><button type="button" class="car-btn" id="sNext" aria-label="Next story">&rarr;</button></div>
+      </div>
+    </section>
+
+
+    <section class="bro bro--home" aria-labelledby="bro-h">
+      <div class="container">
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">See the EZER for yourself<span class="dot">.</span></h2>
+            <p>Find out how standing while moving works. Book a personal demo and experience standing mobility firsthand.</p>
+            <div class="bro-actions">
+              <a href="book-a-demo/index.html" class="bro-btn bro-btn--primary">Book a demo</a>
+            </div>
+          </div>
+          <div class="bro-photo" style="background-image:url('assets/img/hero-poster-teaser.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="ds-footer" role="contentinfo" aria-label="Site footer">
+    <div class="ds-footer__wrap">
+      <p class="ds-footer__title">Make Standing the New Standard<span class="dot">.</span></p>
+      <div class="ds-footer__grid">
+        <div class="ds-footer__brand">
+          <a class="ds-footer__logo" href="index.html" aria-label="J58 — home"><img src="assets/img/j58-logo-white.png" alt="J58" width="1378" height="444" /></a>
+          <p>J58 develops the EZER standing wheelchair, the first mechanical standing wheelchair that allows people to sit, stand, and move while standing.</p>
+          <p>De Hems 10, 7522 NL Enschede, Nederland<br><a href="mailto:info@j58.eu">info@j58.eu</a></p>
+          <div class="ds-footer__social" aria-label="Social media"><a href="https://www.facebook.com/j58.eu/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.3-3.6 3.7V10H8.4v3h2.4v7z" fill="currentColor"/></svg></a><a href="https://nl.linkedin.com/company/j58" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="7.5" r="1.7" fill="currentColor"/><rect x="6" y="10" width="3" height="8.5" fill="currentColor"/><path d="M11 10h2.8v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.6 3 3.7v5h-3v-4.2c0-1-.2-1.8-1.3-1.8s-1.2.8-1.2 1.8v4.2h-3z" fill="currentColor"/></svg></a><a href="https://www.instagram.com/j58.eu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.2" cy="7.8" r="1" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@J58EU" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6.5" width="16" height="11" rx="3.2" fill="currentColor"/><path d="M10.5 9.7v4.6l4-2.3z" fill="#12aaba"/></svg></a><a href="https://www.tiktok.com/@j58.eu" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 5v9.3a2.8 2.8 0 1 1-2.8-2.8M13.5 5c.3 2.1 1.8 3.5 4 3.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <a href="product/index.html">The EZER</a>
+          <a href="product/resources.html">Resources</a>
+          <a href="user-stories/index.html">User Stories</a>
+          <a href="faq/index.html">FAQ</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>For partners</h4>
+          <a href="professionals/index.html">Healthcare Professionals</a>
+          <a href="distributors/index.html">Dealers</a>
+          <a href="reimbursement/index.html">Funding</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Company</h4>
+          <a href="about/index.html">About J58</a>
+          <a href="blog/index.html">Blogs and articles</a>
+          <a href="contact/index.html">Contact</a>
+          <a href="book-a-demo/index.html">Book a Demo</a>
+        </div>
+      </div>
+      <div class="ds-footer__bottom"><span>&copy; <span id="year">2026</span> J58. All rights reserved.</span><span><a href="privacy-policy/index.html">Privacy</a> &middot; <a href="cookie-policy/index.html">Cookies</a> &middot; <a href="terms-and-conditions/index.html" data-terms>Terms</a> &middot; <a href="#" data-coming-soon>Accessibility</a></span></div>
+    </div>
+  </footer>
+  <script src="assets/js/site.js"></script>
+
+<script>
+(function(){
+  var vp=document.getElementById('carVp'),tr=document.getElementById('carTrack');
+  if(!vp||!tr)return;
+  var GAP=28,STEP_MS=3000,HOLD=6000,busy=false,timer=null,visible=false,base=0,cw=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cards(){return Array.prototype.slice.call(tr.children);}
+  function layout(){
+    var vw=vp.clientWidth, vh=window.innerHeight; cw=Math.min(660,Math.round(vw*(vw<700?0.78:0.44)),Math.round((vh-520)/0.5625)); cw=Math.max(cw,vw<700?260:340);
+    tr.style.setProperty('--car-w',cw+'px'); tr.style.setProperty('--car-gap',GAP+'px');
+    base=Math.round(vw/2-cw/2-2*(cw+GAP));
+    tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+  }
+  function mark(){
+    var c=cards();
+    c.forEach(function(el,i){
+      var on=(i===2); el.classList.toggle('is-center',on);
+      var v=el.querySelector('video'); if(!v)return;
+      if(on){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else {v.pause();}
+    });
+  }
+  function next(){
+    if(busy)return; busy=true;
+    var c=cards();
+    c[2].classList.remove('is-center'); c[3].classList.add('is-center'); playOnly(c[3]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    setTimeout(function(){
+      tr.appendChild(tr.firstElementChild);
+      tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+      busy=false;
+    },STEP_MS+30);
+  }
+  function prev(){
+    if(busy)return; busy=true;
+    var c=cards();
+    tr.insertBefore(c[c.length-1],c[0]);
+    tr.style.transition='none'; tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    void tr.offsetWidth;
+    var n=cards(); n[3].classList.remove('is-center'); n[2].classList.add('is-center'); playOnly(n[2]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+base+'px)';
+    setTimeout(function(){busy=false;},STEP_MS+30);
+  }
+  function playOnly(el){cards().forEach(function(x){var v=x.querySelector('video');if(!v)return;if(x===el){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});}
+  function start(){stop(); if(reduce||!visible)return; timer=setInterval(next,HOLD+STEP_MS);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  document.getElementById('carNext').addEventListener('click',function(){next();start();});
+  document.getElementById('carPrev').addEventListener('click',function(){prev();start();});
+  vp.addEventListener('mouseenter',stop); vp.addEventListener('mouseleave',start);
+  tr.addEventListener('click',function(e){var c=e.target.closest('.stack-card');if(!c||c.classList.contains('is-center'))return;var i=cards().indexOf(c);if(i>2){next();start();}else if(i<2){prev();start();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;visible?start():stop();},{threshold:.35}).observe(vp);}else{visible=true;start();}
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(layout,120);});
+  tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]); tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]);
+  layout(); mark();
+})();
+</script>
+<script>
+(function(){
+  var vp=document.getElementById('sVp'),tr=document.getElementById('sTrack');
+  if(!vp||!tr)return;
+  var GAP=28,STEP_MS=3000,HOLD=6000,busy=false,timer=null,visible=false,base=0,cw=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cards(){return Array.prototype.slice.call(tr.children);}
+  function layout(){
+    var vw=vp.clientWidth, vh=window.innerHeight; cw=Math.min(560,Math.round(vw*(vw<700?0.78:0.4))); cw=Math.max(cw,vw<700?260:340);
+    tr.style.setProperty('--car-w',cw+'px'); tr.style.setProperty('--car-gap',GAP+'px');
+    base=Math.round(vw/2-cw/2-2*(cw+GAP));
+    tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+  }
+  function mark(){
+    var c=cards();
+    c.forEach(function(el,i){
+      var on=(i===2); el.classList.toggle('is-center',on);
+      var v=el.querySelector('video'); if(!v)return;
+      if(on){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else {v.pause();}
+    });
+  }
+  function next(){
+    if(busy)return; busy=true;
+    var c=cards();
+    c[2].classList.remove('is-center'); c[3].classList.add('is-center'); playOnly(c[3]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    setTimeout(function(){
+      tr.appendChild(tr.firstElementChild);
+      tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+      busy=false;
+    },STEP_MS+30);
+  }
+  function prev(){
+    if(busy)return; busy=true;
+    var c=cards();
+    tr.insertBefore(c[c.length-1],c[0]);
+    tr.style.transition='none'; tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    void tr.offsetWidth;
+    var n=cards(); n[3].classList.remove('is-center'); n[2].classList.add('is-center'); playOnly(n[2]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+base+'px)';
+    setTimeout(function(){busy=false;},STEP_MS+30);
+  }
+  function playOnly(el){cards().forEach(function(x){var v=x.querySelector('video');if(!v)return;if(x===el){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});}
+  function start(){stop(); if(reduce||!visible)return; timer=setInterval(next,HOLD+STEP_MS);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  document.getElementById('sNext').addEventListener('click',function(){next();start();});
+  document.getElementById('sPrev').addEventListener('click',function(){prev();start();});
+  vp.addEventListener('mouseenter',stop); vp.addEventListener('mouseleave',start);
+  tr.addEventListener('click',function(e){var c=e.target.closest('.stack-card');if(!c||c.classList.contains('is-center'))return;var i=cards().indexOf(c);if(i>2){next();start();}else if(i<2){prev();start();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;visible?start():stop();},{threshold:.35}).observe(vp);}else{visible=true;start();}
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(layout,120);});
+  tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]); tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]);
+  layout(); mark();
+})();
+</script>
+
+  <script>
+    /* Solid navy nav bar once the hero has scrolled out of view */
+    (function () {
+      var wrap = document.getElementById('navWrap');
+      var hero = document.querySelector('.page-hero');
+      if (!wrap || !hero) return;
+      function update() { var past = hero.getBoundingClientRect().bottom < 100; wrap.classList.toggle('past-hero', past); }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+<script>
+(function(){
+  var v=document.getElementById('heroVideo'),b=document.getElementById('heroSound');
+  if(!v||!b||v.getAttribute('data-audio')!=='true')return; /* button only appears when the video file has an audio track */
+  b.hidden=false;
+  b.addEventListener('click',function(){
+    var on=v.muted; v.muted=!on; if(on){v.volume=1;v.play&&v.play();}
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.setAttribute('aria-label',on?'Turn sound off':'Turn sound on');
+  });
+})();
+</script>
+<script src="assets/js/cursor.js" defer></script>
+<script src="assets/js/a11y.js"></script>
+<script src="assets/js/nav-dd.js?v=4"></script>
+</body>
+</html>

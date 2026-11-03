@@ -1,0 +1,68 @@
+/* J58 homepage: compact phone layout (loaded last so it wins over earlier rules) */
+
+/* Mission: shorter block, all four photos in a 2x2 grid */
+@media (max-width: 800px) {
+  .mw { height: 100vh; height: 100svh; min-height: 560px; } /* one full phone screen, 2x2 photos fill it */
+  .mw-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 6px; }
+  .mw-col { display: contents; }
+  .mw-t:not([style*="background-image"]) { display: none; }
+  .mw-col .mw-t:nth-child(2) { display: none; } /* keep four photos: 2 x 2 */
+  .mw-t, .mw-big { padding: 0; border-radius: 12px; }
+  .mw-copy { padding: 0 18px; }
+  .mw-copy h2 { font-size: 1.7rem; line-height: 1.12; max-width: 11em; margin-bottom: 16px; }
+  .mw-cta .btn-primary { padding: 12px 22px; font-size: .95rem; }
+  .mw-badge { width: 56px; height: 56px; bottom: 10px; }
+}
+
+/* Key facts: centred, one line of three */
+@media (max-width: 820px) {
+  .fs { padding: 18px 0; }
+  .fs__row { display: flex; justify-content: center; align-items: flex-start; gap: 0; padding: 0 6px; }
+  .fs__item { flex: 1 1 0; min-width: 0; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 2px 6px; }
+  .fs__item + .fs__item { border-left: 1px solid #ddd2b9; border-top: 0; padding: 2px 6px; }
+  .fs__ico { width: 40px; height: 40px; }
+  .fs__ico svg { width: 20px; height: 20px; }
+  .fs__label { font-size: 9px; letter-spacing: .08em; }
+  .fs__value { font-size: 14px; margin-top: 2px; }
+  .fs__sub { font-size: 11px; line-height: 1.3; }
+}
+
+/* Product carousel: remove the tall empty bands above and below */
+@media (max-width: 700px) {
+  .stack-section { min-height: 100vh; min-height: 100svh; justify-content: center; padding-block: 28px; }
+  .stack-section::before, .stack-section::after { height: 28px; }
+  .stack-heading { margin-bottom: 18px; }
+  .stack-heading h2 { font-size: 1.55rem; line-height: 1.15; }
+  .stack-media, .stack-card--rev .stack-media { aspect-ratio: 4 / 5 !important; } /* tall enough for the text on the photo */
+  .stack-text { padding: 60px 16px 18px; }
+  .stack-title { font-size: 19px; }
+  .stack-sub { font-size: 14px; margin-top: 4px; }
+  .stack-rule { margin: 10px 0; }
+  .car-nav { margin-top: 14px; }
+  .car-nav .btn-primary { padding: 12px 22px; font-size: .95rem; }
+  .car-btn { width: 40px; height: 40px; }
+}
+
+/* "How can we help you": all screens, no white boxes, just a highlighted outline; compact buttons */
+.who .who-card { background: transparent !important; border: 0 !important;
+  box-shadow: 0 0 0 1px rgba(18,170,186,.75), 0 0 18px rgba(18,170,186,.28) !important; }
+.who .who-card:hover, .who .who-card:focus-visible { transform: none;
+  box-shadow: 0 0 0 2px #2bc4e0, 0 0 28px rgba(43,196,224,.45) !important; }
+.who .who-card .who-ic { background: rgba(18,170,186,.16) !important; }
+.who .who-card .who-ic svg { color: #2bc4e0; stroke: #2bc4e0; }
+.who .who-card b { color: #fff !important; }
+.who .who-card span { align-self: center !important; padding: 7px 14px !important; font-size: .84rem !important; width: fit-content !important; gap: 6px !important; line-height: 1.2 !important; }
+@media (min-width: 901px) {
+  .who .who-card { min-height: 0; padding: 28px 24px 26px; gap: 12px; }
+}
+@media (max-width: 900px) {
+  .who { padding-block: 28px; }
+  .who-grid { gap: 12px; max-width: 340px; margin-inline: auto; }
+  .who .who-card { min-height: 0; padding: 14px 16px 16px; gap: 8px; border-radius: 14px; }
+  .who .who-card .who-ic { width: 36px; height: 36px; margin-bottom: 0; }
+  .who .who-card .who-ic svg { width: 18px; height: 18px; }
+  .who .who-card b { font-size: 1rem; margin-bottom: 2px; }
+  .who .who-card span { padding: 6px 12px !important; font-size: .78rem !important; }
+}
+
+@media (min-width: 901px) { .who-grid { max-width: 900px; margin-inline: auto; } }
