@@ -74,3 +74,7 @@
 @media(max-width:900px){.cx-side{min-height:260px}}
 .cx-intro{color:#3a4657;margin:0 0 22px;line-height:1.6}
 .cx-note{color:#6b7686;font-size:.85rem;margin:14px 0 0}
+
+/* Success screen button: outlined in brand blue */
+.cx-ok .btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border:2px solid #12aaba !important;border-radius:99px;background:transparent !important;color:#0B1D35 !important;font-weight:700;cursor:pointer;box-shadow:0 0 0 3px rgba(18,170,186,.18);transition:background .2s,color .2s,box-shadow .2s}
+.cx-ok .btn-secondary:hover,.cx-ok .btn-secondary:focus-visible{background:#12aaba !important;color:#fff !important;box-shadow:0 0 0 5px rgba(18,170,186,.28)}
