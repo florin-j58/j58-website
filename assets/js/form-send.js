@@ -3,7 +3,7 @@
    2) If ENDPOINT is empty, or sending fails, the visitor's email app opens with the message ready, addressed to social@j58.eu. */
 (function(){
 var J=window.J58Form=window.J58Form||{};
-J.ENDPOINT="";               /* paste the Apps Script web app URL here */
+J.ENDPOINT="https://script.google.com/macros/s/AKfycbx0h1fUppWTwHEouQP-wj3Q2WX3bDgacauDAvpYxnPNzpqI_52lO-KIcOKAYG0yalyb/exec";               /* paste the Apps Script web app URL here */
 J.TO="social@j58.eu";
 J.mailMsg="One more step: your email app should now open with your message ready. Please press Send there to deliver it. Nothing is sent until you do. If nothing opened, write to "+J.TO+".";
 J.send=function(o){
