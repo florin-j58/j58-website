@@ -197,8 +197,8 @@
 })();
 </script>
 <script src="../assets/js/cursor.js" defer></script>
+<script src="../assets/js/form-send.js"></script>
 <script>(function(){
-var ENDPOINT=""; /* e.g. a Formspree / HubSpot / own endpoint URL. While empty, the form opens the visitor's email app addressed to info@j58.eu. */
 var TO="info@j58.eu",f=document.getElementById('cx'),body=document.getElementById('cxBody'),ok=document.getElementById('cxOk'),btn=document.getElementById('cxSubmit'),msg=document.getElementById('cx-msg'),cnt=document.getElementById('cxCount');
 msg.addEventListener('input',function(){cnt.textContent=msg.value.length+' / 1500'});
 function bad(el,on){var w=el.closest('.cx-f');if(w)w.classList.toggle('bad',on)}
@@ -214,8 +214,7 @@ var d={};new FormData(f).forEach(function(v,k){d[k]=v});var phone=(d.dial||'')+'
 var text='Form: Book a demo\nPage language: '+(document.documentElement.lang||'en').toUpperCase()+'\n'+'Topic: '+d.topic+'\nName: '+d.first+' '+d.last+'\nEmail: '+d.email+'\nPhone: '+phone+'\nCountry: '+d.country+'\nCity: '+d.city+' '+d.postcode+'\n\n'+d.message;
 function done(m){body.hidden=true;ok.hidden=false;if(m)document.getElementById('cxOkMsg').textContent=m;ok.focus();ok.scrollIntoView({behavior:'smooth',block:'center'})}
 btn.disabled=true;btn.firstElementChild.textContent='Sending…';
-if(ENDPOINT){fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;done()}).catch(function(){btn.disabled=false;btn.firstElementChild.textContent='Request my demo';alert('Sorry, sending failed. Please email us at '+TO+'.')})}
-else{window.location.href='mailto:'+TO+'?subject='+encodeURIComponent('[Book a demo] '+d.topic)+'&body='+encodeURIComponent(text);setTimeout(function(){done('Your email app should now open with your message ready to send. If it didn\u2019t, please write to '+TO+'.');btn.disabled=false;btn.firstElementChild.textContent='Request my demo'},600)}});
+J58Form.send({form:'Book a demo',subject:'[Book a demo] '+d.topic,text:text,data:d}).then(function(r){done(r==='sent'?'':J58Form.mailMsg);btn.disabled=false;btn.firstElementChild.textContent='Request my demo'});});
 document.getElementById('cxAgain').addEventListener('click',function(){f.reset();cnt.textContent='0 / 1500';ok.hidden=true;body.hidden=false});
 })();</script>
 <script>(function(){var side=document.getElementById('cxSide'),form=document.getElementById('cx');if(!side||!form)return;

@@ -1,7 +1,6 @@
 /* Generic J58 form handler for .cx forms (validation, mailto fallback, success panel). Config: data-subject, data-sendlabel on the form. */
 (function(){
 var f=document.querySelector('form.cx[data-generic]');if(!f)return;
-var ENDPOINT="";/* e.g. Formspree / HubSpot endpoint. While empty, the visitor's email app opens, addressed to info@j58.eu. */
 var TO="info@j58.eu",body=document.getElementById('cxBody'),ok=document.getElementById('cxOk'),btn=document.getElementById('cxSubmit'),msg=f.querySelector('textarea'),cnt=document.getElementById('cxCount');
 if(msg&&cnt)msg.addEventListener('input',function(){cnt.textContent=msg.value.length+' / '+(msg.maxLength>0?msg.maxLength:1500)});
 function bad(el,on){var w=el.closest('.cx-f');if(w)w.classList.toggle('bad',on)}
@@ -19,7 +18,6 @@ var fname=f.getAttribute('data-subject')||'Website form',text='Form: '+fname+'\n
 function done(m){body.hidden=true;ok.hidden=false;if(m)document.getElementById('cxOkMsg').textContent=m;ok.focus();ok.scrollIntoView({behavior:'smooth',block:'center'})}
 var lab=btn.firstElementChild,orig=lab.textContent;btn.disabled=true;lab.textContent='Sending…';
 var subj='['+fname+'] '+(d.topic||'');
-if(ENDPOINT){fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;done()}).catch(function(){btn.disabled=false;lab.textContent=orig;alert('Sorry, sending failed. Please email us at '+TO+'.')})}
-else{window.location.href='mailto:'+TO+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(text);setTimeout(function(){done('Your email app should now open with your details ready to send. If it didn’t, please write to '+TO+'.');btn.disabled=false;lab.textContent=orig},600)}});
+J58Form.send({form:fname,subject:subj,text:text,data:d}).then(function(r){done(r==='sent'?'':J58Form.mailMsg);btn.disabled=false;lab.textContent=orig})});
 var again=document.getElementById('cxAgain');if(again)again.addEventListener('click',function(){f.reset();if(cnt)cnt.textContent='0 / 1500';ok.hidden=true;body.hidden=false});
 })();
