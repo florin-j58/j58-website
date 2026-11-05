@@ -451,7 +451,7 @@
     .mb__head h2 { font-size:clamp(36px,4vw,52px); font-weight:800; letter-spacing:-.02em; line-height:1.1; color:var(--black); }
     .mb__sub { margin-top:10px; font-size:calc(22px * var(--ts)); font-weight:700; color:var(--black); }
     .mb__lead { margin-top:8px; font-size:calc(16px * var(--ts)); color:#555; }
-    .mb__row { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
+    .mb__row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
     .mb-card { position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; text-align:left; display:flex; align-items:flex-end; padding:22px; color:#fff; isolation:isolate; transition:transform .35s ease, box-shadow .35s ease; }
     .mb-card::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%); transition:opacity .3s; }
     .mb-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.22); }
@@ -1901,7 +1901,7 @@
       </div>
       <div class="mb__row">
         <button aria-haspopup="dialog" aria-label="Gemak — meer informatie" class="mb-card" data-mb="convenience" style="background-image:url('../assets/img/product/benefit-convenience.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">Gemak</div><div class="mb-card__sub">Verstelbaar, zodat hij bij jou past.</div><div class="mb-card__keys"><div>Aanpasbare onderdelen</div><div>Gewicht en lengte</div></div></div>
+          <div class="mb-card__txt"><div class="mb-card__title">Gemak</div><div class="mb-card__sub">Verstelbaar, zodat hij bij jou past.</div><div class="mb-card__keys"><div>Aanpasbaar</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Veiligheid — meer informatie" class="mb-card" data-mb="safety" style="background-image:url('../assets/img/product/benefit-safety.jpg')" type="button">
@@ -1909,15 +1909,11 @@
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Efficiëntie — meer informatie" class="mb-card" data-mb="efficiency" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">Efficiëntie</div><div class="mb-card__sub">Direct staan en zitten</div><div class="mb-card__keys"><div>Beweeg terwijl je staat</div><div>2-in-1-oplossing</div></div></div>
+          <div class="mb-card__txt"><div class="mb-card__title">Efficiëntie</div><div class="mb-card__sub">Zitten, staan en bewegen terwijl je staat</div><div class="mb-card__keys"><div>2-in-1-oplossing</div><div>Dagelijkse rolstoel</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Ontwerp — meer informatie" class="mb-card" data-mb="design" style="background-image:url('../assets/img/product/benefit-design.jpg')" type="button">
           <div class="mb-card__txt"><div class="mb-card__title">Ontwerp</div><div class="mb-card__sub">Premium mechanisch ontwerp</div><div class="mb-card__keys"><div>Geen batterijen</div><div>Licht van gewicht</div></div></div>
-          <span aria-hidden="true" class="mb-card__plus"></span>
-        </button>
-        <button aria-haspopup="dialog" aria-label="Zitten, staan en bewegen — meer weten" class="mb-card" data-mb="standmove" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">2-in-1</div><div class="mb-card__sub">Zitten, staan en rijden terwijl je staat</div><div class="mb-card__keys"><div>Dagelijkse rolstoel</div><div>Staan en bewegen</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
       </div>
@@ -1935,19 +1931,6 @@
         <p class="mb-modal__lede">Verstelbaar, zodat hij bij jou past.</p>
         <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/benefit-convenience.jpg"/></figure>
         <div class="mb-modal__text"><p>Aanpasbare onderdelen en verstelbare ondersteuning helpen de EZER sta-rolstoel af te stemmen op je lengte, lichaamsbouw en dagelijkse behoeften. Een persoonlijke pasvorm geeft comfort en controle, of je nu zit, staat of rijdt.</p></div>
-        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Plan een demo</a></div>
-      </div>
-    </dialog>
-    <dialog aria-labelledby="mb-standmove-t" class="mb-modal" id="mb-standmove">
-      <button aria-label="Sluiten" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
-      <div aria-label="Een man staat en beweegt in zijn EZER in een supermarkt" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')">
-        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/img/product/stand-and-move-poster.jpg" preload="none"><source src="../assets/video/stand-and-move.mp4" type="video/mp4"/></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-standmove-t">Zitten, staan en rijden terwijl je staat</h3></div>
-      </div>
-      <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>2-in-1-oplossing</div><div>Beweeg terwijl je staat</div></div>
-        <p class="mb-modal__lede">Je rolstoel voor elke dag. Een heel nieuw perspectief.</p>
-        <div class="mb-modal__text"><p>De EZER sta-rolstoel is een rolstoel om in te zitten en een stahulp in één. Sta op om ergens bij te komen, op ooghoogte te praten of te werken, en blijf bewegen terwijl je staat.</p></div>
         <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Plan een demo</a></div>
       </div>
     </dialog>
@@ -1971,14 +1954,14 @@
       <button aria-label="Sluiten" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
       <div aria-label="Een man werkt aan zijn bureau in zijn EZER" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')">
         <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/webflow/erik-poster.jpg" preload="none"><source src="../assets/video/webflow/erik.mp4" type="video/mp4"/></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Direct staan en zitten</h3></div>
+        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Efficiëntie</h3><p>Zitten, staan en bewegen terwijl je staat</p></div>
       </div>
       
       <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>3 seconden om te staan</div><div>3 seconden om te zitten</div><div>Geen overstap naar een ander hulpmiddel</div></div>
-        <p class="mb-modal__lede">Van zitten naar staan in één vloeiende beweging</p>
-        <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/hero-1.jpg"/></figure>
-        <div class="mb-modal__text"><p>Wissel tussen zitten en staan wanneer je volgende activiteit daarom vraagt. Dankzij het mechanische systeem van de EZER sta-rolstoel verander je van houding zonder over te stappen op een ander hulpmiddel, zodat je meer tijd hebt voor wat er echt toe doet.</p></div>
+        <div class="mb-modal__keys"><div>2-in-1-oplossing</div><div>Dagelijkse rolstoel</div></div>
+        <p class="mb-modal__lede">Je rolstoel voor elke dag. Een heel nieuw perspectief.</p>
+        <figure class="mb-modal__fig"><video muted loop playsinline controls preload="none" poster="../assets/img/product/stand-and-move-poster.jpg" style="width:100%;display:block;border-radius:10px"><source src="../assets/video/stand-and-move.mp4" type="video/mp4" /></video></figure>
+        <div class="mb-modal__text"><p>De EZER sta-rolstoel is een rolstoel om in te zitten en een stahulp in één. Sta op om ergens bij te komen, op ooghoogte te praten of te werken, en blijf bewegen terwijl je staat.</p></div>
         <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Plan een demo</a></div>
       </div>
     </dialog>
@@ -2505,7 +2488,7 @@ bt.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)
   var last=null;
   function open(id,btn){ var d=document.getElementById('mb-'+id); if(!d||!d.showModal) return; last=btn; d.showModal(); document.body.classList.add('mb-lock'); d.scrollTop=0; var v=d.querySelector('.mb-modal__vid'); if(v){ v.currentTime=0; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } }
   function close(d){ d.close(); }
-  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ var v=d.querySelector('.mb-modal__vid'); if(v) v.pause(); }); });
+  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ d.querySelectorAll('video').forEach(function(v){ v.pause(); }); d.querySelectorAll('iframe').forEach(function(f){ var s=f.getAttribute('src'); if(s){ f.setAttribute('src','about:blank'); setTimeout(function(){ f.setAttribute('src',s); },50); } }); }); });
   cards.forEach(function(c){ c.addEventListener('click',function(){ open(c.getAttribute('data-mb'),c); }); if(c.getAttribute('role')==='button') c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(c.getAttribute('data-mb'),c); } }); });
   document.querySelectorAll('.mb-modal').forEach(function(d){
     d.querySelector('.mb-modal__close').addEventListener('click',function(){ close(d); });

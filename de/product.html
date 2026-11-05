@@ -451,7 +451,7 @@
     .mb__head h2 { font-size:clamp(36px,4vw,52px); font-weight:800; letter-spacing:-.02em; line-height:1.1; color:var(--black); }
     .mb__sub { margin-top:10px; font-size:calc(22px * var(--ts)); font-weight:700; color:var(--black); }
     .mb__lead { margin-top:8px; font-size:calc(16px * var(--ts)); color:#555; }
-    .mb__row { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
+    .mb__row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
     .mb-card { position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; text-align:left; display:flex; align-items:flex-end; padding:22px; color:#fff; isolation:isolate; transition:transform .35s ease, box-shadow .35s ease; }
     .mb-card::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%); transition:opacity .3s; }
     .mb-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.22); }
@@ -1904,7 +1904,7 @@
       </div>
       <div class="mb__row">
         <button aria-haspopup="dialog" aria-label="Komfort — mehr erfahren" class="mb-card" data-mb="convenience" style="background-image:url('../assets/img/product/benefit-convenience.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">Komfort</div><div class="mb-card__sub">Anpassbar, damit er zu Ihnen passt.</div><div class="mb-card__keys"><div>Anpassbare Komponenten</div><div>Gewicht und Größe</div></div></div>
+          <div class="mb-card__txt"><div class="mb-card__title">Komfort</div><div class="mb-card__sub">Anpassbar, damit er zu Ihnen passt.</div><div class="mb-card__keys"><div>Anpassbar</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Sicherheit — mehr erfahren" class="mb-card" data-mb="safety" style="background-image:url('../assets/img/product/benefit-safety.jpg')" type="button">
@@ -1912,15 +1912,11 @@
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Effizienz — mehr erfahren" class="mb-card" data-mb="efficiency" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">Effizienz</div><div class="mb-card__sub">Sofort aufstehen und hinsetzen</div><div class="mb-card__keys"><div>Sich stehend fortbewegen</div><div>2-in-1-Lösung</div></div></div>
+          <div class="mb-card__txt"><div class="mb-card__title">Effizienz</div><div class="mb-card__sub">Sitzen, Stehen und Bewegen im Stehen</div><div class="mb-card__keys"><div>2-in-1-Lösung</div><div>Alltagsrollstuhl</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
         <button aria-haspopup="dialog" aria-label="Design — mehr erfahren" class="mb-card" data-mb="design" style="background-image:url('../assets/img/product/benefit-design.jpg')" type="button">
           <div class="mb-card__txt"><div class="mb-card__title">Design</div><div class="mb-card__sub">Premium mechanisches Design</div><div class="mb-card__keys"><div>Keine Batterien</div><div>Leichtgewicht</div></div></div>
-          <span aria-hidden="true" class="mb-card__plus"></span>
-        </button>
-        <button aria-haspopup="dialog" aria-label="Sitzen, stehen und fahren — mehr erfahren" class="mb-card" data-mb="standmove" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')" type="button">
-          <div class="mb-card__txt"><div class="mb-card__title">2-in-1</div><div class="mb-card__sub">Sitzen, Stehen und Bewegen im Stehen</div><div class="mb-card__keys"><div>Alltagsrollstuhl</div><div>Stehen und fahren</div></div></div>
           <span aria-hidden="true" class="mb-card__plus"></span>
         </button>
       </div>
@@ -1938,19 +1934,6 @@
         <p class="mb-modal__lede">Anpassbar, damit er zu Ihnen passt.</p>
         <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/benefit-convenience.jpg"/></figure>
         <div class="mb-modal__text"><p>Anpassbare Komponenten und verstellbare Unterstützung helfen, den EZER Stehrollstuhl auf Ihre Größe, Ihren Körperbau und Ihre alltäglichen Bedürfnisse abzustimmen. Eine persönliche Passform sorgt für Komfort und Kontrolle, ob Sie sitzen, stehen oder sich fortbewegen.</p></div>
-        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
-      </div>
-    </dialog>
-    <dialog aria-labelledby="mb-standmove-t" class="mb-modal" id="mb-standmove">
-      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
-      <div aria-label="Ein Mann steht und fährt in seinem EZER in einem Supermarkt" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')">
-        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/img/product/stand-and-move-poster.jpg" preload="none"><source src="../assets/video/stand-and-move.mp4" type="video/mp4"/></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-standmove-t">Sitzen, Stehen und Bewegen im Stehen</h3></div>
-      </div>
-      <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>2-in-1-Lösung</div><div>Sich stehend fortbewegen</div></div>
-        <p class="mb-modal__lede">Ihr Alltagsrollstuhl. Eine völlig neue Perspektive.</p>
-        <div class="mb-modal__text"><p>Der EZER Stehrollstuhl ist Rollstuhl und Stehhilfe in einem. Stehen Sie auf, um etwas zu erreichen, auf Augenhöhe zu sprechen oder zu arbeiten, und bleiben Sie im Stehen in Bewegung.</p></div>
         <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
       </div>
     </dialog>
@@ -1974,14 +1957,14 @@
       <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
       <div aria-label="Ein Mann arbeitet in seinem EZER am Schreibtisch" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')">
         <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/webflow/erik-poster.jpg" preload="none"><source src="../assets/video/webflow/erik.mp4" type="video/mp4"/></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Sofort aufstehen und hinsetzen</h3></div>
+        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Effizienz</h3><p>Sitzen, Stehen und Bewegen im Stehen</p></div>
       </div>
       
       <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>3 Sekunden zum Aufstehen</div><div>3 Sekunden zum Hinsetzen</div><div>Kein Umsteigen auf ein anderes Gerät</div></div>
-        <p class="mb-modal__lede">Vom Sitzen zum Stehen in einer fließenden Bewegung</p>
-        <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/hero-1.jpg"/></figure>
-        <div class="mb-modal__text"><p>Wechseln Sie zwischen Sitzen und Stehen, wann immer Ihre nächste Aktivität es erfordert. Das mechanische System des EZER Stehrollstuhls lässt Sie die Position ändern, ohne auf ein anderes Gerät umzusteigen, sodass Sie mehr Zeit für das haben, was zählt.</p></div>
+        <div class="mb-modal__keys"><div>2-in-1-Lösung</div><div>Alltagsrollstuhl</div><div>Kein Umsteigen auf ein anderes Gerät</div></div>
+        <p class="mb-modal__lede">Ihr Alltagsrollstuhl. Eine völlig neue Perspektive.</p>
+        <figure class="mb-modal__fig"><video muted loop playsinline controls preload="none" poster="../assets/img/product/stand-and-move-poster.jpg" style="width:100%;display:block;border-radius:10px"><source src="../assets/video/stand-and-move.mp4" type="video/mp4" /></video></figure>
+        <div class="mb-modal__text"><p>Der EZER Stehrollstuhl ist Rollstuhl und Stehhilfe in einem. Stehen Sie auf, um etwas zu erreichen, auf Augenhöhe zu sprechen oder zu arbeiten, und bleiben Sie im Stehen in Bewegung.</p></div>
         <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
       </div>
     </dialog>
@@ -2508,7 +2491,7 @@ bt.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)
   var last=null;
   function open(id,btn){ var d=document.getElementById('mb-'+id); if(!d||!d.showModal) return; last=btn; d.showModal(); document.body.classList.add('mb-lock'); d.scrollTop=0; var v=d.querySelector('.mb-modal__vid'); if(v){ v.currentTime=0; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } }
   function close(d){ d.close(); }
-  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ var v=d.querySelector('.mb-modal__vid'); if(v) v.pause(); }); });
+  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ d.querySelectorAll('video').forEach(function(v){ v.pause(); }); d.querySelectorAll('iframe').forEach(function(f){ var s=f.getAttribute('src'); if(s){ f.setAttribute('src','about:blank'); setTimeout(function(){ f.setAttribute('src',s); },50); } }); }); });
   cards.forEach(function(c){ c.addEventListener('click',function(){ open(c.getAttribute('data-mb'),c); }); if(c.getAttribute('role')==='button') c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(c.getAttribute('data-mb'),c); } }); });
   document.querySelectorAll('.mb-modal').forEach(function(d){
     d.querySelector('.mb-modal__close').addEventListener('click',function(){ close(d); });
