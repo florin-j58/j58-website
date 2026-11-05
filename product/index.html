@@ -452,7 +452,7 @@
     .mb__head h2 { font-size:clamp(36px,4vw,52px); font-weight:800; letter-spacing:-.02em; line-height:1.1; color:var(--black); }
     .mb__sub { margin-top:10px; font-size:calc(22px * var(--ts)); font-weight:700; color:var(--black); }
     .mb__lead { margin-top:8px; font-size:calc(16px * var(--ts)); color:#555; }
-    .mb__row { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
+    .mb__row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
     .mb-card { position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; text-align:left; display:flex; align-items:flex-end; padding:22px; color:#fff; isolation:isolate; transition:transform .35s ease, box-shadow .35s ease; }
     .mb-card::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%); transition:opacity .3s; }
     .mb-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.22); }
@@ -1916,12 +1916,8 @@
           <div class="mb-card__txt"><div class="mb-card__title">Safety</div><div class="mb-card__sub">Patented safety</div><div class="mb-card__keys"><div>Wider wheelbase</div><div>Locks in position</div></div></div>
           <span class="mb-card__plus" aria-hidden="true"></span>
         </button>
-        <button class="mb-card" type="button" data-mb="efficiency" aria-haspopup="dialog" aria-label="Sit and stand — learn more" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')">
-          <div class="mb-card__txt"><div class="mb-card__title">Sit and stand</div><div class="mb-card__sub">Instant standing and sitting</div><div class="mb-card__keys"><div>3 seconds to stand</div><div>No transfer needed</div></div></div>
-          <span class="mb-card__plus" aria-hidden="true"></span>
-        </button>
-        <button class="mb-card" type="button" data-mb="standmove" aria-haspopup="dialog" aria-label="Move while standing — learn more" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')">
-          <div class="mb-card__txt"><div class="mb-card__title">Move while standing</div><div class="mb-card__sub">Keep moving at eye level</div><div class="mb-card__keys"><div>Everyday wheelchair</div><div>Stand and move</div></div></div>
+        <button class="mb-card" type="button" data-mb="efficiency" aria-haspopup="dialog" aria-label="Efficiency — learn more" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')">
+          <div class="mb-card__txt"><div class="mb-card__title">Efficiency</div><div class="mb-card__sub">Sit, stand and move while standing</div><div class="mb-card__keys"><div>2-in-1 solution</div><div>Everyday wheelchair</div></div></div>
           <span class="mb-card__plus" aria-hidden="true"></span>
         </button>
         <button class="mb-card" type="button" data-mb="design" aria-haspopup="dialog" aria-label="Design — learn more" style="background-image:url('../assets/img/product/benefit-design.jpg')">
@@ -1946,19 +1942,6 @@
         <div class="mb-modal__cta"><a class="ph-demo" href="../book-a-demo/index.html">Book a demo</a></div>
       </div>
     </dialog>
-    <dialog class="mb-modal" id="mb-standmove" aria-labelledby="mb-standmove-t">
-      <button class="mb-modal__close" type="button" aria-label="Close"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
-      <div class="mb-modal__hero" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')" role="img" aria-label="A man standing and moving in his EZER in a supermarket">
-        <video class="mb-modal__vid" muted loop playsinline preload="none" poster="../assets/img/product/stand-and-move-poster.jpg"><source src="../assets/video/stand-and-move.mp4" type="video/mp4" /></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-standmove-t">Move while standing</h3></div>
-      </div>
-      <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>Everyday wheelchair</div><div>Stand and move</div><div>Eye level, hands free</div></div>
-        <p class="mb-modal__lede">Your everyday wheelchair. A whole new perspective.</p>
-        <div class="mb-modal__text"><p>Once you are up, you do not have to stop. Keep moving while you stand to reach, talk at eye level or work, and sit down again whenever you like. One EZER is your wheelchair for sitting and your standing device in one.</p></div>
-        <div class="mb-modal__cta"><a class="ph-demo" href="../book-a-demo/index.html">Book a demo</a></div>
-      </div>
-    </dialog>
 
     <dialog class="mb-modal" id="mb-safety" aria-labelledby="mb-safety-t">
       <button class="mb-modal__close" type="button" aria-label="Close"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
@@ -1979,14 +1962,14 @@
       <button class="mb-modal__close" type="button" aria-label="Close"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
       <div class="mb-modal__hero" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')" role="img" aria-label="A man working at his desk in his EZER">
         <video class="mb-modal__vid" muted loop playsinline preload="none" poster="../assets/video/webflow/erik-poster.jpg"><source src="../assets/video/webflow/erik.mp4" type="video/mp4" /></video>
-        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Sit and stand</h3></div>
+        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Efficiency</h3><p>Sit, stand and move while standing</p></div>
       </div>
       
       <div class="mb-modal__body">
-        <div class="mb-modal__keys"><div>3 seconds to stand</div><div>3 seconds to sit</div><div>No transfer to another device</div></div>
-        <p class="mb-modal__lede">Instant standing and sitting, in one smooth movement</p>
-        <figure class="mb-modal__fig"><img src="../assets/img/product/hero-1.jpg" alt="Two people in a library, one standing in the EZER next to the other reading a book" loading="lazy" /></figure>
-        <div class="mb-modal__text"><p>Move between sitting and standing whenever your next activity calls for it. The EZER standing wheelchair’s mechanical system lets you change position without transferring to another device, so you can spend more time doing what matters.</p></div>
+        <div class="mb-modal__keys"><div>2-in-1 solution</div><div>Everyday wheelchair</div><div>No transfer to another device</div></div>
+        <p class="mb-modal__lede">Your everyday wheelchair. A whole new perspective.</p>
+        <figure class="mb-modal__fig"><video muted loop playsinline controls preload="none" poster="../assets/img/product/stand-and-move-poster.jpg" style="width:100%;display:block;border-radius:10px"><source src="../assets/video/stand-and-move.mp4" type="video/mp4" /></video></figure>
+        <div class="mb-modal__text"><p>Once you are up, you do not have to stop. Keep moving while you stand to reach, talk at eye level or work, and sit down again whenever you like. One EZER is your wheelchair for sitting and your standing device in one.</p></div>
         <div class="mb-modal__cta"><a class="ph-demo" href="../book-a-demo/index.html">Book a demo</a></div>
       </div>
     </dialog>
