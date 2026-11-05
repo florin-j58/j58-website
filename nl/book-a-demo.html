@@ -3,21 +3,24 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#12aaba" name="theme-color"/>
-  <title>Plan een demo — Probeer de EZER | J58</title>
-  <meta content="Plan een persoonlijke demo van de EZER sta-rolstoel. Ervaar zelf hoe het is om staand mobiel te zijn, bij jou in de buurt." name="description"/>
+  <title>Demo aanvragen — probeer de EZER | J58</title>
+  <meta content="Vraag een persoonlijke demo van de EZER sta-rolstoel aan. Ervaar staande mobiliteit uit eerste hand, bij jou in de buurt." name="description"/>
   <meta content="website" property="og:type"/>
-  <meta content="Plan een demo | J58" property="og:title"/>
-  <meta content="Ervaar de EZER sta-rolstoel zelf." property="og:description"/>
+  <meta content="Demo aanvragen | J58" property="og:title"/>
+  <meta content="Ervaar de EZER sta-rolstoel uit eerste hand." property="og:description"/>
   <meta content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" property="og:image"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
   <link href="../assets/css/site.css" rel="stylesheet"/>
   <link href="../assets/css/nav.css" rel="stylesheet"/>
+  <link href="../assets/css/forms.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
   <link href="../assets/css/theme.css?v=3" rel="stylesheet"/>
   <link href="../assets/css/design-system.css?v=5" rel="stylesheet"/>
+<link href="../assets/css/bro-banner.css" rel="stylesheet"/>
 <link href="../assets/css/footer.css" rel="stylesheet"/>
+<link href="../assets/css/form-cx.css" rel="stylesheet"/>
 <script src="../assets/js/lang.js"></script>
 <script src="../assets/js/consent.js" defer></script>
 <script src="../assets/js/coming-soon.js" defer></script>
@@ -28,6 +31,7 @@
 <link rel="alternate" hreflang="de" href="https://www.j58.eu/de/book-a-demo.html" />
 <link rel="alternate" hreflang="nl" href="https://www.j58.eu/nl/book-a-demo.html" />
 <link rel="alternate" hreflang="x-default" href="https://www.j58.eu/book-a-demo/index.html" />
+<style>.cx-side::after{display:none}.cx-side .cx-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;border-radius:inherit;display:block}.cx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
@@ -91,50 +95,64 @@
   <main id="main" role="main">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Plan een demo</p>
-        <h1>Probeer de EZER zelf<span class="dot">.</span></h1>
-        <p>Wil je de EZER proberen? Vul het formulier in en we nemen contact met je op. Demolocatie: De Hems 10, 7522 NL Enschede.</p>
+        <p class="eyebrow">Demo aanvragen</p>
+        <h1>Probeer de EZER zelf uit<span class="dot">.</span></h1>
+        <p>Ervaar staan en bewegen uit eerste hand. Vertel ons wie je bent en waar je woont, dan regelen we een persoonlijke demo bij jou in de buurt.</p>
       </div>
     </section>
 
-    <section class="section">
+    <section aria-labelledby="cx-h" class="section cx-section">
+      <div class="container cx-wrap">
+        <aside class="cx-side" id="cxSide" aria-labelledby="cx-h"><img class="cx-photo" src="../assets/img/ezer-side.jpg" alt="Een vrouw staat rechtop in de EZER sta-rolstoel voor een boekenwand" loading="lazy"><h2 id="cx-h" class="cx-sr">Laten we praten.</h2></aside>
+
+        <form aria-label="Demoformulier" class="cx reveal reveal-delay-1" id="cx" novalidate="">
+          <div class="cx-ok" hidden="" id="cxOk" role="status" tabindex="-1">
+            <div class="cx-ok-ic"><svg fill="none" height="34" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="34"><path d="M5 12l5 5L20 7"></path></svg></div>
+            <h3>Bedankt<span class="dot">.</span></h3>
+            <p id="cxOkMsg">We hebben je demo-aanvraag ontvangen en nemen snel contact op om een moment te plannen.</p>
+            <button class="btn-secondary" id="cxAgain" type="button">Nog een aanvraag versturen</button>
+          </div>
+          <div class="cx-body" id="cxBody">
+          <fieldset class="cx-fs"><legend>Waarmee kunnen we je helpen?<span class="cx-req">*</span></legend><div class="cx-chips"><label class="cx-chip"><input type="radio" name="topic" value="For me or someone I care for" required><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.500" r="2"/><path d="M12 7v6h5l2 5M9 10a5 5 0 1 0 6 7"/></svg>Voor mezelf of iemand om wie ik geef</span></label><label class="cx-chip"><input type="radio" name="topic" value="Healthcare professional or therapist"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a4 4 0 0 0 8 0v-1"/><circle cx="18" cy="12" r="2"/></svg>Zorgprofessional of therapeut</span></label><label class="cx-chip"><input type="radio" name="topic" value="Becoming a distributor"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.500-5h15L21 9M3 9h18M3 9v11h18V9M9 20v-6h6v6"/></svg>Distributeur worden</span></label><label class="cx-chip"><input type="radio" name="topic" value="Other"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg>Overig</span></label></div><p class="cx-err" data-for="topic">Kies één optie.</p></fieldset>
+
+          <div class="cx-grid">
+            <div class="cx-f"><input autocomplete="given-name" id="cx-first" name="first" placeholder=" " required="" type="text"/><label for="cx-first">Voornaam<span class="cx-req">*</span></label><p class="cx-err">Vul je voornaam in.</p></div>
+            <div class="cx-f"><input autocomplete="family-name" id="cx-last" name="last" placeholder=" " required="" type="text"/><label for="cx-last">Achternaam<span class="cx-req">*</span></label><p class="cx-err">Vul je achternaam in.</p></div>
+            <div class="cx-f cx-full"><input autocomplete="email" id="cx-email" name="email" placeholder=" " required="" type="email"/><label for="cx-email">E-mailadres<span class="cx-req">*</span></label><p class="cx-err">Vul een geldig e-mailadres in.</p></div>
+            <div class="cx-f cx-full cx-phone"><select aria-label="Landnummer" class="cx-dial" name="dial"><option value="+31">Nederland (+31)</option><option value="+49">Duitsland (+49)</option><option value="+32">België (+32)</option><option value="+33">Frankrijk (+33)</option><option value="+34">Spanje (+34)</option><option value="+351">Portugal (+351)</option><option value="+39">Italië (+39)</option><option value="+43">Oostenrijk (+43)</option><option value="+41">Zwitserland (+41)</option><option value="+44">Verenigd Koninkrijk (+44)</option><option value="+45">Denemarken (+45)</option><option value="+46">Zweden (+46)</option><option value="+47">Noorwegen (+47)</option><option value="+358">Finland (+358)</option><option value="+48">Polen (+48)</option><option value="+61">Australië (+61)</option><option value="+55">Brazilië (+55)</option><option value="+1">Verenigde Staten / Canada (+1)</option></select><div class="cx-f cx-inner"><input autocomplete="tel-national" id="cx-phone" name="phone" placeholder=" " required="" type="tel"/><label for="cx-phone">Telefoonnummer<span class="cx-req">*</span></label><p class="cx-err">Vul je telefoonnummer in.</p></div></div>
+            
+            <div class="cx-f cx-full"><input autocomplete="country-name" id="cx-country" name="country" placeholder=" " required="" type="text"/><label for="cx-country">Land<span class="cx-req">*</span></label><p class="cx-err">Vul je land in.</p></div>
+            <div class="cx-f"><input autocomplete="address-level2" id="cx-city" name="city" placeholder=" " required="" type="text"/><label for="cx-city">Plaats<span class="cx-req">*</span></label><p class="cx-err">Vul je plaats in.</p></div>
+            <div class="cx-f"><input autocomplete="postal-code" id="cx-post" name="postcode" placeholder=" " required="" type="text"/><label for="cx-post">Postcode<span class="cx-req">*</span></label><p class="cx-err">Vul je postcode in.</p></div>
+            <div class="cx-f cx-full"><textarea id="cx-msg" maxlength="1500" name="message" placeholder=" " required="" rows="5"></textarea><label for="cx-msg">Is er iets dat we moeten weten?<span class="cx-req">*</span></label><span class="cx-count" id="cxCount">0 / 1500</span><p class="cx-err">Vertel ons wat meer.</p></div>
+          </div>
+          <input aria-hidden="true" autocomplete="off" class="cx-hp" name="company_website" tabindex="-1" type="text"/>
+          <label class="cx-chk"><input name="consent" required="" type="checkbox"/><span>Ik ga ermee akkoord dat J58 bovenstaande gegevens opslaat en verwerkt om mijn demo te regelen.<span class="cx-req">*</span> Lees ons <a href="#">privacybeleid</a>.</span></label>
+          <p class="cx-err" data-for="consent">Accepteer dit zodat we je kunnen antwoorden.</p>
+          <button class="cx-submit" id="cxSubmit" type="submit"><span>Demo aanvragen</span><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.200" viewBox="0 0 24 24" width="20"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+  </main>
+
+    <section aria-labelledby="bro-h" class="bro bro--home">
       <div class="container">
-        <div class="split" style="align-items:flex-start">
-          <div class="reveal">
-            <h2 style="font-size:1.6rem;color:var(--navy);margin-bottom:16px">Wat kun je verwachten<span class="dot">.</span></h2>
-            <div class="steps">
-              <div class="step"><div class="step-num"></div><div><h3>Vertel ons over jezelf</h3><p>Deel een paar gegevens, zodat wij ons kunnen voorbereiden.</p></div></div>
-              <div class="step"><div class="step-num"></div><div><h3>Wij nemen contact op</h3><p>We plannen een moment en plek die jou uitkomen.</p></div></div>
-              <div class="step"><div class="step-num"></div><div><h3>Ervaar staan</h3><p>Probeer de EZER met begeleiding — zonder druk, zonder verplichtingen.</p></div></div>
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">Ervaar de EZER zelf<span class="dot">.</span></h2>
+            <p>Ontdek hoe staand bewegen werkt. Plan een persoonlijke demo en ervaar staande mobiliteit uit eerste hand.</p>
+            <div class="bro-actions">
+              <a class="bro-btn bro-btn--primary" href="book-a-demo.html">Plan een demo</a>
+              <a class="bro-btn bro-btn--ghost" href="brochure.html">Vraag de brochure aan</a>
             </div>
           </div>
-          <div class="reveal reveal-delay-1">
-            <form aria-label="Plan een demo" class="form" data-send style="margin:0">
-              <p class="form-success" hidden="" role="status" style="background:var(--blue-light);color:var(--blue-dark);padding:14px 18px;border-radius:12px;font-weight:600" tabindex="-1">Bedankt! Je aanvraag is ontvangen!</p>
-              <div class="form-row">
-                <div class="field"><label for="fname">Voornaam <span class="req">*</span></label><input autocomplete="given-name" id="fname" name="fname" required="" type="text"/></div>
-                <div class="field"><label for="lname">Achternaam <span class="req">*</span></label><input autocomplete="family-name" id="lname" name="lname" required="" type="text"/></div>
-              </div>
-              <div class="form-row">
-                <div class="field"><label for="email">E-mail <span class="req">*</span></label><input autocomplete="email" id="email" name="email" required="" type="email"/></div>
-                <div class="field"><label for="phone">Telefoon</label><input autocomplete="tel" id="phone" name="phone" type="tel"/></div>
-              </div>
-              <div class="field"><label for="role">Kies er één…</label>
-                <select id="role" name="role">
-                  <option>Voor particulieren</option><option>Voor bedrijven</option><option>Voor leveranciers</option><option>Iets anders</option>
-                </select>
-              </div>
-              <div class="field"><label for="hear">Waar heb je van ons gehoord?</label><select id="hear" name="hear"><option value="">Kies er één…</option><option>Instagram/Facebook</option><option>TikTok</option><option>E-mail of nieuwsbrief</option><option>YouTube</option><option>LinkedIn</option><option>Mond-tot-mondreclame</option><option>Zoekmachine</option><option>Anders</option></select></div>
-              <div class="field"><label for="msg">Is er nog iets dat we moeten weten?</label><textarea id="msg" name="msg"></textarea></div>
-              <label class="form-consent"><input required="" type="checkbox"/> <span>Ik ga akkoord met contact over mijn demo-aanvraag en accepteer het privacybeleid. <span class="req">*</span></span></label>
-              <button class="btn-primary btn-lg" type="submit">Vraag mijn demo aan</button>
-              <p class="field-hint">Dit formulier is beveiligd tegen spam. We delen je gegevens nooit.</p>
-            </form>
-          </div>
+          <div class="bro-photo" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"></div>
         </div>
       </div>
     </section>
-  </main>
 
   <footer aria-label="Voettekst van de site" class="ds-footer" role="contentinfo">
     <div class="ds-footer__wrap">
@@ -171,10 +189,53 @@
     </div>
   </footer>
   <script src="../assets/js/site.js"></script>
+<script>
+(function(){
+  var r=document.querySelectorAll('input[name="delivery"]'),box=document.getElementById('postFields');
+  if(r.length&&box){r.forEach(function(x){x.addEventListener('change',function(){
+    var post=document.querySelector('input[name="delivery"]:checked').value==='post';
+    box.classList.toggle('open',post);
+    box.querySelectorAll('input').forEach(function(i){i.required=post;});
+  });});}
+  var d=document.getElementById('dialSel'),p=document.getElementById('phoneIn');
+  if(d&&p){d.addEventListener('change',function(){if(d.value)p.value=d.value;});}
+})();
+</script>
 <script defer="" src="../assets/js/cursor.js"></script>
+<script src="../assets/js/form-send.js"></script>
+<script>(function(){
+var TO="info@j58.eu",f=document.getElementById('cx'),body=document.getElementById('cxBody'),ok=document.getElementById('cxOk'),btn=document.getElementById('cxSubmit'),msg=document.getElementById('cx-msg'),cnt=document.getElementById('cxCount');
+msg.addEventListener('input',function(){cnt.textContent=msg.value.length+' / 1500'});
+function bad(el,on){var w=el.closest('.cx-f');if(w)w.classList.toggle('bad',on)}
+function check(){var okAll=true,first=null;
+['first','last','email','phone','country','city','postcode','message'].forEach(function(n){var el=f.elements[n],v=el.value.trim(),good=!!v;if(n==='email')good=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v);bad(el,!good);if(!good){okAll=false;first=first||el}});
+var t=f.querySelector('input[name=topic]:checked'),fs=f.querySelector('.cx-fs');fs.classList.toggle('bad',!t);if(!t){okAll=false;first=first||fs.querySelector('input')}
+var c=f.elements.consent,ce=f.querySelector('[data-for=consent]');ce.classList.toggle('show',!c.checked);if(!c.checked){okAll=false;first=first||c}
+if(first)first.focus({preventScroll:false});return okAll}
+f.addEventListener('input',function(e){if(e.target.closest('.cx-f'))bad(e.target,false)});
+f.addEventListener('change',function(e){if(e.target.name==='topic')f.querySelector('.cx-fs').classList.remove('bad');if(e.target.name==='consent')f.querySelector('[data-for=consent]').classList.remove('show')});
+f.addEventListener('submit',function(e){e.preventDefault();if(f.elements.company_website.value)return;if(!check())return;
+var d={};new FormData(f).forEach(function(v,k){d[k]=v});var phone=(d.dial||'')+' '+(d.phone||'');
+var text='Topic: '+d.topic+'\nName: '+d.first+' '+d.last+'\nEmail: '+d.email+'\nPhone: '+phone+'\nCountry: '+d.country+'\nCity: '+d.city+' '+d.postcode+'\n\n'+d.message;
+function done(m){body.hidden=true;ok.hidden=false;if(m)document.getElementById('cxOkMsg').textContent=m;ok.focus();ok.scrollIntoView({behavior:'smooth',block:'center'})}
+btn.disabled=true;btn.firstElementChild.textContent='Verzenden…';
+J58Form.send({form:'Book a demo (NL)',subject:'Demo-aanvraag via website: '+d.topic,text:text,data:d}).then(function(r){done(r==='sent'?'':J58Form.mailMsg);btn.disabled=false;btn.firstElementChild.textContent='Demo aanvragen'});});
+document.getElementById('cxAgain').addEventListener('click',function(){f.reset();cnt.textContent='0 / 1500';ok.hidden=true;body.hidden=false});
+})();</script>
+<script>(function(){var side=document.getElementById('cxSide'),form=document.getElementById('cx');if(!side||!form)return;
+var chars=[].slice.call(side.querySelectorAll('.cx-c')),trail=document.getElementById('cxTrail'),wheel=document.getElementById('cxWheel'),spin=document.getElementById('cxSpin'),typing=side.querySelector('.cx-typing'),R=170,C=2*Math.PI*R,cx=200,cy=260,last=0,spd=1,raf=0;
+if(!trail||!wheel||!spin)return;trail.style.strokeDasharray=C;trail.style.strokeDashoffset=C;
+function upd(){raf=0;var r=form.getBoundingClientRect(),vh=innerHeight,p=Math.min(1,Math.max(0,(vh*.55-r.top)/(r.height*.9)));
+var ang=-Math.PI/2+p*2*Math.PI;wheel.setAttribute('transform','translate('+(cx+R*Math.cos(ang))+' '+(cy+R*Math.sin(ang))+')');spin.setAttribute('transform','rotate('+(p*2600)+')');
+trail.style.strokeDashoffset=C*(1-p);
+chars.forEach(function(c,i){c.classList.toggle('on',p>(i+.4)/(chars.length+.6))});
+var y=scrollY,v=Math.min(3,Math.abs(y-last)/18);last=y;typing.style.setProperty('--spd',1+v)}
+function req(){if(!raf)raf=requestAnimationFrame(upd)}
+addEventListener('scroll',req,{passive:true});addEventListener('resize',req);upd();
+form.addEventListener('input',function(){var f=form.querySelectorAll('input[type=text],input[type=email],select,textarea'),n=0;f.forEach(function(x){if(x.value)n++});side.style.setProperty('--fill',n/f.length)});
+})();</script>
 <script src="../assets/js/a11y.js"></script>
 <script src="../assets/js/nav-dd.js?v=4"></script>
 
 
-<script src="../assets/js/form-send.js"></script>
 </body></html>
