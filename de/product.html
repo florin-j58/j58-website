@@ -1,0 +1,2596 @@
+<!DOCTYPE html>
+<html data-page="product.html" lang="de"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Der Ezer — der erste mechanische Stehrollstuhl der Welt. Gleichzeitig stehen und fahren, ganz ohne Akkus. Reine niederländische Ingenieurskunst." name="description"/>
+  <meta content="#12aaba" name="theme-color"/>
+  <title>Ezer Produkt | J58 — Der Stehrollstuhl</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --blue:        #12aaba;
+      --blue-dark:   #0d8a9a;
+      --blue-light:  #e6f7f9;
+      --blue-mid:    #a8e4ea;
+      --navy:        #0B1D35;
+      --navy-mid:    #132849;
+      --white:       #FFFFFF;
+      --off-white:   #F8FAFC;
+      --gray-50:     #F5F5F5;
+      --gray-100:    #F0F0F0;
+      --gray-200:    #E2E8F0;
+      --gray-400:    #94A3B8;
+      --gray-600:    #475569;
+      --gray-900:    #0F172A;
+      --black:       #111111;
+
+      --ts: 1;
+
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  16px;
+      --radius-xl:  24px;
+
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:  0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+      --shadow-lg:  0 12px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+
+      --nav-h: 72px;
+      --toolbar-h: 40px;
+
+      --container: 1280px;
+      --container-pad: clamp(20px, 5vw, 80px);
+
+      --transition: 0.25s ease;
+    }
+
+    /* ============================================================
+       HIGH CONTRAST MODE
+    ============================================================ */
+    html.hc {
+      --blue:        #00d4e8;
+      --blue-dark:   #00b5c7;
+      --blue-light:  #001f23;
+      --navy:        #000000;
+      --white:       #FFFFFF;
+      --off-white:   #111111;
+      --gray-50:     #111111;
+      --gray-100:    #222222;
+      --gray-200:    #444444;
+      --gray-400:    #aaaaaa;
+      --gray-600:    #cccccc;
+      --gray-900:    #ffffff;
+      --black:       #ffffff;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: calc(16px * var(--ts));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: calc(18px * var(--ts));
+      line-height: 1.7;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       SKIP LINK
+    ============================================================ */
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 16px;
+      z-index: 10000;
+      background: var(--blue);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* ============================================================
+       ACCESSIBILITY TOOLBAR
+    ============================================================ */
+
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      transition: box-shadow var(--transition);
+    }
+    .nav-wrap.scrolled {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    nav {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-logo { flex-shrink: 0; }
+    .nav-logo img { height: 36px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      font-size: calc(14px * var(--ts));
+      font-weight: 500;
+      color: var(--gray-600);
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+    .nav-links a.active {
+      color: var(--blue);
+      background: var(--blue-light);
+      border-bottom: 2px solid var(--blue);
+    }
+
+    .nav-cta { flex-shrink: 0; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue);
+      color: var(--white) !important;
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: calc(14px * var(--ts));
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      border: 2px solid transparent;
+      min-height: 44px;
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(18, 170, 186, 0.35);
+    }
+    .btn-primary:active { transform: none; }
+
+    .btn-primary-lg {
+      padding: 16px 36px;
+      font-size: calc(16px * var(--ts));
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      color: var(--blue) !important;
+      border-radius: var(--radius-sm);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: calc(16px * var(--ts));
+      transition: background var(--transition), transform var(--transition);
+      border: 2px solid var(--white);
+      min-height: 44px;
+    }
+    .btn-white:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost-white {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--white) !important;
+      border: 2px solid var(--white);
+      border-radius: var(--radius-sm);
+      padding: 16px 36px;
+      font-weight: 700;
+      font-size: calc(16px * var(--ts));
+      transition: background var(--transition), transform var(--transition);
+      min-height: 44px;
+    }
+    .btn-ghost-white:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      border-radius: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--gray-900);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: calc(var(--toolbar-h) + var(--nav-h));
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 24px 24px;
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+    }
+    .mobile-drawer.open { display: block; }
+    .mobile-drawer a {
+      display: block;
+      padding: 12px 0;
+      font-size: calc(16px * var(--ts));
+      font-weight: 500;
+      color: var(--gray-900);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .mobile-drawer a:last-of-type { border-bottom: none; }
+    .mobile-drawer .mobile-cta { margin-top: 16px; }
+
+    @media (max-width: 1023px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
+    }
+
+    /* ============================================================
+       SECTION 1: HERO
+    ============================================================ */
+    .product-hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--gray-50);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 120px var(--container-pad) 80px;
+    }
+
+    .product-hero__photo {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: url('../assets/img/mission/p1.jpg') 70% 30% / cover no-repeat;
+    }
+    .product-hero__photo::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11,29,53,.72) 0%, rgba(11,29,53,.55) 45%, rgba(11,29,53,.88) 100%),
+        linear-gradient(90deg, rgba(11,29,53,.5) 0%, rgba(11,29,53,.15) 100%);
+    }
+    .product-hero .product-hero__label { color: rgba(255,255,255,.8) !important; }
+    .product-hero .product-hero__headline { color: #fff; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+    .product-hero .scroll-indicator__label { color: rgba(255,255,255,.75); }
+    .product-hero .scroll-indicator__line { background: rgba(255,255,255,.5); }
+
+    .product-hero__glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(18,170,186,0.14) 0%, rgba(18,170,186,0.05) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .product-hero__label {
+      position: relative;
+      z-index: 1;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-400);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .product-hero__headline {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 56px;
+    }
+
+    .product-hero__render {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .product-hero__render img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.10));
+    }
+
+
+    /* ---- Hero slider (3 rotating photos) ---- */
+    .product-hero { justify-content: flex-start; min-height: max(560px, calc(100vh - 40px)); min-height: max(560px, calc(100svh - 40px)); margin-top: -80px; padding: 150px var(--container-pad) 80px; background: var(--navy); }
+    .product-hero__photo::after { background:
+        linear-gradient(180deg, rgba(11,29,53,.10) 0%, rgba(11,29,53,.04) 35%, rgba(11,29,53,0) 48%, rgba(11,29,53,.10) 56%, rgba(11,29,53,.28) 66%, rgba(11,29,53,.52) 76%, rgba(11,29,53,.78) 86%, rgba(11,29,53,.94) 94%, var(--navy) 100%); }
+    .product-hero__glow { display:none; }
+    .product-hero__photo { background: none; }
+    .ph-slide { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transform:scale(1.06); transition:opacity 1.2s ease, transform 7s ease-out; }
+    .ph-slide.is-on { opacity:1; transform:scale(1); }
+    .product-hero__headline { margin-bottom: 28px; font-size: clamp(40px, 6.4vw, 76px); }
+    .product-hero__label { margin-bottom: 14px; }
+    .ph-bottom { position:absolute; left:50%; bottom:78px; transform:translateX(-50%); z-index:2; width:calc(100% - 48px); max-width:1000px; display:flex; flex-direction:column; align-items:center; text-align:center; }
+    .ph-bottom .product-hero__headline { margin-bottom:26px; }
+    .ph-cta { position:relative; z-index:2; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+    .ph-cta a { display:inline-flex; align-items:center; justify-content:center; min-width:200px; padding:13px 28px; border-radius:6px; font-weight:600; font-size:calc(15px * var(--ts)); text-decoration:none; transition:transform .2s, background .2s, box-shadow .2s; }
+    .ph-cta a:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.3); }
+    .ph-cta .ph-order { background: var(--blue); color:#fff; }
+    .ph-cta .ph-order:hover { background:#0e8e9c; }
+    .ph-cta .ph-demo { background:#fff; color:#0B1D35; }
+    .ph-arrow { position:absolute; z-index:3; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:4px; border:0; background:rgba(255,255,255,.85); color:#0B1D35; display:grid; place-items:center; cursor:pointer; transition:background .2s; }
+    .ph-arrow:hover { background:#fff; }
+    .ph-arrow svg { width:18px; height:18px; }
+    .ph-prev { left:24px; } .ph-next { right:24px; }
+    .ph-dots { position:absolute; z-index:3; left:50%; bottom:34px; transform:translateX(-50%); display:flex; gap:10px; }
+    .ph-dots button { width:10px; height:10px; padding:0; border-radius:50%; border:0; background:rgba(255,255,255,.45); cursor:pointer; transition:background .2s, transform .2s; }
+    .ph-dots button[aria-current="true"] { background:#fff; transform:scale(1.15); }
+    .product-hero .scroll-indicator { display:none; }
+    @media (max-width:640px){ .ph-arrow{display:none} .ph-cta a{min-width:150px;padding:12px 18px} }
+    @media (prefers-reduced-motion: reduce){ .ph-slide{transition:opacity .4s; transform:none} }
+
+
+    /* ---- Product benefits + pop-ups ---- */
+    .mb { background:var(--ds-cream,#F6F1E6); padding:100px 0 90px; }
+    .mb__head { text-align:center; padding:0 var(--container-pad); margin-bottom:48px; }
+    .mb__head h2 { font-size:clamp(36px,4vw,52px); font-weight:800; letter-spacing:-.02em; line-height:1.1; color:var(--black); }
+    .mb__sub { margin-top:10px; font-size:calc(22px * var(--ts)); font-weight:700; color:var(--black); }
+    .mb__lead { margin-top:8px; font-size:calc(16px * var(--ts)); color:#555; }
+    .mb__row { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; max-width:1480px; margin:0 auto; padding:0 var(--container-pad); }
+    .mb-card { position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; background-size:cover; background-position:center; text-align:left; display:flex; align-items:flex-end; padding:22px; color:#fff; isolation:isolate; transition:transform .35s ease, box-shadow .35s ease; }
+    .mb-card::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%); transition:opacity .3s; }
+    .mb-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.22); }
+    .mb-card:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
+    .mb-card__title { font-size:calc(28px * var(--ts)); font-weight:700; line-height:1.1; letter-spacing:-.01em; text-shadow:0 2px 14px rgba(0,0,0,.35); }
+    .mb-card__plus { position:absolute; top:16px; right:16px; width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.88); transition:background .2s, transform .3s; }
+    .mb-card__plus::before,.mb-card__plus::after { content:""; position:absolute; left:50%; top:50%; width:16px; height:2px; background:#12aaba; transform:translate(-50%,-50%); }
+    .mb-card__plus::after { transform:translate(-50%,-50%) rotate(90deg); }
+    .mb-card:hover .mb-card__plus { background:#fff; transform:rotate(90deg); }
+    .mb-modal { border:0; padding:0; width:min(1280px, calc(100vw - 48px)); max-width:none; max-height:calc(100vh - 48px); margin:auto; border-radius:8px; overflow:auto; background:#fff; color:var(--black); box-shadow:0 40px 100px rgba(0,0,0,.45); overscroll-behavior:contain; }
+    .mb-modal::backdrop { background:rgba(10,18,32,.62); backdrop-filter:blur(3px); }
+    .mb-modal[open] { animation:mbIn .35s cubic-bezier(.22,1,.36,1); }
+    .mb-modal[open]::backdrop { animation:mbFade .35s ease; }
+    @keyframes mbIn { from { opacity:0; transform:translateY(24px) scale(.98); } to { opacity:1; transform:none; } }
+    @keyframes mbFade { from { opacity:0; } to { opacity:1; } }
+    .mb-modal__hero { position:relative; min-height:50vh; background-size:cover; background-position:center; display:flex; align-items:flex-start; }
+    .mb-modal__hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.05) 45%,rgba(0,0,0,.1) 100%); }
+    .mb-modal__hero-txt { position:relative; z-index:1; padding:44px 56px; color:#fff; text-shadow:0 2px 20px rgba(0,0,0,.4); }
+    .mb-modal__hero-txt h3 { font-size:clamp(40px,5vw,64px); font-weight:700; line-height:1.05; letter-spacing:-.02em; }
+    .mb-modal__hero-txt p { margin-top:10px; font-size:calc(22px * var(--ts)); font-weight:500; }
+    .mb-modal__close { position:sticky; top:16px; float:right; margin:16px 16px -56px 0; height:40px; z-index:5; width:40px; height:40px; border-radius:50%; background:#fff; color:#1c2230; display:grid; place-items:center; box-shadow:0 4px 14px rgba(0,0,0,.2); transition:transform .2s; }
+    .mb-modal__close:hover { transform:scale(1.08); }
+    .mb-modal__close svg { width:16px; height:16px; }
+    .mb-modal__body { max-width:880px; margin:0 auto; padding:72px 28px 80px; text-align:center; }
+    .mb-modal__body h4 { font-size:clamp(26px,3vw,40px); font-weight:700; line-height:1.2; letter-spacing:-.01em; }
+    .mb-modal__body p { margin-top:22px; font-size:calc(18px * var(--ts)); line-height:1.65; color:#454c59; }
+    .mb-modal__body ul { list-style:none; margin:34px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .mb-modal__body li { padding:18px 14px; border-radius:10px; background:#f3f5f7; font-weight:600; font-size:calc(15px * var(--ts)); line-height:1.35; }
+    .mb-modal__cta { margin-top:40px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .mb-modal__cta a { display:inline-flex; justify-content:center; min-width:190px; padding:13px 26px; border-radius:6px; font-weight:600; text-decoration:none; }
+    .mb-modal__cta .ph-order { background:var(--blue); color:#fff; }
+    .mb-modal__cta .ph-demo { background:#0B1D35; color:#fff; }
+
+    /* card subtitle + keywords */
+    .mb-card__txt { display:flex; flex-direction:column; gap:6px; padding-right:48px; }
+    .mb-card__sub { font-size:calc(16px * var(--ts)); font-weight:600; line-height:1.25; text-shadow:0 2px 12px rgba(0,0,0,.4); }
+    .mb-card__keys { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+    .mb-card__keys div { font-size:calc(12px * var(--ts)); font-weight:600; padding:4px 10px; border-radius:999px; background:rgba(255,255,255,.18); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,.28); }
+    /* popup stats */
+    .mb-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:34px; }
+    .mb-stat { padding:26px 14px; border-radius:12px; background:#fff; border:1px solid rgba(11,29,53,.1); }
+    .mb-stat strong { display:block; font-size:clamp(34px,4.4vw,56px); line-height:1; font-weight:800; color:#0B1D35; letter-spacing:-.02em; }
+    .mb-stat span { display:block; margin-top:10px; font-size:calc(15px * var(--ts)); font-weight:600; color:#454c59; }
+    .mb-modal__body p + p { margin-top:14px; }
+    @media (max-width:640px){ .mb-stats { grid-template-columns:1fr; } }
+    .mb-modal__hero:has(.mb-modal__vid) { min-height:0; background:#000; } .mb-modal__vid { position:relative; display:block; width:100%; height:auto; max-height:92vh; object-fit:contain; margin:0 auto; } .mb-modal__hero:has(.mb-modal__vid) .mb-modal__hero-txt { position:absolute; top:0; left:0; right:0; } /* whole video frame visible, nothing cropped */
+    .mb-modal__body ul { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin-top:28px; }
+    .mb-modal__body li { padding:0; background:none; border-radius:0; font-size:calc(14px * var(--ts)); font-weight:600; color:#0B1D35; }
+    .mb-modal__body li + li::before { content:"\00b7"; margin-right:18px; color:var(--blue); font-weight:800; }
+    .mb-modal__body p strong { color:#0B1D35; }
+    .mb-modal__body { max-width:1100px; text-align:left; padding:36px 56px 72px; }
+    .mb-modal__lede { max-width:20em; margin:0 auto; text-align:center; font-size:clamp(24px,3vw,38px); font-weight:700; line-height:1.2; letter-spacing:-.015em; color:#0B1D35; }
+    .mb-modal__body p.mb-modal__lede { margin-top:0; font-size:clamp(24px,3vw,38px); color:#0B1D35; line-height:1.2; }
+    .mb-modal__fig { margin:44px auto; border-radius:10px; overflow:hidden; background:none; width:fit-content; max-width:100%; }
+    .mb-modal__fig img { width:auto; max-width:100%; height:auto; max-height:92vh; object-fit:contain; display:block; margin:0 auto; border-radius:10px; }
+    .mb-modal__text { max-width:880px; margin:0 auto; }
+    .mb-modal__text h4 { text-align:left; }
+    .mb-modal__text p { margin-top:14px; }
+    .mb-modal__text ul { justify-content:flex-start; }
+    .mb-modal__cta { margin-top:44px; }
+    @media (max-width:640px){ .mb-modal__body { padding:40px 20px 56px; } .mb-modal__fig { margin:30px 0; } }
+    .mb-modal__keys { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:0 0 30px; }
+    .mb-modal__keys div { font-size:calc(13px * var(--ts)); font-weight:600; padding:7px 16px; border-radius:999px; background:rgba(11,29,53,.06); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border:1px solid rgba(11,29,53,.16); color:#0B1D35; }
+    body.mb-lock { overflow:hidden; }
+    @media (max-width:1000px){ .mb__row { display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px; padding-bottom:10px; } .mb-card { flex:0 0 72%; scroll-snap-align:center; } }
+    @media (max-width:640px){ .mb-modal { width:100vw; max-height:100vh; border-radius:0; } .mb-modal__hero-txt { padding:28px 22px; } .mb-modal__hero { min-height:44vh; } .mb-modal__hero:has(.mb-modal__vid){min-height:0} .mb-modal__body ul { grid-template-columns:1fr; } .mb-modal__body { padding:48px 20px 56px; } }
+    @media (prefers-reduced-motion: reduce){ .mb-modal[open], .mb-modal[open]::backdrop { animation:none; } }
+
+
+    /* ---- Anatomy: decorations ---- */
+    .technical-diagram { position:relative; overflow:hidden; }
+    .td-wheel { position:absolute; width:84px; height:84px; color:#12aaba; right:7%; top:110px; opacity:.9; }
+    .td-wheel--b { width:56px; height:56px; left:6%; bottom:260px; right:auto; top:auto; opacity:.55; }
+    .td-spin { transform-origin:50% 50%; animation:tdSpin 8s linear infinite; }
+    .td-wheel--b .td-spin { animation-duration:5s; animation-direction:reverse; }
+    @keyframes tdSpin { to { transform:rotate(360deg); } }
+    .td-dots { position:absolute; width:104px; height:84px; color:#12aaba; pointer-events:none; }
+    .td-dots i { position:absolute; border-radius:50%; background:#12aaba; animation:tdDrift ease-in-out infinite alternate; }
+    @keyframes tdDrift { 0%{transform:translate(0,0)} 33%{transform:translate(var(--dx),calc(var(--dy)*-1))} 66%{transform:translate(calc(var(--dx)*-1),var(--dy))} 100%{transform:translate(calc(var(--dx)*.5),calc(var(--dy)*.5))} }
+    .td-dots--a { left:7%; top:150px; } .td-dots--b { right:8%; bottom:300px; }
+    @media (max-width:1000px){ .td-wheel,.td-dots { display:none; } }
+    @media (prefers-reduced-motion:reduce){ .td-spin,.td-dots i { animation:none; } }
+
+
+    /* anatomy: soft transitions in and out */
+    .technical-diagram { padding-top:150px; padding-bottom:110px; }
+    .cinematic::after { display:none; content:""; position:absolute; left:0; right:0; bottom:0; height:clamp(130px,20vh,220px); background:linear-gradient(180deg, rgba(11,29,53,0) 0%, rgba(11,29,53,.12) 12%, rgba(11,29,53,.35) 28%, rgba(11,29,53,.62) 46%, rgba(11,29,53,.85) 66%, rgba(11,29,53,.96) 84%, rgb(11,29,53) 100%); pointer-events:none; z-index:1; }
+
+
+    /* ---- hero in the style of the home page hero ---- */
+    .product-hero { justify-content:center; padding:120px clamp(24px,6vw,96px) 120px; }
+    .product-hero__photo::after { background:
+        radial-gradient(ellipse at 50% 48%, rgba(11,29,53,.42) 0%, rgba(11,29,53,.28) 55%, rgba(11,29,53,.16) 100%),
+        linear-gradient(180deg, rgba(11,29,53,0) 0%, rgba(11,29,53,0) 62%, rgba(11,29,53,.10) 68%, rgba(11,29,53,.28) 76%, rgba(11,29,53,.52) 84%, rgba(11,29,53,.78) 91%, rgba(11,29,53,.94) 96%, var(--navy) 100%); }
+    .ph-bottom { position:relative; left:auto; bottom:auto; transform:none; z-index:2; width:100%; max-width:1000px; margin-top:-40px; }
+    .ph-bottom .product-hero__headline { font-family:"Playfair Display",Georgia,serif; font-weight:500; font-size:clamp(2.6rem,6vw,5rem); line-height:1.02; letter-spacing:-.035em; max-width:11em; margin:0 auto 30px; color:#fff; }
+    .ph-bottom .product-hero__headline .dot { color:var(--blue); }
+    .ph-cta { gap:14px; }
+    .ph-cta a { min-width:0; gap:10px; padding:15px 24px; border-radius:10px; font-size:1rem; font-weight:500; line-height:1; }
+    .ph-cta a::after { content:"\2192"; font-size:1.2em; line-height:1; }
+    .ph-cta .ph-order { background:var(--blue); color:#0B1D35; border:1px solid var(--blue); }
+    .ph-cta .ph-order:hover { background:var(--blue); filter:brightness(1.06); }
+    .ph-cta .ph-demo { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.9); }
+    .ph-cta .ph-demo:hover { background:#fff; color:#111; box-shadow:none; }
+    .ph-sub { max-width:32em; margin:32px auto 0; color:rgba(255,255,255,.92); font-size:clamp(.95rem,1.2vw,1.1rem); line-height:1.4; letter-spacing:-.01em; }
+    .ph-scroll { position:absolute; left:50%; bottom:110px; z-index:3; transform:translateX(-50%); display:grid; place-items:center; width:56px; height:56px; background:#fff; color:#111; border-radius:10px; transition:transform .2s ease; }
+    .ph-scroll:hover { transform:translateX(-50%) translateY(3px); }
+    .ph-scroll svg { width:22px; height:22px; }
+    .ph-dots { bottom:80px; }
+    @media (max-width:640px){ .ph-scroll{display:none} .ph-dots{bottom:60px} .ph-bottom{margin-top:0} }
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 1;
+      opacity: 0.6;
+    }
+    .scroll-indicator__label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .scroll-indicator__line {
+      width: 1px;
+      height: 40px;
+      background: var(--gray-400);
+      overflow: hidden;
+      position: relative;
+    }
+    .scroll-indicator__line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: var(--blue);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0% { top: -100%; }
+      100% { top: 100%; }
+    }
+
+    /* ============================================================
+       SECTION 2: PRODUCT INTRODUCTION — SPLIT LAYOUT
+    ============================================================ */
+    .product-intro {
+      background: var(--white);
+      padding: 120px 0;
+    }
+
+    .product-intro .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .product-intro__left {}
+
+    .product-intro__overline {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .product-intro__headline {
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .product-intro__desc {
+      font-size: 18px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-top: 24px;
+    }
+
+    .product-intro__specs {
+      display: flex;
+      gap: 40px;
+      border-top: 1px solid var(--gray-200);
+      padding-top: 32px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .product-intro__spec-item {}
+
+    .product-intro__spec-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .product-intro__spec-value {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.2;
+    }
+
+    .product-intro__right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pi-stage { width: 100%; max-width: 560px; margin: 0 auto; --H: clamp(340px, 42vw, 480px); }
+    .pi-stage .cmp-toggle { margin-top: 28px; }
+
+    .product-intro__image-wrap {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-intro__image-wrap img {
+      max-height: 600px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.08));
+    }
+
+    @media (max-width: 900px) {
+      .product-intro .container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .product-intro__right { order: -1; }
+    }
+
+    /* ============================================================
+       SECTION 3: CINEMATIC FULL-BLEED
+    ============================================================ */
+    .cinematic {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cinematic__bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    .cinematic__video { width:100%; height:100%; object-fit:cover; }
+    .cinematic__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.55) 100%);
+      z-index: 1;
+    }
+
+    .cinematic::before, .cinematic::after { display:block; content:""; position:absolute; left:0; right:0; height:clamp(120px,22vh,240px); z-index:1; pointer-events:none; }
+    .cinematic::before { top:0; background:linear-gradient(to bottom, #F6F1E6 0%, rgba(246,241,230,.85) 18%, rgba(246,241,230,.55) 38%, rgba(246,241,230,.22) 62%, rgba(246,241,230,0) 100%); }
+    .cinematic::after { bottom:0; top:auto; background:linear-gradient(to top, #F6F1E6 0%, rgba(246,241,230,.85) 18%, rgba(246,241,230,.55) 38%, rgba(246,241,230,.22) 62%, rgba(246,241,230,0) 100%); }
+
+    .cinematic__content {
+      position: relative;
+      z-index: 2;
+      padding: 80px var(--container-pad);
+    }
+
+    .cinematic__line1 {
+      display: block;
+      font-size: clamp(64px, 10vw, 140px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+    }
+
+    .cinematic__line2 {
+      display: block;
+      font-size: clamp(64px, 10vw, 140px);
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+    }
+
+    /* ============================================================
+       SECTION 4: COMPONENT DETAIL STRIP
+    ============================================================ */
+    .detail-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+    }
+
+    .detail-panel {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .detail-panel:nth-child(1) { background: #d8d8d8; }
+    .detail-panel:nth-child(2) { background: #e0e0e0; }
+    .detail-panel:nth-child(3) { background: #d5d5d5; }
+    .detail-panel:nth-child(4) { background: #dddcdc; }
+
+    .detail-panel__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+      transform-origin: center;
+      transition: transform 0.6s ease;
+    }
+
+    .detail-panel:hover .detail-panel__image {
+      transform: scale(1.18);
+    }
+
+    .detail-panel__label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      z-index: 2;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .detail-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .detail-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .detail-panel {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .detail-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       SECTION 5: TECHNICAL DIAGRAM
+    ============================================================ */
+    .technical-diagram {
+      background: var(--gray-50);
+      padding: 120px 0;
+    }
+
+    .technical-diagram__header { text-align:center;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+      margin-bottom: 72px;
+    }
+
+    .section-overline {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .diagram-container {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-inline: var(--container-pad);
+    }
+
+    .diagram-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .diagram-image-wrap img {
+      max-width: 900px;
+      -webkit-mask-image: radial-gradient(ellipse 60% 62% at 50% 54%, #000 70%, transparent 100%);
+      mask-image: radial-gradient(ellipse 60% 62% at 50% 54%, #000 70%, transparent 100%);
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter:none;
+    }
+
+    /* Callout annotations */
+    .callout {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .callout__circle {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid var(--black);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .callout__text {
+      max-width: 180px;
+    }
+
+    .callout__title {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .callout__desc {
+      display: block;
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    /* Callout line from circle to text using CSS */
+    .callout--right {
+      flex-direction: row;
+    }
+    .callout--left {
+      flex-direction: row-reverse;
+    }
+    .callout--left .callout__text {
+      text-align: right;
+    }
+
+    /* Positions (desktop only) */
+    /* 1: top-right */
+    .callout-1 { top: 4%; right: 0; }
+    /* 2: right-center */
+    .callout-2 { top: 36%; right: 0; }
+    /* 3: bottom-right */
+    .callout-3 { bottom: 14%; right: 0; }
+    /* 4: bottom-center-right */
+    .callout-4 { bottom: 2%; left: 50%; transform: translateX(20px); }
+    /* 5: bottom-left */
+    .callout-5 { bottom: 14%; left: 0; }
+    /* 6: left-center */
+    .callout-6 { top: 36%; left: 0; }
+    /* 7: top-left */
+    .callout-7 { top: 4%; left: 0; }
+
+    /* Hairline connector using pseudo-element border trick */
+    .callout__connector {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #aaaaaa;
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    /* Mobile callout list */
+    .callout-mobile-list {
+      display: none;
+      list-style: none;
+      margin-top: 48px;
+    }
+
+    .callout-mobile-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .callout-mobile-list li:last-child { border-bottom: none; }
+
+    .callout-mobile-list .num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid var(--black);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    .callout-mobile-list .info strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .callout-mobile-list .info span {
+      font-size: 13px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .callout {
+        display: none;
+      }
+      .callout-mobile-list {
+        display: block;
+      }
+    }
+
+    /* ============================================================
+       SECTIONS 6–8: COMPONENT DEEP-DIVE (SPLIT)
+    ============================================================ */
+    .component-section {
+      display: grid;
+      grid-template-columns: 60fr 40fr;
+      min-height: 600px;
+    }
+
+    .component-section--reversed {
+      grid-template-columns: 40fr 60fr;
+    }
+
+    .component-section--reversed .component-section__image {
+      order: 2;
+    }
+
+    .component-section--reversed .component-section__text {
+      order: 1;
+    }
+
+    .component-section__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+    }
+
+    .component-section__image--gray { background: var(--gray-50); }
+    .component-section__image--darker { background: #e8e8e8; }
+
+    .component-section__image img {
+      max-height: 560px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 40px rgba(0,0,0,0.08));
+    }
+
+    .component-section__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px clamp(32px, 5vw, 80px);
+    }
+
+    .component-section__text--white { background: var(--white); }
+    .component-section__text--gray { background: var(--gray-50); }
+
+    .component-overline {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-400);
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .component-title {
+      font-size: clamp(36px, 3.5vw, 52px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .component-desc {
+      font-size: 18px;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-top: 24px;
+    }
+
+    .component-features {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .component-features li {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .component-features li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      border: 1.5px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-check__icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-check__icon svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--blue);
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    @media (max-width: 900px) {
+      .component-section,
+      .component-section--reversed {
+        grid-template-columns: 1fr;
+      }
+      .component-section--reversed .component-section__image,
+      .component-section--reversed .component-section__text {
+        order: unset;
+      }
+      .component-section--reversed .component-section__image {
+        order: -1;
+      }
+      .component-section__image {
+        padding: 48px 32px;
+        min-height: 340px;
+      }
+      .component-section__image img {
+        max-height: 300px;
+      }
+      .component-section__text {
+        padding: 56px 32px;
+      }
+    }
+
+    /* ============================================================
+       SECTION 9: SPECIFICATIONS TABLE
+    ============================================================ */
+    .specs-section {
+      background: var(--gray-50);
+      padding: 120px 0;
+    }
+
+    .specs-section__inner {
+      max-width: 1240px;
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+    }
+
+    .specs-section__overline {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .specs-section__title {
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 64px;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      padding: 20px 0;
+      vertical-align: middle;
+    }
+
+    .specs-table td:first-child {
+      font-size: 16px;
+      color: var(--gray-600);
+      width: 55%;
+    }
+
+    .specs-table td:last-child {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      text-align: right;
+    }
+
+    .specs-grid { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(32px,5vw,80px); align-items:start; }
+    .specs-fig { position:sticky; top:110px; margin:0; }
+    .specs-fig img { width:100%; height:auto; display:block; }
+    .specs-table td { padding:14px 0; }
+    section.specs-section { background:#0B1D35 !important; color:#fff; }
+    section.specs-section .specs-section__overline { color:#12aaba !important; }
+    section.specs-section .specs-section__title { color:#fff !important; }
+    .specs-section__title .dot { color:#12aaba; }
+    .specs-table tr { border-bottom-color:rgba(255,255,255,.16); }
+    section.specs-section .specs-table td:first-child, section.specs-section .specs-table td:last-child { color:#fff !important; }
+    .specs-table td:first-child { opacity:1; }
+
+    @media (max-width:900px){ .specs-grid { grid-template-columns:1fr; } .specs-fig { position:static; max-width:520px; margin-inline:auto; } }
+
+    /* ---- feature rows (image + short text) ---- */
+    .tl { background:var(--ds-cream,#F6F1E6); padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px); display:grid; grid-template-columns:minmax(0,2.1fr) minmax(0,1fr); gap:clamp(24px,4vw,64px); align-items:start; max-width:1500px; margin-inline:auto; box-sizing:border-box; }
+    .tl{position:relative}
+    .tl-deco{position:absolute;inset:0;pointer-events:none;z-index:2}
+    .tl-wheel{position:absolute;right:clamp(24px,5vw,90px);bottom:clamp(24px,5vw,70px);width:92px;color:#12aaba}
+    .tl--rev .tl-wheel{right:auto;left:clamp(24px,5vw,90px)}
+    .tl-dots{position:absolute;right:calc(clamp(24px,5vw,90px) + 100px);bottom:clamp(30px,5.5vw,80px);width:104px;height:84px}
+    .tl--rev .tl-dots{right:auto;left:calc(clamp(24px,5vw,90px) + 100px)}
+    .tl-dots i{position:absolute;border-radius:50%;background:#12aaba;animation:spDrift ease-in-out infinite alternate}
+    @media (max-width:900px){.tl-wheel{width:60px}.tl-dots{display:none}}
+    .uc2 .sp-copy h3 span{color:#12aaba}
+    .uc2 .uc-reimb{font-style:italic;color:#0e8794;margin:0 0 28px;font-size:1.05rem}
+    .uc2 .uc-reimb strong{color:#0B1D35;font-style:normal}
+    .uc2-vis{aspect-ratio:auto;max-width:560px;padding:clamp(24px,4vw,48px) 0 clamp(96px,10vw,124px)}
+    .uc2-photo{position:relative;left:auto;top:auto;width:min(62%,340px);margin-left:8%;transform:rotate(-2deg);overflow:hidden;line-height:0}
+    .uc2-photo video{width:100%;height:auto;display:block}
+    .uc2-vis .sp-squig{left:0;top:0}
+    .uc2-vis .sp-pill{right:0;top:6%;transform:rotate(3deg)}
+    .uc2-vis .sp-card{right:-2%;bottom:0;transform:rotate(3deg)}
+    @media (max-width:900px){.uc2-photo{margin-inline:auto}.uc2-vis .sp-card{right:4%}}
+    .feat-end{background:var(--ds-cream,#F6F1E6);text-align:center;padding:0 20px clamp(48px,7vw,88px)}
+    .fs__cta{justify-content:center;margin-top:36px}
+    .tl--rev { grid-template-columns:minmax(0,1fr) minmax(0,2.1fr); }
+    .tl__media { margin:0; border-radius:10px; overflow:hidden; aspect-ratio:16/9; background:#0B1D35; }
+    .tl__media video { width:100%; height:100%; object-fit:cover; display:block; }
+    .tl__media img { width:100%; height:100%; object-fit:cover; display:block; }
+    .tl__title { font-size:clamp(28px,3.2vw,46px); font-weight:700; line-height:1.08; letter-spacing:-.02em; color:#0B1D35; }
+    .tl__title .dot { color:var(--blue); }
+    .tl__text p { margin-top:14px; font-size:calc(18px * var(--ts)); line-height:1.6; color:#454c59; max-width:30em; }
+    @media (max-width:900px){ .tl, .tl--rev { grid-template-columns:1fr; } .tl--rev .tl__text { order:2; } }
+
+    /* ============================================================
+       SECTION 10: PULL QUOTE / TESTIMONIAL
+    ============================================================ */
+    .pull-quote {
+      position: relative;
+      min-height: 60vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 80px var(--container-pad);
+    }
+
+    .pull-quote__decoration {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 200px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(18,170,186,0.15);
+      font-family: Georgia, serif;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+    }
+
+    .pull-quote__content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .pull-quote__text {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      font-style: italic;
+    }
+
+    .pull-quote__attribution {
+      display: block;
+      font-size: 16px;
+      color: var(--blue);
+      font-weight: 500;
+      margin-top: 32px;
+      font-style: normal;
+    }
+
+    /* ============================================================
+       SECTION 11: CTA
+    ============================================================ */
+    .cta-section {
+      background: linear-gradient(135deg, #12aaba 0%, #0d8a9a 100%);
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .cta-section__title {
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-section__sub {
+      font-size: 20px;
+      color: rgba(255,255,255,0.9);
+      margin-top: 16px;
+      line-height: 1.6;
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    .cta-section__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--navy);
+      padding: 80px 0 0;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 48px;
+      padding-bottom: 64px;
+    }
+
+    @media (max-width: 1024px) {
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer__logo {
+      height: 32px;
+      width: auto;
+      margin-bottom: 20px;
+    }
+
+    .footer__tagline {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .footer__social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      color: var(--gray-400);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .footer__social a:hover {
+      background: rgba(18,170,186,0.2);
+      color: var(--blue);
+    }
+
+    .footer__social svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .footer__col-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer__links a {
+      font-size: 14px;
+      color: var(--gray-400);
+      transition: color var(--transition);
+    }
+    .footer__links a:hover { color: var(--white); }
+
+    .footer__contact-item {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer__newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer__newsletter-input {
+      flex: 1;
+      min-width: 160px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: var(--white);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .footer__newsletter-input::placeholder { color: var(--gray-400); }
+    .footer__newsletter-input:focus { border-color: var(--blue); }
+
+    .footer__newsletter-btn {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+    .footer__newsletter-btn:hover { background: var(--blue-dark); }
+
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer__copyright {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    .footer__bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer__bottom-links a {
+      font-size: 13px;
+      color: var(--gray-400);
+      transition: color var(--transition);
+    }
+    .footer__bottom-links a:hover { color: var(--white); }
+
+
+    /* ---------- Enhanced safety + CE (old-site layout: CE image left, text right) ---------- */
+    .sf { background: var(--ds-cream, #F6F1E6); color: #0B1D35; padding: clamp(72px, 9vw, 130px) 0; overflow: hidden; }
+    .sf-wrap { width: min(1180px, 100% - 2 * clamp(20px, 5vw, 60px)); margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+    .sf-vis { position: relative; width: 100%; max-width: 520px; aspect-ratio: .9; margin-inline: auto; }
+    .sf-ce-panel { position: absolute; left: 8%; top: 8%; width: 74%; height: 70%; background: #fff; border-radius: 22px; box-shadow: 0 18px 44px rgba(11,29,53,.14); display: grid; place-items: center; padding: 8%; box-sizing: border-box; }
+    .sf-ce-img { width: 100%; height: 100%; object-fit: contain; }
+    .sf-ce-fallback { width: 70%; color: #0B1D35; }
+    .sf-ce-img[hidden], .sf-ce-fallback[hidden] { display: none !important; }
+    .sf-wheel { left: -3%; top: -3%; width: 104px; color: #12aaba; }
+    .sf-vis .sp-dots { position: absolute; inset: 0; }
+    .sf-vis .sp-dots i { position: absolute; border-radius: 50%; background: #12aaba; animation: spDrift ease-in-out infinite alternate; }
+    .sf-card { right: 0; bottom: 4%; }
+    .sf-card li::after { transform: scale(0); animation: sfPop .5s cubic-bezier(.3,1.6,.5,1) forwards; }
+    .sf-card li:nth-child(1)::after { animation-delay: .5s; } .sf-card li:nth-child(2)::after { animation-delay: .9s; } .sf-card li:nth-child(3)::after { animation-delay: 1.3s; }
+    @keyframes sfPop { to { transform: scale(1); } }
+    @media (prefers-reduced-motion: reduce) { .sf-card li::after { animation: none; transform: none; } }
+    .sf-copy h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.05; margin: 0 0 24px; color: #0B1D35; }
+    .sf-copy p { font-size: 1.08rem; line-height: 1.7; margin: 0 0 18px; color: #3a4452; max-width: 32em; }
+    @media (max-width: 900px) { .sf-wrap { grid-template-columns: 1fr; } }
+
+    /* ---------- FAQ ---------- */
+    .pf { background: var(--ds-cream,#F6F1E6); color: #0B1D35; padding: clamp(72px, 9vw, 120px) 0; }
+    .pf-wrap { width: min(860px, 100% - 2 * clamp(20px, 5vw, 60px)); margin-inline: auto; }
+    .pf h2 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); line-height: 1.08; margin: 0 0 12px; text-align: center; color: #0B1D35; }
+    .pf-sub { text-align: center; margin: 0 0 48px; color: #4a5565; }
+    .pf-cat { font: 700 1.3rem "Playfair Display", serif; margin: 44px 0 14px; color: #0B1D35; }
+    .pf-cat .dot { color: #12aaba; }
+    .pf-acc { display: grid; gap: 10px; }
+    .pf-item { border: 1px solid rgba(11,29,53,.12); border-radius: 14px; overflow: hidden; background: #fff; }
+    .pf-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; text-align: left; background: none; border: 0; padding: 18px 22px; font: 600 1rem "Montserrat", sans-serif; color: #0B1D35; cursor: pointer; }
+    .pf-q:hover { background: rgba(18,170,186,.06); }
+    .pf-plus { flex: none; font-size: 24px; line-height: 1; color: #12aaba; transition: transform .25s ease; }
+    .pf-q[aria-expanded="true"] .pf-plus { transform: rotate(45deg); }
+    .pf-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .pf-a-in { padding: 0 22px 20px; color: #4a5565; line-height: 1.65; }
+
+    /* ============================================================
+       RESPONSIVE GLOBAL
+    ============================================================ */
+    @media (max-width: 640px) {
+      .product-hero {
+        padding: 80px 24px 60px;
+      }
+      .product-intro {
+        padding: 80px 0;
+      }
+      .technical-diagram {
+        padding: 80px 0;
+      }
+      .specs-section {
+        padding: 80px 0;
+      }
+      .pull-quote {
+        padding: 60px 24px;
+      }
+      .cta-section {
+        padding: 80px 0;
+      }
+    }
+
+  </style>
+  <link href="../assets/css/components.css" rel="stylesheet"/>
+  <link href="../assets/css/nav.css" rel="stylesheet"/>
+  <link href="../assets/css/solution.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/theme.css?v=3" rel="stylesheet"/>
+  <link href="../assets/css/inspire.css" rel="stylesheet"/>
+  <link href="../assets/css/design-system.css?v=5" rel="stylesheet"/>
+<link href="../assets/css/bro-banner.css" rel="stylesheet"/>
+<link href="../assets/css/footer.css" rel="stylesheet"/>
+  <link href="../assets/css/facts.css" rel="stylesheet"/>
+  <link href="../assets/css/carousel.css" rel="stylesheet"/>
+  <link href="../assets/css/toolbar.css" rel="stylesheet"/>
+  <link href="../assets/css/extras.css" rel="stylesheet"/>
+  <style>main .insp > .container{max-width:none;width:min(1700px,100% - 2*clamp(24px,6vw,96px));padding-inline:0;margin-inline:auto}</style>
+<script src="../assets/js/lang.js"></script>
+<script src="../assets/js/consent.js" defer></script>
+<script src="../assets/js/coming-soon.js" defer></script>
+<script src="../assets/js/newsletter-popup.js" defer></script>
+<link href="../assets/css/nav-dd.css?v=5" rel="stylesheet"/>
+<style id="nav-like-home">
+    /* ---------- NAV: logo left, floating dark pill, white CTA right ---------- */
+    .nav-wrap,
+    .nav-wrap.scrolled,
+    .nav-wrap.is-scrolled {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .nav-wrap .nav {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-left: clamp(24px, 6vw, 96px);
+      padding-right: clamp(24px, 6vw, 96px);
+      max-width: none;
+      height: auto;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .nav-wrap .nav-logo { color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .nav-wrap .nav-logo img { display: block; height: 56px; width: auto; }
+
+    .nav-wrap .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 auto;
+      padding: 0 10px;
+      height: 56px;
+      list-style: none;
+      background: rgba(11, 29, 53, .62);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 12px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-wrap .nav-links a {
+      display: block;
+      padding: 10px 16px;
+      color: rgba(255, 255, 255, .92);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .nav-wrap .nav-links a:hover,
+    .nav-wrap .nav-links a:focus-visible { background: rgba(255, 255, 255, .12); color: #fff; }
+
+    .nav-wrap .nav-cta .btn-primary {
+      background: #fff;
+      color: #111;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .nav-wrap .nav-cta .btn-primary:hover { background: var(--hero-accent); color: var(--hero-accent-ink); transform: translateY(-1px); }
+
+    .nav-wrap .nav-hamburger span { background: #fff; }
+    .nav-wrap .mobile-drawer {
+      position: absolute;
+      top: 100px;
+      left: 16px;
+      right: 16px;
+      background: rgba(18, 18, 18, .96);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .nav-wrap .mobile-drawer a { color: #fff; }
+
+    @media (max-width: 1280px) {
+      .nav-wrap .nav-links { display: none; }
+      .nav-wrap .nav { justify-content: space-between; }
+      .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 1480px) {
+      html:not([lang="en"]) .nav-wrap .nav-links { display: none; }
+      html:not([lang="en"]) .nav-wrap .nav { justify-content: space-between; }
+      html:not([lang="en"]) .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      html:not([lang="en"]) .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      .nav-wrap .nav-logo img { height: 44px; }
+      .nav-wrap .nav-cta { display: none; }
+    }
+    /* ---------- NAV once the hero has scrolled away: solid J58 navy bar ---------- */
+    .nav-wrap .nav { transition: top .25s ease, padding .25s ease, background .25s ease; }
+    .nav-wrap.past-hero .nav {
+      top: 0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background: rgba(11, 29, 53, .96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 6px 24px rgba(11, 29, 53, .25);
+    }
+    .nav-wrap.past-hero .nav-logo img { height: 44px; }
+    .nav-wrap.past-hero .mobile-drawer { top: 80px; }
+    @media (prefers-reduced-motion: reduce) { .nav-wrap .nav { transition: none; } }
+
+    /* hero photo runs to the very top, behind the transparent nav */
+    .product-hero { margin-top: 0 !important; padding-top: 150px; min-height: max(620px, 100vh) !important; }
+    .nav-wrap .nav-logo img { width: auto; }
+    .nav-wrap .nav-links a[aria-current="page"] { background: rgba(255,255,255,.12); }
+</style>
+<meta name="robots" content="noindex,nofollow" />
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt springen</a>
+
+  <!-- ================================================================
+       ACCESSIBILITY TOOLBAR
+  ================================================================ -->
+  <div aria-label="Optionen zur Barrierefreiheit" class="a11y-toolbar" role="complementary">
+    <div class="container">
+      <span class="a11y-toolbar-label">Barrierefreiheit:</span>
+      <button aria-label="Hohen Kontrast ein-/ausschalten" aria-pressed="false" class="a11y-btn" id="hcToggle">Hoher Kontrast</button>
+      <div aria-hidden="true" class="a11y-divider"></div>
+      <div aria-label="Textgröße" class="a11y-size-group" role="group">
+        <button aria-label="Text verkleinern" class="a11y-btn" id="textMinus">A−</button>
+        <button aria-label="Text vergrößern" class="a11y-btn" id="textPlus">A+</button>
+      </div>
+      <div aria-label="Sprache" class="lang-switch" role="group"><a data-lang="en" href="../product/index.html" hreflang="en" lang="en">EN</a><a data-lang="nl" href="../nl/product.html" hreflang="nl" lang="nl">NL</a><a aria-current="true" data-lang="de" href="product.html" hreflang="de" lang="de">DE</a></div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       NAVIGATION
+  ================================================================ -->
+  <div class="nav-wrap" id="nav-wrap">
+    <nav aria-label="Hauptnavigation" class="nav container" role="navigation">
+      <a aria-label="J58 — Startseite" class="nav-logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+
+      <ul class="nav-links" role="list">
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="productMenu">Produkt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="productMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Produkt</p>
+              <a class="nav-mega-link" href="product.html"><strong>Der EZER</strong><small>Merkmale, Vorteile und Funktionsweise</small></a>
+              <a class="nav-mega-link" href="product-resources.html"><strong>Ressourcen</strong><small>Videos, Broschüre, technische Daten und Anleitungen</small></a>
+            </div>
+            <a class="nav-mega-card" href="product.html" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"><span><em>Produkt</em><b>Den EZER entdecken</b></span></a>
+          </div>
+        </li>
+        <li><a href="user-stories.html">Nutzerberichte</a></li>
+        <li><a href="reimbursement.html">Finanzierung</a></li>
+        <li><a href="healthcare-professionals.html">Fachkräfte</a></li>
+        <li><a href="distributors.html">Händler</a></li>
+        <li class="nav-dd"><button aria-controls="aboutMenu" aria-expanded="false" aria-haspopup="true" class="nav-dd-btn" type="button">Über uns <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div class="nav-mega" id="aboutMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Über uns</p>
+              <a class="nav-mega-link" href="about.html"><strong>Unsere Geschichte &amp; Team</strong><small>Mission, Weg und die Menschen hinter J58</small></a>
+              <a class="nav-mega-link" href="blog.html"><strong>Blogs und Artikel</strong><small>Neuigkeiten, Geschichten und Newsletter</small></a>
+              <a class="nav-mega-link" href="faq.html"><strong>FAQ</strong><small>Antworten auf häufige Fragen</small></a>
+            </div>
+            <a class="nav-mega-card" href="about.html#team-heading" style="background-image:url('../assets/img/team/gabriel.jpg')"><span><em>Lernen Sie das Team kennen</em><b>Schön, Sie kennenzulernen</b></span></a>
+          </div>
+        </li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a aria-label="Demo des Ezer Rollstuhls buchen" class="btn-primary" href="book-a-demo.html">Demo buchen</a>
+      </div>
+
+      <button aria-controls="mobile-drawer" aria-expanded="false" aria-label="Navigationsmenü öffnen" class="nav-hamburger" id="hamburger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div aria-hidden="true" aria-label="Mobile Navigation" class="mobile-drawer" id="mobile-drawer" role="dialog">
+    <a aria-current="page" href="product.html">Produkt</a>
+    <a href="product-resources.html">Ressourcen</a>
+    <a href="user-stories.html">Nutzerberichte</a>
+    <a href="reimbursement.html">Finanzierung</a>
+    <a href="healthcare-professionals.html">Für Fachkräfte</a>
+    <a href="distributors.html">Händler</a>
+    <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Über uns<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="about.html">Über uns</a><a href="about.html#team-heading">Team</a><a href="blog.html">Blogs und Artikel</a><a href="faq.html">FAQ</a></div></div>
+    <a href="contact.html">Kontakt</a>
+      <div aria-label="Sprache" class="lang-switch lang-switch--drawer" role="group"><a data-lang="en" href="../product/index.html" hreflang="en" lang="en">EN</a><a data-lang="nl" href="../nl/product.html" hreflang="nl" lang="nl">NL</a><a aria-current="true" data-lang="de" href="product.html" hreflang="de" lang="de">DE</a></div>
+    <div class="mobile-cta">
+      <a class="btn-primary" href="book-a-demo.html" style="width:100%;justify-content:center;">Demo buchen</a>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       MAIN CONTENT
+  ================================================================ -->
+  <main id="main-content">
+
+    <!-- ============================================================
+         SECTION 1: HERO
+    ============================================================ -->
+    <section aria-label="Hauptbild — Ezer Stehrollstuhl" class="product-hero">
+      <div aria-label="Fotos von Menschen mit dem EZER" aria-roledescription="carousel" class="product-hero__photo" role="group">
+        <div aria-label="Eine Braut im EZER lacht mit ihrem Vater bei ihrer Hochzeit" class="ph-slide is-on" role="img" style="background-image:url('../assets/img/product/hero-3.jpg');background-position:50% 35%"></div>
+        <div aria-label="Ein Mann steht in seinem EZER auf einem Gartenweg zwischen Pflanzen" class="ph-slide" role="img" style="background-image:url('../assets/img/product/hero-2.jpg');background-position:50% 50%"></div>
+        <div aria-label="Zwei Freunde lesen gemeinsam ein Buch in einer Bibliothek, einer steht im EZER" class="ph-slide" role="img" style="background-image:url('../assets/img/product/hero-1.jpg');background-position:50% 40%"></div>
+        <div aria-label="Ein Mann steht in seinem EZER und schießt mit dem Bogen" class="ph-slide" role="img" style="background-image:url('../assets/img/product/hero-4.jpg');background-position:50% 40%"></div>
+      </div>
+
+      <div class="ph-bottom">
+      <h1 class="product-hero__headline reveal reveal-delay-1">Aufstehen<span class="dot">.</span> Bewegen<span class="dot">.</span> Aufblühen<span class="dot">.</span></h1>
+
+      <div class="ph-cta">
+        
+        <a class="ph-demo" href="book-a-demo.html">Demo buchen</a>
+      </div>
+      <p class="ph-sub">Der weltweit erste mechanische Stehrollstuhl, mit dem Sie gleichzeitig stehen und sich bewegen können.</p>
+      </div>
+      <a aria-label="Nach unten scrollen" class="ph-scroll" href="#benefits"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg></a>
+
+      <button aria-label="Vorheriges Foto" class="ph-arrow ph-prev" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 20 20"><path d="M12.5 4 6.5 10l6 6"></path></svg></button>
+      <button aria-label="Nächstes Foto" class="ph-arrow ph-next" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 20 20"><path d="M7.5 4l6 6-6 6"></path></svg></button>
+      <div aria-label="Foto wählen" class="ph-dots" role="group"><button aria-current="true" aria-label="Foto 1" type="button"></button><button aria-label="Foto 2" type="button"></button><button aria-label="Foto 3" type="button"></button><button aria-label="Foto 4" type="button"></button></div>
+
+      <div aria-hidden="true" class="scroll-indicator">
+        <span class="scroll-indicator__label">Scrollen</span>
+        <div class="scroll-indicator__line"></div>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         PRODUCT BENEFITS (cards open pop-ups)
+    ============================================================ -->
+    <section aria-labelledby="mb-h" class="mb" id="benefits">
+      <div class="mb__head">
+        <h2 id="mb-h">Lernen Sie den EZER kennen<span class="dot">.</span></h2>
+        <p class="mb__sub">Steh-Rollstuhl</p>
+        <p class="mb__lead">Entdecken Sie die Vorteile, die jeder EZER bietet.</p>
+      </div>
+      <div class="mb__row">
+        <button aria-haspopup="dialog" aria-label="Komfort — mehr erfahren" class="mb-card" data-mb="convenience" style="background-image:url('../assets/img/product/benefit-convenience.jpg')" type="button">
+          <div class="mb-card__txt"><div class="mb-card__title">Komfort</div><div class="mb-card__sub">Anpassbar, damit er zu Ihnen passt.</div><div class="mb-card__keys"><div>Anpassbare Komponenten</div><div>Gewicht und Größe</div></div></div>
+          <span aria-hidden="true" class="mb-card__plus"></span>
+        </button>
+        <button aria-haspopup="dialog" aria-label="Sicherheit — mehr erfahren" class="mb-card" data-mb="safety" style="background-image:url('../assets/img/product/benefit-safety.jpg')" type="button">
+          <div class="mb-card__txt"><div class="mb-card__title">Sicherheit</div><div class="mb-card__sub">Patentierte Sicherheit</div><div class="mb-card__keys"><div>Breiterer Radstand</div><div>Rastet in Position ein</div></div></div>
+          <span aria-hidden="true" class="mb-card__plus"></span>
+        </button>
+        <button aria-haspopup="dialog" aria-label="Effizienz — mehr erfahren" class="mb-card" data-mb="efficiency" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')" type="button">
+          <div class="mb-card__txt"><div class="mb-card__title">Effizienz</div><div class="mb-card__sub">Sofort aufstehen und hinsetzen</div><div class="mb-card__keys"><div>Sich stehend fortbewegen</div><div>2-in-1-Lösung</div></div></div>
+          <span aria-hidden="true" class="mb-card__plus"></span>
+        </button>
+        <button aria-haspopup="dialog" aria-label="Design — mehr erfahren" class="mb-card" data-mb="design" style="background-image:url('../assets/img/product/benefit-design.jpg')" type="button">
+          <div class="mb-card__txt"><div class="mb-card__title">Design</div><div class="mb-card__sub">Premium mechanisches Design</div><div class="mb-card__keys"><div>Keine Batterien</div><div>Leichtgewicht</div></div></div>
+          <span aria-hidden="true" class="mb-card__plus"></span>
+        </button>
+        <button aria-haspopup="dialog" aria-label="Sitzen, stehen und fahren — mehr erfahren" class="mb-card" data-mb="standmove" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')" type="button">
+          <div class="mb-card__txt"><div class="mb-card__title">2-in-1</div><div class="mb-card__sub">Sitzen, Stehen und Bewegen im Stehen</div><div class="mb-card__keys"><div>Alltagsrollstuhl</div><div>Stehen und fahren</div></div></div>
+          <span aria-hidden="true" class="mb-card__plus"></span>
+        </button>
+      </div>
+    </section>
+
+    <dialog aria-labelledby="mb-convenience-t" class="mb-modal" id="mb-convenience">
+      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+      <div aria-label="Ein Mann steht in seinem EZER und greift in einen Küchenschrank" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-convenience.jpg')">
+        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/webflow/for-everyone-poster.jpg" preload="none"><source src="../assets/video/webflow/for-everyone.mp4" type="video/mp4"/></video>
+        <div class="mb-modal__hero-txt"><h3 id="mb-convenience-t">Komfort</h3></div>
+      </div>
+      
+      <div class="mb-modal__body">
+        <div class="mb-modal__keys"><div>Anpassbare Komponenten</div><div>Auf Ihr Gewicht und Ihre Größe abgestimmt</div><div>Keine Akkus, kein Aufladen</div></div>
+        <p class="mb-modal__lede">Anpassbar, damit er zu Ihnen passt.</p>
+        <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/benefit-convenience.jpg"/></figure>
+        <div class="mb-modal__text"><p>Anpassbare Komponenten und verstellbare Unterstützung helfen, den EZER Stehrollstuhl auf Ihre Größe, Ihren Körperbau und Ihre alltäglichen Bedürfnisse abzustimmen. Eine persönliche Passform sorgt für Komfort und Kontrolle, ob Sie sitzen, stehen oder sich fortbewegen.</p></div>
+        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
+      </div>
+    </dialog>
+    <dialog aria-labelledby="mb-standmove-t" class="mb-modal" id="mb-standmove">
+      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+      <div aria-label="Ein Mann steht und fährt in seinem EZER in einem Supermarkt" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/stand-and-move-poster.jpg')">
+        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/img/product/stand-and-move-poster.jpg" preload="none"><source src="../assets/video/stand-and-move.mp4" type="video/mp4"/></video>
+        <div class="mb-modal__hero-txt"><h3 id="mb-standmove-t">Sitzen, Stehen und Bewegen im Stehen</h3></div>
+      </div>
+      <div class="mb-modal__body">
+        <div class="mb-modal__keys"><div>2-in-1-Lösung</div><div>Sich stehend fortbewegen</div></div>
+        <p class="mb-modal__lede">Ihr Alltagsrollstuhl. Eine völlig neue Perspektive.</p>
+        <div class="mb-modal__text"><p>Der EZER Stehrollstuhl ist Rollstuhl und Stehhilfe in einem. Stehen Sie auf, um etwas zu erreichen, auf Augenhöhe zu sprechen oder zu arbeiten, und bleiben Sie im Stehen in Bewegung.</p></div>
+        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
+      </div>
+    </dialog>
+
+    <dialog aria-labelledby="mb-safety-t" class="mb-modal" id="mb-safety">
+      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+      <div aria-label="Ein Mann steht in seinem EZER in einem Büro" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-safety.jpg')">
+        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/webflow/asafasf-poster.jpg" preload="none"><source src="../assets/video/webflow/asafasf.mp4" type="video/mp4"/></video>
+        <div class="mb-modal__hero-txt"><h3 id="mb-safety-t">Sicherheit</h3><p>Patentierte Sicherheit</p></div>
+      </div>
+      
+      <div class="mb-modal__body">
+        <div class="mb-modal__keys"><div>Breiterer Radstand im Stehen</div><div>Rastet in Position ein</div><div>CE-gekennzeichnet, für Nutzer bis 120 kg</div></div>
+        <p class="mb-modal__lede">Stabilität, die mit Ihnen aufsteigt.</p>
+        <figure class="mb-modal__fig" style="aspect-ratio:9/16;width:360px;max-width:100%;margin:44px auto;background:#0B1D35"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-src="https://www.youtube-nocookie.com/embed/6owU_U0oBkU?rel=0&amp;playsinline=1" style="width:100%;height:100%;border:0;display:block" title="Sicherheitsmechanismus des EZER"></iframe></figure>
+        <div class="mb-modal__text"><h4>Gebaut um einen Sicherheitsmechanismus, den Sie spüren.</h4><p>Wenn Sie sich aufrichten, bewegen sich die patentierten Vorderräder nach außen und nach vorn, um den Radstand zu verbreitern, und der EZER Stehrollstuhl rastet in Position ein. Er ist CE-gekennzeichnet und erfüllt die allgemeinen Sicherheits- und Leistungsanforderungen der Europäischen Medizinprodukteverordnung.</p></div>
+        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
+      </div>
+    </dialog>
+    <dialog aria-labelledby="mb-efficiency-t" class="mb-modal" id="mb-efficiency">
+      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+      <div aria-label="Ein Mann arbeitet in seinem EZER am Schreibtisch" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-efficiency.jpg')">
+        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/webflow/erik-poster.jpg" preload="none"><source src="../assets/video/webflow/erik.mp4" type="video/mp4"/></video>
+        <div class="mb-modal__hero-txt"><h3 id="mb-efficiency-t">Sofort aufstehen und hinsetzen</h3></div>
+      </div>
+      
+      <div class="mb-modal__body">
+        <div class="mb-modal__keys"><div>3 Sekunden zum Aufstehen</div><div>3 Sekunden zum Hinsetzen</div><div>Kein Umsteigen auf ein anderes Gerät</div></div>
+        <p class="mb-modal__lede">Vom Sitzen zum Stehen in einer fließenden Bewegung</p>
+        <figure class="mb-modal__fig"><img alt="" loading="lazy" src="../assets/img/product/hero-1.jpg"/></figure>
+        <div class="mb-modal__text"><p>Wechseln Sie zwischen Sitzen und Stehen, wann immer Ihre nächste Aktivität es erfordert. Das mechanische System des EZER Stehrollstuhls lässt Sie die Position ändern, ohne auf ein anderes Gerät umzusteigen, sodass Sie mehr Zeit für das haben, was zählt.</p></div>
+        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
+      </div>
+    </dialog>
+    <dialog aria-labelledby="mb-design-t" class="mb-modal" id="mb-design">
+      <button aria-label="Schließen" class="mb-modal__close" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+      <div aria-label="Zwei EZER Steh-Rollstühle vor dunklem Hintergrund" class="mb-modal__hero" role="img" style="background-image:url('../assets/img/product/benefit-design.jpg')">
+        <video class="mb-modal__vid" loop="" muted="" playsinline="" poster="../assets/video/mechanics-design-poster.jpg" preload="none"><source src="../assets/video/mechanics-design.mp4" type="video/mp4"/></video>
+        <div class="mb-modal__hero-txt"><h3 id="mb-design-t">Premium mechanisches Design</h3></div>
+      </div>
+      
+      <div class="mb-modal__body">
+        <div class="mb-modal__keys"><div>Leichter Aluminiumrahmen</div><div>Matt Schwarz, Silber oder individuelle RAL-Farbe</div><div>Einfach zu reparieren und zu warten</div></div>
+        <p class="mb-modal__lede">Jedes Detail hat seinen Zweck.</p>
+        <div class="mb-modal__text"><p>Gasfedern, auf Ihr Gewicht abgestimmt, heben Sie vom Sitzen ins Stehen und wieder zurück, ohne dass Sie darüber nachdenken müssen.</p><p>Ein schlanker Rahmen, komfortable Unterstützung und sorgfältig ausgewählte Materialien verleihen dem EZER Stehrollstuhl sein unverwechselbares Aussehen und Gefühl. Sein vollmechanisches Design ermöglicht Mobilität im Stehen ohne Motoren oder Batterien, und vermeidet die zusätzlichen Kosten und die Komplexität motorisierter Systeme.</p></div>
+        <div class="mb-modal__trio" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:8px 0 44px"><img alt="Nahaufnahme der Antriebsriemen und des Aluminiumrahmens des EZER" loading="lazy" src="../assets/img/product/mechanics-1.jpg" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;display:block"/><img alt="Der EZER-Rahmen mit Rücklicht und Speichenrad" loading="lazy" src="../assets/img/product/mechanics-2.jpg" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;display:block"/><img alt="Seitenansicht des EZER-Rahmens zwischen den Rädern" loading="lazy" src="../assets/img/product/mechanics-3.jpg" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;display:block"/></div>
+        <div class="mb-modal__cta"><a class="ph-demo" href="book-a-demo.html">Demo buchen</a></div>
+      </div>
+    </dialog>
+
+
+
+    <section aria-label="Wichtige Fakten zum EZER" class="fs">
+      <div class="fs__row">
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"></path></svg></span>
+          <div><span class="fs__label">Antrieb</span><span class="fs__value">Mechanisch</span><span class="fs__sub">Keine Batterie nötig</span></div>
+        </div>
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 2.8l7.5 2.7v5.6c0 4.6-3.1 8.2-7.5 10.1-4.4-1.9-7.5-5.5-7.5-10.1V5.5z"></path><path d="M8.6 12.2l2.5 2.5 4.4-4.9"></path></svg></span>
+          <div><span class="fs__label">Zertifizierung</span><span class="fs__value">CE-zertifiziert</span><span class="fs__sub">EU-Sicherheitsnorm</span></div>
+        </div>
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.7a7 7 0 0 1 14 0c0 5.6-7 11.7-7 11.7z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg></span>
+          <div><span class="fs__label">Herkunft</span><span class="fs__value">Dutch Design</span><span class="fs__sub">Gebaut in Enschede</span></div>
+        </div>
+      </div>
+      <div class="sp-cta fs__cta"><a class="sp-btn" href="about.html">Mehr über uns</a></div>
+    </section>
+
+<section aria-label="Stehen und bewegen Sie sich überall — Video" class="cinematic">
+      <video aria-label="EZER-Nutzer stehen und bewegen sich an alltäglichen Orten" autoplay="" class="cinematic__bg cinematic__video" loop="" muted="" playsinline="" poster="../assets/img/product/stand-and-move-poster.jpg" preload="metadata"><source src="../assets/video/stand-and-move.mp4" type="video/mp4"/></video>
+      <div aria-hidden="true" class="cinematic__overlay"></div>
+      <div class="cinematic__content reveal">
+        <span class="cinematic__line1">Aufstehen und</span>
+        <span class="cinematic__line1">bewegen.</span>
+        <span class="cinematic__line2">Überall.</span>
+      </div>
+    </section>
+
+<section aria-labelledby="mechanism-heading" class="tl" id="mechanism">
+      <div aria-hidden="true" class="tl-deco"><svg class="tl-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><span class="tl-dots"><i style="left:8%;top:16%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s"></i><i style="left:52%;top:6%;width:7px;height:7px;--dx:7px;--dy:8px;animation-duration:2.8s;animation-delay:-.6s"></i><i style="left:90%;top:34%;width:10px;height:10px;--dx:9px;--dy:-7px;animation-duration:3.6s;animation-delay:-1.1s"></i><i style="left:22%;top:70%;width:6px;height:6px;--dx:-6px;--dy:7px;animation-duration:3s;animation-delay:-.3s"></i><i style="left:66%;top:84%;width:9px;height:9px;--dx:8px;--dy:6px;animation-duration:3.4s;animation-delay:-1.6s"></i></span></div>
+      <figure class="tl__media reveal"><video aria-label="Gas springs lifting the EZER from seated to standing" autoplay="" loop="" muted="" playsinline="" poster="../assets/img/panels/spec-gas-springs.jpg" preload="metadata" src="../assets/video/spec-gas-springs.mp4"></video></figure>
+      <div class="tl__text reveal reveal-delay-1"><h2 class="tl__title" id="mechanism-heading">Gasfedern – In 3 Sekunden oben<span class="dot">.</span></h2><p>Sorgt für fließende Übergänge zwischen Sitzen und Stehen, mit gewichtsangepasster mechanischer Unterstützung, die den körperlichen Aufwand minimiert.</p></div>
+    </section>
+
+<section aria-labelledby="wheels-heading" class="tl tl--rev" id="wheels">
+      <div aria-hidden="true" class="tl-deco"><svg class="tl-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><span class="tl-dots"><i style="left:8%;top:16%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s"></i><i style="left:52%;top:6%;width:7px;height:7px;--dx:7px;--dy:8px;animation-duration:2.8s;animation-delay:-.6s"></i><i style="left:90%;top:34%;width:10px;height:10px;--dx:9px;--dy:-7px;animation-duration:3.6s;animation-delay:-1.1s"></i><i style="left:22%;top:70%;width:6px;height:6px;--dx:-6px;--dy:7px;animation-duration:3s;animation-delay:-.3s"></i><i style="left:66%;top:84%;width:9px;height:9px;--dx:8px;--dy:6px;animation-duration:3.4s;animation-delay:-1.6s"></i></span></div>
+      <div class="tl__text reveal reveal-delay-1"><h2 class="tl__title" id="wheels-heading">Riemenantrieb – Rollen im Stehen<span class="dot">.</span></h2><p>Ermöglicht schnelle, mühelose Fortbewegung im Stehen, mit effizienter Kraftübertragung und einem kompakten, einfach zu bedienenden Design.</p></div>
+      <figure class="tl__media reveal"><video aria-label="Belt drive moving the EZER while standing" autoplay="" loop="" muted="" playsinline="" poster="../assets/img/panels/spec-belt-drive.jpg" preload="metadata" src="../assets/video/spec-belt-drive.mp4"></video></figure>
+    </section>
+
+<section aria-labelledby="sf-h" class="tl" id="safety">
+      <div aria-hidden="true" class="tl-deco"><svg class="tl-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><span class="tl-dots"><i style="left:8%;top:16%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s"></i><i style="left:52%;top:6%;width:7px;height:7px;--dx:7px;--dy:8px;animation-duration:2.8s;animation-delay:-.6s"></i><i style="left:90%;top:34%;width:10px;height:10px;--dx:9px;--dy:-7px;animation-duration:3.6s;animation-delay:-1.1s"></i><i style="left:22%;top:70%;width:6px;height:6px;--dx:-6px;--dy:7px;animation-duration:3s;animation-delay:-.3s"></i><i style="left:66%;top:84%;width:9px;height:9px;--dx:8px;--dy:6px;animation-duration:3.4s;animation-delay:-1.6s"></i></span></div>
+      <figure class="tl__media reveal"><video aria-label="The EZER front wheels widening the wheelbase and locking in place" autoplay="" loop="" muted="" playsinline="" poster="../assets/img/panels/spec-safety.jpg" preload="metadata" src="../assets/video/spec-safety.mp4"></video></figure>
+      <div class="tl__text reveal reveal-delay-1"><h2 class="tl__title" id="sf-h">Sicherheitsmechanismus – Gebaut für sicheren Stand<span class="dot">.</span></h2><p>Sorgt für Stabilität beim Übergang vom Sitzen zum Stehen und bei der Fortbewegung im Stehen und gewährleistet so sicheres und selbstbewusstes Arbeiten.</p></div>
+    </section>
+    <div class="feat-end"><a class="sp-btn" href="book-a-demo.html">Demo buchen</a></div>
+
+
+
+
+
+
+
+
+    
+
+    <!-- ============================================================
+         SECTION 3: CINEMATIC FULL-BLEED
+    ============================================================ -->
+    
+
+    <!-- ============================================================
+         SECTION 5: TECHNICAL DIAGRAM
+    ============================================================ -->
+    
+
+    <!-- ============================================================
+         SECTION 4: COMPONENT DETAIL STRIP
+    ============================================================ -->
+    
+
+    
+
+    <!-- ============================================================
+         SECTION 6: THE STANDING MECHANISM — Component deep-dive 1
+    ============================================================ -->
+    
+
+    
+
+    
+
+    <!-- ============================================================
+         ENHANCED SAFETY + CE MARK
+    ============================================================ -->
+    
+
+        <!-- ============================================================
+         SECTION 9: SPECIFICATIONS TABLE
+    ============================================================ -->
+    
+
+    <section aria-labelledby="specs-heading" class="specs-section" id="specifications">
+      <div class="specs-section__inner">
+
+        <span class="specs-section__overline reveal">Spezifikationen</span>
+        <h2 class="specs-section__title reveal reveal-delay-1" id="specs-heading">In Zahlen<span class="dot">.</span></h2>
+
+        <div class="specs-grid">
+        <table aria-label="Technische Daten des Ezer Rollstuhls" class="specs-table reveal reveal-delay-2">
+          <tbody>
+            <tr>
+              <td>Modell</td>
+              <td>EZER 02</td>
+            </tr>
+            <tr>
+              <td>Farbe</td>
+              <td>Schwarz + Blau (matt) / ganz Schwarz (matt)</td>
+            </tr>
+            <tr>
+              <td>Bauart</td>
+              <td>Stehrollstuhl mit Fahrfunktion</td>
+            </tr>
+            <tr>
+              <td>Abstand Fußraste zum Sitz (FS)</td>
+              <td>25–50 cm</td>
+            </tr>
+            <tr>
+              <td>Sitzbreite (SB)</td>
+              <td>41 cm</td>
+            </tr>
+            <tr>
+              <td>Sitzhöhe (SH)</td>
+              <td>49 cm</td>
+            </tr>
+            <tr>
+              <td>Sitztiefe (ST)</td>
+              <td>46 cm</td>
+            </tr>
+            <tr>
+              <td>Rollstuhlhöhe (RH)</td>
+              <td>85 cm</td>
+            </tr>
+            <tr>
+              <td>Rückenlehnenhöhe (LH)</td>
+              <td>34 cm</td>
+            </tr>
+            <tr>
+              <td>Rollstuhlbreite (RB)</td>
+              <td>72 cm</td>
+            </tr>
+            <tr>
+              <td>Rollstuhllänge (RL)</td>
+              <td>96.5 cm</td>
+            </tr>
+            <tr>
+              <td>Sitzwinkel</td>
+              <td>4°</td>
+            </tr>
+            <tr>
+              <td>Max. Belastbarkeit</td>
+              <td>120 kg</td>
+            </tr>
+            <tr>
+              <td>Transfergewicht</td>
+              <td>28 kg</td>
+            </tr>
+            <tr>
+              <td>Gesamtgewicht</td>
+              <td>35 kg</td>
+            </tr>
+            <tr>
+              <td>Abstand Achsmitte zur Rückenlehne</td>
+              <td>0–4 cm</td>
+            </tr>
+          </tbody>
+        </table>
+        <figure class="specs-fig reveal reveal-delay-2"><img alt="Technische 2D-Zeichnungen des EZER von der Seite, von vorn und von oben, mit den Maßen FS, SH, ST, LH, SB, RH, RL und RB" height="1123" loading="lazy" src="../assets/img/product/dimensions-white.png" width="900"/></figure>
+      </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 10: PULL QUOTE / TESTIMONIAL
+    ============================================================ -->
+        <style>.uc-photo video{width:100%;max-width:420px;height:auto;border-radius:18px;display:block;margin:0 auto;box-shadow:0 20px 50px rgba(0,0,0,.4)}@media(max-width:900px){.uc-photo video{max-width:320px}}</style>
+<section aria-labelledby="uc-h" class="sp uc2">
+      <div class="container">
+        <div class="sp-row reveal">
+          <div class="sp-copy">
+            <h3 id="uc-h">Mehr <span>Flexibilität</span> am Arbeitsplatz<span class="dot">.</span></h3>
+            <p>Das ist Nick, ein renommierter Konditor in den Niederlanden. Am schwersten fiel ihm, dass er seiner Leidenschaft nicht mehr nachgehen konnte. Mit dem EZER steht er wieder in der Küche, bereit zum Backen.</p>
+            <p class="uc-reimb">Für berufliche Tätigkeiten vollständig von <strong>UWV</strong> erstattet.</p>
+            <div class="sp-cta"><a class="sp-btn" href="user-stories.html">Erfahrungsberichte ansehen</a></div>
+          </div>
+          <div class="sp-vis uc2-vis"><svg aria-hidden="true" class="sp-squig sp-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><div class="sp-photo uc2-photo"><video aria-label="Nick, ein Konditor, steht in seinem EZER in der Küche" autoplay="" loop="" muted="" playsinline="" poster="../assets/img/compare/nick-poster.jpg" preload="metadata" src="../assets/video/nick.mp4"></video></div><span class="sp-pill"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.6"></circle></svg> Anwendung</span><div class="sp-card"><b>Mit dem EZER</b><ul><li>Im Stehen backen</li><li>Kollegen auf Augenhöhe begegnen</li><li>Zurück in die Küche</li></ul></div></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+    ============================================================ -->
+    
+
+        <!-- ============================================================
+         SECTION 11: CTA
+    ============================================================ -->
+
+    <style>
+      .pr{background:#F6F1E6;padding:clamp(64px,9vw,120px) clamp(20px,5vw,60px)}
+      .pr__wrap{max-width:1180px;margin:0 auto}
+      .pr__head{text-align:center;margin-bottom:clamp(36px,5vw,64px)}
+      .pr__head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:600;letter-spacing:-.03em;color:#0B1D35;margin:0 0 10px}
+      .pr__head h2 .dot{color:#12aaba}
+      .pr__head p{font-size:1.15rem;color:#4a4d4b;margin:0}
+      .pr__grid{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;border:1.5px solid #0B1D35;border-radius:22px;background:#fff;overflow:hidden}
+      .pr__card{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(28px,3.4vw,48px) clamp(20px,2.6vw,36px)}
+      .pr__card+.pr__card{border-left:1.5px solid #0B1D35}
+      .pr__card--best{background:rgba(18,170,186,.10);padding-top:clamp(52px,5vw,68px)}
+      .pr__tag{position:absolute;left:0;right:0;top:0;padding:12px 0;background:#12aaba;color:#0B1D35;font:700 .78rem/1 "Montserrat",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+      .pr__card h3{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:500;letter-spacing:-.02em;color:#0B1D35;margin:0 0 6px}
+      .pr__sub{margin:0 0 22px;color:#4a4d4b;font-size:1.02rem}
+      .pr__price{width:100%;display:flex;align-items:center;justify-content:center;gap:6px;min-height:150px;margin-bottom:24px;border-radius:16px;background:#F6F1E6;color:#0B1D35;font:600 clamp(3rem,5vw,4.4rem)/1 "Montserrat",sans-serif;letter-spacing:-.03em}
+      .pr__card--best .pr__price{background:#12aaba}
+      .pr__cur{font-size:.55em;align-self:flex-start;margin-top:.55em}
+      .pr__price--txt{font-size:clamp(1.9rem,3vw,2.6rem)}
+      .pr__btn{margin-top:auto}
+      @media(max-width:860px){.pr__grid{grid-template-columns:1fr}.pr__card+.pr__card{border-left:0;border-top:1.5px solid #0B1D35}}
+    </style>
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+    <style>
+.pf2{background:#F6F1E6;padding:clamp(56px,8vw,110px) clamp(20px,4vw,56px)}
+.pf2__wrap{max-width:820px;margin:0 auto}
+.pf2 h2{font-size:clamp(28px,3.4vw,44px);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:#0B1D35;margin:0 0 28px}
+.pf2 h2 .dot{color:#12aaba}
+.pf2__item{background:#fff;border-radius:14px;margin-bottom:12px;box-shadow:0 1px 3px rgba(11,29,53,.08)}
+.pf2__item summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:600;color:#0B1D35;display:flex;justify-content:space-between;gap:16px}
+.pf2__item summary::-webkit-details-marker{display:none}
+.pf2__item summary::after{content:"+";color:#12aaba;font-size:1.4rem;line-height:1}
+.pf2__item[open] summary::after{content:"\2212"}
+.pf2__item p{margin:0;padding:0 24px 22px;color:#454c59;line-height:1.65}
+.pf2__more{margin-top:22px}
+section.pf2{background:#0B1D35 !important}
+section.pf2 h2{color:#fff !important}
+.pf2__item{background:rgba(255,255,255,.06);box-shadow:none;border:1px solid rgba(255,255,255,.12)}
+.pf2__item summary{color:#fff}
+.pf2__item p{color:rgba(255,255,255,.82)}
+.pf2__item[open]{background:rgba(255,255,255,.09)}
+.pf2__more{margin-top:28px}
+.pf2__more a{display:inline-flex;align-items:center;padding:16px 26px;border-radius:14px;background:#12aaba;color:#0B1D35;font-weight:600;text-decoration:none;transition:transform .2s ease,filter .2s ease}
+.pf2__more a:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.pf2__more a:focus-visible{outline:3px solid #0B1D35;outline-offset:3px}
+</style>
+<section class="rh-callout" style="padding:48px 20px;background:#F4F0E6"><div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px"><div><h2 style="margin:0 0 6px;font-size:1.5rem;color:#0B1D35">Anleitungen, Videos und technische Daten<span class="dot">.</span></h2><p style="margin:0;color:#54606f">Alles zum EZER an einem Ort.</p></div><a class="btn-primary" href="product-resources.html">Ressourcenzentrum öffnen</a></div></section>
+<section aria-labelledby="pf2-h" class="pf2"><div class="pf2__wrap"><h2 id="pf2-h">Gut zu wissen<span class="dot">.</span></h2><details class="pf2__item"><summary>Ist der EZER Stehrollstuhl vollständig mechanisch?</summary><p>Ja, von Anfang an war es unser Ziel, den Rollstuhl vollständig mechanisch zu bauen, damit Menschen nicht von Strom abhängig sind.</p></details><details class="pf2__item"><summary>Kann ich den Rollstuhl vor dem Kauf testen?</summary><p>Ja, Sie können den EZER Stehrollstuhl bei uns oder bei einem unserer Händler testen, damit er passend auf Ihre Bedürfnisse eingestellt werden kann. Bitte kontaktieren Sie uns für einen Test.</p></details><details class="pf2__item"><summary>Was ist ein Stehrollstuhl?</summary><p>Ein Stehrollstuhl ist ein Rollstuhl, mit dem man sich in eine stehende Position aufrichten kann, was Mobilität, Durchblutung und soziale Interaktion verbessert. Stehrollstühle sind meist entweder elektrisch oder mechanisch, und manche, wie der EZER, können sich auch im Stehen fortbewegen.</p></details><details class="pf2__item"><summary>Wer profitiert vom EZER Stehrollstuhl?</summary><p>Menschen mit Querschnittlähmung, MS, Zerebralparese oder anderen Mobilitätseinschränkungen, die eine bessere Haltung, Knochendichte und Alltagsfunktion anstreben, können vom EZER Stehrollstuhl profitieren.</p></details><p class="pf2__more"><a href="faq.html">Alle häufig gestellten Fragen ansehen →</a></p></div></section>
+
+    <section aria-labelledby="bro-h" class="bro bro--home">
+      <div class="container">
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">Erleben Sie den EZER selbst<span class="dot">.</span></h2>
+            <p>Entdecken Sie, wie Bewegung im Stehen funktioniert. Buchen Sie eine persönliche Demo und erleben Sie stehende Mobilität aus erster Hand.</p>
+            <div class="bro-actions">
+              <a class="bro-btn bro-btn--primary" href="book-a-demo.html">Demo buchen</a>
+              <a class="bro-btn bro-btn--ghost" href="brochure.html">Broschüre anfordern</a>
+            </div>
+          </div>
+          <div class="bro-photo" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+  <footer aria-label="Fußbereich der Website" class="ds-footer" role="contentinfo">
+    <div class="ds-footer__wrap">
+      <p class="ds-footer__title">Stehen zum neuen Standard machen<span class="dot">.</span></p>
+      <div class="ds-footer__grid">
+        <div class="ds-footer__brand">
+          <a aria-label="J58 — Startseite" class="ds-footer__logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+          <p>J58 entwickelt den EZER Stehrollstuhl, den ersten mechanischen Stehrollstuhl, mit dem man sitzen, stehen und sich im Stehen fortbewegen kann.</p>
+          <p>De Hems 10, 7522 NL Enschede, Nederland<br/><a href="mailto:info@j58.eu">info@j58.eu</a></p>
+          <div aria-label="Social media" class="ds-footer__social"><a aria-label="Facebook" href="https://www.facebook.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.3-3.6 3.7V10H8.4v3h2.4v7z" fill="currentColor"></path></svg></a><a aria-label="LinkedIn" href="https://nl.linkedin.com/company/j58" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" fill="currentColor" r="1.7"></circle><rect fill="currentColor" height="8.5" width="3" x="6" y="10"></rect><path d="M11 10h2.8v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.6 3 3.7v5h-3v-4.2c0-1-.2-1.8-1.3-1.8s-1.2.8-1.2 1.8v4.2h-3z" fill="currentColor"></path></svg></a><a aria-label="Instagram" href="https://www.instagram.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="none" height="14" rx="4" stroke="currentColor" stroke-width="1.8" width="14" x="5" y="5"></rect><circle cx="12" cy="12" fill="none" r="3.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="16.2" cy="7.8" fill="currentColor" r="1"></circle></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@J58EU" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="currentColor" height="11" rx="3.2" width="16" x="4" y="6.5"></rect><path d="M10.5 9.7v4.6l4-2.3z" fill="#12aaba"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@j58.eu" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.5 5v9.3a2.8 2.8 0 1 1-2.8-2.8M13.5 5c.3 2.1 1.8 3.5 4 3.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></div>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Produkt</h4>
+          <a href="product.html">Der EZER</a>
+          <a href="product-resources.html">Ressourcen</a>
+          <a href="user-stories.html">Nutzerberichte</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Für Partner</h4>
+          <a href="healthcare-professionals.html">Fachkräfte im Gesundheitswesen</a>
+          <a href="distributors.html">Händler</a>
+          <a href="reimbursement.html">Finanzierung</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Unternehmen</h4>
+          <a href="about.html">Über J58</a>
+          <a href="blog.html">Blogs und Artikel</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="book-a-demo.html">Demo buchen</a>
+        </div>
+      </div>
+      <div class="ds-footer__bottom"><span>© <span id="year">2026</span> J58. Alle Rechte vorbehalten.</span><span><a href="privacy-policy.html">Datenschutz</a> · <a href="cookie-policy.html">Cookies</a> · <a href="terms-and-conditions.html" data-terms>AGB</a> · <a href="#" data-coming-soon>Barrierefreiheit</a></span></div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       JAVASCRIPT
+  ================================================================ -->
+  <script>
+    'use strict';
+
+    /* ---------------------------------------------------------------
+       Accessibility — High Contrast
+    --------------------------------------------------------------- */
+    const htmlEl = document.documentElement;
+    const hcBtn = document.getElementById('hcToggle') || document.createElement('button');
+
+    function setHighContrast(on) {
+      if (on) {
+        htmlEl.classList.add('hc');
+        hcBtn.classList.add('active');
+        hcBtn.setAttribute('aria-pressed', 'true');
+        localStorage.setItem('j58-hc', '1');
+      } else {
+        htmlEl.classList.remove('hc');
+        hcBtn.classList.remove('active');
+        hcBtn.setAttribute('aria-pressed', 'false');
+        localStorage.removeItem('j58-hc');
+      }
+    }
+
+    hcBtn.addEventListener('click', () => {
+      setHighContrast(!htmlEl.classList.contains('hc'));
+    });
+
+    if (localStorage.getItem('j58-hc') === '1') {
+      setHighContrast(true);
+    }
+
+    /* ---------------------------------------------------------------
+       Accessibility — Text size
+    --------------------------------------------------------------- */
+    let textScale = parseFloat(localStorage.getItem('j58-ts') || '1');
+
+    function applyTextScale(scale) {
+      textScale = Math.min(1.4, Math.max(0.8, scale));
+      htmlEl.style.setProperty('--ts', textScale);
+      localStorage.setItem('j58-ts', textScale);
+    }
+
+    applyTextScale(textScale);
+
+    (document.getElementById('textPlus') || document.createElement('b')).addEventListener('click', () => applyTextScale(textScale + 0.1));
+    (document.getElementById('textMinus') || document.createElement('b')).addEventListener('click', () => applyTextScale(textScale - 0.1));
+    
+
+    /* ---------------------------------------------------------------
+       Navigation — Scroll shadow
+    --------------------------------------------------------------- */
+    const navWrap = document.getElementById('nav-wrap');
+
+    function updateNavShadow() {
+      if (window.scrollY > 8) {
+        navWrap.classList.add('scrolled');
+      } else {
+        navWrap.classList.remove('scrolled');
+      }
+    }
+
+    window.addEventListener('scroll', updateNavShadow, { passive: true });
+    updateNavShadow();
+
+    /* ---------------------------------------------------------------
+       Navigation — Mobile hamburger
+    --------------------------------------------------------------- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileDrawer.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    });
+
+    // Close drawer on mobile link click
+    mobileDrawer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileDrawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    // Close drawer on outside click
+    document.addEventListener('click', (e) => {
+      if (
+        mobileDrawer.classList.contains('open') &&
+        !mobileDrawer.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        hamburger.classList.remove('open');
+        mobileDrawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    /* ---------------------------------------------------------------
+       Scroll Reveal — IntersectionObserver
+    --------------------------------------------------------------- */
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        }
+      );
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+      });
+    } else {
+      // Show all immediately if reduced motion
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('visible');
+      });
+    }
+
+    /* ---------------------------------------------------------------
+       Scroll Indicator — hide on scroll
+    --------------------------------------------------------------- */
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+
+    if (scrollIndicator) {
+      window.addEventListener('scroll', () => {
+        const opacity = Math.max(0, 0.6 - window.scrollY / 200);
+        scrollIndicator.style.opacity = opacity;
+      }, { passive: true });
+    }
+
+    /* ---------------------------------------------------------------
+       Newsletter form — prevent default & show confirmation
+    --------------------------------------------------------------- */
+    const newsletterForm = document.querySelector('.footer__newsletter-form');
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('input[type="email"]');
+        const btn = newsletterForm.querySelector('button');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Angemeldet!';
+        btn.disabled = true;
+        input.value = '';
+
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 3000);
+      });
+    }
+
+  </script>
+
+
+<script>
+(function(){var s=document.getElementById('piStage');if(!s)return;var bt=s.querySelectorAll('.cmp-toggle button');
+function set(m){s.setAttribute('data-mode',m);bt.forEach(function(b){var on=b.dataset.mode===m;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)})}
+bt.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)})});})();
+</script>
+<script>
+(function(){document.querySelectorAll('.pf-q').forEach(function(b){b.addEventListener('click',function(){var p=document.getElementById(b.getAttribute('aria-controls')),o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);p.style.maxHeight=o?'0':p.scrollHeight+'px';});});})();
+</script>
+<script>
+(function(){var v=document.querySelector('.cinematic__video');if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.15}).observe(v)}})();
+(function(){
+  var hero=document.querySelector('.product-hero'); if(!hero) return;
+  var slides=hero.querySelectorAll('.ph-slide'), dots=hero.querySelectorAll('.ph-dots button'), i=0, t;
+  function go(n){ i=(n+slides.length)%slides.length; slides.forEach(function(s,k){s.classList.toggle('is-on',k===i)}); dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')}); }
+  function play(){ clearInterval(t); if(!matchMedia('(prefers-reduced-motion: reduce)').matches) t=setInterval(function(){go(i+1)},3000); }
+  hero.querySelector('.ph-prev').addEventListener('click',function(){go(i-1);play()});
+  hero.querySelector('.ph-next').addEventListener('click',function(){go(i+1);play()});
+  dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);play()})});
+  hero.addEventListener('mouseenter',function(){clearInterval(t)}); hero.addEventListener('mouseleave',play);
+  play();
+})();
+</script>
+<script>
+(function(){
+  var cards=document.querySelectorAll('.mb-card'); if(!cards.length) return;
+  var last=null;
+  function open(id,btn){ var d=document.getElementById('mb-'+id); if(!d||!d.showModal) return; last=btn; d.showModal(); document.body.classList.add('mb-lock'); d.scrollTop=0; var v=d.querySelector('.mb-modal__vid'); if(v){ v.currentTime=0; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } }
+  function close(d){ d.close(); }
+  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ var v=d.querySelector('.mb-modal__vid'); if(v) v.pause(); }); });
+  cards.forEach(function(c){ c.addEventListener('click',function(){ open(c.getAttribute('data-mb'),c); }); if(c.getAttribute('role')==='button') c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(c.getAttribute('data-mb'),c); } }); });
+  document.querySelectorAll('.mb-modal').forEach(function(d){
+    d.querySelector('.mb-modal__close').addEventListener('click',function(){ close(d); });
+    d.addEventListener('click',function(e){ if(e.target===d) close(d); });
+    d.addEventListener('close',function(){ document.body.classList.remove('mb-lock'); if(last) last.focus(); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var vp=document.getElementById('carVp'),tr=document.getElementById('carTrack');
+  if(!vp||!tr)return;
+  var GAP=28,STEP_MS=3000,HOLD=6000,busy=false,timer=null,visible=false,base=0,cw=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cards(){return Array.prototype.slice.call(tr.children);}
+  function layout(){
+    var vw=vp.clientWidth, vh=window.innerHeight; cw=Math.min(660,Math.round(vw*(vw<700?0.78:0.44)),Math.round((vh-520)/0.5625)); cw=Math.max(cw,vw<700?260:340);
+    tr.style.setProperty('--car-w',cw+'px'); tr.style.setProperty('--car-gap',GAP+'px');
+    base=Math.round(vw/2-cw/2-2*(cw+GAP));
+    tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+  }
+  function mark(){
+    var c=cards();
+    c.forEach(function(el,i){
+      var on=(i===2); el.classList.toggle('is-center',on);
+      var v=el.querySelector('video'); if(!v)return;
+      if(on){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else {v.pause();}
+    });
+  }
+  function next(){
+    if(busy)return; busy=true;
+    var c=cards();
+    c[2].classList.remove('is-center'); c[3].classList.add('is-center'); playOnly(c[3]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    setTimeout(function(){
+      tr.appendChild(tr.firstElementChild);
+      tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+      busy=false;
+    },STEP_MS+30);
+  }
+  function prev(){
+    if(busy)return; busy=true;
+    var c=cards();
+    tr.insertBefore(c[c.length-1],c[0]);
+    tr.style.transition='none'; tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    void tr.offsetWidth;
+    var n=cards(); n[3].classList.remove('is-center'); n[2].classList.add('is-center'); playOnly(n[2]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+base+'px)';
+    setTimeout(function(){busy=false;},STEP_MS+30);
+  }
+  function playOnly(el){cards().forEach(function(x){var v=x.querySelector('video');if(!v)return;if(x===el){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});}
+  function start(){stop(); if(reduce||!visible)return; timer=setInterval(next,HOLD+STEP_MS);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  document.getElementById('carNext').addEventListener('click',function(){next();start();});
+  document.getElementById('carPrev').addEventListener('click',function(){prev();start();});
+  vp.addEventListener('mouseenter',stop); vp.addEventListener('mouseleave',start);
+  tr.addEventListener('click',function(e){var c=e.target.closest('.stack-card');if(!c||c.classList.contains('is-center'))return;var i=cards().indexOf(c);if(i>2){next();start();}else if(i<2){prev();start();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;visible?start():stop();},{threshold:.35}).observe(vp);}else{visible=true;start();}
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(layout,120);});
+  tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]); tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]);
+  layout(); mark();
+})();
+</script>
+  <script>
+(function(){var s=document.getElementById('modeStage');if(!s)return;var bt=s.querySelectorAll('.cmp-toggle button');
+function set(m){s.setAttribute('data-mode',m);bt.forEach(function(b){var on=b.dataset.mode===m;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)})}
+bt.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)})});})();
+</script>
+<script defer="" src="../assets/js/cursor.js"></script>
+<script src="../assets/js/a11y.js"></script>
+<script src="../assets/js/nav-dd.js?v=4"></script>
+  <script>
+    /* Solid navy nav bar once the hero has scrolled out of view (same as home) */
+    (function () {
+      var wrap = document.getElementById('nav-wrap');
+      var hero = document.querySelector('.product-hero');
+      if (!wrap || !hero) return;
+      function update() { wrap.classList.toggle('past-hero', hero.getBoundingClientRect().bottom < 100); }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+
+
+</body></html>

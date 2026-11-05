@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html data-page="user-stories.html" lang="de"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#12aaba" name="theme-color"/>
+  <title>Nutzerberichte — Leben mit dem EZER | J58</title>
+  <meta content="Echte Menschen, echte Tage. Berichte von Nutzern des EZER Stehrollstuhls über Beruf, Familie und Selbstständigkeit im Alltag." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Nutzerberichte | J58" property="og:title"/>
+  <meta content="Berichte von EZER-Nutzern über Selbstständigkeit im Alltag." property="og:description"/>
+  <meta content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" property="og:image"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/site.css" rel="stylesheet"/>
+  <link href="../assets/css/nav.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/theme.css?v=3" rel="stylesheet"/>
+  <link href="../assets/css/design-system.css?v=5" rel="stylesheet"/>
+<link href="../assets/css/bro-banner.css" rel="stylesheet"/>
+<link href="../assets/css/footer.css" rel="stylesheet"/>
+<style>
+.has-reel{min-height:min(78vh,640px);display:flex;align-items:center}
+.has-reel::after{display:none}
+.has-reel .container{max-width:1100px;text-align:center;width:100%}
+.has-reel .container p{margin-inline:auto}
+.hero-reel{position:absolute;inset:0;overflow:hidden}
+.hero-reel{display:flex;flex-direction:column;gap:14px;padding-block:14px}.hero-reel__track{display:flex;gap:14px;flex:1;min-height:0;width:max-content;animation:reel 80s linear infinite}.hero-reel__track--rev{animation-direction:reverse;animation-duration:95s}
+.hero-reel__track img{height:100%;width:auto;aspect-ratio:1/1;object-fit:cover;border-radius:16px;flex:none;filter:saturate(.9)}
+
+.hero-reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,53,.78),rgba(11,29,53,.62) 50%,rgba(11,29,53,.85)),radial-gradient(ellipse at center,rgba(11,29,53,.55),transparent 70%)}
+.has-reel h1{text-shadow:0 4px 30px rgba(0,0,0,.45)}
+@keyframes reel{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.hero-reel__track{animation:none}}
+
+.us-list{display:grid;gap:28px;max-width:1040px;margin-inline:auto}
+.us-card{display:grid;grid-template-columns:1.15fr 1fr;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 14px 36px rgba(11,29,53,.10);border:1px solid rgba(11,29,53,.06);min-height:340px}
+.us-text{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.us-card blockquote{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.25rem,2.2vw,1.8rem);line-height:1.35;color:#0B1D35}
+.us-card blockquote::before{content:none}
+.us-card .quote-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(11,29,53,.12);padding-top:20px}
+.us-card .avatar{width:44px;height:44px;border-radius:50%;background:#12aaba;color:#0B1D35;display:grid;place-items:center;font:700 1rem "Montserrat",sans-serif;flex:none}
+.us-body h3{margin:0 0 16px;font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.4rem,2.3vw,1.9rem);line-height:1.25;color:#0B1D35}
+.us-body p{margin:0;font-size:1.02rem;line-height:1.6;color:#4a5a6e}
+.us-text .btn-primary{align-self:flex-start}
+.us-photo{background-size:cover;background-repeat:no-repeat;min-height:260px}
+@media(max-width:760px){.us-card{grid-template-columns:1fr}.us-photo{order:-1;min-height:240px}}
+.vt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;width:min(1400px,calc(100vw - 48px));margin-left:50%;transform:translateX(-50%)}
+.vt-thumb{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#12324f,#0B1D35);display:grid;place-items:center;box-shadow:0 14px 36px rgba(0,0,0,.25)}
+.vt-head{position:absolute;left:10px;right:10px;top:10px;display:flex;align-items:center;gap:10px;padding:8px 12px 8px 8px;border-radius:14px;background:rgba(5,12,24,.78);color:#fff;font-family:"Montserrat",sans-serif;backdrop-filter:blur(4px)}
+.vt-av{width:30px;height:30px;border-radius:50%;flex:none;background:#0B1D35}
+.vt-title{display:flex;flex-direction:column;min-width:0;line-height:1.2}
+.vt-title strong{font-size:.9rem;font-weight:700}
+.vt-title span{font-size:.72rem;opacity:.7}
+
+.vt-thumb.has-video{cursor:pointer;background-size:cover;background-position:center}
+.vt-thumb.has-video .vt-soon{display:none}
+.vt-thumb.has-video .vt-pb{background:#12aaba;border-radius:50%}
+.vt-thumb.has-video:hover .vt-pb{background:#2bc4e0}
+.vt-modal{border:0;padding:0;background:#000;border-radius:20px;width:min(1100px,94vw);overflow:hidden}
+.vt-modal::backdrop{background:rgba(5,12,24,.78)}
+.vt-modal .vt-frame{position:relative;aspect-ratio:16/9;width:100%}
+.vt-modal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vt-modal .vt-x{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:20px;cursor:pointer}
+.vt-bar{position:absolute;left:10px;right:10px;bottom:10px;display:flex;align-items:center;gap:8px;height:40px;padding:0 6px;border-radius:12px;background:rgba(5,12,24,.78)}
+.vt-pb{display:grid;place-items:center;width:34px;height:34px;color:#fff}
+.vt-track{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.28)}
+.vt-soon{white-space:nowrap;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:600 .68rem "Montserrat",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.vt-meta{display:flex;flex-direction:column;margin-top:14px;font-family:"Montserrat",sans-serif;color:#fff}
+.vt-meta span{font-size:.85rem;opacity:.65}
+@media(max-width:1000px){.vt-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.vt-grid{grid-template-columns:1fr}}
+.us-list{gap:0!important}
+.us-card{position:sticky;margin-bottom:56px;transform-origin:50% 0}
+.us-card:nth-child(1){top:96px}.us-card:nth-child(2){top:112px}.us-card:nth-child(3){top:128px}.us-card:nth-child(4){top:144px}.us-card:nth-child(5){top:160px}.us-card:nth-child(6){top:176px;margin-bottom:0}
+.us-card:nth-child(even){grid-template-columns:1fr 1.15fr}
+.us-card:nth-child(even) .us-photo{order:-1}
+@media(max-width:760px){.us-card,.us-card:nth-child(even){grid-template-columns:1fr}.us-card:nth-child(even) .us-photo{order:-1}.us-card{position:relative;top:auto!important;margin-bottom:24px}}
+
+</style>
+<script src="../assets/js/lang.js"></script>
+<script src="../assets/js/consent.js" defer></script>
+<script src="../assets/js/coming-soon.js" defer></script>
+<script src="../assets/js/newsletter-popup.js" defer></script>
+<link href="../assets/css/nav-dd.css?v=5" rel="stylesheet"/>
+<meta name="robots" content="noindex,nofollow" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+  <div aria-label="Optionen zur Barrierefreiheit" class="a11y-toolbar" role="complementary">
+    <div class="container">
+      <span class="a11y-toolbar-label">Barrierefreiheit:</span>
+      <button aria-label="Hohen Kontrast ein-/ausschalten" aria-pressed="false" class="a11y-btn" id="hcToggle">Hoher Kontrast</button>
+      <div aria-hidden="true" class="a11y-divider"></div>
+      <div aria-label="Textgröße" class="a11y-size-group" role="group">
+        <button aria-label="Text verkleinern" class="a11y-btn" id="textMinus">A−</button>
+        <button aria-label="Text vergrößern" class="a11y-btn" id="textPlus">A+</button>
+      </div>
+      <div aria-label="Sprache" class="lang-switch" role="group"><a data-lang="en" href="../user-stories/index.html" hreflang="en" lang="en">EN</a><a data-lang="nl" href="../nl/user-stories.html" hreflang="nl" lang="nl">NL</a><a aria-current="true" data-lang="de" href="user-stories.html" hreflang="de" lang="de">DE</a></div>
+    </div>
+  </div>
+  <div class="nav-wrap" id="navWrap">
+    <nav aria-label="Hauptnavigation" class="nav container" role="navigation">
+      <a aria-label="J58 — Startseite" class="nav-logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="productMenu">Produkt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="productMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Produkt</p>
+              <a class="nav-mega-link" href="product.html"><strong>Der EZER</strong><small>Merkmale, Vorteile und Funktionsweise</small></a>
+              <a class="nav-mega-link" href="product-resources.html"><strong>Ressourcen</strong><small>Videos, Broschüre, technische Daten und Anleitungen</small></a>
+            </div>
+            <a class="nav-mega-card" href="product.html" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"><span><em>Produkt</em><b>Den EZER entdecken</b></span></a>
+          </div>
+        </li>
+        <li><a aria-current="page" href="user-stories.html">Nutzerberichte</a></li>
+        <li><a href="reimbursement.html">Finanzierung</a></li>
+        <li><a href="healthcare-professionals.html">Fachkräfte</a></li>
+        <li><a href="distributors.html">Händler</a></li>
+        <li class="nav-dd"><button aria-controls="aboutMenu" aria-expanded="false" aria-haspopup="true" class="nav-dd-btn" type="button">Über uns <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div class="nav-mega" id="aboutMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Über uns</p>
+              <a class="nav-mega-link" href="about.html"><strong>Unsere Geschichte &amp; Team</strong><small>Mission, Weg und die Menschen hinter J58</small></a>
+              <a class="nav-mega-link" href="blog.html"><strong>Blogs und Artikel</strong><small>Neuigkeiten, Geschichten und Newsletter</small></a>
+              <a class="nav-mega-link" href="faq.html"><strong>FAQ</strong><small>Antworten auf häufige Fragen</small></a>
+            </div>
+            <a class="nav-mega-card" href="about.html#team-heading" style="background-image:url('../assets/img/team/gabriel.jpg')"><span><em>Lernen Sie das Team kennen</em><b>Schön, Sie kennenzulernen</b></span></a>
+          </div>
+        </li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta"><a class="btn-primary" href="book-a-demo.html">Demo buchen</a></div>
+      <button aria-controls="mobileDrawer" aria-expanded="false" aria-label="Navigationsmenü öffnen" class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div aria-label="Navigationsmenü" class="mobile-drawer" id="mobileDrawer">
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Produkt<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="product.html">Produkt</a><a href="product-resources.html">Ressourcen</a></div></div>
+      <a href="user-stories.html">Nutzerberichte</a>
+      <a href="reimbursement.html">Finanzierung</a>
+      <a href="healthcare-professionals.html">Für Fachkräfte</a>
+      <a href="distributors.html">Händler</a>
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Über uns<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="about.html">Über uns</a><a href="about.html#team-heading">Team</a><a href="blog.html">Blogs und Artikel</a><a href="faq.html">FAQ</a></div></div>
+      <a href="contact.html">Kontakt</a>
+      <div aria-label="Sprache" class="lang-switch lang-switch--drawer" role="group"><a data-lang="en" href="../user-stories/index.html" hreflang="en" lang="en">EN</a><a data-lang="nl" href="../nl/user-stories.html" hreflang="nl" lang="nl">NL</a><a aria-current="true" data-lang="de" href="user-stories.html" hreflang="de" lang="de">DE</a></div>
+      <div class="mobile-cta"><a class="btn-primary" href="book-a-demo.html" style="display:block;text-align:center;">Demo buchen</a></div>
+    </div>
+  </div>
+
+  <main id="main" role="main">
+    <section class="page-hero has-reel">
+      <div aria-hidden="true" class="hero-reel"><div class="hero-reel__track"><img alt="" loading="eager" src="../assets/img/mission/p1.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p2.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p3.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p4.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p6.jpg"/><img alt="" loading="eager" src="../assets/img/panels/active.jpg"/><img alt="" loading="eager" src="../assets/img/panels/eye-level.jpg"/><img alt="" loading="eager" src="../assets/img/panels/reach-high.jpg"/><img alt="" loading="eager" src="../assets/img/panels/work.jpg"/><img alt="" loading="eager" src="../assets/img/product/benefit-safety.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-archery.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p1.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p2.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p3.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p4.jpg"/><img alt="" loading="eager" src="../assets/img/mission/p6.jpg"/><img alt="" loading="eager" src="../assets/img/panels/active.jpg"/><img alt="" loading="eager" src="../assets/img/panels/eye-level.jpg"/><img alt="" loading="eager" src="../assets/img/panels/reach-high.jpg"/><img alt="" loading="eager" src="../assets/img/panels/work.jpg"/><img alt="" loading="eager" src="../assets/img/product/benefit-safety.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-archery.jpg"/></div><div class="hero-reel__track hero-reel__track--rev"><img alt="" loading="eager" src="../assets/img/panels/spec-belt-drive.jpg"/><img alt="" loading="eager" src="../assets/img/panels/spec-gas-springs.jpg"/><img alt="" loading="eager" src="../assets/img/panels/spec-safety.jpg"/><img alt="" loading="eager" src="../assets/img/product/benefit-design.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-1.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-2.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-3.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-4.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-1.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-2.jpg"/><img alt="" loading="eager" src="../assets/img/panels/spec-belt-drive.jpg"/><img alt="" loading="eager" src="../assets/img/panels/spec-gas-springs.jpg"/><img alt="" loading="eager" src="../assets/img/panels/spec-safety.jpg"/><img alt="" loading="eager" src="../assets/img/product/benefit-design.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-1.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-2.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-3.jpg"/><img alt="" loading="eager" src="../assets/img/product/hero-4.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-1.jpg"/><img alt="" loading="eager" src="../assets/img/rehab/rehab-2.jpg"/></div></div>
+      <div class="container">
+        <p class="eyebrow">Nutzerberichte</p>
+        <h1>Hören Sie, was unsere Freunde sagen<span class="dot">.</span></h1>
+        <p>Alltägliche Momente, auf Augenhöhe erzählt. Echte Menschen, echte Tage.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="us-list">
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>An unserem Hochzeitstag neben Patrick stehen.</h3><p>„Das Schönste, was mir an diesem Tag passiert ist, war die Heirat mit Patrick, und das Zweitschönste war, neben ihm zu stehen.“</p></div><a class="btn-primary" href="user-story-shanaya.html">Mehr lesen</a></div><div aria-label="Shanaya mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/shanaya/photo-03.jpg');background-position:50% 40%"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Zurück im Garten und am obersten Regal.</h3><p>Wir haben Jeroen im November 2024 kennengelernt, als er den Prototyp testen kam. Er wurde Beta-Nutzer und entschied sich, überzeugt davon, dass der EZER ihm im Haus und im Garten hilft, einen eigenen anzuschaffen.</p></div><a class="btn-primary" href="user-story-jeroen.html">Mehr lesen</a></div><div aria-label="Jeroen mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/jeroen/photo-01.jpg');background-position:50% 30%"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Aktiv bleiben beginnt mit dem Aufstehen.</h3><p>Christian nutzt den EZER zu Hause, um aktiv zu bleiben. Die erhöhte Position hält seinen Körper stärker aktiv.</p></div><a class="btn-primary" href="user-story-christian.html">Mehr lesen</a></div><div aria-label="Christian mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/christian/photo-04.jpg');background-position:50% 45%"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Gespräche auf Augenhöhe, zu Hause.</h3><p>Edwin nutzt den EZER, um auf Augenhöhe Kontakte zu pflegen und sich zu Hause fortzubewegen.</p></div><a class="btn-primary" href="user-story-edwin.html">Mehr lesen</a></div><div aria-label="Edwin mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/edwin/photo-01.jpg');background-position:50% 35%"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Meine Arbeit erfordert oft, dass ich stehe. Und jetzt kann ich es.</h3><p>Nick nutzt den EZER bei der Arbeit. Seine Küche ist komplett auf das Arbeiten im Stehen ausgelegt, daher brauchte er einen Rollstuhl, der sich der Umgebung anpasst.</p></div><a class="btn-primary" href="user-story-nick.html">Mehr lesen</a></div><div aria-label="Nick mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/nick/photo-03.jpg');background-position:35% 50%"></div></article>
+          <article class="us-card reveal"><div class="us-text"><div class="us-body"><h3>Stehen zu Hause und bei der Arbeit.</h3><p>Johan nutzt den EZER zu Hause und bei der Arbeit.</p></div><a class="btn-primary" href="user-story-johan.html">Mehr lesen</a></div><div aria-label="Johan mit dem EZER" class="us-photo" role="img" style="background-image:url('../assets/stories/johan/photo-01.jpg');background-position:50% 60%"></div></article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <section aria-labelledby="bro-h" class="bro bro--home">
+      <div class="container">
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">Erleben Sie den EZER selbst<span class="dot">.</span></h2>
+            <p>Entdecken Sie, wie Bewegung im Stehen funktioniert. Buchen Sie eine persönliche Demo und erleben Sie stehende Mobilität aus erster Hand.</p>
+            <div class="bro-actions">
+              <a class="bro-btn bro-btn--primary" href="book-a-demo.html">Demo buchen</a>
+              <a class="bro-btn bro-btn--ghost" href="brochure.html">Broschüre anfordern</a>
+            </div>
+          </div>
+          <div class="bro-photo" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+  <footer aria-label="Fußbereich der Website" class="ds-footer" role="contentinfo">
+    <div class="ds-footer__wrap">
+      <p class="ds-footer__title">Stehen zum neuen Standard machen<span class="dot">.</span></p>
+      <div class="ds-footer__grid">
+        <div class="ds-footer__brand">
+          <a aria-label="J58 — Startseite" class="ds-footer__logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+          <p>J58 entwickelt den EZER Stehrollstuhl, den ersten mechanischen Stehrollstuhl, mit dem man sitzen, stehen und sich im Stehen fortbewegen kann.</p>
+          <p>De Hems 10, 7522 NL Enschede, Nederland<br/><a href="mailto:info@j58.eu">info@j58.eu</a></p>
+          <div aria-label="Social media" class="ds-footer__social"><a aria-label="Facebook" href="https://www.facebook.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.3-3.6 3.7V10H8.4v3h2.4v7z" fill="currentColor"></path></svg></a><a aria-label="LinkedIn" href="https://nl.linkedin.com/company/j58" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" fill="currentColor" r="1.7"></circle><rect fill="currentColor" height="8.5" width="3" x="6" y="10"></rect><path d="M11 10h2.8v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.6 3 3.7v5h-3v-4.2c0-1-.2-1.8-1.3-1.8s-1.2.8-1.2 1.8v4.2h-3z" fill="currentColor"></path></svg></a><a aria-label="Instagram" href="https://www.instagram.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="none" height="14" rx="4" stroke="currentColor" stroke-width="1.8" width="14" x="5" y="5"></rect><circle cx="12" cy="12" fill="none" r="3.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="16.2" cy="7.8" fill="currentColor" r="1"></circle></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@J58EU" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="currentColor" height="11" rx="3.2" width="16" x="4" y="6.5"></rect><path d="M10.5 9.7v4.6l4-2.3z" fill="#12aaba"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@j58.eu" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.5 5v9.3a2.8 2.8 0 1 1-2.8-2.8M13.5 5c.3 2.1 1.8 3.5 4 3.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></div>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Produkt</h4>
+          <a href="product.html">Der EZER</a>
+          <a href="product-resources.html">Ressourcen</a>
+          <a href="user-stories.html">Nutzerberichte</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Für Partner</h4>
+          <a href="healthcare-professionals.html">Fachkräfte im Gesundheitswesen</a>
+          <a href="distributors.html">Händler</a>
+          <a href="reimbursement.html">Finanzierung</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Unternehmen</h4>
+          <a href="about.html">Über J58</a>
+          <a href="blog.html">Blogs und Artikel</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="book-a-demo.html">Demo buchen</a>
+        </div>
+      </div>
+      <div class="ds-footer__bottom"><span>© <span id="year">2026</span> J58. Alle Rechte vorbehalten.</span><span><a href="privacy-policy.html">Datenschutz</a> · <a href="cookie-policy.html">Cookies</a> · <a href="terms-and-conditions.html" data-terms>AGB</a> · <a href="#" data-coming-soon>Barrierefreiheit</a></span></div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+<script defer="" src="../assets/js/cursor.js"></script>
+
+<dialog aria-label="User story video" class="vt-modal" id="vt-modal"><button aria-label="Schließen" class="vt-x" type="button">×</button><div class="vt-frame" id="vt-frame"></div></dialog>
+<script>
+/* Add the YouTube video ID (or full link) to each card's data-yt="" above. The thumbnail loads from YouTube and the video plays in a pop-up. */
+(function(){
+  var dlg=document.getElementById('vt-modal'), fr=document.getElementById('vt-frame');
+  function id(v){var m=(v||'').match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/); return m?m[1]:((v||'').match(/^[\w-]{11}$/)?v:'');}
+  document.querySelectorAll('.vt-thumb[data-yt]').forEach(function(t){
+    var y=id(t.getAttribute('data-yt')); if(!y) return;
+    t.classList.add('has-video'); t.style.backgroundImage='linear-gradient(180deg,rgba(5,12,24,.15),rgba(5,12,24,.35)),url(https://i.ytimg.com/vi/'+y+'/hqdefault.jpg)';
+    t.setAttribute('role','button'); t.setAttribute('tabindex','0'); t.setAttribute('aria-label','Video abspielen: '+t.getAttribute('data-name'));
+    function open(){ fr.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&rel=0" title="'+t.getAttribute('data-name')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'; dlg.showModal(); }
+    t.addEventListener('click',open); t.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();open();} });
+  });
+  dlg.addEventListener('close',function(){ fr.innerHTML=''; });
+  dlg.querySelector('.vt-x').addEventListener('click',function(){ dlg.close(); });
+  dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
+})();
+</script>
+<script src="../assets/js/a11y.js"></script>
+<script src="../assets/js/nav-dd.js?v=4"></script>
+
+
+</body></html>

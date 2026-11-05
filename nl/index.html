@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html data-page="index.html" lang="nl"><head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="#12aaba" name="theme-color"/>
+  <title>EZER sta-rolstoel | J58 — Sta en beweeg. Overal.</title>
+  <meta content="De EZER is 's werelds eerste mechanische sta-rolstoel — sta en beweeg tegelijk, zonder batterijen. Dagelijkse vrijheid op ooghoogte." name="description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="EZER sta-rolstoel | J58" property="og:title"/>
+  <meta content="'s Werelds eerste mechanische sta-rolstoel. Sta en beweeg, zonder batterijen." property="og:description"/>
+  <meta content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" property="og:image"/>
+  <meta content="https://www.j58.eu/" property="og:url"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Caveat:wght@600;700&amp;family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/site.css" rel="stylesheet"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "J58",
+    "url": "https://www.j58.eu/",
+    "description": "J58 develops the EZER, the world's first mechanical standing wheelchair.",
+    "makesOffer": { "@type": "Product", "name": "EZER Standing Wheelchair" }
+  }
+  </script>
+
+  <!-- HOME: Qarry-inspired nav + hero (overrides site.css for this page) -->
+  <style>
+    :root {
+      --hero-accent: var(--blue, #12aaba);   /* J58 brand teal */
+      --hero-accent-ink: var(--navy, #0B1D35);
+      --hero-radius: 28px;
+      --hero-gap: 12px;
+    }
+
+    h1 .dot, h2 .dot { color: var(--hero-accent); }
+
+    /* ---------- NAV: logo left, floating dark pill, white CTA right ---------- */
+    .nav-wrap,
+    .nav-wrap.scrolled,
+    .nav-wrap.is-scrolled {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 0;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: 0 !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    .nav-wrap .nav {
+      position: absolute;
+      top: calc(var(--hero-gap) + 28px);
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-left: clamp(24px, 6vw, 96px);
+      padding-right: clamp(24px, 6vw, 96px);
+      max-width: none;
+      height: auto;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+    .nav-wrap .nav-logo { color: #fff; text-decoration: none; flex: 0 0 auto; }
+    .nav-wrap .nav-logo img { display: block; height: 56px; width: auto; }
+
+    .nav-wrap .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 auto;
+      padding: 0 10px;
+      height: 56px;
+      list-style: none;
+      background: rgba(11, 29, 53, .62);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 12px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-wrap .nav-links a {
+      display: block;
+      padding: 10px 16px;
+      color: rgba(255, 255, 255, .92);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background .2s ease, color .2s ease;
+    }
+    .nav-wrap .nav-links a:hover,
+    .nav-wrap .nav-links a:focus-visible { background: rgba(255, 255, 255, .12); color: #fff; }
+
+    .nav-wrap .nav-cta .btn-primary {
+      background: #fff;
+      color: #111;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .nav-wrap .nav-cta .btn-primary:hover { background: var(--hero-accent); color: var(--hero-accent-ink); transform: translateY(-1px); }
+
+    .nav-wrap .nav-hamburger span { background: #fff; }
+    .nav-wrap .mobile-drawer {
+      position: absolute;
+      top: calc(var(--hero-gap) + 28px + 72px);
+      left: 16px;
+      right: 16px;
+      background: rgba(18, 18, 18, .96);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 16px;
+      padding: 12px;
+    }
+    .nav-wrap .mobile-drawer a { color: #fff; }
+
+    /* ---------- HERO: rounded frame, full-bleed video, big left-aligned headline ---------- */
+    .page-hero.has-video.page-hero--full {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: var(--hero-gap);
+      min-height: calc(100svh - 80px);
+      padding: 140px 0 clamp(96px, 12vh, 140px);
+      border-radius: var(--hero-radius);
+      overflow: hidden;
+      background: var(--navy, #0B1D35);
+      text-align: center;
+      isolation: isolate;
+    }
+    .page-hero.has-video .hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    .page-hero.has-video .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* dark scrim, heavier on the left where the text sits */
+    .page-hero.has-video.page-hero--full::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(11, 29, 53, .23) 0%, rgba(11, 29, 53, .15) 55%, rgba(11, 29, 53, .08) 100%),
+        linear-gradient(0deg, rgba(11, 29, 53, .15) 0%, rgba(11, 29, 53, 0) 40%);
+    }
+    /* subtle film grain */
+    .page-hero.has-video.page-hero--full::after {
+      content: none; display: none;
+      /* grain removed */
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .12;
+      mix-blend-mode: overlay;
+      background-image: url(../"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(../%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+    .page-hero.has-video > .container {
+      max-width: none;
+      width: 100%;
+      padding-left: clamp(24px, 6vw, 96px);
+      padding-right: clamp(24px, 6vw, 96px);
+    }
+    .page-hero.has-video .badge {
+      display: inline-block;
+      margin: 0 0 20px;
+      padding: 0;
+      background: none !important;
+      border: 0 !important;
+      color: var(--blue-mid, #a8e4ea) !important;
+      font-size: .95rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .page-hero.has-video .hero-title {
+      max-width: 11em;
+      margin: 0 auto 28px;
+      color: #fff;
+      font-size: clamp(2.4rem, 5.2vw, 4.6rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+    .page-hero.has-video > .container > p {
+      max-width: 32em;
+      margin: 32px auto 0;
+      color: rgba(255, 255, 255, .92);
+      font-size: clamp(.95rem, 1.2vw, 1.1rem);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .page-hero.has-video .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .page-hero.has-video .hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: none;
+      transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .page-hero.has-video .hero-actions a::after { content: "\2192"; font-size: 1.2em; line-height: 1; }
+    .page-hero.has-video .hero-actions .btn-primary {
+      background: var(--hero-accent);
+      color: var(--hero-accent-ink);
+      border: 1px solid var(--hero-accent);
+    }
+    .page-hero.has-video .hero-actions .btn-primary:hover { transform: translateY(-2px); filter: none; }
+    .page-hero.has-video .hero-actions .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .9);
+    }
+    .page-hero.has-video .hero-actions .btn-secondary:hover { background: #fff; color: #111; transform: translateY(-2px); }
+
+    /* scroll-down square button */
+    .hero-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      z-index: 2;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      background: #fff;
+      color: #111;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+    .hero-scroll:hover { transform: translateX(-50%) translateY(3px); }
+    .hero-scroll svg { width: 22px; height: 22px; }
+
+    /* sound toggle (bottom-right of hero; sound is OFF until the visitor turns it on) */
+    .hero-sound {
+      position: absolute; right: 28px; bottom: 28px; z-index: 2;
+      display: grid; place-items: center; width: 56px; height: 56px;
+      background: rgba(255,255,255,.16); color: #fff; cursor: pointer;
+      border: 1px solid rgba(255,255,255,.7); border-radius: 10px;
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+      transition: background .2s ease, color .2s ease;
+    }
+    .hero-sound[hidden] { display: none; }
+    .hero-sound:hover { background: #fff; color: #111; }
+    .hero-sound svg { width: 22px; height: 22px; }
+    .hero-sound .ic-on { display: none; }
+    .hero-sound[aria-pressed="true"] .ic-on { display: block; }
+    .hero-sound[aria-pressed="true"] .ic-off { display: none; }
+
+    @media (max-width: 1280px) {
+      .nav-wrap .nav-links { display: none; }
+      .nav-wrap .nav { justify-content: space-between; }
+      .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 1480px) {
+      html:not([lang="en"]) .nav-wrap .nav-links { display: none; }
+      html:not([lang="en"]) .nav-wrap .nav { justify-content: space-between; }
+      html:not([lang="en"]) .nav-wrap .nav-cta { margin-left: auto; margin-right: 12px; }
+      html:not([lang="en"]) .nav-wrap .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 640px) {
+      :root { --hero-radius: 20px; --hero-gap: 8px; }
+      .nav-wrap .nav-logo img { height: 44px; }
+      .nav-wrap .nav-cta { display: none; }
+      .page-hero.has-video.page-hero--full { padding-top: 130px; padding-bottom: 110px; }
+      .page-hero.has-video .hero-actions a { padding: 14px 20px; font-size: .95rem; }
+      .hero-scroll { display: none; }
+      .hero-sound { right: 16px; bottom: 16px; width: 48px; height: 48px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .page-hero.has-video .hero-actions a, .nav-wrap .nav-cta .btn-primary, .hero-scroll { transition: none; }
+    }
+
+    /* ---------- NAV once the hero has scrolled away: solid J58 navy bar ---------- */
+    .nav-wrap .nav { transition: top .25s ease, padding .25s ease, background .25s ease; }
+    .nav-wrap.past-hero .nav {
+      top: 0;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background: rgba(11, 29, 53, .96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 6px 24px rgba(11, 29, 53, .25);
+    }
+    .nav-wrap.past-hero .nav-logo img { height: 44px; }
+    .nav-wrap.past-hero .mobile-drawer { top: 80px; }
+    @media (prefers-reduced-motion: reduce) { .nav-wrap .nav { transition: none; } }
+
+    /* ---------- HOME PAGE WIDTHS: two content widths only ----------
+       WIDE  (aligned with the logo/nav edges): "Get inspired" panel + impact section
+       STANDARD (1120px content): every other section
+       Full-bleed exceptions: hero, partner marquee, section backgrounds */
+    :root { --w-wide: 1700px; --w-std: 1120px; --w-pad: clamp(24px, 6vw, 96px); --w-std-pad: clamp(20px, 5vw, 60px); }
+    main .insp > .container,
+    main .imp > .container, main .sp > .container { max-width: none; width: min(var(--w-wide), 100% - 2 * var(--w-pad)); padding-inline: 0; margin-inline: auto; }
+    main .section > .container,
+    main .stack-section > .container,
+    main .bro > .container,
+    main .cta-band > .container { max-width: none; width: min(var(--w-std), 100% - 2 * var(--w-std-pad)); padding-inline: 0; margin-inline: auto; }
+    main .bro-card { max-width: none; }
+    main .bro.bro--home { background: var(--cream) !important; color: #1b1d1c; border-top: 1px solid rgba(11,29,53,.08); padding-block: clamp(40px, 5vw, 72px); }
+
+    /* ---------- restructure additions ---------- */
+    /* hero: one filled primary, secondary as a text link */
+    .page-hero.has-video .hero-actions .btn-secondary { background: none; border: 0; padding-inline: 8px; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+    .page-hero.has-video .hero-actions .btn-secondary:hover { background: none; color: #fff; transform: none; text-decoration-thickness: 2px; }
+
+
+    /* problems: two-column list */
+    .probsol-grid { grid-template-columns: 1fr; }
+    .probsol-grid::before { display: none; }
+    .prob-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(28px, 5vw, 72px); }
+    @media (max-width: 720px) { .prob-list { grid-template-columns: 1fr; } }
+    .h-dot h2 .dot { color: var(--hero-accent); }
+
+    /* mission wall: full-viewport photo collage */
+    .mw { position: relative; height: 100vh; height: 100svh; min-height: 620px; background: #0B1D35; overflow: hidden; color: #fff; }
+    .mw-grid { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 2.1fr 2.1fr 1fr; gap: 8px; padding: 8px; }
+    .mw-col { display: grid; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 0; }
+    .mw-t { position: relative; border-radius: 14px; background: #2a4a5e center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(255,255,255,.55); font: 600 .72rem/1 "Montserrat", sans-serif; letter-spacing: .12em; text-transform: uppercase; overflow: hidden; min-height: 0; }
+    .mw-t svg { width: 30px; height: 30px; }
+    .mw-big { justify-content: flex-end; padding-bottom: 36px; }
+    .mw-col--r .mw-t:last-child { justify-content: flex-start; padding-top: 36px; }
+    .mw-t[style*="background-image"] svg, .mw-t[style*="background-image"] span { display: none; }
+    .mw { --mw-overlay-opacity: .2; } /* overlay colours are 80% transparent over the photos */
+    .mw-t::after { content: ""; position: absolute; inset: 0; background: var(--tone); opacity: var(--mw-overlay-opacity); pointer-events: none; }
+    .mw-t { background-color: var(--tone); }
+    .mw-t[data-tone="a"] { --tone: #8c6a55; } .mw-t[data-tone="b"] { --tone: #3f6c6f; }
+    .mw-t[data-tone="c"] { --tone: #6f7f8c; } .mw-t[data-tone="d"] { --tone: #b0613b; }
+    .mw-t[data-tone="e"] { --tone: #4b5a6b; } .mw-t[data-tone="f"] { --tone: #5a7a62; }
+    .mw-veil { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(11,29,53,.68) 0%, rgba(11,29,53,.38) 45%, rgba(11,29,53,.08) 75%); pointer-events: none; }
+    .mw-copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 24px; }
+    .mw-copy h2 { max-width: 12em; margin: 0 0 var(--ds-title-gap, 24px); color: #fff !important; font-size: clamp(2.2rem, 5.2vw, 4.6rem); line-height: 1.05; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+    .mw-copy h2 strong { font-weight: 800; }
+    .mw-copy h2 .dot { color: #5fb6d6; }
+    .mw-copy p { max-width: 30em; margin: 0 0 28px; font: 500 clamp(.95rem, 1.3vw, 1.15rem)/1.6 "Montserrat", sans-serif; text-shadow: 0 1px 14px rgba(0,0,0,.45); }
+    .mw-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .mw-badge { position: absolute; left: 50%; transform: translateX(-50%); bottom: clamp(20px, 5vh, 56px); width: 96px; height: 96px; opacity: .72; display: grid; place-items: center; border-radius: 50%; background: rgba(11,29,53,.4); }
+    .mw-badge > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .mw-wreath { transform-origin: 60px 60px; animation: mwSpin 16s linear infinite; }
+    .mw-badge-in { position: relative; width: 62%; aspect-ratio: 1; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 6px 22px rgba(0,0,0,.35); }
+    .mw-badge-in img { width: 78%; height: auto; display: block; }
+    @keyframes mwSpin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .mw-wreath { animation: none; } }
+    @media (max-width: 800px) { .mw-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; } .mw-col { display: none; } .mw-badge { width: 76px; height: 76px; } }
+
+    /* rise move thrive transition screen */
+    .rmt { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; background: #1a1612 url('../assets/img/rise-move-thrive.jpg') 62% center / cover no-repeat; color: #fff; overflow: hidden; }
+    .rmt::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #0B1D35 0%, rgba(11,29,53,0) 24%, rgba(244,243,238,0) 76%, #F6F1E6 100%), linear-gradient(90deg, rgba(11,29,53,.55) 0%, rgba(11,29,53,.18) 45%, rgba(11,29,53,0) 70%); }
+    .rmt-copy { position: relative; width: min(var(--w-wide), 100% - 2 * var(--w-pad)); margin-inline: auto; padding-block: 72px; }
+    .rmt-title { margin: 0 0 28px; font-family: "Montserrat", sans-serif; line-height: .98; letter-spacing: -.02em; text-shadow: 0 2px 24px rgba(0,0,0,.25); }
+    .rmt-title span { display: block; }
+    .rmt-title .l { font-weight: 300; font-size: clamp(3rem, 7.2vw, 6.4rem); }
+    .rmt-title .b { font-weight: 700; font-size: clamp(4rem, 10.6vw, 9.4rem); line-height: 1.02; }
+    .rmt-title i { font-style: normal; color: #5fb6d6; }
+    .rmt-title .l i { color: #fff; }
+    .rmt-sub { margin: 0; max-width: 24em; font: 500 clamp(1rem, 1.5vw, 1.3rem)/1.55 "Montserrat", sans-serif; text-shadow: 0 1px 12px rgba(0,0,0,.35); }
+    @media (max-width: 700px) { .rmt { background-position: 70% center; } }
+
+    /* who are you */
+    .who { padding-block: clamp(40px, 6vw, 72px); }
+    .who { position: relative; overflow: hidden; }
+    .who .container { position: relative; }
+    .who-deco { position: absolute; inset: 0; pointer-events: none; }
+    .who-pill { position: absolute; left: 2%; top: 4px; transform: rotate(-4deg); display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px 9px 12px; background: #fff; color: #0B1D35; font: 700 .85rem/1 "Montserrat", sans-serif; letter-spacing: .1em; text-transform: uppercase; border: 2.5px solid #0B1D35; border-radius: 40px 50px 44px 48px / 50px 40px 48px 44px; box-shadow: 3px 4px 0 -1px #12aaba; }
+    .who-pill svg { width: 18px; height: 18px; }
+    .who-wheel { position: absolute; right: -76px; top: -34px; width: 64px; height: 64px; color: #12aaba; }
+    .who-spin { transform-origin: 50% 50%; animation: whoSpin 7s linear infinite; }
+    @keyframes whoSpin { to { transform: rotate(360deg); } }
+    .who-line { position: absolute; left: 0; right: 0; top: 30px; border-top: 2px dashed rgba(18,170,186,.55); }
+    .who-line i { position: absolute; right: 0; top: -8px; width: 14px; height: 14px; border-radius: 50%; background: #12aaba; }
+    .who-dots { --teal: #12aaba; left: -40px; top: auto; bottom: -68px; }
+    .who-dot { position: absolute; left: 6%; bottom: -44px; width: 22px; height: 22px; border-radius: 50%; background: #E9762B; box-shadow: 34px -10px 0 -6px #12aaba; }
+    .who-grid, .who .section-header { position: relative; z-index: 1; }
+    .who-card span { display: inline-flex; align-self: center; align-items: center; margin-top: auto; padding: 10px 18px; border-radius: 999px; white-space: nowrap; line-height: 1.2; justify-content: center; background: #12aaba; color: #0B1D35; font-weight: 700; font-size: .92rem; transition: background .2s, color .2s; }
+    .who-card span::after { content: "\2192"; margin-left: 8px; }
+    .who-card:hover span { background: #0B1D35; color: #fff; }
+    @media (prefers-reduced-motion: reduce) { .who-spin { animation: none; } }
+    .who .section-header h2 { display: inline-block; position: relative; z-index: 2; background: #0B1D35; padding: 0 26px; }
+    @media (max-width: 900px) { .who-wheel, .who-dots { display: none; } .who-line { top: 24px; } }
+    .rs-grid .card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+    .rs-grid .card p { margin-bottom: 20px; }
+    .rs-cta { margin-top: auto; display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: #12aaba; color: #0B1D35; font-weight: 700; font-size: .92rem; white-space: nowrap; transition: background .2s, color .2s; }
+    .rs-cta::after { content: "\2192"; margin-left: 8px; }
+    .rs-grid .card:hover .rs-cta { background: #0B1D35; color: #fff; }
+    .rs-funding { padding-top: 0; }
+    .rs-funding .btn-primary { color: #0B1D35; font-weight: 700; }
+    .rs-funding .container { border-top: 1px solid rgba(11,29,53,.12); padding-top: clamp(40px, 5vw, 64px); }
+    .rs-funding .section-header p { max-width: 640px; margin-inline: auto; }
+    .who-ic { width: 44px; height: 44px; border-radius: 11px; background: rgba(18,170,186,.12); color: #0e8794; display: grid; place-items: center; margin-bottom: 6px; }
+    .who-ic svg { width: 26px; height: 26px; }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .who-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 32px 28px; min-height: 250px; box-shadow: 0 1px 3px rgba(11,29,53,.06); border: 1px solid #E1E8EE; border-radius: 16px; background: #fff; text-decoration: none; color: var(--navy, #0B1D35); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .who-card b { font-size: 1.1rem; line-height: 1.25; margin-bottom: 8px; }
+    .who-card span { align-self: stretch !important; padding: 14px 20px !important; font-size: .92rem !important; }
+    .who-ic { width: 52px; height: 52px; }
+    .who-card:hover { transform: translateY(-3px); border-color: var(--hero-accent); box-shadow: 0 10px 28px rgba(11,29,53,.10); }
+    @media (max-width: 900px) { .who-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .who-grid { grid-template-columns: 1fr; } }
+
+    /* features: infinite carousel, centred card zoomed in, edges fade out */
+    .stack-section { overflow: hidden; }
+    .car-viewport { position: relative; width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 7%, #000 22%, #000 78%, rgba(0,0,0,.35) 93%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 7%, #000 22%, #000 78%, rgba(0,0,0,.35) 93%, transparent 100%); }
+    .stack { display: flex; gap: var(--car-gap, 28px); padding-block: 40px; will-change: transform; }
+    .stack-card { position: static; flex: 0 0 var(--car-w, 780px); width: var(--car-w, 780px); margin: 0; padding: 0; overflow: hidden; border-radius: 26px;
+      transform: scale(.8); opacity: .45; filter: saturate(.8); transition: transform 3s cubic-bezier(.45,.05,.25,1), opacity 3s ease, filter 3s ease; }
+    .stack-card.is-center { transform: scale(1); opacity: 1; filter: none; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+    .stack-card--rev { padding: 0; }
+    .stack-inner { grid-template-columns: 1fr; min-height: 0; gap: 0; }
+    .stack-media, .stack-card--rev .stack-media { order: -1; aspect-ratio: 16 / 9; border-radius: 0; }
+    .stack-text { padding: 26px 30px 30px; height: auto; }
+    .stack-card--rev .stack-text { text-align: left; align-items: flex-start; }
+    .stack-card--rev .stack-rule { margin-left: 0; }
+    .stack-title { font-size: clamp(24px, 2.4vw, 34px); }
+    .stack-rule { margin: 14px 0; }
+    .stack-text p { font-size: 1.05rem; max-width: none; }
+    .stack-num { display: none; }
+    .car-nav { display: flex; justify-content: center; gap: 12px; margin-top: 8px; }
+    .car-btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.5); background: transparent; color: #fff; font-size: 20px; cursor: pointer; transition: background .2s, color .2s; }
+    .car-btn:hover { background: #fff; color: #0c1a1d; }
+    @media (prefers-reduced-motion: reduce) { .stack-card { transition: none; } }
+    @media (max-width: 700px) { .car-viewport { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%); } }
+
+    /* features carousel: one full viewport (title + cards + CTA) */
+    .stack-section { position: relative; }
+    .stack-section::before, .stack-section::after { content: ""; position: absolute; left: 0; right: 0; height: clamp(150px, 24vh, 250px); pointer-events: none; z-index: 0; }
+    .stack-section::before { top: 0; background: linear-gradient(180deg, rgb(246,241,230) 0%, rgb(242,237,227) 8%, rgb(228,225,216) 17%, rgb(209,208,202) 25%, rgb(186,187,185) 33%, rgb(156,160,163) 42%, rgb(128,135,142) 50%, rgb(101,110,120) 58%, rgb(71,83,98) 67%, rgb(48,62,81) 75%, rgb(29,45,67) 83%, rgb(15,33,56) 92%, rgb(11,29,53) 100%); }
+    .stack-section::after { bottom: 0; background: linear-gradient(0deg, rgb(246,241,230) 0%, rgb(242,237,227) 8%, rgb(228,225,216) 17%, rgb(209,208,202) 25%, rgb(186,187,185) 33%, rgb(156,160,163) 42%, rgb(128,135,142) 50%, rgb(101,110,120) 58%, rgb(71,83,98) 67%, rgb(48,62,81) 75%, rgb(29,45,67) 83%, rgb(15,33,56) 92%, rgb(11,29,53) 100%); }
+    .stack-section > .container { position: relative; z-index: 1; }
+    .stack-section { min-height: calc(100svh - 0px); display: flex; flex-direction: column; justify-content: center; padding-block: 150px 100px; box-sizing: border-box; }
+    .stack-section > .container { display: flex; flex-direction: column; justify-content: center; }
+    .stack-heading { margin-bottom: 4px; }
+    .stack-heading h2 { font-size: clamp(24px, min(4vw, 5.4svh), 46px); }
+    .stack { padding-block: 18px; }
+    .stack-text { padding: 22px 40px 28px; }
+    .stack-title { font-size: clamp(20px, 2vw, 27px); }
+    .stack-rule { margin: 10px 0; max-width: none; }
+    .stack-text p { font-size: .95rem; }
+    .car-nav { align-items: center; gap: 18px; margin-top: 4px; }
+    .car-nav .btn-primary { white-space: nowrap; }
+    @media (max-width: 640px) { .stack-text { padding: 20px 28px 24px; } .stack-section { padding-block: 84px 20px; } .car-nav { gap: 10px; } .car-btn { width: 44px; height: 44px; } }
+
+
+    /* "In their words": same carousel as the features section, quote cards on cream */
+    .qc-section { background: var(--ds-cream, #F6F1E6); color: #0B1D35; overflow: hidden; padding-block: clamp(72px, 9vw, 120px); }
+    .qc-section > .container { display: flex; flex-direction: column; }
+    .qc-section .stack-heading { text-align: center; margin-bottom: 8px; }
+    .qc-section .stack-heading h2 { color: #0B1D35; font-size: clamp(24px, min(4vw, 5.4svh), 46px); }
+    .qc-section .stack { padding-block: 28px; }
+    .qc-card { background: #fff; color: #0B1D35; padding: clamp(28px, 3vw, 44px) clamp(26px, 3vw, 44px); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; box-sizing: border-box; border: 1px solid rgba(11,29,53,.08); }
+    .qc-section .stack-card.is-center { box-shadow: 0 24px 60px rgba(11,29,53,.18); }
+    .qc-card blockquote { margin: 0; font-family: "Playfair Display", serif; font-weight: 700; font-size: clamp(1.15rem, 1.7vw, 1.55rem); line-height: 1.35; color: #0B1D35; }
+    .qc-card blockquote::before { content: none; }
+    .qc-rule { display: block; height: 1px; background: rgba(11,29,53,.14); margin: 22px 0 18px; }
+    .qc-author { display: flex; align-items: center; gap: 14px; }
+    .qc-avatar { width: 44px; height: 44px; border-radius: 50%; background: #12aaba; color: #0B1D35; display: grid; place-items: center; font: 700 1rem "Montserrat", sans-serif; flex: none; }
+    .qc-name { font: 700 .95rem "Montserrat", sans-serif; }
+    .qc-role { font: 500 .85rem "Montserrat", sans-serif; opacity: .65; }
+    .qc-section .car-btn { border-color: rgba(11,29,53,.4); color: #0B1D35; }
+    .qc-section .car-btn:hover { background: #0B1D35; color: #fff; border-color: #0B1D35; }
+    .qc-section .car-nav { margin-top: 8px; }
+
+
+    /* ---------- 8mm film look on the hero video ---------- */
+    .hero-video { overflow: hidden; }
+    .hero-video video { filter: none; transform: none; animation: none; }
+    .film { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .film i { position: absolute; inset: 0; display: block; }
+    .film-grain { inset: -50% !important; opacity: .34; mix-blend-mode: overlay; animation: filmGrain .5s steps(1, end) infinite;
+      background-image: url(../"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 1.6 1.6 1.6 0 -1.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(../%23n)'/%3E%3C/svg%3E"); background-size: 260px 260px; }
+    .film-vig { background: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 48%, rgba(20,10,0,.28) 78%, rgba(10,5,0,.62) 100%); }
+    .film-leak { mix-blend-mode: screen; opacity: 0; background: radial-gradient(ellipse 38% 70% at 100% 40%, rgba(255,140,40,.55), rgba(255,90,20,0) 70%), radial-gradient(ellipse 28% 50% at 0% 85%, rgba(255,190,90,.35), rgba(255,120,30,0) 70%); animation: filmLeak 9s ease-in-out infinite; }
+    .film-scratch { opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, transparent 0, transparent 22%, rgba(255,255,255,.55) 22.1%, transparent 22.3%, transparent 61%, rgba(255,255,255,.35) 61.1%, transparent 61.25%, transparent 100%); animation: filmScratch 2.6s steps(1, end) infinite; }
+    .film-dust { opacity: 0; background:
+      radial-gradient(circle at 18% 32%, rgba(255,255,255,.75) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 72% 18%, rgba(255,255,255,.6) 0 1px, transparent 1.6px),
+      radial-gradient(circle at 44% 76%, rgba(0,0,0,.5) 0 2px, transparent 2.6px),
+      radial-gradient(circle at 86% 64%, rgba(255,255,255,.55) 0 1.2px, transparent 1.8px);
+      animation: filmDust 3.1s steps(1, end) infinite; }
+    .film-flicker { background: #fff3d6; mix-blend-mode: soft-light; opacity: 0; animation: filmFlicker .22s steps(1, end) infinite; }
+    @keyframes filmGrain { 0%{transform:translate(0,0)} 20%{transform:translate(-6%,4%)} 40%{transform:translate(5%,-7%)} 60%{transform:translate(-3%,8%)} 80%{transform:translate(7%,3%)} 100%{transform:translate(0,0)} }
+    @keyframes filmWeave { 0%{transform:scale(1.04) translate(0,0)} 14%{transform:scale(1.04) translate(.25%,-.15%)} 29%{transform:scale(1.04) translate(-.2%,.2%)} 43%{transform:scale(1.04) translate(.1%,.3%)} 57%{transform:scale(1.04) translate(-.3%,-.1%)} 71%{transform:scale(1.04) translate(.2%,.1%)} 86%{transform:scale(1.04) translate(-.1%,-.25%)} 100%{transform:scale(1.04) translate(0,0)} }
+    @keyframes filmFlicker { 0%{opacity:.05} 25%{opacity:.16} 50%{opacity:0} 75%{opacity:.11} 100%{opacity:.03} }
+    @keyframes filmLeak { 0%,55%,100%{opacity:0} 66%{opacity:.75} 78%{opacity:.25} 88%{opacity:0} }
+    @keyframes filmScratch { 0%,12%{opacity:0;transform:translateX(0)} 13%{opacity:.8;transform:translateX(4%)} 15%{opacity:0} 48%{opacity:0} 49%{opacity:.7;transform:translateX(-9%)} 51%{opacity:0} 100%{opacity:0} }
+    @keyframes filmDust { 0%{opacity:0} 6%{opacity:1;transform:translate(0,0)} 10%{opacity:0} 40%{opacity:0} 42%{opacity:1;transform:translate(9%,-7%)} 47%{opacity:0} 78%{opacity:0} 80%{opacity:1;transform:translate(-12%,10%)} 85%{opacity:0} 100%{opacity:0} }
+    @media (prefers-reduced-motion: reduce) { .hero-video video, .film i { animation: none !important; } .film-grain { opacity: .25; } }
+
+    /* closing CTA: one primary, one quiet link */
+    .cta-pair { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; }
+    .cta-band h2 .dot { color: #0B1D35; }
+    main .cta-band { padding-block: clamp(28px, 3.5vw, 44px); }
+    main .cta-band h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: 8px; }
+    main .cta-band p { margin-bottom: 16px; font-size: .98rem; }
+    .cta-link { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
+    .cta-link:hover { text-decoration-thickness: 2px; }
+  </style>
+  <link href="../assets/css/inspire.css" rel="stylesheet"/>
+  <link href="../assets/css/impact.css" rel="stylesheet"/>
+  <link href="../assets/css/forms.css" rel="stylesheet"/>
+  <link href="../assets/css/solution.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="../assets/css/theme.css?v=3" rel="stylesheet"/>
+  <link href="../assets/css/design-system.css?v=5" rel="stylesheet"/>
+<link href="../assets/css/bro-banner.css" rel="stylesheet"/>
+<link href="../assets/css/footer.css" rel="stylesheet"/>
+  <link href="../assets/css/facts.css" rel="stylesheet"/>
+<script src="../assets/js/lang.js"></script>
+<script src="../assets/js/consent.js" defer></script>
+<script src="../assets/js/coming-soon.js" defer></script>
+<script src="../assets/js/newsletter-popup.js" defer></script>
+<link href="../assets/css/nav-dd.css?v=5" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/mobile-home.css?v=5" />
+<meta name="robots" content="noindex,nofollow" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
+
+  <!-- ACCESSIBILITY TOOLBAR -->
+  <div aria-label="Toegankelijkheidsopties" class="a11y-toolbar" role="complementary">
+    <div class="container">
+      <span class="a11y-toolbar-label">Toegankelijkheid:</span>
+      <button aria-label="Hoogcontrastmodus aan/uit" aria-pressed="false" class="a11y-btn" id="hcToggle">Hoog contrast</button>
+      <div aria-hidden="true" class="a11y-divider"></div>
+      <div aria-label="Tekstgrootte" class="a11y-size-group" role="group">
+        <button aria-label="Tekst kleiner" class="a11y-btn" id="textMinus">A−</button>
+        <button aria-label="Tekst groter" class="a11y-btn" id="textPlus">A+</button>
+      </div>
+      <div aria-label="Taal" class="lang-switch" role="group"><a data-lang="en" href="../index.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang="nl" href="index.html" hreflang="nl" lang="nl">NL</a><a data-lang="de" href="../de/index.html" hreflang="de" lang="de">DE</a></div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="nav-wrap" id="navWrap">
+    <nav aria-label="Hoofdnavigatie" class="nav container" role="navigation">
+      <a aria-label="J58 — home" class="nav-logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dd"><button type="button" class="nav-dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="productMenu">Product <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="nav-mega" id="productMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Product</p>
+              <a class="nav-mega-link" href="product.html"><strong>De EZER</strong><small>Kenmerken, voordelen en hoe het werkt</small></a>
+              <a class="nav-mega-link" href="product-resources.html"><strong>Resources</strong><small>Video's, brochure, specificaties en handleidingen</small></a>
+            </div>
+            <a class="nav-mega-card" href="product.html" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"><span><em>Product</em><b>Zie de EZER</b></span></a>
+          </div>
+        </li>
+        <li><a href="user-stories.html">Gebruikersverhalen</a></li>
+        <li><a href="reimbursement.html">Financiering</a></li>
+        <li><a href="healthcare-professionals.html">Professionals</a></li>
+        <li><a href="distributors.html">Dealers</a></li>
+        <li class="nav-dd"><button aria-controls="aboutMenu" aria-expanded="false" aria-haspopup="true" class="nav-dd-btn" type="button">Over ons <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div class="nav-mega" id="aboutMenu">
+            <div class="nav-mega-links"><p class="nav-mega-eyebrow">Over ons</p>
+              <a class="nav-mega-link" href="about.html"><strong>Ons verhaal &amp; team</strong><small>Missie, reis en de mensen achter J58</small></a>
+              <a class="nav-mega-link" href="blog.html"><strong>Blogs en artikelen</strong><small>Nieuws, verhalen en nieuwsbrieven</small></a>
+              <a class="nav-mega-link" href="faq.html"><strong>FAQ</strong><small>Antwoorden op veelgestelde vragen</small></a>
+            </div>
+            <a class="nav-mega-card" href="about.html#team-heading" style="background-image:url('../assets/img/team/gabriel.jpg')"><span><em>Ontmoet het team</em><b>Leuk je te ontmoeten</b></span></a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a class="btn-primary" href="book-a-demo.html">Plan een demo</a></div>
+      <button aria-controls="mobileDrawer" aria-expanded="false" aria-label="Navigatiemenu openen" class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+    <div aria-label="Navigatiemenu" class="mobile-drawer" id="mobileDrawer">
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Product<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="product.html">Product</a><a href="product-resources.html">Resources</a></div></div>
+      <a href="user-stories.html">Gebruikersverhalen</a>
+      <a href="reimbursement.html">Financiering</a>
+      <a href="healthcare-professionals.html">Voor professionals</a>
+      <a href="distributors.html">Dealers</a>
+      <div class="md-group"><button type="button" class="md-toggle" aria-expanded="false">Over ons<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="md-sub"><a href="about.html">Over ons</a><a href="about.html#team-heading">Team</a><a href="blog.html">Blogs en artikelen</a><a href="faq.html">Veelgestelde vragen</a></div></div>
+      <a href="contact.html">Contact</a>
+      <div aria-label="Taal" class="lang-switch lang-switch--drawer" role="group"><a data-lang="en" href="../index.html" hreflang="en" lang="en">EN</a><a aria-current="true" data-lang="nl" href="index.html" hreflang="nl" lang="nl">NL</a><a data-lang="de" href="../de/index.html" hreflang="de" lang="de">DE</a></div>
+      <div class="mobile-cta"><a class="btn-primary" href="book-a-demo.html" style="display:block;text-align:center;">Plan een demo</a></div>
+    </div>
+  </div>
+
+  <main id="main" role="main">
+
+    <section aria-labelledby="hero-heading" class="page-hero has-video page-hero--wide page-hero--full">
+      <div aria-hidden="true" class="hero-video">
+        <video autoplay="" data-audio="false" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/img/hero-poster-teaser.jpg">
+          <source src="../assets/video/teaser.mp4" type="video/mp4"/>
+        </video>
+        
+      </div>
+      <div class="container">
+        <h1 class="hero-title" id="hero-heading"><span class="w">Sta</span> <span class="w">op</span><br/> <span class="w">en</span> <span class="w">ga<span class="dot">.</span></span></h1>
+        <div class="hero-actions">
+          <a class="btn-primary btn-lg" href="book-a-demo.html">Plan een demo</a>
+          <a class="btn-secondary btn-lg" href="product.html">Bekijk hoe het werkt</a>
+        </div>
+        <p>De eerste mechanische sta-rolstoel ter wereld waarmee je tegelijk kunt staan en bewegen.</p>
+      </div>
+      <button aria-label="Geluid aan" aria-pressed="false" class="hero-sound" hidden="" id="heroSound" type="button">
+        <svg aria-hidden="true" class="ic-off" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="m16 9 5 6"></path><path d="m21 9-5 6"></path></svg>
+        <svg aria-hidden="true" class="ic-on" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M18.5 5.5a9 9 0 0 1 0 13"></path></svg>
+      </button>
+      <a aria-label="Scroll omlaag" class="hero-scroll" href="#partners-label">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14"></path><path d="M6 13l6 6 6-6"></path></svg>
+      </a>
+    </section>
+
+    <section aria-label="Kerngegevens over de EZER" class="fs">
+      <div class="fs__row">
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"></path></svg></span>
+          <div><span class="fs__label">Aandrijving</span><span class="fs__value">Mechanisch</span><span class="fs__sub">Geen accu nodig</span></div>
+        </div>
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 2.8l7.5 2.7v5.6c0 4.6-3.1 8.2-7.5 10.1-4.4-1.9-7.5-5.5-7.5-10.1V5.5z"></path><path d="M8.6 12.2l2.5 2.5 4.4-4.9"></path></svg></span>
+          <div><span class="fs__label">Certificering</span><span class="fs__value">CE-gecertificeerd</span><span class="fs__sub">Europese veiligheidsnorm</span></div>
+        </div>
+        <div class="fs__item">
+          <span aria-hidden="true" class="fs__ico"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.7a7 7 0 0 1 14 0c0 5.6-7 11.7-7 11.7z"></path><circle cx="12" cy="9.8" r="2.6"></circle></svg></span>
+          <div><span class="fs__label">Herkomst</span><span class="fs__value">Dutch Design</span><span class="fs__sub">Gebouwd in Enschede</span></div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- WHO ARE YOU -->
+    <section aria-labelledby="who-h" class="section section-alt who">
+      <div class="container">
+      <div aria-hidden="true" class="who-deco">
+        
+        <svg class="who-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="who-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg>
+        <span class="sp-dots who-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span>
+        <span class="who-line"></span>
+        
+      </div>
+      
+        <div class="section-header reveal" style="margin-bottom:32px"><h2 id="who-h">Hoe kunnen we je helpen<span class="dot">.</span></h2></div>
+        <div class="who-grid">
+          <a class="who-card reveal" href="product.html"><i class="who-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="10" cy="4.5" r="1.8"></circle><path d="M10 7.5v5.5h5l3 5.5"></path><path d="M10 10.5h4.5"></path><path d="M7.5 11.5a5.5 5.5 0 1 0 7.2 7.6"></path></svg></i><b>Voor mijzelf of iemand voor wie ik zorg</b><span>Ontdek de EZER</span></a>
+          <a class="who-card reveal" href="healthcare-professionals.html"><i class="who-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3"></path><path d="M10 13v2a4.5 4.5 0 0 0 9 0v-1.5"></path><circle cx="19" cy="12" r="1.8"></circle></svg></i><b>Ik ben ergotherapeut of behandelaar</b><span>Voor professionals</span></a>
+          <a class="who-card reveal" href="distributors.html"><i class="who-ic"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10l2-5h14l2 5"></path><path d="M4 10v9h16v-9"></path><path d="M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"></path><path d="M10 19v-5h4v5"></path></svg></i><b>Verkoop de EZER</b><span>Word dealer</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="partners-label" class="section">
+      <p class="text-center eyebrow" id="partners-label" style="margin-bottom:32px">In samenwerking met</p>
+      <div aria-label="Partners en supporters" class="marquee" role="group">
+        <ul class="marquee-track" role="list">
+          <li><img alt="University of Twente" src="../assets/img/partners/twente.png"/></li>
+          <li><img alt="Demcon" src="../assets/img/partners/demcon.png"/></li>
+          <li><img alt="Novel-T" src="../assets/img/partners/novel-t.png"/></li>
+          <li><img alt="Roessingh Centrum voor Revalidatie" src="../assets/img/partners/roessingh.png"/></li>
+          <li><img alt="Oost NL" src="../assets/img/partners/oostnl.png"/></li>
+          <li><img alt="imec" src="../assets/img/partners/imec.png"/></li>
+          <li><img alt="4TU.HTM" src="../assets/img/partners/4tu.png"/></li>
+          <li><img alt="Innovation Origins" src="../assets/img/partners/innovation-origins.jpg"/></li>
+          <!-- duplicate set for seamless infinite loop -->
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/twente.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/demcon.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/novel-t.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/roessingh.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/oostnl.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/imec.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/4tu.png"/></li>
+          <li aria-hidden="true"><img alt="" src="../assets/img/partners/innovation-origins.jpg"/></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- RISE MOVE THRIVE (transition) -->
+
+    <!-- OUR SOLUTION -->
+    <section aria-labelledby="sp-h" class="sp">
+      <div class="container">
+        <div class="sp-head reveal">
+          <h2 id="sp-h">Sta en beweeg wanneer je wilt<span class="dot">.</span></h2>
+          <p>Eén mechanische rolstoel die een antwoord biedt op de alledaagse problemen van de hele dag zitten. Kom zelfverzekerd van zitten naar staan en beweeg staand voort zonder angst om te vallen.</p>
+        </div>
+        <div class="sp-row reveal">
+          <div class="sp-copy">
+            <h3>“Op ooghoogte voelt elk gesprek natuurlijk.”<small class="sp-by">— Martin</small></h3>
+            <p>Mensen kijken vaak langs of over rolstoelgebruikers heen in openbare ruimtes of gespreksgroepen. Praat, doe boodschappen en ontmoet mensen oog in oog in plaats van omhoog te kijken.</p>
+          </div>
+          <div aria-hidden="true" class="sp-vis v1"><svg aria-hidden="true" class="sp-squig sp-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><div class="sp-photo" style="background-image:url('../assets/img/panels/eye-level.jpg');background-position:50% 35%"></div><span class="sp-pill"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.6"></circle></svg> Ooghoogte</span><div class="sp-card"><b>Terwijl je beweegt</b><ul><li>Sta op</li><li>Rol door</li><li>Wees actiever</li></ul></div></div>
+        </div>
+        <div class="sp-row sp-row--rev reveal">
+          <div class="sp-copy">
+            <h3>“Eindelijk kan ik de hoge kastjes in mijn keuken bereiken.”<small class="sp-by">— Jeroen</small></h3>
+            <p>Geen woningaanpassingen nodig en lagere kosten. Keukenbladen, kastjes en hoge planken komen weer binnen bereik, zodat u uw huis kunt laten zoals het is.</p>
+          </div>
+          <div aria-hidden="true" class="sp-vis v2"><span class="sp-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span><div class="sp-photo" style="background-image:url('../assets/img/panels/reach-high.jpg');background-position:50% 30%"></div><span class="sp-pill"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.6"></circle></svg> Bovenste plank</span><div class="sp-card"><b>Thuis</b><ul><li>Keukenblad</li><li>Hoge planken</li><li>Geen verbouwing</li></ul></div></div>
+        </div>
+        <div class="sp-row reveal">
+          <div class="sp-copy">
+            <h3>“Mijn werk vraagt vaak dat ik sta, en nu kan dat.”<small class="sp-by">— Erik</small></h3>
+            <p>Werk aan een sta-bureau, praat op ooghoogte met klanten en kies zelf wanneer u staat en wanneer u zit.</p>
+          </div>
+          <div aria-hidden="true" class="sp-vis v3"><svg aria-hidden="true" class="sp-squig sp-wheel" fill="none" stroke="currentColor" viewBox="0 0 100 100"><g class="sp-spin"><circle cx="50" cy="50" r="44" stroke-width="7"></circle><circle cx="50" cy="50" fill="currentColor" r="7" stroke="none"></circle><path d="M50 50V10M50 50V90M50 50H10M50 50H90M50 50L22 22M50 50L78 78M50 50L78 22M50 50L22 78" stroke-linecap="round" stroke-width="3"></path></g></svg><div class="sp-photo" style="background-image:url('../assets/img/panels/work.jpg');background-position:50% 25%"></div><span class="sp-pill"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.6"></circle></svg> Op het werk</span><div class="sp-card"><b>Op het werk</b><ul><li>Kom bij je bureau</li><li>Doe mee aan het stameeting</li><li>Werk zelfstandig</li></ul></div></div>
+        </div>
+        <div class="sp-row sp-row--rev reveal">
+          <div class="sp-copy">
+            <h3>“Met deze rolstoel blijf ik gezonder en actiever.”<small class="sp-by">— Christian</small></h3>
+            <p>Met de EZER sta-rolstoel brengt u een groter deel van de dag rechtop door. Staan haalt u langer uit de zittende houding en verdeelt de druk.</p>
+          </div>
+          <div aria-hidden="true" class="sp-vis v4"><span class="sp-dots"><i style="left:14%;top:20%;width:9px;height:9px;--dx:-8px;--dy:-9px;animation-duration:3.2s;animation-delay:-0.0s"></i><i style="left:45%;top:12%;width:5px;height:5px;--dx:9px;--dy:-1px;animation-duration:3.8s;animation-delay:-0.7s"></i><i style="left:74%;top:26%;width:7px;height:7px;--dx:3px;--dy:7px;animation-duration:4.3s;animation-delay:-1.4s"></i><i style="left:20%;top:52%;width:6px;height:6px;--dx:-3px;--dy:-6px;animation-duration:4.9s;animation-delay:-2.1s"></i><i style="left:58%;top:58%;width:10px;height:10px;--dx:14px;--dy:2px;animation-duration:5.4s;animation-delay:-2.8s"></i><i style="left:84%;top:64%;width:5px;height:5px;--dx:8px;--dy:10px;animation-duration:6.0s;animation-delay:-3.5s"></i><i style="left:34%;top:80%;width:4px;height:4px;--dx:2px;--dy:-3px;animation-duration:6.5s;animation-delay:-4.2s"></i><i style="left:70%;top:84%;width:6px;height:6px;--dx:-4px;--dy:5px;animation-duration:7.1s;animation-delay:-4.9s"></i><i style="left:88%;top:14%;width:4px;height:4px;--dx:13px;--dy:-8px;animation-duration:7.6s;animation-delay:-5.6s"></i></span><div class="sp-photo" style="background-image:url('../assets/stories/christian/photo-04.jpg');background-position:50% 55%"></div><span class="sp-pill"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.6"></circle></svg> Blijf actief</span><div class="sp-card"><b>Tijd rechtop</b><div class="sp-bars"><i class="l" style="height:30%"></i><i class="l" style="height:38%"></i><i style="height:52%"></i><i style="height:64%"></i><i style="height:78%"></i><i style="height:92%"></i><i style="height:100%"></i><i style="height:84%"></i><i style="height:68%"></i><i class="l" style="height:44%"></i></div></div></div>
+        </div>
+      
+      <div class="sp-cta-all reveal" style="text-align:center;margin-top:48px"><a class="btn-primary btn-lg" href="product.html">Bekijk het product</a></div>
+    </div>
+    </section>
+
+    
+
+    <section aria-labelledby="stack-heading" class="stack-section">
+      <div class="container">
+        <div class="stack-heading">
+          <h2 id="stack-heading">Ontdek wat de EZER-rolstoel <strong>anders<span class="dot">.</span></strong> maakt</h2>
+        </div>
+
+        <div class="car-viewport" id="carVp"><div class="stack" id="carTrack">
+          <!-- CARD 01 -->
+          <article class="stack-card" style="--i:0">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Direct staan en zitten<span class="dot">.</span></h3>
+                <div class="stack-sub">Van zitten naar staan in één vloeiende beweging</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>3 seconden om te staan</div><div>3 seconden om te zitten</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-01.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay="" loop="" muted="" playsinline="" poster="../assets/video/webflow/erik-poster.jpg" preload="metadata"><source src="../assets/video/webflow/erik.mp4" type="video/mp4"/></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 02 -->
+          <article class="stack-card stack-card--rev" style="--i:1">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Zitten, staan en rijden terwijl je staat<span class="dot">.</span></h3>
+                <div class="stack-sub">Je rolstoel voor elke dag. Een heel nieuw perspectief.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>2-in-1-oplossing</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-02.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay="" loop="" muted="" playsinline="" poster="../assets/video/webflow/supermarket-poster.jpg" preload="metadata"><source src="../assets/video/webflow/supermarket.mp4" type="video/mp4"/></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 03 -->
+          <article class="stack-card" style="--i:2">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Premium mechanisch ontwerp<span class="dot">.</span></h3>
+                <div class="stack-sub">Elk detail heeft een doel.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>Geen batterijen</div><div>Licht van gewicht</div><div>Eenvoudig te repareren</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-03.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay="" loop="" muted="" playsinline="" poster="../assets/video/mechanics-design-poster.jpg" preload="metadata"><source src="../assets/video/mechanics-design.mp4" type="video/mp4"/></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 04 -->
+          <article class="stack-card stack-card--rev" style="--i:3">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Gemak<span class="dot">.</span></h3>
+                <div class="stack-sub">Verstelbaar, zodat hij bij jou past.</div>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>Aanpasbare onderdelen</div><div>Gewicht en lengte</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-04.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay="" loop="" muted="" playsinline="" poster="../assets/video/webflow/for-everyone-poster.jpg" preload="metadata"><source src="../assets/video/webflow/for-everyone.mp4" type="video/mp4"/></video>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 05 -->
+          <article class="stack-card" style="--i:4">
+            <div class="stack-inner">
+              <div class="stack-text">
+                <h3 class="stack-title">Gepatenteerde veiligheid<span class="dot">.</span></h3>
+                <span class="stack-rule"></span>
+                <div class="stack-keys"><div>Bredere wielbasis</div><div>Vergrendelt in positie</div></div>
+              </div>
+              
+              <div class="stack-media">
+                <!-- Replace with: <video src="assets/video/card-05.mp4" autoplay muted loop playsinline></video> -->
+                <video autoplay="" loop="" muted="" playsinline="" poster="../assets/video/webflow/asafasf-poster.jpg" preload="metadata"><source src="../assets/video/webflow/asafasf.mp4" type="video/mp4"/></video>
+              </div>
+            </div>
+          </article>
+        </div></div>
+        <div class="car-nav"><button aria-label="Vorige functie" class="car-btn" id="carPrev" type="button">←</button><a class="btn-primary btn-lg" href="product.html#benefits">Ontdek het product</a><button aria-label="Volgende functie" class="car-btn" id="carNext" type="button">→</button></div>
+      </div>
+    </section>
+
+
+
+
+    <!-- USE CASE -->
+
+    <section aria-labelledby="imp-h" class="mw">
+      <!-- To add a photo: give a tile  style="background-image:url('assets/img/...jpg')"  and it replaces the placeholder. -->
+      <div aria-hidden="false" class="mw-grid">
+        <div class="mw-col mw-col--l"><div aria-label="Foto" class="mw-t" data-tone="a" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/img/mission/p3.jpg');background-position:55% 30%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto</span></div><div aria-label="Foto" class="mw-t" data-tone="b" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/img/mission/p6.jpg');background-position:55% 35%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto</span></div></div>
+        <div aria-label="Foto" class="mw-t mw-big" data-tone="c" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/img/mission/p2.jpg');background-position:50% 22%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto: gebruiker</span></div>
+        <div aria-label="Foto" class="mw-t mw-big" data-tone="d" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/img/mission/p1.jpg');background-position:75% 30%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto: gebruiker</span></div>
+        <div class="mw-col mw-col--r"><div aria-label="Foto" class="mw-t" data-tone="e" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/img/mission/p4.jpg');background-position:38% 38%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto</span></div><div aria-label="Foto" class="mw-t" data-tone="f" role="img" aria-label="Lid van de J58-gemeenschap met de EZER sta-rolstoel" style="background-image:url('../assets/stories/christian/photo-04.jpg');background-position:50% 55%"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Foto</span></div></div>
+      </div>
+      <div aria-hidden="true" class="mw-veil"></div>
+      <div class="mw-copy">
+        <h2 id="imp-h">Onze missie is om <span class="mw-acc">1 miljoen mensen te helpen</span> weer te staan<span class="dot">.</span></h2>
+        <div class="mw-cta"><a class="btn-primary" href="about.html">Meer over ons</a></div>
+      </div>
+      <div aria-label="1e plaats, Nationale Zorginnovatie Prijs 2025" class="mw-badge" role="img"><svg viewBox="0 0 120 120"><defs><linearGradient id="mwg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f3dc92"></stop><stop offset=".5" stop-color="#c9a24a"></stop><stop offset="1" stop-color="#a47a28"></stop></linearGradient></defs><g class="mw-wreath" fill="url(#mwg)"><circle cx="60" cy="60" fill="none" r="43" stroke="#c9a24a" stroke-width="1"></circle><ellipse cx="54.0" cy="102.6" rx="2.4" ry="6.0" transform="rotate(163 54.0 102.6)"></ellipse><ellipse cx="49.8" cy="107.9" opacity=".85" rx="2.0" ry="5.0" transform="rotate(123 49.8 107.9)"></ellipse><ellipse cx="43.2" cy="99.6" rx="2.4" ry="5.9" transform="rotate(178 43.2 99.6)"></ellipse><ellipse cx="37.8" cy="103.7" opacity=".85" rx="2.0" ry="4.9" transform="rotate(138 37.8 103.7)"></ellipse><ellipse cx="33.5" cy="93.9" rx="2.3" ry="5.8" transform="rotate(193 33.5 93.9)"></ellipse><ellipse cx="27.2" cy="96.4" opacity=".85" rx="1.9" ry="4.8" transform="rotate(153 27.2 96.4)"></ellipse><ellipse cx="25.7" cy="85.9" rx="2.3" ry="5.7" transform="rotate(208 25.7 85.9)"></ellipse><ellipse cx="18.9" cy="86.7" opacity=".85" rx="1.9" ry="4.7" transform="rotate(168 18.9 86.7)"></ellipse><ellipse cx="20.1" cy="76.1" rx="2.2" ry="5.6" transform="rotate(223 20.1 76.1)"></ellipse><ellipse cx="13.4" cy="75.1" opacity=".85" rx="1.9" ry="4.6" transform="rotate(183 13.4 75.1)"></ellipse><ellipse cx="17.3" cy="65.2" rx="2.2" ry="5.5" transform="rotate(238 17.3 65.2)"></ellipse><ellipse cx="11.1" cy="62.6" opacity=".85" rx="1.8" ry="4.5" transform="rotate(198 11.1 62.6)"></ellipse><ellipse cx="17.4" cy="54.0" rx="2.1" ry="5.3" transform="rotate(253 17.4 54.0)"></ellipse><ellipse cx="12.1" cy="49.8" opacity=".85" rx="1.8" ry="4.5" transform="rotate(213 12.1 49.8)"></ellipse><ellipse cx="20.4" cy="43.2" rx="2.1" ry="5.2" transform="rotate(268 20.4 43.2)"></ellipse><ellipse cx="16.3" cy="37.8" opacity=".85" rx="1.7" ry="4.4" transform="rotate(228 16.3 37.8)"></ellipse><ellipse cx="26.1" cy="33.5" rx="2.1" ry="5.1" transform="rotate(283 26.1 33.5)"></ellipse><ellipse cx="23.6" cy="27.2" opacity=".85" rx="1.7" ry="4.3" transform="rotate(243 23.6 27.2)"></ellipse><ellipse cx="34.1" cy="25.7" rx="2.0" ry="5.0" transform="rotate(298 34.1 25.7)"></ellipse><ellipse cx="33.3" cy="18.9" opacity=".85" rx="1.7" ry="4.2" transform="rotate(258 33.3 18.9)"></ellipse><ellipse cx="43.9" cy="20.1" rx="2.0" ry="4.9" transform="rotate(313 43.9 20.1)"></ellipse><ellipse cx="44.9" cy="13.4" opacity=".85" rx="1.6" ry="4.1" transform="rotate(273 44.9 13.4)"></ellipse><ellipse cx="54.8" cy="17.3" rx="1.9" ry="4.8" transform="rotate(328 54.8 17.3)"></ellipse><ellipse cx="57.4" cy="11.1" opacity=".85" rx="1.6" ry="4.0" transform="rotate(288 57.4 11.1)"></ellipse><ellipse cx="66.0" cy="102.6" rx="2.4" ry="6.0" transform="rotate(197 66.0 102.6)"></ellipse><ellipse cx="70.2" cy="107.9" opacity=".85" rx="2.0" ry="5.0" transform="rotate(237 70.2 107.9)"></ellipse><ellipse cx="76.8" cy="99.6" rx="2.4" ry="5.9" transform="rotate(182 76.8 99.6)"></ellipse><ellipse cx="82.2" cy="103.7" opacity=".85" rx="2.0" ry="4.9" transform="rotate(222 82.2 103.7)"></ellipse><ellipse cx="86.5" cy="93.9" rx="2.3" ry="5.8" transform="rotate(167 86.5 93.9)"></ellipse><ellipse cx="92.8" cy="96.4" opacity=".85" rx="1.9" ry="4.8" transform="rotate(207 92.8 96.4)"></ellipse><ellipse cx="94.3" cy="85.9" rx="2.3" ry="5.7" transform="rotate(152 94.3 85.9)"></ellipse><ellipse cx="101.1" cy="86.7" opacity=".85" rx="1.9" ry="4.7" transform="rotate(192 101.1 86.7)"></ellipse><ellipse cx="99.9" cy="76.1" rx="2.2" ry="5.6" transform="rotate(137 99.9 76.1)"></ellipse><ellipse cx="106.6" cy="75.1" opacity=".85" rx="1.9" ry="4.6" transform="rotate(177 106.6 75.1)"></ellipse><ellipse cx="102.7" cy="65.2" rx="2.2" ry="5.5" transform="rotate(122 102.7 65.2)"></ellipse><ellipse cx="108.9" cy="62.6" opacity=".85" rx="1.8" ry="4.5" transform="rotate(162 108.9 62.6)"></ellipse><ellipse cx="102.6" cy="54.0" rx="2.1" ry="5.3" transform="rotate(107 102.6 54.0)"></ellipse><ellipse cx="107.9" cy="49.8" opacity=".85" rx="1.8" ry="4.5" transform="rotate(147 107.9 49.8)"></ellipse><ellipse cx="99.6" cy="43.2" rx="2.1" ry="5.2" transform="rotate(92 99.6 43.2)"></ellipse><ellipse cx="103.7" cy="37.8" opacity=".85" rx="1.7" ry="4.4" transform="rotate(132 103.7 37.8)"></ellipse><ellipse cx="93.9" cy="33.5" rx="2.1" ry="5.1" transform="rotate(77 93.9 33.5)"></ellipse><ellipse cx="96.4" cy="27.2" opacity=".85" rx="1.7" ry="4.3" transform="rotate(117 96.4 27.2)"></ellipse><ellipse cx="85.9" cy="25.7" rx="2.0" ry="5.0" transform="rotate(62 85.9 25.7)"></ellipse><ellipse cx="86.7" cy="18.9" opacity=".85" rx="1.7" ry="4.2" transform="rotate(102 86.7 18.9)"></ellipse><ellipse cx="76.1" cy="20.1" rx="2.0" ry="4.9" transform="rotate(47 76.1 20.1)"></ellipse><ellipse cx="75.1" cy="13.4" opacity=".85" rx="1.6" ry="4.1" transform="rotate(87 75.1 13.4)"></ellipse><ellipse cx="65.2" cy="17.3" rx="1.9" ry="4.8" transform="rotate(32 65.2 17.3)"></ellipse><ellipse cx="62.6" cy="11.1" opacity=".85" rx="1.6" ry="4.0" transform="rotate(72 62.6 11.1)"></ellipse></g></svg><span class="mw-badge-in"><img alt="" src="../assets/img/prize/zorginnovatie-mark.png"/></span></div>
+    </section>
+
+    <section aria-labelledby="ig-heading" class="rl">
+      <div class="container rl-top reveal">
+        <div class="rl-titles"><h2 id="ig-heading">Volg onze reis<span class="dot">.</span></h2><h3 class="rl-sub">Echte momenten uit de J58-community<span class="dot">.</span></h3></div>
+        <div class="rl-icons"><a aria-label="Facebook" class="rl-ic" href="https://www.facebook.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.300-3.6 3.700V10H8.400v3h2.400v7z" fill="currentColor"></path></svg></a><a aria-label="LinkedIn" class="rl-ic" href="https://nl.linkedin.com/company/j58" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7.500" cy="7.500" fill="currentColor" r="1.700"></circle><rect fill="currentColor" height="8.500" width="3" x="6" y="10"></rect><path d="M11 10h2.800v1.200c.5-.9 1.500-1.400 2.700-1.400 2.400 0 3 1.600 3 3.700v5h-3v-4.200c0-1-.2-1.800-1.300-1.800s-1.200.8-1.200 1.800v4.200h-3z" fill="currentColor"></path></svg></a><a aria-label="Instagram" class="rl-ic" href="https://www.instagram.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="none" height="14" rx="4" stroke="currentColor" stroke-width="1.800" width="14" x="5" y="5"></rect><circle cx="12" cy="12" fill="none" r="3.200" stroke="currentColor" stroke-width="1.800"></circle><circle cx="16.200" cy="7.800" fill="currentColor" r="1"></circle></svg></a><a aria-label="YouTube" class="rl-ic" href="https://www.youtube.com/@J58EU" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="currentColor" height="11" rx="3.200" width="16" x="4" y="6.500"></rect><path d="M10.500 9.700v4.600l4-2.300z" fill="#12aaba"></path></svg></a><a aria-label="TikTok" class="rl-ic" href="https://www.tiktok.com/@j58.eu" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.500 5v9.300a2.800 2.800 0 1 1-2.800-2.800M13.500 5c.3 2.100 1.800 3.500 4 3.700" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></div>
+      </div>
+      <div class="rl-grid"><a aria-label="Open deze post" class="rl-tile" data-ig="DLFr_NKI4jw" href="https://www.instagram.com/p/DLFr_NKI4jw/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/product/hero-1.jpg" style="object-position:50% 50%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="Dd9EEmFKpvb" href="https://www.instagram.com/p/Dd9EEmFKpvb/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/panels/work.jpg" style="object-position:50% 35%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DZ_8IQIoIEH" href="https://www.instagram.com/p/DZ_8IQIoIEH/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/product/hero-3.jpg" style="object-position:50% 50%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DZuVe00FYFE" href="https://www.instagram.com/p/DZuVe00FYFE/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/mission/p1.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DL1um2Bp9ea" href="https://www.instagram.com/p/DL1um2Bp9ea/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/panels/active.jpg" style="object-position:50% 50%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DZaEp-FO1Us" href="https://www.instagram.com/p/DZaEp-FO1Us/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/product/hero-4.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DW33NLmiN0x" href="https://www.instagram.com/p/DW33NLmiN0x/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/panels/reach-high.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DWoJsvKlP4x" href="https://www.instagram.com/p/DWoJsvKlP4x/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/panels/eye-level.jpg" style="object-position:50% 45%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DV8ZY1biZgq" href="https://www.instagram.com/p/DV8ZY1biZgq/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/mission/p3.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DVq6iskALdi" href="https://www.instagram.com/p/DVq6iskALdi/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/inspire/courtyard.jpg" style="object-position:50% 50%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DQru1IACAiT" href="https://www.instagram.com/p/DQru1IACAiT/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/mission/p6.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a><a aria-label="Open deze post" class="rl-tile" data-ig="DNirhAAtB6w" href="https://www.instagram.com/p/DNirhAAtB6w/" rel="noopener" target="_blank"><img alt="" loading="lazy" src="../assets/img/mission/p4.jpg" style="object-position:50% 40%"/><span aria-hidden="true" class="rl-ig"><svg viewBox="0 0 24 24"><rect fill="none" height="16" rx="4.5" stroke="currentColor" stroke-width="1.6" width="16" x="4" y="4"></rect><circle cx="12" cy="12" fill="none" r="3.6" stroke="currentColor" stroke-width="1.6"></circle><circle cx="16.8" cy="7.2" fill="currentColor" r="1.1"></circle></svg></span></a></div>
+      <hr aria-hidden="true" class="rl-divider"/>
+    </section>
+    <dialog aria-label="Instagram-post" class="ig-modal" id="ig-modal">
+      <div class="ig-modal__media" id="ig-media"></div>
+      <aside class="ig-modal__side">
+        <button aria-label="Sluiten" class="ig-modal__close" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15"></path></svg></button>
+        <header class="ig-modal__head"><img alt="" height="56" src="../assets/img/inspire/j58-icon.png" width="56"/><strong>j58.eu</strong></header>
+        <div class="ig-modal__cap" id="ig-cap"></div>
+      </aside>
+    </dialog>
+    <script>
+    (function(){
+      var dlg=document.getElementById('ig-modal'); if(!dlg||!dlg.showModal) return;
+      var media=document.getElementById('ig-media'), cap=document.getElementById('ig-cap'), who=dlg.querySelector('.ig-modal__head strong'), av=dlg.querySelector('.ig-modal__head img'), users={'Dd9EEmFKpvb':'wheels4walking'};
+      var base='../assets/social/', fallbackCap='', caps={"DZuVe00FYFE": "👀\"Mom, look, you can stand again.\"\n\nThese were the words Desiree's daughter said when she saw her mother standing again after spending years primarily in a sitting position.\n\nGiving a hug to a loved one, having a conversation at eye level, or simply standing are things many of us take for granted.\n\nYet for many wheelchair users, these moments are not always easy. A simple hug often means awkwardly bending over someone in a wheelchair, rather than embracing each other naturally.\n\nWe're not claiming that we can solve all the challenges that people in wheelchairs face. We know there are many physical and emotional obstacles they navigate every day.\n\nWhat we are proud of is being able to play a small part in giving back some independence, dignity, and, above all, those precious moments of connection with family and friends. ❤️\n\nThat's what the EZER Standing Wheelchair is designed for.\n\n🩵 Would you like to experience standing and moving with the EZER Standing Wheelchair?\n\nSend us a message! We'd love to hear your story.\n\n@j58.eu Let's get up and go!", "DWoJsvKlP4x": "Our first clients are already receiving their wheelchairs, and this week we had the pleasure of delivering EZER to Edwin 🙌\n\nOur team visited Edwin at his home to personally deliver the chair, adapt it to fit just right, and make sure he could use it comfortably. After setting up EZER and making a few adjustments tailored to him, Edwin was able to try it out right away.\n\nWe guided him through everything he needed to know, and his first feedback was great: it felt comfortable, stable, and secure 💬\n\nHe then tested EZER in different parts of his home, including the kitchen, where countertops are normally out of reach with a standard wheelchair. These small things change what everyday independence can look like.\n\nWe’ll stay in close contact with Edwin to support him along the way and to keep learning how EZER can best meet his needs over time.\n\nThis is just the beginning!\n\nGet up and go!", "DNirhAAtB6w": "🚀 “The first time I stood up after more than 18 years in a wheelchair was very special.” – Martin\n\nAnd the very first thing Martin did when he stood up in @j58.eu 's EZER standing wheelchair was ask his wife for a kiss — while standing. 🤔\n\n🎯 That was the moment we realized the true potential of our innovative standing wheelchair. Beyond being more active and having more opportunities, it’s about the little moments we often take for granted: eye-level conversations, or simply experiencing life from a different perspective.\n\n✅ Martin immediately felt the benefits of our EZER standing wheelchair — more experiences, more opportunities, and small but priceless moments, like that first kiss while standing.\n\nFrom our first meeting until today, Martin has tested the wheelchair with us multiple times, even sharing sketches and suggestions to help improve it.\n\nWe appreciate all the effort and feedback we received from Martin. Thank you. 🙏\n\n✅ Spread the word and if interested in our Ezer standing wheelchair, book a demo.\n\n💡 Discover our Ezer standing wheelchair by J58.EU — built to bring conversations back to eye level.\nwww.j58.eu\n\n#StandingWheelchair #DisabilityInnovation #AccessibilityMatters #Accessibility #Inclusion #MobilityFreedom #j58 #innovative #wheelchairUsers #independence #Ezerstandingwheelchair", "DLFr_NKI4jw": "Discover how a standing wheelchair transformed Kiki’s visit to the @rijksmuseum_twenthe\n\nThe first time we met her, she told us that she really enjoys museums, but often regular wheelchairs at museums come with limitations and don’t allow her to always see the exhibits properly. They are either too high, on a pedestal, or are covered by a glass that reflects the light, so her experience at the museum was not fully satisfying.\n\nWhen we met her and she saw J58’s standing wheelchair, we decided to go together to the @rijksmuseum to see how she could experience a museum in a standing wheelchair instead of a standard one.\nShe enjoyed the art while standing, viewing the paintings at their intended height and interacting with people in the museum at eye level. A small change in posture made a big difference in experience!\n\nBook a demo with us and let’s explore how we can enhance your experience at museums, concerts, or parties.\n\nThanks, Kiki, for sharing this moment with us. You help us move forward.\nGet up and go!\nwww.j58.eu", "DW33NLmiN0x": "Recently, we had the pleasure of welcoming Isis @rollenddoorhetleven — a content creator who shares her travel experiences and talks about accessibility on TikTok and Instagram ✈️🗺️\n\nShe’s someone who loves being out, exploring new places, and truly enjoying everyday life, so we were excited to see how she would experience EZER.\n\nThat’s why we invited Isis to visit J58 and try EZER for the first time. Experiencing a standing wheelchair was something completely new for her, and it was amazing to share that moment! 🪄\n\nTo explore EZER in real-life situations, we headed to a local supermarket. It was great to see how EZER supports independence in everyday tasks, like reaching top shelves, which are things that would normally require assistance.\n\nSeeing how EZER can improve life quality for our users is something that inspires and motivates us to push forward!\n\n✉️ Curious to try it yourself? Feel free to reach out!\nGet up and go!", "DZaEp-FO1Us": "Last week, we delivered the EZER to Christian, and he's happy that he can stand and reach the high shelves in his house without having to ask for help to grab things. 🎉\n\nHe can now move freely through his kitchen, reach items on the top shelves, and is especially happy that he can be more physically active by moving around independently in a standing position with the EZER.\n\nWould you also like to be able to reach more things independently at home and stay more active throughout the day? Get in touch with and book a demo via dm @j58.eu or check our website.\n\nGet up and go!\n\n🇳🇱\nVorige week hebben we de EZER geleverd aan Christian, en hij is ontzettend blij dat hij weer kan staan en zelfstandig de hoge planken in huis kan bereiken zonder hulp te hoeven vragen. 🎉\n\nHij kan zich nu vrij door zijn keuken bewegen, spullen van de bovenste planken pakken en is vooral blij dat hij weer actiever kan zijn door zich zelfstandig voort te bewegen in een staande positie met de EZER.\n\nZou jij ook graag thuis meer dingen zelfstandig willen kunnen bereiken en gedurende de dag actiever willen zijn?\n\nNeem contact met ons op en plan een demo.\n\nGet up and go! 🚀", "DQru1IACAiT": "J58's Standing Wheelchair isn’t only for moving around. It can also support real work environments.\n\n📲 Many production lines have workstations and tables placed higher than usual. For wheelchair users, this often means stretching, adjusting posture, or relying on colleagues for help. With a standing wheelchair, these tasks can be done comfortably and independently.\n\nDuring our first visit at DCW Johan tested our first prototype and he came up with several suggestions to improve our product. A few months ago we had our second visit at DCW where Johan tried our final version of the EZER standing wheelchair. He had the chance to test the wheelchair directly in his work environment at the production line, doing his daily tasks. It worked smoothly. 🚀\n\nHe was able to reach tools and materials more easily, move things from one place to another while standing, and have conversations at eye level with his colleagues. Johan could comfortably work within the existing setup, without needing any major adjustments to the workspace. 🎯\n\nProduction lines are usually standardized, and being able to stand made it easier for him to reach materials, handle tools, and stay involved in the flow of the work.\n\nThis showed that a standing wheelchair can be used in production environments with only minimal changes to the workplace.\n\n✅ If you are curious to try out the EZER wheelchair at your workplace or would like to explore a small pilot, feel free to reach out to us. We are always open to visiting companies and testing together in real work settings.\n\nGet up and go!", "DL1um2Bp9ea": "Ezer Standing Wheelchair Changed Kiki’s Museum Experience—Here’s How\n\nKiki loves museums, but at times museums are not fully accessible and regular wheelchairs often come with limitations — to see paintings that are too high, avoid glare on glass, or struggling to engage at eye level.\n\nThen she tried the @J58.EU standing wheelchair at the @rijksmuseum and this wheelchair provided more freedom to:\n🖼️ See art that is placed higher up on a wall.\n🗣️ Have eye-level conversations comfortably— this made the first interaction easier.\n✨ Enjoy freedom of movement.\n\nA small change made a big difference.\n\nWant to redefine accessibility for yourself or your museum, festival or concert halls?\nBook a demo and let’s explore the possibilities together.\n\nThank you, Kiki, for inspiring us to keep pushing forward.\nGet up and go!\n👉 www.j58.eu\n\n#AccessForAll #InclusiveDesign #StandTall", "DVq6iskALdi": "Recently, we had the pleasure of collaborating on a project with Saxion University of Applied Sciences 🎓\n\nDuring this period, Saxion students explored EZER’s positioning in the market and looked into the possible next steps for EZER in this exciting phase of growth.\n\nAs part of their project, the students invited Isa, who tested the EZER wheelchair in different everyday settings, including at home and in the supermarket. isadejongh_ shares her journey online after a skiing accident that resulted in a spinal cord injury, using her platform to raise awareness and document her path toward independence.\n\nIt was great to see how EZER supported her independence and mobility. In the supermarket, Isa was able to move around comfortably and reach the products she needed on her own, something that makes a huge difference for a wheelchair user. We were happy to see that such a difference became possible with EZER! ✨\n\nCurious to experience EZER yourself?\nFeel free to reach out to us! 💬\nGet up and go!", "DZ_8IQIoIEH": "This was the very first time we tested the EZER in Nick's kitchen and at home.\n\nLooking back now, it's incredible to see the impact the EZER Standing Wheelchair can have on someone's life.\n\n🍰🧁Nick is a pastry chef—but not just any pastry chef. He earned the title of Meester Pâtissier, the highest recognition in the profession and an achievement held by only a handful of pastry chefs in the Netherlands.\n\nLike many people, his work is something he genuinely loves doing.\n\nHowever, his kitchen is designed for working in a standing position and after his accident this definitely came as a limitation.\nThis changes with the Ezer standing wheelchair. He can bake while standing, reach for high shelves and have eye-to-eye level discussions with colleagues.\n\nWe're proud to be a small part of Nick's journey and to support him get back to doing what he does best.\n\nAnd if you're ever near Amsterdam and love great pastries, be sure to visit Patisserie Linnick.\nYou won't be disappointed.\n\n👋🏻Interested in working, cooking, or simply spending more of your day standing up?\n\nGet in touch and book a demo. We'd love to show you what the EZER can do.\n\nGet up and go!\n\n#StandingWheelchair #Accessibility #PastryChef #Mobility #WheelchairInnovation EZER J58 GetUpAndGo", "DV8ZY1biZgq": "Wrapping up our mini series on our collaboration with Saxion University of Applied Sciences and J58! Throughout this project, students explored Ezer in real-life situations together with users. The previous user tests from this project can be found on our page.\n\nIn this final test, Willem was invited to try EZER and experience the wheelchair in a standing position. One of the things he immediately noticed was how different it feels to interact with people at eye level. Standing allowed for more natural conversations and interactions with others. 🗣️\n\nHe also shared that it simply feels good, and that he is very happy with the possibility to stand again. Small moments like being able to talk, laugh, and connect with others at the same height can make a big difference.\n\nCurious to experience Ezer yourself? Feel free to reach out!\nGet up and go!", "Dd9EEmFKpvb": "Standing for the first time after I came in my wheelchair life!♿️ Testing the Ezer from @j58.eu 🤩#disability #ezer #accessible #wheelchair #standingchair"};
+      function clear(){ var v=media.querySelector('video'); if(v){v.pause();} media.innerHTML=''; media.classList.remove('is-paused'); }
+      document.querySelectorAll('.rl-tile[data-ig]').forEach(function(t){
+        var id=t.getAttribute('data-ig'), img=t.querySelector('img');
+        /* cover image: assets/social/<post id>.jpg replaces the placeholder when the file exists */
+        var probe=new Image(); probe.onload=function(){ img.src=probe.src; t.setAttribute('data-cover',probe.src); }; probe.src=base+id+'.jpg';
+        t.addEventListener('click',function(e){
+          e.preventDefault();
+          clear();
+          /* video: assets/social/<post id>.mp4, plays at once (muted, as browsers require) */
+          var v=document.createElement('video'); v.muted=true; v.loop=true; v.autoplay=true; v.playsInline=true;
+          v.setAttribute('playsinline',''); v.poster=t.getAttribute('data-cover')||img.src;
+          v.addEventListener('error',function(){ if(!media.querySelector('img')){ v.remove(); var sn=media.querySelector('.ig-snd'); if(sn)sn.remove(); var pp=media.querySelector('.ig-play'); if(pp)pp.remove(); var im=document.createElement('img'); im.src=v.poster; im.alt=''; media.appendChild(im);} },true);
+          v.src=base+id+'.mp4'; media.appendChild(v);
+          var snd=document.createElement('button'); snd.type='button'; snd.className='ig-snd'; snd.setAttribute('aria-label','Sound');
+          var ico=function(){ snd.innerHTML=v.muted?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z" fill="currentColor"/><path d="M16 8.500a5 5 0 0 1 0 7M18.500 6a8.500 8.500 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'; };
+          ico(); snd.addEventListener('click',function(ev){ ev.stopPropagation(); v.muted=!v.muted; ico(); });
+          var pl=document.createElement('span'); pl.className='ig-play'; pl.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+          media.appendChild(snd); media.appendChild(pl);
+          v.addEventListener('pause',function(){ media.classList.add('is-paused'); }); v.addEventListener('play',function(){ media.classList.remove('is-paused'); });
+          v.addEventListener('click',function(){ if(v.paused) v.play(); else v.pause(); });
+          var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){});
+          /* caption: assets/social/<post id>.txt */
+          cap.textContent=caps[id]||fallbackCap;
+          if(!caps[id]&&window.fetch){ fetch(base+id+'.txt').then(function(r){return r.ok?r.text():Promise.reject();}).then(function(x){ if(x.trim()) cap.textContent=x.trim(); }).catch(function(){}); }
+          who.textContent=users[id]||'j58.eu'; av.style.display=users[id]?'none':'';
+          dlg.showModal();
+        });
+      });
+      dlg.addEventListener('close',clear);
+      dlg.querySelector('.ig-modal__close').addEventListener('click',function(){dlg.close();});
+      dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
+    })();
+    </script>
+
+
+<style>
+.pull-quote{position:relative;min-height:60vh;background:linear-gradient(rgba(11,29,53,.80),rgba(11,29,53,.72)),url('../assets/img/martin-hoffman.jpg') center 4%/cover no-repeat,#0B1D35;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px clamp(20px,5vw,60px)}
+.pull-quote__decoration{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:200px;font-weight:900;line-height:1;color:rgba(18,170,186,.15);font-family:Georgia,serif;pointer-events:none;z-index:0;user-select:none}
+.pull-quote__content{position:relative;z-index:1;max-width:800px}
+.pull-quote blockquote{margin:0}
+.pull-quote__text{text-shadow:0 2px 24px rgba(11,29,53,.55);font-size:clamp(28px,4vw,52px);font-weight:700;color:#fff;line-height:1.3;font-style:italic;margin:0}
+.pull-quote__attribution{display:block;font-size:16px;color:#12aaba;font-weight:500;margin-top:32px;font-style:normal}
+@media(max-width:768px){.pull-quote{padding:60px 24px}}
+</style>
+
+
+<section aria-label="Ervaringen" class="qc-section">
+      <div class="container">
+        <div class="car-viewport" id="sVp"><div class="stack" id="sTrack">
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/martin.jpg" alt="Martin" loading="lazy" style="object-position:50% 35%"></div><div class="stack-text"><h3 class="stack-title">“Het is heel bijzonder, geef me nu een kus terwijl ik nog sta”</h3><span class="stack-rule"></span><div class="stack-sub">Martin</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/anthony.jpg" alt="Anthony (stand-upcomedian)" loading="lazy" style="object-position:35% 30%"></div><div class="stack-text"><h3 class="stack-title">“Ik woon in Nederland, Nederlandse vrouwen zijn lang, daarom heb ik deze rolstoel nodig.”</h3><span class="stack-rule"></span><div class="stack-sub">Anthony (stand-upcomedian)</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/christian.jpg" alt="Christian (Ambassadeur)" loading="lazy" style="object-position:50% 22%"></div><div class="stack-text"><h3 class="stack-title">“In plaats van onder de tafel te zitten kan ik nu aan de (sta-)tafel meedoen”</h3><span class="stack-rule"></span><div class="stack-sub">Christian (Ambassadeur)</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/jeroen.jpg" alt="Jeroen" loading="lazy" style="object-position:50% 25%"></div><div class="stack-text"><h3 class="stack-title">“Ik kan nu hogere planken bereiken, sta-bureaus gebruiken en vrij bewegen, waardoor ik overdag veel productiever ben.”</h3><span class="stack-rule"></span><div class="stack-sub">Jeroen</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/johan.jpg" alt="Johan" loading="lazy" style="object-position:55% 24%"></div><div class="stack-text"><h3 class="stack-title">“Dat ik met mijn rolstoel kan staan, heeft me het vertrouwen en de onafhankelijkheid gegeven om volledig mee te doen met vrienden en familie.”</h3><span class="stack-rule"></span><div class="stack-sub">Johan</div></div></div></article>
+          <article class="stack-card"><div class="stack-inner"><div class="stack-media"><img src="../assets/img/testimonials/erik.jpg" alt="Erik" loading="lazy" style="object-position:50% 24%"></div><div class="stack-text"><h3 class="stack-title">“Als klanten bij ons op bezoek komen, moest ik altijd tegen ze opkijken. Nu, met deze rolstoel, staan we op dezelfde hoogte.”</h3><span class="stack-rule"></span><div class="stack-sub">Erik</div></div></div></article>
+        </div></div>
+        <div class="car-nav"><button aria-label="Vorig verhaal" class="car-btn" id="sPrev" type="button">←</button><a class="btn-primary btn-lg" href="user-stories.html">Lees gebruikersverhalen</a><button aria-label="Volgend verhaal" class="car-btn" id="sNext" type="button">→</button></div>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="bro-h" class="bro bro--home">
+      <div class="container">
+        <div class="bro-card">
+          <div class="bro-text">
+            <h2 id="bro-h">Ervaar de EZER zelf<span class="dot">.</span></h2>
+            <p>Ontdek hoe staand bewegen werkt. Plan een persoonlijke demo en ervaar staande mobiliteit uit eerste hand.</p>
+            <div class="bro-actions">
+              <a class="bro-btn bro-btn--primary" href="book-a-demo.html">Plan een demo</a>
+            </div>
+          </div>
+          <div class="bro-photo" style="background-image:url('../assets/img/hero-poster-teaser.jpg')"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer aria-label="Voettekst van de site" class="ds-footer" role="contentinfo">
+    <div class="ds-footer__wrap">
+      <p class="ds-footer__title">Maak staan de nieuwe standaard<span class="dot">.</span></p>
+      <div class="ds-footer__grid">
+        <div class="ds-footer__brand">
+          <a aria-label="J58 — home" class="ds-footer__logo" href="index.html"><img alt="J58" height="444" src="../assets/img/j58-logo-white.png" width="1378"/></a>
+          <p>J58 ontwikkelt de EZER sta-rolstoel, de eerste mechanische sta-rolstoel waarmee mensen kunnen zitten, staan en bewegen terwijl ze staan.</p>
+          <p>De Hems 10, 7522 NL Enschede, Nederland<br/><a href="mailto:info@j58.eu">info@j58.eu</a></p>
+          <div aria-label="Social media" class="ds-footer__social"><a aria-label="Facebook" href="https://www.facebook.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.6 20v-7h2.4l.4-3h-2.8V8.3c0-.9.3-1.4 1.5-1.4h1.4V4.2c-.3 0-1.1-.1-2.1-.1-2.2 0-3.6 1.3-3.6 3.7V10H8.4v3h2.4v7z" fill="currentColor"></path></svg></a><a aria-label="LinkedIn" href="https://nl.linkedin.com/company/j58" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" fill="currentColor" r="1.7"></circle><rect fill="currentColor" height="8.5" width="3" x="6" y="10"></rect><path d="M11 10h2.8v1.2c.5-.9 1.5-1.4 2.7-1.4 2.4 0 3 1.6 3 3.7v5h-3v-4.2c0-1-.2-1.8-1.3-1.8s-1.2.8-1.2 1.8v4.2h-3z" fill="currentColor"></path></svg></a><a aria-label="Instagram" href="https://www.instagram.com/j58.eu/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="none" height="14" rx="4" stroke="currentColor" stroke-width="1.8" width="14" x="5" y="5"></rect><circle cx="12" cy="12" fill="none" r="3.2" stroke="currentColor" stroke-width="1.8"></circle><circle cx="16.2" cy="7.8" fill="currentColor" r="1"></circle></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@J58EU" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><rect fill="currentColor" height="11" rx="3.2" width="16" x="4" y="6.5"></rect><path d="M10.5 9.7v4.6l4-2.3z" fill="#12aaba"></path></svg></a><a aria-label="TikTok" href="https://www.tiktok.com/@j58.eu" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13.5 5v9.3a2.8 2.8 0 1 1-2.8-2.8M13.5 5c.3 2.1 1.8 3.5 4 3.7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></a></div>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Product</h4>
+          <a href="product.html">De EZER</a>
+          <a href="product-resources.html">Resources</a>
+          <a href="user-stories.html">Gebruikersverhalen</a>
+          <a href="faq.html">Veelgestelde vragen</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Voor partners</h4>
+          <a href="healthcare-professionals.html">Zorgprofessionals</a>
+          <a href="distributors.html">Dealers</a>
+          <a href="reimbursement.html">Financiering</a>
+        </div>
+        <div class="ds-footer__col">
+          <h4>Bedrijf</h4>
+          <a href="about.html">Over J58</a>
+          <a href="blog.html">Blogs en artikelen</a>
+          <a href="contact.html">Contact</a>
+          <a href="book-a-demo.html">Plan een demo</a>
+        </div>
+      </div>
+      <div class="ds-footer__bottom"><span>© <span id="year">2026</span> J58. Alle rechten voorbehouden.</span><span><a href="privacy-policy.html">Privacy</a> · <a href="cookie-policy.html">Cookies</a> · <a href="terms-and-conditions.html" data-terms>Voorwaarden</a> · <a href="#" data-coming-soon>Toegankelijkheid</a></span></div>
+    </div>
+  </footer>
+  <script src="../assets/js/site.js"></script>
+
+<script>
+(function(){
+  var vp=document.getElementById('carVp'),tr=document.getElementById('carTrack');
+  if(!vp||!tr)return;
+  var GAP=28,STEP_MS=3000,HOLD=6000,busy=false,timer=null,visible=false,base=0,cw=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cards(){return Array.prototype.slice.call(tr.children);}
+  function layout(){
+    var vw=vp.clientWidth, vh=window.innerHeight; cw=Math.min(660,Math.round(vw*(vw<700?0.78:0.44)),Math.round((vh-520)/0.5625)); cw=Math.max(cw,vw<700?260:340);
+    tr.style.setProperty('--car-w',cw+'px'); tr.style.setProperty('--car-gap',GAP+'px');
+    base=Math.round(vw/2-cw/2-2*(cw+GAP));
+    tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+  }
+  function mark(){
+    var c=cards();
+    c.forEach(function(el,i){
+      var on=(i===2); el.classList.toggle('is-center',on);
+      var v=el.querySelector('video'); if(!v)return;
+      if(on){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else {v.pause();}
+    });
+  }
+  function next(){
+    if(busy)return; busy=true;
+    var c=cards();
+    c[2].classList.remove('is-center'); c[3].classList.add('is-center'); playOnly(c[3]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    setTimeout(function(){
+      tr.appendChild(tr.firstElementChild);
+      tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+      busy=false;
+    },STEP_MS+30);
+  }
+  function prev(){
+    if(busy)return; busy=true;
+    var c=cards();
+    tr.insertBefore(c[c.length-1],c[0]);
+    tr.style.transition='none'; tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    void tr.offsetWidth;
+    var n=cards(); n[3].classList.remove('is-center'); n[2].classList.add('is-center'); playOnly(n[2]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+base+'px)';
+    setTimeout(function(){busy=false;},STEP_MS+30);
+  }
+  function playOnly(el){cards().forEach(function(x){var v=x.querySelector('video');if(!v)return;if(x===el){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});}
+  function start(){stop(); if(reduce||!visible)return; timer=setInterval(next,HOLD+STEP_MS);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  document.getElementById('carNext').addEventListener('click',function(){next();start();});
+  document.getElementById('carPrev').addEventListener('click',function(){prev();start();});
+  vp.addEventListener('mouseenter',stop); vp.addEventListener('mouseleave',start);
+  tr.addEventListener('click',function(e){var c=e.target.closest('.stack-card');if(!c||c.classList.contains('is-center'))return;var i=cards().indexOf(c);if(i>2){next();start();}else if(i<2){prev();start();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;visible?start():stop();},{threshold:.35}).observe(vp);}else{visible=true;start();}
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(layout,120);});
+  tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]); tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]);
+  layout(); mark();
+})();
+</script>
+<script>
+(function(){
+  var vp=document.getElementById('sVp'),tr=document.getElementById('sTrack');
+  if(!vp||!tr)return;
+  var GAP=28,STEP_MS=3000,HOLD=6000,busy=false,timer=null,visible=false,base=0,cw=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function cards(){return Array.prototype.slice.call(tr.children);}
+  function layout(){
+    var vw=vp.clientWidth, vh=window.innerHeight; cw=Math.min(560,Math.round(vw*(vw<700?0.78:0.4))); cw=Math.max(cw,vw<700?260:340);
+    tr.style.setProperty('--car-w',cw+'px'); tr.style.setProperty('--car-gap',GAP+'px');
+    base=Math.round(vw/2-cw/2-2*(cw+GAP));
+    tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+  }
+  function mark(){
+    var c=cards();
+    c.forEach(function(el,i){
+      var on=(i===2); el.classList.toggle('is-center',on);
+      var v=el.querySelector('video'); if(!v)return;
+      if(on){var p=v.play(); if(p&&p.catch)p.catch(function(){});} else {v.pause();}
+    });
+  }
+  function next(){
+    if(busy)return; busy=true;
+    var c=cards();
+    c[2].classList.remove('is-center'); c[3].classList.add('is-center'); playOnly(c[3]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    setTimeout(function(){
+      tr.appendChild(tr.firstElementChild);
+      tr.style.transition='none'; tr.style.transform='translateX('+base+'px)';
+      busy=false;
+    },STEP_MS+30);
+  }
+  function prev(){
+    if(busy)return; busy=true;
+    var c=cards();
+    tr.insertBefore(c[c.length-1],c[0]);
+    tr.style.transition='none'; tr.style.transform='translateX('+(base-(cw+GAP))+'px)';
+    void tr.offsetWidth;
+    var n=cards(); n[3].classList.remove('is-center'); n[2].classList.add('is-center'); playOnly(n[2]);
+    tr.style.transition='transform '+STEP_MS+'ms cubic-bezier(.45,.05,.25,1)';
+    tr.style.transform='translateX('+base+'px)';
+    setTimeout(function(){busy=false;},STEP_MS+30);
+  }
+  function playOnly(el){cards().forEach(function(x){var v=x.querySelector('video');if(!v)return;if(x===el){var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});}
+  function start(){stop(); if(reduce||!visible)return; timer=setInterval(next,HOLD+STEP_MS);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  document.getElementById('sNext').addEventListener('click',function(){next();start();});
+  document.getElementById('sPrev').addEventListener('click',function(){prev();start();});
+  vp.addEventListener('mouseenter',stop); vp.addEventListener('mouseleave',start);
+  tr.addEventListener('click',function(e){var c=e.target.closest('.stack-card');if(!c||c.classList.contains('is-center'))return;var i=cards().indexOf(c);if(i>2){next();start();}else if(i<2){prev();start();}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;visible?start():stop();},{threshold:.35}).observe(vp);}else{visible=true;start();}
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(layout,120);});
+  tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]); tr.insertBefore(tr.children[tr.children.length-1],tr.children[0]);
+  layout(); mark();
+})();
+</script>
+
+  <script>
+    /* Solid navy nav bar once the hero has scrolled out of view */
+    (function () {
+      var wrap = document.getElementById('navWrap');
+      var hero = document.querySelector('.page-hero');
+      if (!wrap || !hero) return;
+      function update() { var past = hero.getBoundingClientRect().bottom < 100; wrap.classList.toggle('past-hero', past); }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+<script>
+(function(){
+  var v=document.getElementById('heroVideo'),b=document.getElementById('heroSound');
+  if(!v||!b||v.getAttribute('data-audio')!=='true')return; /* button only appears when the video file has an audio track */
+  b.hidden=false;
+  b.addEventListener('click',function(){
+    var on=v.muted; v.muted=!on; if(on){v.volume=1;v.play&&v.play();}
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.setAttribute('aria-label',on?'Geluid uit':'Geluid aan');
+  });
+})();
+</script>
+<script defer="" src="../assets/js/cursor.js"></script>
+<script src="../assets/js/a11y.js"></script>
+<script src="../assets/js/nav-dd.js?v=4"></script>
+
+
+</body></html>
