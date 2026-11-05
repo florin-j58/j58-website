@@ -2495,7 +2495,7 @@ bt.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.mode)
   var last=null;
   function open(id,btn){ var d=document.getElementById('mb-'+id); if(!d||!d.showModal) return; last=btn; d.showModal(); document.body.classList.add('mb-lock'); d.scrollTop=0; var v=d.querySelector('.mb-modal__vid'); if(v){ v.currentTime=0; var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } }
   function close(d){ d.close(); }
-  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ var v=d.querySelector('.mb-modal__vid'); if(v) v.pause(); }); });
+  document.querySelectorAll('.mb-modal').forEach(function(d){ d.addEventListener('close',function(){ d.querySelectorAll('video').forEach(function(v){ v.pause(); }); d.querySelectorAll('iframe').forEach(function(f){ var s=f.getAttribute('src'); if(s){ f.setAttribute('src','about:blank'); setTimeout(function(){ f.setAttribute('src',s); },50); } }); }); });
   cards.forEach(function(c){ c.addEventListener('click',function(){ open(c.getAttribute('data-mb'),c); }); if(c.getAttribute('role')==='button') c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(c.getAttribute('data-mb'),c); } }); });
   document.querySelectorAll('.mb-modal').forEach(function(d){
     d.querySelector('.mb-modal__close').addEventListener('click',function(){ close(d); });
