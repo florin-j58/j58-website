@@ -1,4 +1,4 @@
-/* J58 newsletter pop-up: shown when a page opens (after a short delay). Closing it hides it for 14 days; joining hides it for a year.
+/* J58 newsletter pop-up: shown only on the home page, once the mission screen scrolls into view. Closing it hides it for 14 days; joining hides it for a year.
    The email is sent to the existing Substack newsletter "The Next Wheelchair" (a normal form post, opens Substack's confirmation in a new tab). */
 (function () {
   var KEY = 'j58news', cs = document.currentScript, root = cs && cs.src ? cs.src.replace(/assets\/js\/newsletter-popup\.js.*$/, '') : '';
@@ -43,6 +43,15 @@
     document.body.appendChild(box); prev = document.activeElement; document.addEventListener('keydown', key);
     requestAnimationFrame(function () { box.classList.add('on'); setTimeout(function () { q('input[type=email]').focus({ preventScroll: true }); }, 350); });
   }
-  function init() { setTimeout(open, 1500); }
+  /* Only on the home page: opens once, when the mission screen (.mw, right after the product benefits) scrolls into view. */
+  function init() {
+    var t = document.querySelector('.mw'); if (!t) return;
+    var done = false;
+    function go() { if (done) return; done = true; if (io) io.disconnect(); window.removeEventListener('scroll', chk); open(); }
+    function chk() { var r = t.getBoundingClientRect(), vh = window.innerHeight || 800; if (r.top < vh * 0.4 && r.bottom > vh * 0.4) go(); }
+    var io = null;
+    if ('IntersectionObserver' in window) { io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && e.intersectionRatio >= 0.5) go(); }); }, { threshold: [0.5] }); io.observe(t); }
+    else window.addEventListener('scroll', chk, { passive: true });
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
