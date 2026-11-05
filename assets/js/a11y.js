@@ -84,3 +84,26 @@
   apply();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
 })();
+
+/* Top bar (accessibility + language): hides while scrolling, slides back in when scrolling stops */
+(function () {
+  var root = document.documentElement, t, hidden = false;
+  var css = document.createElement('style');
+  css.textContent =
+    '.a11y-toolbar{position:sticky;top:0;transition:transform .35s ease}' +
+    'html.tb-hide .a11y-toolbar{transform:translateY(-100%)}' +
+    '.nav-wrap{transition:top .35s ease,background .3s,box-shadow .3s}' +
+    'html.tb-sc:not(.tb-hide) .nav-wrap{top:var(--toolbar-h,40px)}' +
+    '@media (prefers-reduced-motion:reduce){.a11y-toolbar,.nav-wrap{transition:none}}';
+  document.head.appendChild(css);
+  function show() { hidden = false; root.classList.remove('tb-hide'); }
+  function onScroll() {
+    var y = window.pageYOffset || root.scrollTop || 0;
+    root.classList.toggle('tb-sc', y > 40);
+    if (y > 40 && !hidden) { hidden = true; root.classList.add('tb-hide'); }
+    clearTimeout(t);
+    t = setTimeout(show, 350);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); clearTimeout(t); show();
+})();
