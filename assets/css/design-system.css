@@ -315,3 +315,17 @@ html:not(.hc) body { background: var(--ds-cream); }
   /* last button to the next section: 32px in total including the section padding */
   html body :is(.cta-band, .cta-section) { padding-bottom: var(--btn-m-section-gap) !important; }
 }
+
+/* Mobile hero buttons (.hero-button primary, .hero-button-secondary transparent), breakpoint 767px
+   padding 12px top/bottom, 20px left/right; min height 48px; 12px between buttons;
+   24px heading to first button; 32px second button to description */
+@media (max-width: 767px) {
+  html body a.hero-button.hero-button.hero-button.hero-button {
+    box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; justify-content: center !important;
+    padding: 12px 20px !important; min-height: 48px !important; line-height: 22px !important;
+    border-width: 1px !important; width: auto !important; min-width: 0 !important; font-size: .95rem !important;
+  }
+  html body .hero-actions, html body .ph-cta { gap: 12px !important; margin-top: 24px !important; margin-bottom: 0 !important; }
+  html body :is(.hero-title, .product-hero__headline) { margin-bottom: 0 !important; }
+  html body :is(.hero-actions, .ph-cta) + :is(p, .ph-sub) { margin-top: 32px !important; }
+}
