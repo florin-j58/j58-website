@@ -284,3 +284,32 @@ html:not(.hc) body { background: var(--ds-cream); }
 .fx-card[aria-pressed="true"] .fx-icon { background: transparent !important; }
 .card:not(:has(.card-media)) .card-icon, .fx-icon { background: rgba(18,170,186,.12) !important; }
 .dl-card .btn-primary { padding: 8px 16px !important; font-size: .85rem !important; width: fit-content; align-self: center; }
+
+/* ---------- Mobile button standard (up to 900px) ----------
+   Inside a button: 14px above and below a 20px label line (primary 13px + 1px border, secondary 12px + 2px border).
+   Supporting text to button 24px | button to a note below 16px | between stacked buttons 12px |
+   last button to next section 32px in total, including the section padding. */
+:root { --btn-m-pad: 14px; --btn-m-line: 20px; --btn-m-text-gap: 24px; --btn-m-note-gap: 16px; --btn-m-stack-gap: 12px; --btn-m-section-gap: 32px; }
+@media (max-width: 900px) {
+  html body :is(.btn-primary, .sp-btn, .bro-btn--primary, .fm-submit, .cx-submit, .rs-cta, .ds-btn--primary, .ph-order):not(.nav-cta *):not(.mobile-cta *):not(.dl-card *) {
+    display: inline-flex !important; align-items: center; justify-content: center; gap: 10px;
+    padding: calc(var(--btn-m-pad) - 1px) 22px !important; border: 1px solid var(--btn-primary-bg) !important;
+    font-size: 1rem !important; font-weight: 500 !important; line-height: var(--btn-m-line) !important; min-height: 0 !important;
+  }
+  html body :is(.btn-secondary, .sp-link, .bro-btn--ghost, .cta-link, .ds-btn--secondary, .ph-demo):not(.nav-cta *):not(.mobile-cta *):not(.dl-card *) {
+    display: inline-flex !important; align-items: center; justify-content: center; gap: 10px;
+    padding: calc(var(--btn-m-pad) - 2px) 22px !important; border: 2px solid var(--btn-secondary-border) !important;
+    background: transparent !important; color: var(--btn-secondary-fg) !important; text-decoration: none !important;
+    font-size: 1rem !important; font-weight: 500 !important; line-height: var(--btn-m-line) !important; min-height: 0 !important;
+  }
+  /* rows of buttons: 24px below the text, 12px between stacked buttons, nothing extra below */
+  html body :is(.hero-actions, .mw-cta, .bro-actions, .sp-cta, .sp-cta-all, .ph-cta, .mc-actions, .sol-actions, .mb-modal__cta, .feat-end) {
+    display: flex !important; flex-direction: column !important; align-items: stretch !important; flex-wrap: nowrap !important;
+    gap: var(--btn-m-stack-gap) !important; margin: var(--btn-m-text-gap) auto 0 !important; width: 100%; max-width: 420px;
+  }
+  /* form submit: 24px after the last field, 16px before the note below it */
+  html body :is(.fm-submit, .cx-submit) { margin-top: var(--btn-m-text-gap) !important; width: 100%; }
+  html body :is(.cx-note, .fm-submit + .fm-fine, .fm-submit + p, .fm-submit + .fm-alt) { margin-top: var(--btn-m-note-gap) !important; }
+  /* last button to the next section: 32px in total including the section padding */
+  html body :is(.cta-band, .cta-section) { padding-bottom: var(--btn-m-section-gap) !important; }
+}
