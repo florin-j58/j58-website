@@ -4,10 +4,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#12aaba" name="theme-color"/>
   <title>EZER-Broschüre anfordern | J58</title>
-  <meta content="Fordern Sie die kostenlose EZER-Broschüre digital oder per Post an und erfahren Sie, wie Sie mit dem EZER gleichzeitig stehen und sich fortbewegen." name="description"/>
+  <meta content="Fordern Sie die kostenlose EZER-Broschüre digital an und erfahren Sie, wie Sie mit dem EZER gleichzeitig stehen und sich fortbewegen." name="description"/>
   <meta content="website" property="og:type"/>
   <meta content="EZER-Broschüre anfordern | J58" property="og:title"/>
-  <meta content="Fordern Sie die kostenlose EZER-Broschüre digital oder per Post an und erfahren Sie, wie Sie mit dem EZER gleichzeitig stehen und sich fortbewegen." property="og:description"/>
+  <meta content="Fordern Sie die kostenlose EZER-Broschüre digital an und erfahren Sie, wie Sie mit dem EZER gleichzeitig stehen und sich fortbewegen." property="og:description"/>
   <meta content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" property="og:image"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -110,17 +110,7 @@
               <input aria-label="E-Mail-Adresse" autocomplete="email" name="email" placeholder="E-Mail-Adresse*" required="" type="email"/>
               <input aria-label="Stadt" autocomplete="address-level2" name="city" placeholder="Stadt*" required="" type="text"/>
             </div>
-            <fieldset class="fm-group" style="border:0;padding:0;margin:26px 0 8px">
-              <legend class="lbl" style="font-weight:700;color:var(--fm-navy);padding:0;margin-bottom:6px">Wie sollen wir die Broschüre senden?<span class="req">*</span></legend>
-              <span class="sub">Bitte auswählen</span>
-              <label class="fm-opt"><input name="delivery" required="" type="radio" value="digital"/> Digital (per E-Mail)</label>
-              <label class="fm-opt"><input name="delivery" type="radio" value="post"/> Per Post</label>
-              <div class="fm-grid fm-more" id="postFields">
-                <input aria-label="Straße und Hausnummer" autocomplete="street-address" name="street" placeholder="Straße und Hausnummer*" type="text"/>
-                <input aria-label="Postleitzahl" autocomplete="postal-code" name="postcode" placeholder="Postleitzahl*" type="text"/>
-                <input aria-label="Land" autocomplete="country-name" class="full" name="country" placeholder="Land*" type="text"/>
-              </div>
-            </fieldset>
+            <input type="hidden" name="delivery" value="digital" />
             <div class="fm-grid" style="margin-top:22px">
               <select aria-label="Was beschreibt Sie am besten?" class="full" name="capacity" required=""><option disabled="" selected="" value="">Was beschreibt Sie am besten?*</option><option>Rollstuhlnutzer (ich selbst)</option><option>Angehöriger oder Freund eines Rollstuhlnutzers</option><option>Ergotherapeut</option><option>Physiotherapeut</option><option>Rehabilitationsarzt oder Therapeut</option><option>Sanitätshaus oder Händler</option><option>Gemeinde, Krankenkasse oder Kostenträger</option><option>Sonstiges</option></select>
               <select aria-label="Wie haben Sie zum ersten Mal von uns erfahren?" class="full" name="heard" required=""><option disabled="" selected="" value="">Wie haben Sie zum ersten Mal von uns erfahren?*</option><option>Instagram / Facebook</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>E-Mail oder Newsletter</option><option>Mundpropaganda</option><option>Suchmaschine</option><option>Veranstaltung oder Messe</option><option>Sonstiges</option></select>
@@ -195,5 +185,5 @@
 <script src="../assets/js/nav-dd.js?v=4"></script>
 
 
-<script src="../assets/js/form-send.js"></script>
+<script src="../assets/js/form-send.js?v=2"></script>
 </body></html>

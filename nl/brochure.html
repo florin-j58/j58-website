@@ -4,10 +4,10 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="#12aaba" name="theme-color"/>
   <title>Vraag de EZER-brochure aan | J58</title>
-  <meta content="Vraag de gratis EZER-brochure aan, digitaal of per post, en ontdek hoe je met de EZER kunt staan en rijden tegelijk." name="description"/>
+  <meta content="Vraag de gratis EZER-brochure digitaal aan en ontdek hoe je met de EZER kunt staan en rijden tegelijk." name="description"/>
   <meta content="website" property="og:type"/>
   <meta content="Vraag de EZER-brochure aan | J58" property="og:title"/>
-  <meta content="Vraag de gratis EZER-brochure aan, digitaal of per post, en ontdek hoe je met de EZER kunt staan en rijden tegelijk." property="og:description"/>
+  <meta content="Vraag de gratis EZER-brochure digitaal aan en ontdek hoe je met de EZER kunt staan en rijden tegelijk." property="og:description"/>
   <meta content="https://www.j58.eu/assets/img/hero-poster-teaser.jpg" property="og:image"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -110,17 +110,7 @@
               <input aria-label="E-mailadres" autocomplete="email" name="email" placeholder="E-mailadres*" required="" type="email"/>
               <input aria-label="Plaats" autocomplete="address-level2" name="city" placeholder="Plaats*" required="" type="text"/>
             </div>
-            <fieldset class="fm-group" style="border:0;padding:0;margin:26px 0 8px">
-              <legend class="lbl" style="font-weight:700;color:var(--fm-navy);padding:0;margin-bottom:6px">Hoe moeten we de brochure sturen?<span class="req">*</span></legend>
-              <span class="sub">Kies een optie</span>
-              <label class="fm-opt"><input name="delivery" required="" type="radio" value="digital"/> Digitaal (per e-mail)</label>
-              <label class="fm-opt"><input name="delivery" type="radio" value="post"/> Per post</label>
-              <div class="fm-grid fm-more" id="postFields">
-                <input aria-label="Straat en huisnummer" autocomplete="street-address" name="street" placeholder="Straat en huisnummer*" type="text"/>
-                <input aria-label="Postcode" autocomplete="postal-code" name="postcode" placeholder="Postcode*" type="text"/>
-                <input aria-label="Land" autocomplete="country-name" class="full" name="country" placeholder="Land*" type="text"/>
-              </div>
-            </fieldset>
+            <input type="hidden" name="delivery" value="digital" />
             <div class="fm-grid" style="margin-top:22px">
               <select aria-label="Wat beschrijft jou het best?" class="full" name="capacity" required=""><option disabled="" selected="" value="">Wat beschrijft jou het best?*</option><option>Rolstoelgebruiker (ikzelf)</option><option>Familielid of vriend van een rolstoelgebruiker</option><option>Ergotherapeut</option><option>Fysiotherapeut</option><option>Revalidatiearts of behandelaar</option><option>Zorgwinkel of dealer</option><option>Gemeente, zorgverzekeraar of financier</option><option>Anders</option></select>
               <select aria-label="Hoe heb je voor het eerst van ons gehoord?" class="full" name="heard" required=""><option disabled="" selected="" value="">Hoe heb je voor het eerst van ons gehoord?*</option><option>Instagram / Facebook</option><option>TikTok</option><option>YouTube</option><option>LinkedIn</option><option>E-mail of nieuwsbrief</option><option>Mond-tot-mondreclame</option><option>Zoekmachine</option><option>Evenement of beurs</option><option>Anders</option></select>
@@ -195,5 +185,5 @@
 <script src="../assets/js/nav-dd.js?v=4"></script>
 
 
-<script src="../assets/js/form-send.js"></script>
+<script src="../assets/js/form-send.js?v=2"></script>
 </body></html>

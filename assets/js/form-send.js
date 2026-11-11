@@ -7,9 +7,9 @@ J.ENDPOINT="https://script.google.com/macros/s/AKfycbx0h1fUppWTwHEouQP-wj3Q2WX3b
 J.TO="social@j58.eu";
 var LANG=(document.documentElement.lang||'en').slice(0,2);
 J.L={
- en:{mail:"One more step: your email app should now open with your message ready. Please press Send there to deliver it. Nothing is sent until you do. If nothing opened, write to "+J.TO+".",ok:"Thank you! We have received your request and will get back to you soon.",sending:"Sending…"},
- de:{mail:"Noch ein Schritt: Ihre E-Mail-App sollte sich jetzt mit Ihrer Nachricht öffnen. Bitte klicken Sie dort auf Senden. Erst dann wird die Nachricht verschickt. Falls sich nichts öffnet, schreiben Sie an "+J.TO+".",ok:"Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns bald bei Ihnen.",sending:"Wird gesendet…"},
- nl:{mail:"Nog één stap: uw e-mailapp opent nu met uw bericht klaar. Druk daar op Verzenden om het te versturen. Er wordt niets verstuurd voordat u dat doet. Opent er niets, schrijf dan naar "+J.TO+".",ok:"Bedankt! We hebben uw aanvraag ontvangen en nemen snel contact met u op.",sending:"Verzenden…"}
+ en:{mail:"One more step: your email app should now open with your message ready. Please press Send there to deliver it. Nothing is sent until you do. If nothing opened, write to "+J.TO+".",ok:"Thank you! We have received your request and will get back to you soon.",okBro:"Thank you! We have received your request and will email you the brochure soon.",sending:"Sending…"},
+ de:{mail:"Noch ein Schritt: Ihre E-Mail-App sollte sich jetzt mit Ihrer Nachricht öffnen. Bitte klicken Sie dort auf Senden. Erst dann wird die Nachricht verschickt. Falls sich nichts öffnet, schreiben Sie an "+J.TO+".",ok:"Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns bald bei Ihnen.",okBro:"Vielen Dank! Wir haben Ihre Anfrage erhalten und senden Ihnen die Broschüre in Kürze per E-Mail.",sending:"Wird gesendet…"},
+ nl:{mail:"Nog één stap: uw e-mailapp opent nu met uw bericht klaar. Druk daar op Verzenden om het te versturen. Er wordt niets verstuurd voordat u dat doet. Opent er niets, schrijf dan naar "+J.TO+".",ok:"Bedankt! We hebben uw aanvraag ontvangen en nemen snel contact met u op.",okBro:"Bedankt! We hebben uw aanvraag ontvangen en e-mailen u binnenkort de brochure.",sending:"Verzenden…"}
 };
 J.t=J.L[LANG]||J.L.en;
 J.mailMsg=J.t.mail;
@@ -52,7 +52,7 @@ document.querySelectorAll('form[data-send]').forEach(function(f){
     var orig=btn?btn.textContent:'';if(btn){btn.disabled=true;btn.textContent=J.t.sending}
     J.send({form:name,subject:'['+name+'] '+who,text:text,data:data}).then(function(r){
       if(btn){btn.disabled=false;btn.textContent=orig}
-      if(ok){ok.textContent=(r==='sent')?J.t.ok:J.mailMsg;ok.hidden=false;ok.focus()}
+      if(ok){ok.textContent=(r==='sent')?(data.delivery==='digital'?J.t.okBro:J.t.ok):J.mailMsg;ok.hidden=false;ok.focus()}
       if(r==='sent'){f.reset();f.querySelectorAll('input,select,textarea,button').forEach(function(el){if(el.type!=='hidden')el.setAttribute('disabled','true')})}
     });
   });
