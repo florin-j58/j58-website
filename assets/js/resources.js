@@ -17,7 +17,8 @@
       langs: { /* en:{f:'ezer-user-manual-en.pdf',v:'v1.0',d:'Nov 2026',s:'4.2 MB'}, nl:{...}, de:{...} */ } },
     { id: 'specs',    type: 'data',     kind: 'page', t: { en: 'Specifications', nl: 'Specificaties', de: 'Spezifikationen' },
       href: { en: 'product/index.html#specifications', nl: 'nl/product.html#specifications', de: 'de/product.html#specifications' } },
-    { id: 'brochure', type: 'brochure', kind: 'file', t: { en: 'Clinical brochure (PDF)', nl: 'Klinische brochure (PDF)', de: 'Klinische Broschüre (PDF)' }, langs: {} },
+    { id: 'brochure', type: 'brochure', kind: 'file', gate: true, t: { en: 'EZER brochure', nl: 'EZER-brochure', de: 'EZER-Broschüre' },
+      langs: { en:{f:'EZER-brochure-en.pdf',v:'Nov 2026',d:'',s:'5.4 MB'}, nl:{f:'EZER-brochure-nl.pdf',v:'Nov 2026',d:'',s:'5.5 MB'}, de:{f:'EZER-brochure-de.pdf',v:'Nov 2026',d:'',s:'5.5 MB'} } },
     { id: 'guide',    type: 'guide',    kind: 'file', t: { en: 'Fitting & assessment guide', nl: 'Pas- en beoordelingsgids', de: 'Anpass- und Beurteilungsleitfaden' }, langs: {} },
     { id: 'order',    type: 'order',    kind: 'file', t: { en: 'Order form', nl: 'Bestelformulier', de: 'Bestellformular' }, langs: {} },
     { id: 'cookie',   type: 'policy',   kind: 'page', t: { en: 'Cookie policy', nl: 'Cookiebeleid', de: 'Cookie-Richtlinie' },
@@ -73,7 +74,7 @@
         var o = sel && d.langs[sel], note = '';
         if (sel && sel !== wanted && !have(wanted)) note = S.fb2.replace('%L%', LN2[LANG][wanted]).replace('%F%', LN2[LANG][sel]);
         var chips = ['en', 'nl', 'de'].map(function (l) { return '<button type="button" class="rl2-c" data-l="' + l + '" aria-pressed="' + (l === sel || (!sel && l === wanted)) + '"' + (have(l) ? '' : ' disabled title="' + esc(S.soonTip) + '"') + ' aria-label="' + esc(S.pick + ': ' + S.ln[l]) + '">' + l.toUpperCase() + '</button>'; }).join('');
-        var btn = o ? '<a class="rl2-b" href="' + esc(DOCDIR + o.f) + '" target="_blank" rel="noopener" download>' + esc(S.dl) + '</a>' : '<a class="rl2-b off" href="#" data-coming-soon>' + esc(S.soon) + '</a>';
+        var btn = o ? '<a class="rl2-b" href="' + esc(DOCDIR + o.f) + '" target="_blank" rel="noopener" download' + (d.gate ? ' data-gate="' + esc(DOCDIR + o.f) + '" data-gl="' + sel + '"' : '') + '>' + esc(S.dl) + '</a>' : '<a class="rl2-b off" href="#" data-coming-soon>' + esc(S.soon) + '</a>';
         row.innerHTML = '<div><b>' + esc(d.t[LANG]) + '</b><span class="rl2-m">' + esc(S.types[d.type]) + (o ? ' · ' + esc(meta(o)) : '') + '</span>' + (note ? '<span class="rl2-n">' + esc(note) + '</span>' : '') + '</div><div class="rl2-lg" role="group" aria-label="' + esc(S.pick) + '">' + chips + '</div>' + btn;
         [].forEach.call(row.querySelectorAll('.rl2-c:not([disabled])'), function (c) { c.addEventListener('click', function () { sel = c.getAttribute('data-l'); paint(); }); });
       }
@@ -97,5 +98,45 @@
     rows.forEach(function (r) { var ok = (!on.length || on.indexOf(r.getAttribute('data-type')) > -1) && (!t || r.textContent.toLowerCase().indexOf(t) > -1); r.hidden = !ok; if (ok) n++; });
     none.hidden = n > 0;
   }
+
+  /* ---- email gate for brochure downloads: asks for an email, sends it to J58 (social@j58.eu + sheet), then offers the PDF ---- */
+  var G = {
+    en: { t: 'Where should we send updates?', p: 'Enter your email address to download the brochure.', e: 'Email address', c: 'I agree to receive information about the EZER from J58.', go: 'Download brochure', x: 'Close', ok: 'Thank you! Your brochure is ready.', dl: 'Download the brochure', err: 'Please enter a valid email address and accept the box.', fine: 'You can unsubscribe at any time.' },
+    nl: { t: 'Waar mogen we updates naartoe sturen?', p: 'Vul je e-mailadres in om de brochure te downloaden.', e: 'E-mailadres', c: 'Ik ga akkoord met het ontvangen van informatie over de EZER van J58.', go: 'Brochure downloaden', x: 'Sluiten', ok: 'Bedankt! Je brochure staat klaar.', dl: 'Download de brochure', err: 'Vul een geldig e-mailadres in en vink het vakje aan.', fine: 'Je kunt je op elk moment afmelden.' },
+    de: { t: 'Wohin sollen wir Neuigkeiten senden?', p: 'Geben Sie Ihre E-Mail-Adresse ein, um die Broschüre herunterzuladen.', e: 'E-Mail-Adresse', c: 'Ich bin damit einverstanden, Informationen zum EZER von J58 zu erhalten.', go: 'Broschüre herunterladen', x: 'Schließen', ok: 'Vielen Dank! Ihre Broschüre steht bereit.', dl: 'Broschüre herunterladen', err: 'Bitte geben Sie eine gültige E-Mail-Adresse ein und setzen Sie das Häkchen.', fine: 'Sie können sich jederzeit abmelden.' }
+  }[LANG];
+  var gs = document.createElement('style');
+  gs.textContent = '.rl2-m-bg{position:fixed;inset:0;z-index:9999;background:rgba(11,29,53,.6);display:flex;align-items:center;justify-content:center;padding:20px}.rl2-m-bg[hidden]{display:none}.rl2-m-box{background:#fff;border-radius:18px;max-width:440px;width:100%;padding:28px;position:relative;font-family:"Montserrat",sans-serif;color:#0B1D35}.rl2-m-box h3{margin:0 0 8px;font-size:1.3rem}.rl2-m-box p{margin:0 0 16px;line-height:1.5;color:#4a5b70}.rl2-m-box input[type=email]{width:100%;box-sizing:border-box;font:inherit;padding:13px 14px;border:1px solid #cdd8e0;border-radius:10px;margin-bottom:14px}.rl2-m-box label.c{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;line-height:1.4;margin-bottom:6px}.rl2-m-box label.c input{margin-top:3px}.rl2-m-box .f{font-size:.8rem;color:#4a5b70;margin:0 0 16px}.rl2-m-box button.go,.rl2-m-box a.go{display:flex;justify-content:center;width:100%;box-sizing:border-box;padding:14px;border-radius:10px;border:0;background:#12aaba;color:#0B1D35;font:600 1rem "Montserrat",sans-serif;cursor:pointer;text-decoration:none}.rl2-m-box .x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:#4a5b70}.rl2-m-err{color:#b42318;font-size:.88rem;margin:0 0 10px!important}';
+  document.head.appendChild(gs);
+  var bg = document.createElement('div'); bg.className = 'rl2-m-bg'; bg.hidden = true;
+  bg.innerHTML = '<div class="rl2-m-box" role="dialog" aria-modal="true" aria-labelledby="rl2mt"><button type="button" class="x" aria-label="' + esc(G.x) + '">&times;</button><form novalidate><h3 id="rl2mt">' + esc(G.t) + '</h3><p>' + esc(G.p) + '</p><input type="email" name="email" autocomplete="email" placeholder="' + esc(G.e) + '" aria-label="' + esc(G.e) + '" required><label class="c"><input type="checkbox" name="consent"> <span>' + esc(G.c) + '</span></label><p class="f">' + esc(G.fine) + '</p><p class="rl2-m-err" hidden>' + esc(G.err) + '</p><button type="submit" class="go">' + esc(G.go) + '</button></form><div class="rl2-m-ok" hidden><h3>' + esc(G.ok) + '</h3><a class="go" href="#" target="_blank" rel="noopener" download>' + esc(G.dl) + '</a></div></div>';
+  document.body.appendChild(bg);
+  var mf = bg.querySelector('form'), mok = bg.querySelector('.rl2-m-ok'), mer = bg.querySelector('.rl2-m-err'), cur = null;
+  function closeM() { bg.hidden = true; mf.hidden = false; mok.hidden = true; mf.reset(); mer.hidden = true; }
+  bg.querySelector('.x').addEventListener('click', closeM);
+  bg.addEventListener('click', function (e) { if (e.target === bg) closeM(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !bg.hidden) closeM(); });
+  list.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[data-gate]') : null; if (!a) return;
+    e.preventDefault(); cur = { href: a.getAttribute('data-gate'), l: a.getAttribute('data-gl') };
+    var done = false; try { done = localStorage.getItem('j58_bro_ok') === '1'; } catch (x) {}
+    if (done) { window.open(cur.href, '_blank', 'noopener'); return; }
+    bg.hidden = false; mf.hidden = false; mok.hidden = true; setTimeout(function () { mf.email.focus(); }, 50);
+  });
+  mf.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var em = mf.email.value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(em) || !mf.consent.checked) { mer.hidden = false; return; }
+    mer.hidden = true;
+    var btn = mf.querySelector('button.go'), t0 = btn.textContent; btn.disabled = true;
+    var name = 'Brochure download (Resources)';
+    var text = 'Form: ' + name + '\nPage: ' + location.href + '\nPage language: ' + LANG.toUpperCase() + '\nBrochure language: ' + (cur ? cur.l : '').toUpperCase() + '\n\nEmail address: ' + em + '\nConsent: yes';
+    var send = window.J58Form && window.J58Form.send ? window.J58Form.send({ form: name, subject: '[' + name + '] ' + em, text: text, data: { email: em, consent: true, delivery: 'digital', brochure: cur ? cur.l : '' } }) : Promise.resolve('none');
+    send.then(function () {
+      btn.disabled = false; btn.textContent = t0;
+      try { localStorage.setItem('j58_bro_ok', '1'); } catch (x) {}
+      var dl = mok.querySelector('a'); dl.href = cur.href; mf.hidden = true; mok.hidden = false;
+    });
+  });
   q.addEventListener('input', run); cb.forEach(function (c) { c.addEventListener('change', run); });
 })();
