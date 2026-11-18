@@ -7,14 +7,14 @@ J.ENDPOINT="https://script.google.com/macros/s/AKfycbx0h1fUppWTwHEouQP-wj3Q2WX3b
 J.TO="social@j58.eu";
 var LANG=(document.documentElement.lang||'en').slice(0,2);
 J.L={
- en:{mail:"One more step: your email app should now open with your message ready. Please press Send there to deliver it. Nothing is sent until you do. If nothing opened, write to "+J.TO+".",ok:"Thank you! We have received your request and will get back to you soon.",okBro:"Thank you! Your brochure is ready to download below.",sending:"Sending…"},
- de:{mail:"Noch ein Schritt: Ihre E-Mail-App sollte sich jetzt mit Ihrer Nachricht öffnen. Bitte klicken Sie dort auf Senden. Erst dann wird die Nachricht verschickt. Falls sich nichts öffnet, schreiben Sie an "+J.TO+".",ok:"Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns bald bei Ihnen.",okBro:"Vielen Dank! Ihre Broschüre steht unten zum Download bereit.",sending:"Wird gesendet…"},
- nl:{mail:"Nog één stap: uw e-mailapp opent nu met uw bericht klaar. Druk daar op Verzenden om het te versturen. Er wordt niets verstuurd voordat u dat doet. Opent er niets, schrijf dan naar "+J.TO+".",ok:"Bedankt! We hebben uw aanvraag ontvangen en nemen snel contact met u op.",okBro:"Bedankt! Je brochure staat hieronder klaar om te downloaden.",sending:"Verzenden…"}
+ en:{mail:"One more step: your email app should now open with your message ready. Please press Send there to deliver it. Nothing is sent until you do. If nothing opened, write to "+J.TO+".",ok:"Thank you! We have received your request and will get back to you soon.",okBro:"Thank you! We are emailing the brochure to you now. If it does not arrive, please check your spam folder. You can also download it below.",sending:"Sending…"},
+ de:{mail:"Noch ein Schritt: Ihre E-Mail-App sollte sich jetzt mit Ihrer Nachricht öffnen. Bitte klicken Sie dort auf Senden. Erst dann wird die Nachricht verschickt. Falls sich nichts öffnet, schreiben Sie an "+J.TO+".",ok:"Vielen Dank! Wir haben Ihre Anfrage erhalten und melden uns bald bei Ihnen.",okBro:"Vielen Dank! Wir senden Ihnen die Broschüre jetzt per E-Mail. Falls sie nicht ankommt, prüfen Sie bitte Ihren Spam-Ordner. Sie können sie unten auch direkt herunterladen.",sending:"Wird gesendet…"},
+ nl:{mail:"Nog één stap: uw e-mailapp opent nu met uw bericht klaar. Druk daar op Verzenden om het te versturen. Er wordt niets verstuurd voordat u dat doet. Opent er niets, schrijf dan naar "+J.TO+".",ok:"Bedankt! We hebben uw aanvraag ontvangen en nemen snel contact met u op.",okBro:"Bedankt! We mailen je de brochure nu. Komt hij niet aan, kijk dan even in je spammap. Je kunt hem hieronder ook direct downloaden.",sending:"Verzenden…"}
 };
 J.t=J.L[LANG]||J.L.en;
 J.mailMsg=J.t.mail;
-var BRO={en:['Download the brochure','EZER-brochure-en.pdf'],de:['Broschüre herunterladen','EZER-brochure-de.pdf'],nl:['Download de brochure','EZER-brochure-nl.pdf']}[LANG]||null;
-if(BRO&&document.querySelector('form[data-send] input[name=delivery]')){var rp=(location.pathname.indexOf('/de/')>-1||location.pathname.indexOf('/nl/')>-1)?'../':(location.pathname.split('/').length>3?'../':'');J.BRO={t:BRO[0],href:rp+'assets/docs/'+BRO[1]}}
+var BROT={en:'Download the brochure',de:'Broschüre herunterladen',nl:'Download de brochure'}[LANG]||'Download the brochure';
+J.BRO=function(l){l=({en:1,nl:1,de:1})[l]?l:LANG;return {t:BROT,href:'/assets/docs/EZER-brochure-'+l+'.pdf'}};
 J.send=function(o){
   var d=o.data||{};
   function viaMail(){
@@ -38,6 +38,7 @@ function label(el,f){
 document.querySelectorAll('form[data-send]').forEach(function(f){
   var name=f.getAttribute('data-send')||f.getAttribute('aria-label')||'Website form';
   var hp=document.createElement('input');hp.type='text';hp.name='company_website';hp.tabIndex=-1;hp.autocomplete='off';hp.setAttribute('aria-hidden','true');hp.style.cssText='position:absolute;left:-9999px;width:1px;height:1px;opacity:0';f.appendChild(hp);
+  var isBro=!!f.querySelector('input[name=delivery]');
   var btn=f.querySelector('button[type=submit]'),ok=f.querySelector('.fm-ok,.form-success');
   f.addEventListener('submit',function(e){
     e.preventDefault();if(hp.value)return;
@@ -49,12 +50,13 @@ document.querySelectorAll('form[data-send]').forEach(function(f){
       var v=(el.value||'').trim();if(!v)return;
       lines.push(label(el,f)+': '+v);data[el.name||label(el,f)]=v;
     });
+    if(isBro)data.delivery='digital';
     var who=((data.first||'')+' '+(data.last||'')).trim()||data.nlname||data.nlemail||data.email||'';
     var text='Form: '+name+'\nPage: '+location.href+'\nPage language: '+(document.documentElement.lang||'en').toUpperCase()+'\n\n'+lines.join('\n');
     var orig=btn?btn.textContent:'';if(btn){btn.disabled=true;btn.textContent=J.t.sending}
     J.send({form:name,subject:'['+name+'] '+who,text:text,data:data}).then(function(r){
       if(btn){btn.disabled=false;btn.textContent=orig}
-      if(ok){ok.textContent=(r==='sent')?(data.delivery==='digital'?J.t.okBro:J.t.ok):J.mailMsg;if(r==='sent'&&data.delivery==='digital'&&J.BRO){var a=document.createElement('a');a.href=J.BRO.href;a.target='_blank';a.rel='noopener';a.download='';a.textContent=J.BRO.t;a.style.cssText='display:block;margin-top:12px;font-weight:700;color:#0b7f8c';ok.appendChild(a)}ok.hidden=false;ok.focus()}
+      if(ok){ok.textContent=(r==='sent')?(isBro?J.t.okBro:J.t.ok):J.mailMsg;if(r==='sent'&&isBro){var bb=J.BRO(data.brochure_lang);var a=document.createElement('a');a.href=bb.href;a.target='_blank';a.rel='noopener';a.download='';a.textContent=bb.t;a.style.cssText='display:block;margin-top:12px;font-weight:700;color:#0b7f8c';ok.appendChild(a)}ok.hidden=false;ok.focus()}
       if(r==='sent'){f.reset();f.querySelectorAll('input,select,textarea,button').forEach(function(el){if(el.type!=='hidden')el.setAttribute('disabled','true')})}
     });
   });
